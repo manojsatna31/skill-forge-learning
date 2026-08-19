@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code Formatting Examples</title>
+
+    <!-- Prism Core CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
+            rel="stylesheet"
+    >
+
+    <!-- Prism Line Numbers -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+            rel="stylesheet"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                    Inter,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
+
+            background: #f5f7fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: 50px auto;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h3 {
+            margin-top: 30px;
+        }
+
+        .description {
+            color: #667085;
+            margin-bottom: 35px;
+        }
+
+        .example {
+            margin: 30px 0 45px;
+        }
+
+        /*
+         * Code wrapper
+         */
+        .code-container {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        /*
+         * Copy button
+         */
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+
+            border: 1px solid #475569;
+            background: #1e293b;
+            color: #fff;
+
+            padding: 7px 13px;
+            border-radius: 6px;
+
+            cursor: pointer;
+            font-size: 13px;
+
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: #334155;
+        }
+
+        .copy-btn.copied {
+            background: #15803d;
+            border-color: #15803d;
+        }
+
+        /*
+         * Prism code block
+         */
+        pre[class*="language-"] {
+            margin: 0;
+            border-radius: 10px;
+            padding: 22px 20px 22px 55px;
+
+            font-size: 14px;
+            line-height: 1.6;
+
+            overflow-x: auto;
+        }
+
+        /*
+         * Inline code
+         */
+        code:not([class*="language-"]) {
+            background: #e5e7eb;
+            color: #c7254e;
+
+            padding: 3px 7px;
+            border-radius: 5px;
+
+            font-size: 0.9em;
+        }
+
+        /*
+         * Output box
+         */
+        .output {
+            background: #111827;
+            color: #d1fae5;
+
+            padding: 18px 20px;
+            border-radius: 10px;
+
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
+
+            white-space: pre-wrap;
+        }
+
+        /*
+         * Terminal
+         */
+        .terminal {
+            background: #0b0f19;
+            color: #e5e7eb;
+
+            padding: 20px;
+            border-radius: 10px;
+
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
+        }
+
+        .terminal .command {
+            color: #86efac;
+        }
+
+        /*
+         * Callout
+         */
+        .callout {
+            padding: 18px 20px;
+            border-left: 4px solid #2563eb;
+
+            background: #eff6ff;
+            border-radius: 6px;
+
+            margin: 20px 0;
+        }
+
+        /*
+         * Table
+         */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+        }
+
+        /*
+         * Highlight specific Prism lines
+         */
+        pre[data-line] {
+            position: relative;
+        }
+
+        /*
+         * Responsive
+         */
+        @media (max-width: 700px) {
+            .container {
+                width: calc(100% - 20px);
+                margin: 25px auto;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            pre[class*="language-"] {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Code Formatting Examples</h1>
+
+    <p class="description">
+        Examples of displaying source code in HTML using Prism.js.
+        Includes syntax highlighting, line numbers, copy buttons,
+        highlighted lines and multiple programming languages.
+    </p>
+
+
+    <!-- ========================================================= -->
+    <!-- 1. PYTHON BASIC -->
+    <!-- ========================================================= -->
+
+    <h2>1. Python — Basic</h2>
+
+    <div class="example">
+
+        <p>
+            Simple Python code with syntax highlighting and line numbers.
+        </p>
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">def hello_world():
+    print("Hello, World!")
+
+hello_world()</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 2. PYTHON FUNCTION -->
+    <!-- ========================================================= -->
+
+    <h2>2. Python — Function</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">def calculate_total(price, tax_rate):
+    tax = price * tax_rate
+    total = price + tax
+
+    return total
+
+
+price = 100
+tax_rate = 0.18
+
+total = calculate_total(price, tax_rate)
+
+print(f"Total: ₹{total}")</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 3. PYTHON CLASS -->
+    <!-- ========================================================= -->
+
+    <h2>3. Python — Class</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">class User:
+
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def display(self):
+        print(f"Name: {self.name}")
+        print(f"Email: {self.email}")
+
+
+user = User(
+    "Manoj",
+    "manoj@example.com"
+)
+
+user.display()</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 4. PYTHON API -->
+    <!-- ========================================================= -->
+
+    <h2>4. Python — API Request</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">import requests
+
+
+url = "https://api.example.com/users"
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    users = response.json()
+
+    for user in users:
+        print(user["name"])
+else:
+    print("Request failed")</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 5. PYTHON JSON -->
+    <!-- ========================================================= -->
+
+    <h2>5. Python — Working With JSON</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">import json
+
+
+data = {
+    "name": "Manoj",
+    "role": "Developer",
+    "skills": [
+        "Python",
+        "AI",
+        "Spring Boot"
+    ]
+}
+
+
+json_data = json.dumps(
+    data,
+    indent=4
+)
+
+print(json_data)</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 6. PYTHON DECORATOR -->
+    <!-- ========================================================= -->
+
+    <h2>6. Python — Decorator</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">def log_execution(func):
+
+    def wrapper(*args, **kwargs):
+
+        print(
+            f"Calling {func.__name__}"
+        )
+
+        result = func(
+            *args,
+            **kwargs
+        )
+
+        print("Completed")
+
+        return result
+
+    return wrapper
+
+
+@log_execution
+def add(a, b):
+    return a + b
+
+
+print(add(10, 20))</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 7. PYTHON EXCEPTION -->
+    <!-- ========================================================= -->
+
+    <h2>7. Python — Exception Handling</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">try:
+    number = int(input("Enter a number: "))
+
+    result = 100 / number
+
+    print(result)
+
+except ValueError:
+    print("Invalid number")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+finally:
+    print("Execution completed")</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 8. JAVASCRIPT -->
+    <!-- ========================================================= -->
+
+    <h2>8. JavaScript</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-javascript">function calculateTotal(price, taxRate) {
+    const tax = price * taxRate;
+
+    return price + tax;
+}
+
+const total = calculateTotal(
+    100,
+    0.18
+);
+
+console.log(total);</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 9. HTML -->
+    <!-- ========================================================= -->
+
+    <h2>9. HTML</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+    &lt;p&gt;
+        Welcome to my website.
+    &lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 10. CSS -->
+    <!-- ========================================================= -->
+
+    <h2>10. CSS</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-css">.card {
+    width: 400px;
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 11. JSON -->
+    <!-- ========================================================= -->
+
+    <h2>11. JSON</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-json">{
+    "name": "AI Application",
+    "version": "1.0.0",
+    "description": "Example project",
+    "dependencies": {
+        "python": "3.14",
+        "fastapi": "latest"
+    }
+}</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 12. SQL -->
+    <!-- ========================================================= -->
+
+    <h2>12. SQL</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-sql">SELECT
+    u.id,
+    u.name,
+    u.email
+FROM users u
+WHERE u.active = true
+ORDER BY u.name ASC;</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 13. BASH -->
+    <!-- ========================================================= -->
+
+    <h2>13. Bash / Terminal</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-bash">python -m venv .venv
+
+source .venv/bin/activate
+
+pip install fastapi uvicorn
+
+uvicorn main:app --reload</code></pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 14. TERMINAL OUTPUT -->
+    <!-- ========================================================= -->
+
+    <h2>14. Terminal Output</h2>
+
+    <div class="example">
+
+        <div class="terminal">
+            <div class="command">$ python main.py</div>
+
+            <br>
+
+            Hello, World!<br>
+            Server started on port 8000<br>
+            Application ready
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 15. PYTHON + OUTPUT -->
+    <!-- ========================================================= -->
+
+    <h2>15. Python + Output</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">numbers = [10, 20, 30, 40]
+
+total = sum(numbers)
+
+print(total)</code></pre>
+
+        </div>
+
+
+        <h3>Output</h3>
+
+        <div class="output">100</div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 16. INLINE CODE -->
+    <!-- ========================================================= -->
+
+    <h2>16. Inline Code</h2>
+
+    <div class="example">
+
+        <p>
+            To create a Python virtual environment, use
+            <code>python -m venv .venv</code>.
+        </p>
+
+        <p>
+            Install dependencies using
+            <code>pip install requests</code>.
+        </p>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 17. CALLOUT -->
+    <!-- ========================================================= -->
+
+    <h2>17. Code Explanation / Callout</h2>
+
+    <div class="example">
+
+        <div class="callout">
+
+            <strong>Important:</strong>
+
+            The <code>requests.get()</code> method sends
+            an HTTP GET request to the specified URL.
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- 18. MULTI LANGUAGE TABLE -->
+    <!-- ========================================================= -->
+
+    <h2>18. Supported Languages</h2>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>Language</th>
+            <th>Prism Class</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr>
+            <td>Python</td>
+            <td><code>language-python</code></td>
+        </tr>
+
+        <tr>
+            <td>JavaScript</td>
+            <td><code>language-javascript</code></td>
+        </tr>
+
+        <tr>
+            <td>HTML</td>
+            <td><code>language-html</code></td>
+        </tr>
+
+        <tr>
+            <td>CSS</td>
+            <td><code>language-css</code></td>
+        </tr>
+
+        <tr>
+            <td>JSON</td>
+            <td><code>language-json</code></td>
+        </tr>
+
+        <tr>
+            <td>SQL</td>
+            <td><code>language-sql</code></td>
+        </tr>
+
+        <tr>
+            <td>Bash</td>
+            <td><code>language-bash</code></td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+
+    <!-- ========================================================= -->
+    <!-- 19. PYTHON LONG EXAMPLE -->
+    <!-- ========================================================= -->
+
+    <h2>19. Python — Complete Example</h2>
+
+    <div class="example">
+
+        <div class="code-container">
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                Copy
+            </button>
+
+            <pre class="line-numbers"><code class="language-python">from fastapi import FastAPI
+from pydantic import BaseModel
+
+
+app = FastAPI()
+
+
+class User(BaseModel):
+    name: str
+    email: str
+
+
+@app.get("/")
+def home():
+    return {
+        "message": "API is running"
+    }
+
+
+@app.post("/users")
+def create_user(user: User):
+
+    return {
+        "message": "User created",
+        "user": user
+    }
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=8000
+    )</code></pre>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- ============================================================= -->
+<!-- Prism JS -->
+<!-- ============================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+
+<!-- Prism Languages -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+
+<!-- Line Numbers -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+
+<script>
+
+    /*
+     * Copy code from the nearest <pre> element
+     */
+    async function copyCode(button) {
+
+        const container = button.closest(".code-container");
+
+        const code = container.querySelector("code");
+
+        const text = code.innerText;
+
+        try {
+
+            await navigator.clipboard.writeText(text);
+
+            button.innerText = "✓ Copied";
+            button.classList.add("copied");
+
+            setTimeout(() => {
+
+                button.innerText = "Copy";
+                button.classList.remove("copied");
+
+            }, 2000);
+
+        } catch (error) {
+
+            console.error(
+                "Unable to copy code:",
+                error
+            );
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
