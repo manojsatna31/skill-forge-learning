@@ -8,4 +8,17 @@ https://skill-forge-learning.netlify.app/python-roadmap/
 when you run locally then update few things
 
 update the path of css files in python-readmap/index.html file
-<base href="/" /> to <base href="/skill-forge-learning/" />
+1) <base href="/" /> to <base href="/skill-forge-learning/" />
+2)
+<header>
+    <div class="container nav">
+        <a href="/skill-forge-learning"><div class="logo">Skill<span>Forge</span></div></a>
+        <div>
+            <a href="/skill-forge-learning">Home</a>
+            <a href="#" class="active">🐍 Python</a>
+            <a href="#" style="opacity:0.5;">Java (soon)</a>
+            <a href="#" style="opacity:0.5;">DAS (soon)</a>
+            <a href="#" style="opacity:0.5;">SQL (soon)</a>
+        </div>
+    </div>
+</header>
