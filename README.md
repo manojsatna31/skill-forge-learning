@@ -18,7 +18,7 @@ The goal is to make the journey from **beginner → intermediate → expert** bo
 
 ---
 
-![SkillForge-GIF](images/skill-forge-learning.gif)
+![SkillForge-GIF](assets/images/skill-forge-learning.gif)
 
 ---
 
