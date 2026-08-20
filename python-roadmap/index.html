@@ -95,9 +95,8 @@
                             </ol>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash">python --version
-pip --version
-                                </code></pre>
+                                <pre class="line-numbers"><code class="language-bash">python --version
+pip --version</code></pre>
                             </div>
                             <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and
                                 <code>pip
@@ -115,7 +114,7 @@ pip --version
                             </ol>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash">python3 --version
+                                <pre class="line-numbers"><code class="language-bash">python3 --version
 pip3 --version</code></pre>
                             </div>
                             <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
@@ -130,7 +129,7 @@ pip3 --version</code></pre>
                             </ol>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash">sudo apt update
+                                <pre class="line-numbers"><code class="language-bash">sudo apt update
 sudo apt install python3 python3-pip python3-venv -y
 python3 --version
 pip3 --version</code></pre>
@@ -171,10 +170,9 @@ pip3 --version</code></pre>
                             </ul>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash"># Quick Open (Ctrl+P) and paste:
+                                <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
 ext install ms-python.python
-ext install ms-python.vscode-pylance
-                                </code></pre>
+ext install ms-python.vscode-pylance</code></pre>
                             </div>
                         </div>
                     </div>
@@ -195,7 +193,7 @@ ext install ms-python.vscode-pylance
                             <strong>🐍 Verify Python's SQLite</strong>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
+                                <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
                             </div>
                             <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
                         </div>
@@ -214,7 +212,7 @@ ext install ms-python.vscode-pylance
                             </ul>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash">sqlite3 --version</code></pre>
+                                <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
                             </div>
                         </div>
                     </div>
@@ -236,14 +234,14 @@ ext install ms-python.vscode-pylance
                             </ul>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash">git --version</code></pre>
+                                <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
                             </div>
                         </div>
                         <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
                             <strong>⚙️ Initial Configuration</strong>
                             <div class="code-container" style="margin-top:0.5rem;">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-bash">git config --global user.name "Your Name"
+                                <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</code></pre>
                             </div>
                             <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
@@ -258,7 +256,7 @@ git config --global user.email "you@example.com"</code></pre>
                     <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
                         <div class="code-container">
                             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre><code class="language-bash"># Install uv (macOS/Linux)
+                            <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or via pip (slower but works everywhere)
@@ -3143,19 +3141,19 @@ def save_data(self, filename="library.json"):
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">def repeat(times):
-        def decorator(func):
-            def wrapper(*args, **kwargs):
-                for _ in range(times):
-                    result = func(*args, **kwargs)
-                return result
-            return wrapper
-        return decorator
+def decorator(func):
+    def wrapper(*args, **kwargs):
+        for _ in range(times):
+            result = func(*args, **kwargs)
+        return result
+    return wrapper
+return decorator
 
-        @repeat(3)
-        def say_hello():
-            print("Hello!")
+@repeat(3)
+def say_hello():
+    print("Hello!")
 
-        say_hello()  # prints "Hello!" three times</code></pre>
+say_hello()  # prints "Hello!" three times</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a decorator that repeats the function a given
                         number
@@ -3176,36 +3174,36 @@ def save_data(self, filename="library.json"):
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from functools import wraps, lru_cache, partial
 
-        # wraps example
-        def my_decorator(func):
-            @wraps(func)
-            def wrapper(*args, **kwargs):
-                print("Calling function")
-                return func(*args, **kwargs)
-            return wrapper
+# wraps example
+def my_decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("Calling function")
+        return func(*args, **kwargs)
+    return wrapper
 
-        @my_decorator
-        def greet(name):
-            """Greets the person."""
-            print(f"Hello {name}")
+@my_decorator
+def greet(name):
+    """Greets the person."""
+    print(f"Hello {name}")
 
-        print(greet.__name__)  # greet (not wrapper)
-        print(greet.__doc__)   # Greets the person.
+print(greet.__name__)  # greet (not wrapper)
+print(greet.__doc__)   # Greets the person.
 
-        # lru_cache – memoize
-        @lru_cache(maxsize=128)
-        def fib(n):
-            if n < 2:
-                return n
-            return fib(n-1) + fib(n-2)
+# lru_cache – memoize
+@lru_cache(maxsize=128)
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)
 
-        print(fib(35))  # fast due to caching
+print(fib(35))  # fast due to caching
 
-        # partial
-        def power(base, exponent):
-            return base ** exponent
-        square = partial(power, exponent=2)
-        print(square(5))  # 25</code></pre>
+# partial
+def power(base, exponent):
+    return base ** exponent
+square = partial(power, exponent=2)
+print(square(5))  # 25</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>lru_cache</code> to memoize a function that
                         computes the factorial recursively.</p>
@@ -3222,23 +3220,23 @@ def save_data(self, filename="library.json"):
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># built-in file context manager
-        with open("example.txt", "w") as f:
-            f.write("Hello World")
-        # file automatically closed
+with open("example.txt", "w") as f:
+    f.write("Hello World")
+# file automatically closed
 
-        # custom context manager
-        class ManagedFile:
-            def __init__(self, filename, mode):
-                self.filename = filename
-                self.mode = mode
-            def __enter__(self):
-                self.file = open(self.filename, self.mode)
-                return self.file
-            def __exit__(self, exc_type, exc_val, exc_tb):
-                self.file.close()
+# custom context manager
+class ManagedFile:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        return self.file
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
 
-        with ManagedFile("test.txt", "w") as f:
-            f.write("Managed file")</code></pre>
+with ManagedFile("test.txt", "w") as f:
+    f.write("Managed file")</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a context manager that measures the execution
                         time
@@ -3259,24 +3257,24 @@ def save_data(self, filename="library.json"):
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from contextlib import contextmanager, closing
 
-        @contextmanager
-        def temporary_change(x):
-            # setup
-            original = x
-            try:
-                yield x * 2
-            finally:
-                # teardown
-                print(f"Restored {original}")
+@contextmanager
+def temporary_change(x):
+    # setup
+    original = x
+    try:
+        yield x * 2
+    finally:
+        # teardown
+        print(f"Restored {original}")
 
-        with temporary_change(10) as val:
-            print(val)  # 20
+with temporary_change(10) as val:
+    print(val)  # 20
 
-        # closing – ensures a resource is closed even if an error occurs
-        from urllib.request import urlopen
-        with closing(urlopen('https://python.org')) as page:
-            for line in page:
-                print(line[:50])</code></pre>
+# closing – ensures a resource is closed even if an error occurs
+from urllib.request import urlopen
+with closing(urlopen('https://python.org')) as page:
+    for line in page:
+        print(line[:50])</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>contextmanager</code> to create a context
                         that
@@ -3297,31 +3295,31 @@ def save_data(self, filename="library.json"):
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">def accumulator():
-        total = 0
-        while True:
-            value = yield total
-            if value is None:
-                break
-            total += value
+total = 0
+while True:
+    value = yield total
+    if value is None:
+        break
+    total += value
 
-        gen = accumulator()
-        next(gen)  # initialize
-        print(gen.send(10))  # 10
-        print(gen.send(20))  # 30
-        gen.close()  # stops the generator
+gen = accumulator()
+next(gen)  # initialize
+print(gen.send(10))  # 10
+print(gen.send(20))  # 30
+gen.close()  # stops the generator
 
-        # using throw
-        def gen_with_exception():
-            try:
-                yield 1
-            except ValueError:
-                yield "Caught ValueError"
-            yield 2
+# using throw
+def gen_with_exception():
+    try:
+        yield 1
+    except ValueError:
+        yield "Caught ValueError"
+    yield 2
 
-        g = gen_with_exception()
-        print(next(g))          # 1
-        print(g.throw(ValueError))  # "Caught ValueError"
-        print(next(g))          # 2</code></pre>
+g = gen_with_exception()
+print(next(g))          # 1
+print(g.throw(ValueError))  # "Caught ValueError"
+print(next(g))          # 2</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a generator that produces squares of numbers,
                         but
@@ -3343,23 +3341,23 @@ def save_data(self, filename="library.json"):
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from itertools import islice, starmap, chain, groupby
 
-        # islice – like slicing for iterators
-        for i in islice(range(10), 3, 7):
-            print(i)  # 3,4,5,6
+# islice – like slicing for iterators
+for i in islice(range(10), 3, 7):
+    print(i)  # 3,4,5,6
 
-        # starmap – apply function to tuples
-        pow = starmap(pow, [(2,3), (3,2)])  # 8,9
-        print(list(pow))
+# starmap – apply function to tuples
+pow = starmap(pow, [(2,3), (3,2)])  # 8,9
+print(list(pow))
 
-        # chain.from_iterable – flatten nested lists
-        nested = [[1,2], [3,4], [5]]
-        flat = list(chain.from_iterable(nested))
-        print(flat)  # [1,2,3,4,5]
+# chain.from_iterable – flatten nested lists
+nested = [[1,2], [3,4], [5]]
+flat = list(chain.from_iterable(nested))
+print(flat)  # [1,2,3,4,5]
 
-        # groupby
-        data = "aaabbbbcc"
-        for key, group in groupby(data):
-            print(key, len(list(group)))  # a 3, b 4, c 2</code></pre>
+# groupby
+data = "aaabbbbcc"
+for key, group in groupby(data):
+    print(key, len(list(group)))  # a 3, b 4, c 2</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>groupby</code> to group a list of words by
                         their
@@ -3379,23 +3377,23 @@ def save_data(self, filename="library.json"):
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from collections import namedtuple, deque, ChainMap
 
-        # namedtuple
-        Point = namedtuple('Point', ['x', 'y'])
-        p = Point(10, 20)
-        print(p.x, p.y)
+# namedtuple
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(10, 20)
+print(p.x, p.y)
 
-        # deque
-        dq = deque([1,2,3])
-        dq.appendleft(0)
-        dq.append(4)
-        print(dq)  # deque([0,1,2,3,4])
+# deque
+dq = deque([1,2,3])
+dq.appendleft(0)
+dq.append(4)
+print(dq)  # deque([0,1,2,3,4])
 
-        # ChainMap
-        defaults = {'color': 'red', 'size': 'M'}
-        user_prefs = {'size': 'L'}
-        combined = ChainMap(user_prefs, defaults)
-        print(combined['color'])  # 'red' (from defaults)
-        print(combined['size'])   # 'L' (from user_prefs)</code></pre>
+# ChainMap
+defaults = {'color': 'red', 'size': 'M'}
+user_prefs = {'size': 'L'}
+combined = ChainMap(user_prefs, defaults)
+print(combined['color'])  # 'red' (from defaults)
+print(combined['size'])   # 'L' (from user_prefs)</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use a <code>deque</code> to implement a sliding window
                         of
@@ -3415,29 +3413,29 @@ def save_data(self, filename="library.json"):
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import os, shutil
 
-        # current directory
-        print(os.getcwd())
-        # list files
-        print(os.listdir('.'))
+# current directory
+print(os.getcwd())
+# list files
+print(os.listdir('.'))
 
-        # create directory
-        os.mkdir('test_dir')
-        # rename
-        os.rename('test_dir', 'new_dir')
-        # remove (only if empty)
-        os.rmdir('new_dir')
+# create directory
+os.mkdir('test_dir')
+# rename
+os.rename('test_dir', 'new_dir')
+# remove (only if empty)
+os.rmdir('new_dir')
 
-        # copy file
-        shutil.copy('source.txt', 'dest.txt')
-        # move file
-        shutil.move('dest.txt', 'archive/')
+# copy file
+shutil.copy('source.txt', 'dest.txt')
+# move file
+shutil.move('dest.txt', 'archive/')
 
-        # remove directory tree
-        shutil.rmtree('old_folder')
+# remove directory tree
+shutil.rmtree('old_folder')
 
-        # path operations
-        print(os.path.exists('file.txt'))
-        print(os.path.join('folder', 'file.txt'))</code></pre>
+# path operations
+print(os.path.exists('file.txt'))
+print(os.path.join('folder', 'file.txt'))</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a script that recursively lists all Python files
                         (.py) in a directory tree.</p>
@@ -3455,27 +3453,28 @@ def save_data(self, filename="library.json"):
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import csv, json
 
-        # Writing CSV
-        with open('data.csv', 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['Name', 'Age'])
-            writer.writerow(['Alice', 30])
-            writer.writerow(['Bob', 25])
+# Writing CSV
+with open('data.csv', 'w', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(['Name', 'Age'])
+    writer.writerow(['Alice', 30])
+    writer.writerow(['Bob', 25])
 
-        # Reading CSV
-        with open('data.csv', 'r') as f:
-            reader = csv.reader(f)
-            for row in reader:
-                print(row)
+# Reading CSV
+with open('data.csv', 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
 
-        # JSON
-        data = {"name": "Alice", "age": 30}
-        with open('data.json', 'w') as f:
-            json.dump(data, f, indent=2)
+# JSON
+data = {"name": "Alice", "age": 30}
+with open('data.json', 'w') as f:
+    json.dump(data, f, indent=2)
 
-        with open('data.json', 'r') as f:
-            loaded = json.load(f)
-            print(loaded)</code></pre>
+with open('data.json', 'r') as f:
+    loaded = json.load(f)
+    print(loaded)
+                        </code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Read a CSV file, filter rows where age > 25, and write
                         the
@@ -3494,27 +3493,28 @@ def save_data(self, filename="library.json"):
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from datetime import datetime, date, timedelta
-        import time
+import time
 
-        # current date and time
-        now = datetime.now()
-        print(now)
-        print(now.strftime('%Y-%m-%d %H:%M'))
+# current date and time
+now = datetime.now()
+print(now)
+print(now.strftime('%Y-%m-%d %H:%M'))
 
-        # date arithmetic
-        today = date.today()
-        yesterday = today - timedelta(days=1)
-        print(yesterday)
+# date arithmetic
+today = date.today()
+yesterday = today - timedelta(days=1)
+print(yesterday)
 
-        # parsing string to date
-        d = datetime.strptime('2025-01-01', '%Y-%m-%d')
-        print(d)
+# parsing string to date
+d = datetime.strptime('2025-01-01', '%Y-%m-%d')
+print(d)
 
-        # sleep and performance
-        start = time.perf_counter()
-        time.sleep(0.5)
-        end = time.perf_counter()
-        print(f"Elapsed: {end-start:.4f}s")</code></pre>
+# sleep and performance
+start = time.perf_counter()
+time.sleep(0.5)
+end = time.perf_counter()
+print(f"Elapsed: {end-start:.4f}s")
+                        </code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a function that returns the number of days
                         between
@@ -3537,22 +3537,23 @@ def save_data(self, filename="library.json"):
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import re
 
-        text = "The price is $12.99 and $10.00"
-        # find all numbers
-        numbers = re.findall(r'\d+\.\d{2}', text)
-        print(numbers)  # ['12.99', '10.00']
+text = "The price is $12.99 and $10.00"
+# find all numbers
+numbers = re.findall(r'\d+\.\d{2}', text)
+print(numbers)  # ['12.99', '10.00']
 
-        # search for a pattern
-        match = re.search(r'\$(\d+\.\d{2})', text)
-        if match:
-            print(match.group(1))  # 12.99
+# search for a pattern
+match = re.search(r'\$(\d+\.\d{2})', text)
+if match:
+    print(match.group(1))  # 12.99
 
-        # substitute
-        new_text = re.sub(r'\d+\.\d{2}', 'XX.XX', text)
-        print(new_text)
+# substitute
+new_text = re.sub(r'\d+\.\d{2}', 'XX.XX', text)
+print(new_text)
 
-        # split
-        parts = re.split(r'\s+', text)  # split on whitespace</code></pre>
+# split
+parts = re.split(r'\s+', text)  # split on whitespace
+                        </code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a regex to validate an email address format.</p>
                 </div>
@@ -4077,46 +4078,46 @@ def buggy_function(x):
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># setup.py (old style)
-        from setuptools import setup, find_packages
+from setuptools import setup, find_packages
 
-        setup(
-            name='myproject',
-            version='0.1.0',
-            packages=find_packages(),
-            install_requires=[
-                'requests>=2.0',
-                'pytest'
-            ],
-            author='Your Name',
-            description='A sample project',
-        )
+setup(
+    name='myproject',
+    version='0.1.0',
+    packages=find_packages(),
+    install_requires=[
+        'requests>=2.0',
+        'pytest'
+    ],
+    author='Your Name',
+    description='A sample project',
+)
 
-        # pyproject.toml (modern)
-        """
-        [build-system]
-        requires = ["setuptools>=61.0", "wheel"]
-        build-backend = "setuptools.build_meta"
+# pyproject.toml (modern)
+"""
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
-        [project]
-        name = "myproject"
-        version = "0.1.0"
-        dependencies = [
-            "requests>=2.0",
-            "pytest"
-        ]
-        """
+[project]
+name = "myproject"
+version = "0.1.0"
+dependencies = [
+    "requests>=2.0",
+    "pytest"
+]
+"""
 
-        # build and install
-        # python -m build
-        # pip install dist/myproject-0.1.0-py3-none-any.whl
+# build and install
+# python -m build
+# pip install dist/myproject-0.1.0-py3-none-any.whl
 
-        # virtual environment
-        # python -m venv .venv
-        # source .venv/bin/activate (Linux/macOS)
-        # .venv\Scripts\activate (Windows)
+# virtual environment
+# python -m venv .venv
+# source .venv/bin/activate (Linux/macOS)
+# .venv\Scripts\activate (Windows)
 
-        # freeze dependencies
-        # pip freeze > requirements.txt</code></pre>
+# freeze dependencies
+# pip freeze > requirements.txt</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Create a simple package with a function and install it
                         locally using <code>pip install -e .</code></p>
@@ -4147,7 +4148,7 @@ def buggy_function(x):
 
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-plaintext">etl_pipeline/
+                        <pre class="line-numbers"><code class="language-plaintext">etl_pipeline/
 ├── etl/
 │   ├── __init__.py
 │   ├── extract.py      – read CSV/JSON, validate with regex
@@ -4174,7 +4175,7 @@ def buggy_function(x):
 
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-csv">order_id,customer_name,email,product,quantity,price,order_date
+                        <pre class="line-numbers"><code class="language-csv">order_id,customer_name,email,product,quantity,price,order_date
 1001,Alice Johnson,alice@email.com,Laptop,2,899.99,2025-01-15
 1002,Bob Smith,bob@email.com,Mouse,5,29.99,2025-01-16
 1003,Carol White,carol@email.com,Keyboard,1,79.99,2025-01-16
@@ -4190,7 +4191,7 @@ def buggy_function(x):
 
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-json">[
+                        <pre class="line-numbers"><code class="language-json">[
     {"name": "Laptop", "category": "Electronics", "weight_kg": 2.5},
     {"name": "Mouse", "category": "Accessories", "weight_kg": 0.2},
     {"name": "Keyboard", "category": "Accessories", "weight_kg": 0.8}
@@ -4952,7 +4953,7 @@ if __name__ == "__main__":
                     <h3>🚀 How to Run</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-bash">$ python -m venv .venv
+                        <pre class="line-numbers"><code class="language-bash">$ python -m venv .venv
 $ source .venv/bin/activate # or .venv\Scripts\activate on Windows
 $ pip install -r requirements.txt
 $ python run_pipeline.py
@@ -5028,7 +5029,7 @@ Unique products: 3
                     <h3>📁 Project Structure</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-plaintext">weather_aggregator/
+                        <pre class="line-numbers"><code class="language-plaintext">weather_aggregator/
 ├── weather/
 │   ├── __init__.py
 │   ├── fetcher.py      – fetch weather from API with retry & caching
@@ -5053,7 +5054,7 @@ Unique products: 3
                     <h3>📄 Sample Data – data/cities.json</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-json">[
+                        <pre class="line-numbers"><code class="language-json">[
     {"name": "London", "country": "UK", "lat": 51.5074, "lon": -0.1278},
     {"name": "New York", "country": "US", "lat": 40.7128, "lon": -74.0060},
     {"name": "Tokyo", "country": "JP", "lat": 35.6762, "lon": 139.6503},
@@ -5660,7 +5661,7 @@ if __name__ == "__main__":
                     <h3>📄 6. requirements.txt</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-text"># Weather Aggregator Dependencies
+                        <pre class="line-numbers"><code class="language-text"># Weather Aggregator Dependencies
 requests>=2.31.0
 pytest>=7.0.0
 # For mocking in tests
@@ -5703,7 +5704,7 @@ if __name__ == "__main__":
                     <h3>🚀 How to Run</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-bash"># 1. Set up virtual environment
+                        <pre class="line-numbers"><code class="language-bash"># 1. Set up virtual environment
 $ python -m venv .venv
 $ source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
@@ -6024,46 +6025,46 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Singleton ──────────────────────────────────────────────
-        class Singleton:
-            _instance = None
+class Singleton:
+    _instance = None
 
-            def __new__(cls, *args, **kwargs):
-                if cls._instance is None:
-                    cls._instance = super().__new__(cls)
-                return cls._instance
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
 
-            def __init__(self, value):
-                self.value = value
+    def __init__(self, value):
+        self.value = value
 
-        s1 = Singleton(10)
-        s2 = Singleton(20)
-        print(s1.value, s2.value)  # 20 20
-        print(s1 is s2)            # True
+s1 = Singleton(10)
+s2 = Singleton(20)
+print(s1.value, s2.value)  # 20 20
+print(s1 is s2)            # True
 
-        # ─── Factory ──────────────────────────────────────────────
-        from abc import ABC, abstractmethod
+# ─── Factory ──────────────────────────────────────────────
+from abc import ABC, abstractmethod
 
-        class Animal(ABC):
-            @abstractmethod
-            def speak(self): pass
+class Animal(ABC):
+    @abstractmethod
+    def speak(self): pass
 
-        class Dog(Animal):
-            def speak(self): return "Woof"
+class Dog(Animal):
+    def speak(self): return "Woof"
 
-        class Cat(Animal):
-            def speak(self): return "Meow"
+class Cat(Animal):
+    def speak(self): return "Meow"
 
-        class AnimalFactory:
-            @staticmethod
-            def create(animal_type: str) -> Animal:
-                if animal_type == "dog":
-                    return Dog()
-                elif animal_type == "cat":
-                    return Cat()
-                raise ValueError(f"Unknown animal: {animal_type}")
+class AnimalFactory:
+    @staticmethod
+    def create(animal_type: str) -> Animal:
+        if animal_type == "dog":
+            return Dog()
+        elif animal_type == "cat":
+            return Cat()
+        raise ValueError(f"Unknown animal: {animal_type}")
 
-        animal = AnimalFactory.create("dog")
-        print(animal.speak())  # Woof</code></pre>
+animal = AnimalFactory.create("dog")
+print(animal.speak())  # Woof</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Implement a <code>DatabaseConnection</code> singleton
                         that
@@ -6083,66 +6084,66 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Observer ──────────────────────────────────────────────
-        class Subject:
-            def __init__(self):
-                self._observers = []
+class Subject:
+    def __init__(self):
+        self._observers = []
 
-            def attach(self, observer):
-                self._observers.append(observer)
+    def attach(self, observer):
+        self._observers.append(observer)
 
-            def detach(self, observer):
-                self._observers.remove(observer)
+    def detach(self, observer):
+        self._observers.remove(observer)
 
-            def notify(self, data):
-                for observer in self._observers:
-                    observer.update(data)
+    def notify(self, data):
+        for observer in self._observers:
+            observer.update(data)
 
-        class Observer:
-            def update(self, data):
-                print(f"Received: {data}")
+class Observer:
+    def update(self, data):
+        print(f"Received: {data}")
 
-        subject = Subject()
-        obs = Observer()
-        subject.attach(obs)
-        subject.notify("Hello")  # Received: Hello
+subject = Subject()
+obs = Observer()
+subject.attach(obs)
+subject.notify("Hello")  # Received: Hello
 
-        # ─── Strategy ──────────────────────────────────────────────
-        from typing import List
+# ─── Strategy ──────────────────────────────────────────────
+from typing import List
 
-        class SortStrategy:
-            def sort(self, data: List[int]) -> List[int]:
-                raise NotImplementedError
+class SortStrategy:
+    def sort(self, data: List[int]) -> List[int]:
+        raise NotImplementedError
 
-        class BubbleSort(SortStrategy):
-            def sort(self, data: List[int]) -> List[int]:
-                arr = data[:]
-                for i in range(len(arr)):
-                    for j in range(0, len(arr)-i-1):
-                        if arr[j] > arr[j+1]:
-                            arr[j], arr[j+1] = arr[j+1], arr[j]
-                return arr
+class BubbleSort(SortStrategy):
+    def sort(self, data: List[int]) -> List[int]:
+        arr = data[:]
+        for i in range(len(arr)):
+            for j in range(0, len(arr)-i-1):
+                if arr[j] > arr[j+1]:
+                    arr[j], arr[j+1] = arr[j+1], arr[j]
+        return arr
 
-        class QuickSort(SortStrategy):
-            def sort(self, data: List[int]) -> List[int]:
-                if len(data) <= 1:
-                    return data
-                pivot = data[0]
-                left = [x for x in data[1:] if x <= pivot]
-                right = [x for x in data[1:] if x > pivot]
-                return self.sort(left) + [pivot] + self.sort(right)
+class QuickSort(SortStrategy):
+    def sort(self, data: List[int]) -> List[int]:
+        if len(data) <= 1:
+            return data
+        pivot = data[0]
+        left = [x for x in data[1:] if x <= pivot]
+        right = [x for x in data[1:] if x > pivot]
+        return self.sort(left) + [pivot] + self.sort(right)
 
-        class Sorter:
-            def __init__(self, strategy: SortStrategy):
-                self._strategy = strategy
+class Sorter:
+    def __init__(self, strategy: SortStrategy):
+        self._strategy = strategy
 
-            def set_strategy(self, strategy: SortStrategy):
-                self._strategy = strategy
+    def set_strategy(self, strategy: SortStrategy):
+        self._strategy = strategy
 
-            def sort(self, data: List[int]) -> List[int]:
-                return self._strategy.sort(data)
+    def sort(self, data: List[int]) -> List[int]:
+        return self._strategy.sort(data)
 
-        sorter = Sorter(BubbleSort())
-        print(sorter.sort([3,1,4,1,5]))  # [1,1,3,4,5]</code></pre>
+sorter = Sorter(BubbleSort())
+print(sorter.sort([3,1,4,1,5]))  # [1,1,3,4,5]</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Build a payment system using Strategy: <code>CreditCardPayment</code>,
                         <code>PayPalPayment</code>, <code>BitcoinPayment</code>.</p>
@@ -6160,45 +6161,45 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Structural Decorator ──────────────────────────────────
-        from functools import wraps
+from functools import wraps
 
-        def bold(func):
-            @wraps(func)
-            def wrapper(*args, **kwargs):
-                return f"<b>{func(*args, **kwargs)}</b>"
-            return wrapper
+def bold(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        return f"<b>{func(*args, **kwargs)}</b>"
+    return wrapper
 
-        def italic(func):
-            @wraps(func)
-            def wrapper(*args, **kwargs):
-                return f"<i>{func(*args, **kwargs)}</i>"
-            return wrapper
+def italic(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        return f"<i>{func(*args, **kwargs)}</i>"
+    return wrapper
 
-        @bold
-        @italic
-        def greet(name):
-            return f"Hello, {name}"
+@bold
+@italic
+def greet(name):
+    return f"Hello, {name}"
 
-        print(greet("Alice"))  # <b><i>Hello, Alice</i></b>
+print(greet("Alice"))  # <b><i>Hello, Alice</i></b>
 
-        # ─── Adapter ──────────────────────────────────────────────
-        class EuropeanPlug:
-            def voltage(self): return 230
+# ─── Adapter ──────────────────────────────────────────────
+class EuropeanPlug:
+    def voltage(self): return 230
 
-        class USPlug:
-            def voltage(self): return 120
+class USPlug:
+    def voltage(self): return 120
 
-        class Adapter:
-            def __init__(self, plug):
-                self._plug = plug
+class Adapter:
+    def __init__(self, plug):
+        self._plug = plug
 
-            def voltage(self):
-                # convert European to US
-                return self._plug.voltage() * 120 / 230
+    def voltage(self):
+        # convert European to US
+        return self._plug.voltage() * 120 / 230
 
-        european = EuropeanPlug()
-        adapter = Adapter(european)
-        print(f"Adapted: {adapter.voltage()}V")  # 120V</code></pre>
+european = EuropeanPlug()
+adapter = Adapter(european)
+print(f"Adapted: {adapter.voltage()}V")  # 120V</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write an adapter that converts XML data to JSON
                         format.
@@ -6219,46 +6220,46 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Basic Metaclass ──────────────────────────────────────
-        class AutoPropertyMeta(type):
-            def __new__(cls, name, bases, dct):
-                # Add a property that returns a class name
-                dct['class_name'] = property(lambda self: name)
-                return super().__new__(cls, name, bases, dct)
+class AutoPropertyMeta(type):
+    def __new__(cls, name, bases, dct):
+        # Add a property that returns a class name
+        dct['class_name'] = property(lambda self: name)
+        return super().__new__(cls, name, bases, dct)
 
-        class MyClass(metaclass=AutoPropertyMeta):
-            pass
+class MyClass(metaclass=AutoPropertyMeta):
+    pass
 
-        obj = MyClass()
-        print(obj.class_name)  # MyClass
+obj = MyClass()
+print(obj.class_name)  # MyClass
 
-        # ─── Singleton Metaclass ────────────────────────────────
-        class SingletonMeta(type):
-            _instances = {}
+# ─── Singleton Metaclass ────────────────────────────────
+class SingletonMeta(type):
+    _instances = {}
 
-            def __call__(cls, *args, **kwargs):
-                if cls not in cls._instances:
-                    cls._instances[cls] = super().__call__(*args, **kwargs)
-                return cls._instances[cls]
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super().__call__(*args, **kwargs)
+        return cls._instances[cls]
 
-        class Database(metaclass=SingletonMeta):
-            def __init__(self, url):
-                self.url = url
+class Database(metaclass=SingletonMeta):
+    def __init__(self, url):
+        self.url = url
 
-        db1 = Database("postgres://localhost")
-        db2 = Database("mysql://localhost")
-        print(db1 is db2)  # True
-        print(db1.url)     # postgres://localhost
+db1 = Database("postgres://localhost")
+db2 = Database("mysql://localhost")
+print(db1 is db2)  # True
+print(db1.url)     # postgres://localhost
 
-        # ─── Validation Metaclass ──────────────────────────────
-        class ValidateMeta(type):
-            def __new__(cls, name, bases, dct):
-                if 'name' not in dct:
-                    raise TypeError(f"Class {name} must define 'name' attribute")
-                return super().__new__(cls, name, bases, dct)
+# ─── Validation Metaclass ──────────────────────────────
+class ValidateMeta(type):
+    def __new__(cls, name, bases, dct):
+        if 'name' not in dct:
+            raise TypeError(f"Class {name} must define 'name' attribute")
+        return super().__new__(cls, name, bases, dct)
 
-        # class Invalid(metaclass=ValidateMeta): pass  # Raises TypeError
-        class Valid(metaclass=ValidateMeta):
-            name = "ValidClass"</code></pre>
+# class Invalid(metaclass=ValidateMeta): pass  # Raises TypeError
+class Valid(metaclass=ValidateMeta):
+    name = "ValidClass"</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Create a metaclass that automatically adds a <code>created_at</code>
                         timestamp to every class instance.</p>
@@ -6280,57 +6281,57 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Simple Descriptor ────────────────────────────────────
-        class PositiveNumber:
-            def __init__(self, name):
-                self._name = name
+class PositiveNumber:
+    def __init__(self, name):
+        self._name = name
 
-            def __get__(self, obj, objtype):
-                if obj is None:
-                    return self
-                return obj.__dict__.get(self._name, 0)
+    def __get__(self, obj, objtype):
+        if obj is None:
+            return self
+        return obj.__dict__.get(self._name, 0)
 
-            def __set__(self, obj, value):
-                if value < 0:
-                    raise ValueError("Value must be positive")
-                obj.__dict__[self._name] = value
+    def __set__(self, obj, value):
+        if value < 0:
+            raise ValueError("Value must be positive")
+        obj.__dict__[self._name] = value
 
-        class Person:
-            age = PositiveNumber("age")
+class Person:
+    age = PositiveNumber("age")
 
-        p = Person()
-        p.age = 25
-        print(p.age)   # 25
-        # p.age = -5   # ValueError
+p = Person()
+p.age = 25
+print(p.age)   # 25
+# p.age = -5   # ValueError
 
-        # ─── Validated String ────────────────────────────────────
-        class ValidatedString:
-            def __init__(self, name, min_len=1, max_len=255):
-                self._name = name
-                self._min_len = min_len
-                self._max_len = max_len
+# ─── Validated String ────────────────────────────────────
+class ValidatedString:
+    def __init__(self, name, min_len=1, max_len=255):
+        self._name = name
+        self._min_len = min_len
+        self._max_len = max_len
 
-            def __get__(self, obj, objtype):
-                if obj is None:
-                    return self
-                return obj.__dict__.get(self._name, "")
+    def __get__(self, obj, objtype):
+        if obj is None:
+            return self
+        return obj.__dict__.get(self._name, "")
 
-            def __set__(self, obj, value):
-                if not isinstance(value, str):
-                    raise TypeError(f"{self._name} must be a string")
-                if len(value) < self._min_len:
-                    raise ValueError(f"{self._name} too short (min {self._min_len})")
-                if len(value) > self._max_len:
-                    raise ValueError(f"{self._name} too long (max {self._max_len})")
-                obj.__dict__[self._name] = value
+    def __set__(self, obj, value):
+        if not isinstance(value, str):
+            raise TypeError(f"{self._name} must be a string")
+        if len(value) < self._min_len:
+            raise ValueError(f"{self._name} too short (min {self._min_len})")
+        if len(value) > self._max_len:
+            raise ValueError(f"{self._name} too long (max {self._max_len})")
+        obj.__dict__[self._name] = value
 
-        class User:
-            username = ValidatedString("username", min_len=3)
-            email = ValidatedString("email", min_len=5)
+class User:
+    username = ValidatedString("username", min_len=3)
+    email = ValidatedString("email", min_len=5)
 
-        u = User()
-        u.username = "alice"
-        u.email = "alice@example.com"
-        print(u.username)  # alice</code></pre>
+u = User()
+u.username = "alice"
+u.email = "alice@example.com"
+print(u.username)  # alice</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Create a <code>LazyProperty</code> descriptor that
                         computes a value only once, then caches it.</p>
@@ -6349,34 +6350,34 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import cProfile
-        import pstats
-        import io
+import pstats
+import io
 
-        def slow_function():
-            total = 0
-            for i in range(10000):
-                total += sum([j**2 for j in range(100)])
-            return total
+def slow_function():
+    total = 0
+    for i in range(10000):
+        total += sum([j**2 for j in range(100)])
+    return total
 
-        # ─── Using cProfile ────────────────────────────────────
-        profiler = cProfile.Profile()
-        profiler.enable()
-        slow_function()
-        profiler.disable()
+# ─── Using cProfile ────────────────────────────────────
+profiler = cProfile.Profile()
+profiler.enable()
+slow_function()
+profiler.disable()
 
-        # Print stats
-        stream = io.StringIO()
-        stats = pstats.Stats(profiler, stream=stream)
-        stats.sort_stats('cumulative').print_stats(10)
-        print(stream.getvalue())
+# Print stats
+stream = io.StringIO()
+stats = pstats.Stats(profiler, stream=stream)
+stats.sort_stats('cumulative').print_stats(10)
+print(stream.getvalue())
 
-        # ─── Using line_profiler (install: pip install line_profiler) ──
-        # Add @profile decorator and run: kernprof -l -v script.py
+# ─── Using line_profiler (install: pip install line_profiler) ──
+# Add @profile decorator and run: kernprof -l -v script.py
 
-        # ─── Using timeit ──────────────────────────────────────────
-        import timeit
-        t = timeit.timeit('sum([i**2 for i in range(100)])', number=1000)
-        print(f"Time: {t:.4f}s")</code></pre>
+# ─── Using timeit ──────────────────────────────────────────
+import timeit
+t = timeit.timeit('sum([i**2 for i in range(100)])', number=1000)
+print(f"Time: {t:.4f}s")</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Profile a recursive Fibonacci function and find the
                         bottleneck.</p>
@@ -6394,36 +6395,36 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── memory_profiler (install: pip install memory_profiler) ──
-        # Add @profile decorator and run: python -m memory_profiler script.py
+# Add @profile decorator and run: python -m memory_profiler script.py
 
-        @profile
-        def memory_hungry():
-            # This will show memory usage line by line
-            large_list = [i**2 for i in range(1000000)]
-            del large_list
-            another_list = [i**3 for i in range(500000)]
+@profile
+def memory_hungry():
+    # This will show memory usage line by line
+    large_list = [i**2 for i in range(1000000)]
+    del large_list
+    another_list = [i**3 for i in range(500000)]
 
-        if __name__ == "__main__":
-            memory_hungry()
+if __name__ == "__main__":
+    memory_hungry()
 
-        # ─── tracemalloc ──────────────────────────────────────────
-        import tracemalloc
+# ─── tracemalloc ──────────────────────────────────────────
+import tracemalloc
 
-        tracemalloc.start()
-        data = [i**2 for i in range(10000)]
-        snapshot = tracemalloc.take_snapshot()
-        top_stats = snapshot.statistics('lineno')
+tracemalloc.start()
+data = [i**2 for i in range(10000)]
+snapshot = tracemalloc.take_snapshot()
+top_stats = snapshot.statistics('lineno')
 
-        print("[ Top 5 memory allocations ]")
-        for stat in top_stats[:5]:
-            print(stat)
+print("[ Top 5 memory allocations ]")
+for stat in top_stats[:5]:
+    print(stat)
 
-        # ─── Memory efficient generators ────────────────────────
-        # Compare list vs generator memory
-        import sys
-        list_memory = sys.getsizeof([i**2 for i in range(10000)])
-        gen_memory = sys.getsizeof((i**2 for i in range(10000)))
-        print(f"List: {list_memory} bytes, Generator: {gen_memory} bytes")</code></pre>
+# ─── Memory efficient generators ────────────────────────
+# Compare list vs generator memory
+import sys
+list_memory = sys.getsizeof([i**2 for i in range(10000)])
+gen_memory = sys.getsizeof((i**2 for i in range(10000)))
+print(f"List: {list_memory} bytes, Generator: {gen_memory} bytes")</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>memory_profiler</code> to compare the memory
                         usage of a list vs a generator.</p>
@@ -6444,49 +6445,49 @@ $ cat output/weather_report.json | python -m json.tool
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import timeit
 
-        # ─── Local variable optimization ──────────────────────
-        def slow():
-            total = 0
-            for i in range(1000000):
-                total += i
-            return total
+ # ─── Local variable optimization ──────────────────────
+def slow():
+    total = 0
+    for i in range(1000000):
+        total += i
+    return total
 
-        def fast():
-            total = 0
-            # bind range to local
-            r = range
-            for i in r(1000000):
-                total += i
-            return total
+def fast():
+    total = 0
+    # bind range to local
+    r = range
+    for i in r(1000000):
+        total += i
+    return total
 
-        print(timeit.timeit(slow, number=10))
-        print(timeit.timeit(fast, number=10))
+print(timeit.timeit(slow, number=10))
+print(timeit.timeit(fast, number=10))
 
-        # ─── Set vs List for membership ──────────────────────
-        data_list = list(range(10000))
-        data_set = set(range(10000))
+# ─── Set vs List for membership ──────────────────────
+data_list = list(range(10000))
+data_set = set(range(10000))
 
-        def list_membership():
-            return 9999 in data_list
+def list_membership():
+    return 9999 in data_list
 
-        def set_membership():
-            return 9999 in data_set
+def set_membership():
+    return 9999 in data_set
 
-        print(timeit.timeit(list_membership, number=10000))  # ~0.02s
-        print(timeit.timeit(set_membership, number=10000))   # ~0.001s
+print(timeit.timeit(list_membership, number=10000))  # ~0.02s
+print(timeit.timeit(set_membership, number=10000))   # ~0.001s
 
-        # ─── Comprehension vs Loop ──────────────────────────
-        def loop_squares():
-            result = []
-            for i in range(10000):
-                result.append(i**2)
-            return result
+# ─── Comprehension vs Loop ──────────────────────────
+def loop_squares():
+    result = []
+    for i in range(10000):
+        result.append(i**2)
+    return result
 
-        def comp_squares():
-            return [i**2 for i in range(10000)]
+def comp_squares():
+    return [i**2 for i in range(10000)]
 
-        print(timeit.timeit(loop_squares, number=100))
-        print(timeit.timeit(comp_squares, number=100))</code></pre>
+print(timeit.timeit(loop_squares, number=100))
+print(timeit.timeit(comp_squares, number=100))</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Optimize a function that finds duplicates in a list by
                         using a set instead of nested loops.</p>
@@ -6504,44 +6505,44 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from functools import lru_cache, cache
-        import timeit
+import timeit
 
-        # ─── Fibonacci with and without cache ────────────────
-        def fib_no_cache(n):
-            if n < 2:
-                return n
-            return fib_no_cache(n-1) + fib_no_cache(n-2)
+# ─── Fibonacci with and without cache ────────────────
+def fib_no_cache(n):
+    if n < 2:
+        return n
+    return fib_no_cache(n-1) + fib_no_cache(n-2)
 
-        @lru_cache(maxsize=128)
-        def fib_cache(n):
-            if n < 2:
-                return n
-            return fib_cache(n-1) + fib_cache(n-2)
+@lru_cache(maxsize=128)
+def fib_cache(n):
+    if n < 2:
+        return n
+    return fib_cache(n-1) + fib_cache(n-2)
 
-        @cache  # Python 3.9+
-        def fib_cache_unlimited(n):
-            if n < 2:
-                return n
-            return fib_cache_unlimited(n-1) + fib_cache_unlimited(n-2)
+@cache  # Python 3.9+
+def fib_cache_unlimited(n):
+    if n < 2:
+        return n
+    return fib_cache_unlimited(n-1) + fib_cache_unlimited(n-2)
 
-        # Time comparison
-        t1 = timeit.timeit(lambda: fib_cache(35), number=10)
-        print(f"Cached: {t1:.4f}s")
+# Time comparison
+t1 = timeit.timeit(lambda: fib_cache(35), number=10)
+print(f"Cached: {t1:.4f}s")
 
-        # ─── lru_cache with custom maxsize ────────────────────
-        @lru_cache(maxsize=5)
-        def expensive_operation(x):
-            print(f"Computing {x}...")
-            return x * x
+# ─── lru_cache with custom maxsize ────────────────────
+@lru_cache(maxsize=5)
+def expensive_operation(x):
+    print(f"Computing {x}...")
+    return x * x
 
-        expensive_operation(1)  # computes
-        expensive_operation(2)  # computes
-        expensive_operation(1)  # cached
-        expensive_operation(3)  # computes
-        expensive_operation(4)  # computes
-        expensive_operation(5)  # computes
-        expensive_operation(6)  # computes (evicts oldest)
-        print(expensive_operation.cache_info())  # CacheInfo(hits=1, misses=6, maxsize=5, currsize=5)</code></pre>
+expensive_operation(1)  # computes
+expensive_operation(2)  # computes
+expensive_operation(1)  # cached
+expensive_operation(3)  # computes
+expensive_operation(4)  # computes
+expensive_operation(5)  # computes
+expensive_operation(6)  # computes (evicts oldest)
+print(expensive_operation.cache_info())  # CacheInfo(hits=1, misses=6, maxsize=5, currsize=5)</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>lru_cache</code> to memoize a function that
                         computes the factorial of large numbers.</p>
@@ -6559,39 +6560,39 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import numpy as np
-        import timeit
+import timeit
 
-        # ─── Python loop vs NumPy vectorization ──────────────
-        size = 1000000
+# ─── Python loop vs NumPy vectorization ──────────────
+size = 1000000
 
-        def python_sum():
-            arr = list(range(size))
-            total = 0
-            for x in arr:
-                total += x
-            return total
+def python_sum():
+    arr = list(range(size))
+    total = 0
+    for x in arr:
+        total += x
+    return total
 
-        def numpy_sum():
-            arr = np.arange(size)
-            return np.sum(arr)
+def numpy_sum():
+    arr = np.arange(size)
+    return np.sum(arr)
 
-        t_py = timeit.timeit(python_sum, number=10)
-        t_np = timeit.timeit(numpy_sum, number=10)
-        print(f"Python: {t_py:.4f}s, NumPy: {t_np:.4f}s")
+t_py = timeit.timeit(python_sum, number=10)
+t_np = timeit.timeit(numpy_sum, number=10)
+print(f"Python: {t_py:.4f}s, NumPy: {t_np:.4f}s")
 
-        # ─── Broadcasting ──────────────────────────────────────
-        a = np.array([1,2,3,4,5])
-        b = a * 2 + 1  # vectorized
-        print(b)  # [3,5,7,9,11]
+# ─── Broadcasting ──────────────────────────────────────
+a = np.array([1,2,3,4,5])
+b = a * 2 + 1  # vectorized
+print(b)  # [3,5,7,9,11]
 
-        # ─── Matrix operations ────────────────────────────────
-        matrix = np.random.rand(1000, 1000)
-        result = matrix @ matrix.T  # matrix multiplication
-        print(result.shape)
+# ─── Matrix operations ────────────────────────────────
+matrix = np.random.rand(1000, 1000)
+result = matrix @ matrix.T  # matrix multiplication
+print(result.shape)
 
-        # ─── Universal functions ──────────────────────────────
-        arr = np.random.rand(1000000)
-        sin_arr = np.sin(arr)  # vectorized</code></pre>
+# ─── Universal functions ──────────────────────────────
+arr = np.random.rand(1000000)
+sin_arr = np.sin(arr)  # vectorized</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Convert a Python function that computes the Euclidean
                         distance between two large lists to use NumPy.</p>
@@ -6610,36 +6611,36 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import ctypes
-        import ctypes.util
+import ctypes.util
 
-        # ─── Load C standard library ──────────────────────────
-        # On Linux/macOS: libc = ctypes.CDLL("libc.so.6")
-        # On Windows: libc = ctypes.CDLL("msvcrt.dll")
-        libc = ctypes.CDLL(ctypes.util.find_library("c"))
+# ─── Load C standard library ──────────────────────────
+# On Linux/macOS: libc = ctypes.CDLL("libc.so.6")
+# On Windows: libc = ctypes.CDLL("msvcrt.dll")
+libc = ctypes.CDLL(ctypes.util.find_library("c"))
 
-        # ─── Use C function ────────────────────────────────────
-        # strlen from C
-        libc.strlen.argtypes = [ctypes.c_char_p]
-        libc.strlen.restype = ctypes.c_size_t
+# ─── Use C function ────────────────────────────────────
+# strlen from C
+libc.strlen.argtypes = [ctypes.c_char_p]
+libc.strlen.restype = ctypes.c_size_t
 
-        string = b"Hello, World!"
-        length = libc.strlen(string)
-        print(f"Length: {length}")
+string = b"Hello, World!"
+length = libc.strlen(string)
+print(f"Length: {length}")
 
-        # ─── Custom C code example ────────────────────────────
-        # Compile this C code: gcc -shared -o libmath.so math.c
-        /*
-        // math.c
-        #include <math.h>
-        double square(double x) { return x * x; }
-        double cube(double x) { return x * x * x; }
-        */
+# ─── Custom C code example ────────────────────────────
+# Compile this C code: gcc -shared -o libmath.so math.c
+/*
+// math.c
+#include <math.h>
+double square(double x) { return x * x; }
+double cube(double x) { return x * x * x; }
+*/
 
-        # Load custom library
-        # libmath = ctypes.CDLL("./libmath.so")
-        # libmath.square.argtypes = [ctypes.c_double]
-        # libmath.square.restype = ctypes.c_double
-        # print(libmath.square(5.0))  # 25.0</code></pre>
+# Load custom library
+# libmath = ctypes.CDLL("./libmath.so")
+# libmath.square.argtypes = [ctypes.c_double]
+# libmath.square.restype = ctypes.c_double
+# print(libmath.square(5.0))  # 25.0</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>ctypes</code> to call the C
                         <code>pow()</code>
@@ -6660,52 +6661,52 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Example: cython_example.pyx ─────────────────────────
-        """
-        # fib.pyx
-        def fib(int n):
-            cdef int i, a=0, b=1
-            for i in range(n):
-                a, b = b, a+b
-            return a
-        """
+"""
+# fib.pyx
+def fib(int n):
+    cdef int i, a=0, b=1
+    for i in range(n):
+        a, b = b, a+b
+    return a
+"""
 
-        # ─── setup.py for Cython ──────────────────────────────
-        """
-        from setuptools import setup
-        from Cython.Build import cythonize
+# ─── setup.py for Cython ──────────────────────────────
+"""
+from setuptools import setup
+from Cython.Build import cythonize
 
-        setup(
-            ext_modules=cythonize("fib.pyx"),
-        )
-        """
+setup(
+    ext_modules=cythonize("fib.pyx"),
+)
+"""
 
-        # ─── Build and use ──────────────────────────────────────
-        # $ python setup.py build_ext --inplace
-        # $ python -c "import fib; print(fib.fib(1000000))"
+# ─── Build and use ──────────────────────────────────────
+# $ python setup.py build_ext --inplace
+# $ python -c "import fib; print(fib.fib(1000000))"
 
-        # ─── Cython with Python types ──────────────────────────
-        """
-        def py_loop(n):
-            total = 0
-            for i in range(n):
-                total += i
-            return total
+# ─── Cython with Python types ──────────────────────────
+"""
+def py_loop(n):
+    total = 0
+    for i in range(n):
+        total += i
+    return total
 
-        def cy_loop(int n):
-            cdef int i
-            cdef long total = 0
-            for i in range(n):
-                total += i
-            return total
-        """
+def cy_loop(int n):
+    cdef int i
+    cdef long total = 0
+    for i in range(n):
+        total += i
+    return total
+"""
 
-        # ─── Using C libraries ──────────────────────────────────
-        """
-        from libc.math cimport sin, cos
+# ─── Using C libraries ──────────────────────────────────
+"""
+from libc.math cimport sin, cos
 
-        def sin_cos(double x):
-            return sin(x), cos(x)
-        """</code></pre>
+def sin_cos(double x):
+    return sin(x), cos(x)
+"""</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Convert a slow Python function to Cython and measure
                         the
@@ -6727,56 +6728,56 @@ $ cat output/weather_report.json | python -m json.tool
                         <pre class="line-numbers"><code class="language-c">// embed_python.c – Embed Python in C
         #include <Python.h>
 
-        int main() {
-            Py_Initialize();
+int main() {
+    Py_Initialize();
 
-            // Run a Python statement
-            PyRun_SimpleString("print('Hello from Python!')");
+    // Run a Python statement
+    PyRun_SimpleString("print('Hello from Python!')");
 
-            // Import a module and call a function
-            PyObject *module = PyImport_ImportModule("math");
-            if (module) {
-                PyObject *func = PyObject_GetAttrString(module, "sqrt");
-                PyObject *arg = PyLong_FromLong(16);
-                PyObject *result = PyObject_CallOneArg(func, arg);
-                double value = PyFloat_AsDouble(result);
-                printf("sqrt(16) = %.2f\n", value);
-                Py_DECREF(arg);
-                Py_DECREF(result);
-                Py_DECREF(func);
-                Py_DECREF(module);
-            }
+    // Import a module and call a function
+    PyObject *module = PyImport_ImportModule("math");
+    if (module) {
+        PyObject *func = PyObject_GetAttrString(module, "sqrt");
+        PyObject *arg = PyLong_FromLong(16);
+        PyObject *result = PyObject_CallOneArg(func, arg);
+        double value = PyFloat_AsDouble(result);
+        printf("sqrt(16) = %.2f\n", value);
+        Py_DECREF(arg);
+        Py_DECREF(result);
+        Py_DECREF(func);
+        Py_DECREF(module);
+    }
 
-            Py_Finalize();
-            return 0;
-        }
+    Py_Finalize();
+    return 0;
+}
 
-        // ─── Compile ────────────────────────────────────────────
-        // gcc -o embed embed_python.c -I/usr/include/python3.x -lpython3.x
+// ─── Compile ────────────────────────────────────────────
+// gcc -o embed embed_python.c -I/usr/include/python3.x -lpython3.x
 
-        // ─── Simple extension module ──────────────────────────
-        /*
-        static PyObject* hello(PyObject* self, PyObject* args) {
-            return PyUnicode_FromString("Hello from C!");
-        }
+// ─── Simple extension module ──────────────────────────
+/*
+static PyObject* hello(PyObject* self, PyObject* args) {
+    return PyUnicode_FromString("Hello from C!");
+}
 
-        static PyMethodDef methods[] = {
-            {"hello", hello, METH_NOARGS, "Return a greeting"},
-            {NULL, NULL, 0, NULL}
-        };
+static PyMethodDef methods[] = {
+    {"hello", hello, METH_NOARGS, "Return a greeting"},
+    {NULL, NULL, 0, NULL}
+};
 
-        static struct PyModuleDef module = {
-            PyModuleDef_HEAD_INIT,
-            "my_extension",
-            NULL,
-            -1,
-            methods
-        };
+static struct PyModuleDef module = {
+    PyModuleDef_HEAD_INIT,
+    "my_extension",
+    NULL,
+    -1,
+    methods
+};
 
-        PyMODINIT_FUNC PyInit_my_extension(void) {
-            return PyModule_Create(&module);
-        }
-        */</code></pre>
+PyMODINIT_FUNC PyInit_my_extension(void) {
+    return PyModule_Create(&module);
+}
+*/</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a simple C extension that adds two integers and
                         returns the result.</p>
@@ -6795,30 +6796,30 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from concurrent.futures import ProcessPoolExecutor, as_completed
-        import time
+import time
 
-        def cpu_intensive(n):
-            """Compute sum of squares for a large range."""
-            return sum(i*i for i in range(n))
+def cpu_intensive(n):
+"""Compute sum of squares for a large range."""
+return sum(i*i for i in range(n))
 
-        if __name__ == "__main__":
-            numbers = [1000000, 2000000, 3000000, 4000000]
+if __name__ == "__main__":
+numbers = [1000000, 2000000, 3000000, 4000000]
 
-            # Sequential
-            start = time.perf_counter()
-            results_seq = [cpu_intensive(n) for n in numbers]
-            elapsed_seq = time.perf_counter() - start
+# Sequential
+start = time.perf_counter()
+results_seq = [cpu_intensive(n) for n in numbers]
+elapsed_seq = time.perf_counter() - start
 
-            # Parallel
-            start = time.perf_counter()
-            with ProcessPoolExecutor(max_workers=4) as executor:
-                futures = {executor.submit(cpu_intensive, n): n for n in numbers}
-                results_par = [future.result() for future in as_completed(futures)]
-            elapsed_par = time.perf_counter() - start
+# Parallel
+start = time.perf_counter()
+with ProcessPoolExecutor(max_workers=4) as executor:
+    futures = {executor.submit(cpu_intensive, n): n for n in numbers}
+    results_par = [future.result() for future in as_completed(futures)]
+elapsed_par = time.perf_counter() - start
 
-            print(f"Sequential: {elapsed_seq:.4f}s")
-            print(f"Parallel: {elapsed_par:.4f}s")
-            print(f"Speedup: {elapsed_seq/elapsed_par:.2f}x")</code></pre>
+print(f"Sequential: {elapsed_seq:.4f}s")
+print(f"Parallel: {elapsed_par:.4f}s")
+print(f"Speedup: {elapsed_seq/elapsed_par:.2f}x")</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>ProcessPoolExecutor</code> to compute the
                         factorial of several large numbers in parallel.</p>
@@ -6837,39 +6838,39 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">from multiprocessing import shared_memory, Process
-        import numpy as np
+import numpy as np
 
-        def worker(shm_name, shape, dtype):
-            # Attach to existing shared memory
-            shm = shared_memory.SharedMemory(name=shm_name)
-            arr = np.ndarray(shape, dtype=dtype, buffer=shm.buf)
+def worker(shm_name, shape, dtype):
+    # Attach to existing shared memory
+    shm = shared_memory.SharedMemory(name=shm_name)
+    arr = np.ndarray(shape, dtype=dtype, buffer=shm.buf)
 
-            # Modify data
-            arr[:] = arr * 2
+    # Modify data
+    arr[:] = arr * 2
 
-            # Cleanup (detach)
-            shm.close()
+    # Cleanup (detach)
+    shm.close()
 
-        if __name__ == "__main__":
-            # Create shared memory
-            data = np.array([1,2,3,4,5], dtype=np.int64)
-            shm = shared_memory.SharedMemory(create=True, size=data.nbytes)
-            shared_arr = np.ndarray(data.shape, dtype=data.dtype, buffer=shm.buf)
-            shared_arr[:] = data
+if __name__ == "__main__":
+    # Create shared memory
+    data = np.array([1,2,3,4,5], dtype=np.int64)
+    shm = shared_memory.SharedMemory(create=True, size=data.nbytes)
+    shared_arr = np.ndarray(data.shape, dtype=data.dtype, buffer=shm.buf)
+    shared_arr[:] = data
 
-            # Run worker process
-            p = Process(target=worker, args=(shm.name, data.shape, data.dtype))
-            p.start()
-            p.join()
+    # Run worker process
+    p = Process(target=worker, args=(shm.name, data.shape, data.dtype))
+    p.start()
+    p.join()
 
-            print(shared_arr)  # [2,4,6,8,10]
+    print(shared_arr)  # [2,4,6,8,10]
 
-            # Cleanup
-            shm.close()
-            shm.unlink()
+    # Cleanup
+    shm.close()
+    shm.unlink()
 
-        # ─── Using with NumPy arrays ──────────────────────────
-        # Useful for large matrices that need to be shared across processes</code></pre>
+# ─── Using with NumPy arrays ──────────────────────────
+# Useful for large matrices that need to be shared across processes</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use <code>shared_memory</code> to share a large NumPy
                         array between two processes and compute its sum.</p>
@@ -6886,33 +6887,33 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Ray (install: pip install ray) ────────────────────────
-        import ray
+import ray
 
-        @ray.remote
-        def square(x):
-            return x * x
+@ray.remote
+def square(x):
+    return x * x
 
-        ray.init(ignore_reinit_error=True)
-        futures = [square.remote(i) for i in range(1000)]
-        results = ray.get(futures)
-        print(results[:5])  # [0, 1, 4, 9, 16]
-        ray.shutdown()
+ray.init(ignore_reinit_error=True)
+futures = [square.remote(i) for i in range(1000)]
+results = ray.get(futures)
+print(results[:5])  # [0, 1, 4, 9, 16]
+ray.shutdown()
 
-        # ─── Dask (install: pip install dask) ──────────────────
-        import dask
-        import dask.array as da
+# ─── Dask (install: pip install dask) ──────────────────
+import dask
+import dask.array as da
 
-        # Create a large array
-        x = da.random.random((10000, 10000), chunks=(1000, 1000))
-        y = x + x.T
-        result = y.mean().compute()  # Lazy evaluation
-        print(result)
+# Create a large array
+x = da.random.random((10000, 10000), chunks=(1000, 1000))
+y = x + x.T
+result = y.mean().compute()  # Lazy evaluation
+print(result)
 
-        # ─── Dask distributed (install: pip install dask-distributed) ──
-        from dask.distributed import Client
-        client = Client()  # starts local cluster
-        future = client.submit(lambda x: x**2, 10)
-        print(future.result())  # 100</code></pre>
+# ─── Dask distributed (install: pip install dask-distributed) ──
+from dask.distributed import Client
+client = Client()  # starts local cluster
+future = client.submit(lambda x: x**2, 10)
+print(future.result())  # 100</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Use Ray to parallelise a monte carlo simulation for
                         estimating π.</p>
@@ -6932,50 +6933,50 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import asyncio
-        import time
+import time
 
-        # ─── Custom event loop ──────────────────────────────────
-        async def hello():
-            await asyncio.sleep(1)
-            print("Hello")
+# ─── Custom event loop ──────────────────────────────────
+async def hello():
+    await asyncio.sleep(1)
+    print("Hello")
 
-        # Old way (pre-Python 3.7)
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(hello())
-        loop.close()
+# Old way (pre-Python 3.7)
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+loop.run_until_complete(hello())
+loop.close()
 
-        # Modern way
-        asyncio.run(hello())
+# Modern way
+asyncio.run(hello())
 
-        # ─── Call soon / later ──────────────────────────────────
-        def callback():
-            print("Callback executed")
+# ─── Call soon / later ──────────────────────────────────
+def callback():
+    print("Callback executed")
 
-        loop = asyncio.get_event_loop()
-        loop.call_soon(callback)
-        loop.call_later(2, callback)
-        loop.run_until_complete(asyncio.sleep(3))
+loop = asyncio.get_event_loop()
+loop.call_soon(callback)
+loop.call_later(2, callback)
+loop.run_until_complete(asyncio.sleep(3))
 
-        # ─── Running multiple loops ────────────────────────────
-        async def fetch_data(delay, name):
-            await asyncio.sleep(delay)
-            return f"Data from {name}"
+# ─── Running multiple loops ────────────────────────────
+async def fetch_data(delay, name):
+    await asyncio.sleep(delay)
+    return f"Data from {name}"
 
-        async def main():
-            # gather with timeouts
-            tasks = [
-                asyncio.create_task(fetch_data(1, "A")),
-                asyncio.create_task(fetch_data(2, "B")),
-                asyncio.create_task(fetch_data(3, "C")),
-            ]
-            done, pending = await asyncio.wait(tasks, timeout=2.5)
-            for task in done:
-                print(task.result())
-            for task in pending:
-                task.cancel()
+async def main():
+    # gather with timeouts
+    tasks = [
+        asyncio.create_task(fetch_data(1, "A")),
+        asyncio.create_task(fetch_data(2, "B")),
+        asyncio.create_task(fetch_data(3, "C")),
+    ]
+    done, pending = await asyncio.wait(tasks, timeout=2.5)
+    for task in done:
+        print(task.result())
+    for task in pending:
+        task.cancel()
 
-        asyncio.run(main())</code></pre>
+asyncio.run(main())</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a custom event loop policy that prints a message
                         every time a task is scheduled.</p>
@@ -6994,63 +6995,63 @@ $ cat output/weather_report.json | python -m json.tool
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import asyncio
 
-        # ─── Async Context Manager ──────────────────────────────
-        class AsyncResource:
-            async def __aenter__(self):
-                print("Acquiring resource")
-                await asyncio.sleep(0.5)
-                return self
+# ─── Async Context Manager ──────────────────────────────
+class AsyncResource:
+    async def __aenter__(self):
+        print("Acquiring resource")
+        await asyncio.sleep(0.5)
+        return self
 
-            async def __aexit__(self, exc_type, exc_val, exc_tb):
-                print("Releasing resource")
-                await asyncio.sleep(0.5)
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        print("Releasing resource")
+        await asyncio.sleep(0.5)
 
-            async def do_work(self):
-                print("Working...")
-                await asyncio.sleep(0.5)
+    async def do_work(self):
+        print("Working...")
+        await asyncio.sleep(0.5)
 
-        async def use_resource():
-            async with AsyncResource() as resource:
-                await resource.do_work()
+async def use_resource():
+    async with AsyncResource() as resource:
+        await resource.do_work()
 
-        asyncio.run(use_resource())
+asyncio.run(use_resource())
 
-        # ─── Async Iterator ──────────────────────────────────────
-        class AsyncCounter:
-            def __init__(self, limit):
-                self.limit = limit
-                self.count = 0
+# ─── Async Iterator ──────────────────────────────────────
+class AsyncCounter:
+    def __init__(self, limit):
+        self.limit = limit
+        self.count = 0
 
-            def __aiter__(self):
-                return self
+    def __aiter__(self):
+        return self
 
-            async def __anext__(self):
-                if self.count >= self.limit:
-                    raise StopAsyncIteration
-                self.count += 1
-                await asyncio.sleep(0.1)
-                return self.count
+    async def __anext__(self):
+        if self.count >= self.limit:
+            raise StopAsyncIteration
+        self.count += 1
+        await asyncio.sleep(0.1)
+        return self.count
 
-        async def iterate():
-            async for num in AsyncCounter(5):
-                print(num)
+async def iterate():
+    async for num in AsyncCounter(5):
+        print(num)
 
-        asyncio.run(iterate())  # 1,2,3,4,5
+asyncio.run(iterate())  # 1,2,3,4,5
 
-        # ─── Using contextlib with async ──────────────────────
-        from contextlib import asynccontextmanager
+# ─── Using contextlib with async ──────────────────────
+from contextlib import asynccontextmanager
 
-        @asynccontextmanager
-        async def managed_resource():
-            print("Acquiring")
-            yield "resource"
-            print("Releasing")
+@asynccontextmanager
+async def managed_resource():
+    print("Acquiring")
+    yield "resource"
+    print("Releasing")
 
-        async def use():
-            async with managed_resource() as res:
-                print(f"Using {res}")
+async def use():
+    async with managed_resource() as res:
+        print(f"Using {res}")
 
-        asyncio.run(use())</code></pre>
+asyncio.run(use())</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Create an async context manager that measures the
                         execution time of a block.</p>
@@ -7068,47 +7069,47 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import asyncio
-        import time
+import time
 
-        # ─── Semaphore example ──────────────────────────────────
-        class RateLimiter:
-            def __init__(self, max_requests, time_window):
-                self.semaphore = asyncio.Semaphore(max_requests)
-                self.time_window = time_window
+# ─── Semaphore example ──────────────────────────────────
+class RateLimiter:
+    def __init__(self, max_requests, time_window):
+        self.semaphore = asyncio.Semaphore(max_requests)
+        self.time_window = time_window
 
-            async def acquire(self):
-                # Simple implementation – each acquire resets after time_window
-                await self.semaphore.acquire()
-                asyncio.create_task(self._release_after())
+    async def acquire(self):
+        # Simple implementation – each acquire resets after time_window
+        await self.semaphore.acquire()
+        asyncio.create_task(self._release_after())
 
-            async def _release_after(self):
-                await asyncio.sleep(self.time_window)
-                self.semaphore.release()
+    async def _release_after(self):
+        await asyncio.sleep(self.time_window)
+        self.semaphore.release()
 
-        async def worker(limiter, task_id):
-            await limiter.acquire()
-            print(f"Task {task_id} started at {time.strftime('%X')}")
-            await asyncio.sleep(0.5)
+async def worker(limiter, task_id):
+    await limiter.acquire()
+    print(f"Task {task_id} started at {time.strftime('%X')}")
+    await asyncio.sleep(0.5)
 
-        async def main():
-            limiter = RateLimiter(max_requests=3, time_window=2)
-            tasks = [worker(limiter, i) for i in range(10)]
-            await asyncio.gather(*tasks)
+async def main():
+    limiter = RateLimiter(max_requests=3, time_window=2)
+    tasks = [worker(limiter, i) for i in range(10)]
+    await asyncio.gather(*tasks)
 
-        asyncio.run(main())
+asyncio.run(main())
 
-        # ─── Alternative using asyncio.Semaphore directly ──────
-        async def limited_worker(semaphore, task_id):
-            async with semaphore:
-                print(f"Task {task_id} running")
-                await asyncio.sleep(1)
+# ─── Alternative using asyncio.Semaphore directly ──────
+async def limited_worker(semaphore, task_id):
+    async with semaphore:
+        print(f"Task {task_id} running")
+        await asyncio.sleep(1)
 
-        async def main_semaphore():
-            sem = asyncio.Semaphore(2)  # max 2 concurrent
-            tasks = [limited_worker(sem, i) for i in range(5)]
-            await asyncio.gather(*tasks)
+async def main_semaphore():
+    sem = asyncio.Semaphore(2)  # max 2 concurrent
+    tasks = [limited_worker(sem, i) for i in range(5)]
+    await asyncio.gather(*tasks)
 
-        asyncio.run(main_semaphore())</code></pre>
+asyncio.run(main_semaphore())</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Implement a rate limiter for an API that allows 5
                         requests
@@ -7127,44 +7128,44 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Type hints ─────────────────────────────────────────────
-        from typing import List, Optional, Union
+from typing import List, Optional, Union
 
-        def greet(name: str) -> str:
-            return f"Hello, {name}"
+def greet(name: str) -> str:
+    return f"Hello, {name}"
 
-        def sum_list(numbers: List[int]) -> int:
-            return sum(numbers)
+def sum_list(numbers: List[int]) -> int:
+    return sum(numbers)
 
-        def get_user(user_id: int) -> Optional[dict]:
-            # Returns dict or None
-            if user_id == 1:
-                return {"id": 1, "name": "Alice"}
-            return None
+def get_user(user_id: int) -> Optional[dict]:
+    # Returns dict or None
+    if user_id == 1:
+        return {"id": 1, "name": "Alice"}
+    return None
 
-        # ─── Union types ────────────────────────────────────────
-        def parse_int(value: Union[str, int]) -> int:
-            if isinstance(value, str):
-                return int(value)
-            return value
+# ─── Union types ────────────────────────────────────────
+def parse_int(value: Union[str, int]) -> int:
+    if isinstance(value, str):
+        return int(value)
+    return value
 
-        # ─── Type aliases ────────────────────────────────────────
-        UserId = int
-        UserData = dict
+# ─── Type aliases ────────────────────────────────────────
+UserId = int
+UserData = dict
 
-        def fetch_user(user_id: UserId) -> UserData:
-            return {"id": user_id, "name": "User"}
+def fetch_user(user_id: UserId) -> UserData:
+    return {"id": user_id, "name": "User"}
 
-        # ─── mypy configuration (mypy.ini) ────────────────────
-        """
-        [mypy]
-        python_version = 3.10
-        warn_return_any = True
-        warn_unused_ignores = True
-        disallow_untyped_defs = True
-        """
+# ─── mypy configuration (mypy.ini) ────────────────────
+"""
+[mypy]
+python_version = 3.10
+warn_return_any = True
+warn_unused_ignores = True
+disallow_untyped_defs = True
+"""
 
-        # ─── Run mypy ────────────────────────────────────────────
-        # $ mypy script.py</code></pre>
+# ─── Run mypy ────────────────────────────────────────────
+# $ mypy script.py</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Add type hints to a function that processes a list of
                         dictionaries, and run mypy.</p>
@@ -7182,41 +7183,41 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── ruff installation and usage ──────────────────────────
-        # $ pip install ruff
-        # $ ruff check .                 # lint all files
-        # $ ruff check . --fix           # auto-fix issues
-        # $ ruff format .                # format code
+# $ pip install ruff
+# $ ruff check .                 # lint all files
+# $ ruff check . --fix           # auto-fix issues
+# $ ruff format .                # format code
 
-        # ─── black installation ──────────────────────────────
-        # $ pip install black
-        # $ black script.py              # format a file
-        # $ black .                      # format all files
+# ─── black installation ──────────────────────────────
+# $ pip install black
+# $ black script.py              # format a file
+# $ black .                      # format all files
 
-        # ─── Configuration (pyproject.toml) ──────────────────
-        """
-        [tool.black]
-        line-length = 88
-        target-version = ['py310']
+# ─── Configuration (pyproject.toml) ──────────────────
+"""
+[tool.black]
+line-length = 88
+target-version = ['py310']
 
-        [tool.ruff]
-        line-length = 88
-        select = ["E", "F", "I", "N", "D"]  # pycodestyle, pyflakes, isort, pep8-naming, pydocstyle
-        ignore = ["D100", "D104"]           # ignore specific rules
-        """
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "N", "D"]  # pycodestyle, pyflakes, isort, pep8-naming, pydocstyle
+ignore = ["D100", "D104"]           # ignore specific rules
+"""
 
-        # ─── Example: Before formatting ──────────────────────
-        def calculate(a,b,c):
-            result=(a+b)*c
-            if result>100: return result
-            else:return result
+# ─── Example: Before formatting ──────────────────────
+def calculate(a,b,c):
+    result=(a+b)*c
+    if result>100: return result
+    else:return result
 
-        # ─── After black formatting ───────────────────────────
-        def calculate(a, b, c):
-            result = (a + b) * c
-            if result > 100:
-                return result
-            else:
-                return result</code></pre>
+# ─── After black formatting ───────────────────────────
+def calculate(a, b, c):
+    result = (a + b) * c
+    if result > 100:
+        return result
+    else:
+        return result</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Install ruff and black, and use them to lint and
                         format a
@@ -7234,51 +7235,51 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── .pre-commit-config.yaml ──────────────────────────────
-        """
-        repos:
-          - repo: https://github.com/pre-commit/pre-commit-hooks
-            rev: v4.4.0
-            hooks:
-              - id: trailing-whitespace
-              - id: end-of-file-fixer
-              - id: check-yaml
-              - id: check-added-large-files
+"""
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
 
-          - repo: https://github.com/psf/black
-            rev: 23.1.0
-            hooks:
-              - id: black
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
 
-          - repo: https://github.com/charliermarsh/ruff-pre-commit
-            rev: v0.1.0
-            hooks:
-              - id: ruff
-                args: [--fix]
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.1.0
+    hooks:
+      - id: ruff
+        args: [--fix]
 
-          - repo: https://github.com/pre-commit/mirrors-mypy
-            rev: v1.5.0
-            hooks:
-              - id: mypy
-        """
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.5.0
+    hooks:
+      - id: mypy
+"""
 
-        # ─── GitHub Actions ( .github/workflows/ci.yml ) ──────
-        """
-        name: CI
-        on: [push, pull_request]
-        jobs:
-          test:
-            runs-on: ubuntu-latest
-            steps:
-              - uses: actions/checkout@v3
-              - uses: actions/setup-python@v4
-                with:
-                  python-version: '3.10'
-              - run: pip install -r requirements-dev.txt
-              - run: ruff check .
-              - run: black --check .
-              - run: mypy .
-              - run: pytest tests/
-        """</code></pre>
+# ─── GitHub Actions ( .github/workflows/ci.yml ) ──────
+"""
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: black --check .
+      - run: mypy .
+      - run: pytest tests/
+"""</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Set up pre‑commit hooks for a project with ruff,
                         black,
@@ -7300,59 +7301,59 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── pyproject.toml ─────────────────────────────────────────
-        """
-        [build-system]
-        requires = ["setuptools>=61.0", "wheel"]
-        build-backend = "setuptools.build_meta"
+"""
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
-        [project]
-        name = "my-awesome-tool"
-        version = "0.1.0"
-        description = "A tool that does something amazing"
-        readme = "README.md"
-        authors = [
-            {name = "Your Name", email = "you@example.com"}
-        ]
-        license = {text = "MIT"}
-        classifiers = [
-            "Programming Language :: Python :: 3",
-            "License :: OSI Approved :: MIT License",
-            "Operating System :: OS Independent",
-        ]
-        requires-python = ">=3.8"
-        dependencies = [
-            "requests>=2.0",
-            "click>=8.0",
-        ]
+[project]
+name = "my-awesome-tool"
+version = "0.1.0"
+description = "A tool that does something amazing"
+readme = "README.md"
+authors = [
+    {name = "Your Name", email = "you@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.0",
+    "click>=8.0",
+]
 
-        [project.scripts]
-        mytool = "mytool.cli:main"
+[project.scripts]
+mytool = "mytool.cli:main"
 
-        [project.urls]
-        Homepage = "https://github.com/yourname/my-awesome-tool"
-        Issues = "https://github.com/yourname/my-awesome-tool/issues"
-        """
+[project.urls]
+Homepage = "https://github.com/yourname/my-awesome-tool"
+Issues = "https://github.com/yourname/my-awesome-tool/issues"
+"""
 
-        # ─── mytool/cli.py – entry point ──────────────────────
-        """
-        import click
+# ─── mytool/cli.py – entry point ──────────────────────
+"""
+import click
 
-        @click.command()
-        @click.option('--name', default='World')
-        def main(name):
-            print(f"Hello, {name}!")
+@click.command()
+@click.option('--name', default='World')
+def main(name):
+    print(f"Hello, {name}!")
 
-        if __name__ == "__main__":
-            main()
-        """
+if __name__ == "__main__":
+    main()
+"""
 
-        # ─── Build and publish ──────────────────────────────────
-        # $ pip install build twine
-        # $ python -m build
-        # $ twine upload dist/*
+# ─── Build and publish ──────────────────────────────────
+# $ pip install build twine
+# $ python -m build
+# $ twine upload dist/*
 
-        # ─── Install from PyPI ──────────────────────────────────
-        # $ pip install my-awesome-tool</code></pre>
+# ─── Install from PyPI ──────────────────────────────────
+# $ pip install my-awesome-tool</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Create a small package with a CLI tool and publish it
                         to
@@ -7376,55 +7377,55 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python"># ─── Checklist for first contribution ────────────────────
-        """
-        1. Find a project: https://github.com/explore
-        2. Look for issues tagged 'good-first-issue' or 'help-wanted'
-        3. Fork the repository
-        4. Clone your fork: git clone https://github.com/yourname/project.git
-        5. Install development dependencies: pip install -e .[dev]
-        6. Create a branch: git checkout -b fix-description
-        7. Make changes and write tests
-        8. Run tests: pytest
-        9. Commit and push: git push origin fix-description
-        10. Open a pull request on the original repo
-        """
+"""
+1. Find a project: https://github.com/explore
+2. Look for issues tagged 'good-first-issue' or 'help-wanted'
+3. Fork the repository
+4. Clone your fork: git clone https://github.com/yourname/project.git
+5. Install development dependencies: pip install -e .[dev]
+6. Create a branch: git checkout -b fix-description
+7. Make changes and write tests
+8. Run tests: pytest
+9. Commit and push: git push origin fix-description
+10. Open a pull request on the original repo
+"""
 
-        # ─── Example: Adding a new feature ─────────────────────
-        """
-        # In a library that has a Calculator class
-        class Calculator:
-            def add(self, a, b):
-                return a + b
+# ─── Example: Adding a new feature ─────────────────────
+"""
+# In a library that has a Calculator class
+class Calculator:
+    def add(self, a, b):
+        return a + b
 
-            # Add this new method
-            def multiply(self, a, b):
-                return a * b
-        """
+    # Add this new method
+    def multiply(self, a, b):
+        return a * b
+"""
 
-        # ─── Tests for the new feature ─────────────────────────
-        """
-        def test_multiply():
-            calc = Calculator()
-            assert calc.multiply(2, 3) == 6
-            assert calc.multiply(0, 5) == 0
-        """
+# ─── Tests for the new feature ─────────────────────────
+"""
+def test_multiply():
+    calc = Calculator()
+    assert calc.multiply(2, 3) == 6
+    assert calc.multiply(0, 5) == 0
+"""
 
-        # ─── Good PR description ──────────────────────────────
-        """
-        ## What does this PR do?
-        Adds a multiply method to the Calculator class.
+# ─── Good PR description ──────────────────────────────
+"""
+## What does this PR do?
+Adds a multiply method to the Calculator class.
 
-        ## Why is it needed?
-        Users need to multiply numbers.
+## Why is it needed?
+Users need to multiply numbers.
 
-        ## Testing
-        - Added unit tests for multiply method.
-        - All existing tests pass.
+## Testing
+- Added unit tests for multiply method.
+- All existing tests pass.
 
-        ## Additional notes
-        - Follows the existing code style.
-        - Includes docstring.
-        """</code></pre>
+## Additional notes
+- Follows the existing code style.
+- Includes docstring.
+"""</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Find a project with a "good-first-issue" and try to
                         make a
@@ -7470,32 +7471,32 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
-        $ curl -LsSf https://astral.sh/uv/install.sh | sh
+$ curl -LsSf https://astral.sh/uv/install.sh | sh
 
-        # or via pip (slower)
-        $ pip install uv
+# or via pip (slower)
+$ pip install uv
 
-        # Initialize a new project
-        $ uv init my_project
-        $ cd my_project
+# Initialize a new project
+$ uv init my_project
+$ cd my_project
 
-        # Add dependencies
-        $ uv add streamlit pandas numpy
+# Add dependencies
+$ uv add streamlit pandas numpy
 
-        # Sync dependencies (install all from pyproject.toml)
-        $ uv sync
+# Sync dependencies (install all from pyproject.toml)
+$ uv sync
 
-        # Run a script inside the virtual environment
-        $ uv run python script.py
+# Run a script inside the virtual environment
+$ uv run python script.py
 
-        # Lock dependencies (generates uv.lock)
-        $ uv lock
+# Lock dependencies (generates uv.lock)
+$ uv lock
 
-        # Upgrade all packages
-        $ uv upgrade
+# Upgrade all packages
+$ uv upgrade
 
-        # Remove a package
-        $ uv remove package_name</code></pre>
+# Remove a package
+$ uv remove package_name</code></pre>
                     </div>
 
                     <h4>🔧 Comparison with pip &amp; Poetry</h4>
@@ -7564,17 +7565,17 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-bash"># Install Streamlit (with uv)
-        $ uv add streamlit
+$ uv add streamlit
 
-        # Or with pip
-        $ pip install streamlit
+# Or with pip
+$ pip install streamlit
 
-        # Create a new file app.py
-        $ touch app.py
+# Create a new file app.py
+$ touch app.py
 
-        # Write your app (see example below)
-        # Run the app
-        $ streamlit run app.py</code></pre>
+# Write your app (see example below)
+# Run the app
+$ streamlit run app.py</code></pre>
                     </div>
 
                     <hr>
@@ -7587,136 +7588,136 @@ $ cat output/weather_report.json | python -m json.tool
                     <h4>📁 Project Structure</h4>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-plaintext">sales_dashboard/
-        ├── pyproject.toml          # project metadata & dependencies
-        ├── uv.lock                 # locked dependencies (generated)
-        ├── app.py                  # main Streamlit app
-        └── data/
-            └── sales.csv           # sample sales data (generated)</code></pre>
+                        <pre class="line-numbers"><code class="language-plaintext">sales_dashboard/
+├── pyproject.toml          # project metadata & dependencies
+├── uv.lock                 # locked dependencies (generated)
+├── app.py                  # main Streamlit app
+└── data/
+    └── sales.csv           # sample sales data (generated)</code></pre>
                     </div>
 
                     <h4>1. Set up the project with uv</h4>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-bash">$ mkdir sales_dashboard && cd sales_dashboard
-        $ uv init
-        $ uv add streamlit pandas numpy matplotlib</code></pre>
+$ uv init
+$ uv add streamlit pandas numpy matplotlib</code></pre>
                     </div>
 
                     <h4>2. Create sample data – data/sales.csv</h4>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-csv">product,region,sales,quantity,date
-        Laptop,North,1200,5,2025-01-15
-        Laptop,South,900,3,2025-01-16
-        Mouse,North,150,10,2025-01-15
-        Mouse,South,180,12,2025-01-16
-        Keyboard,North,300,6,2025-01-17
-        Keyboard,South,250,5,2025-01-17
-        Monitor,North,800,4,2025-01-18
-        Monitor,South,950,5,2025-01-18</code></pre>
+Laptop,North,1200,5,2025-01-15
+Laptop,South,900,3,2025-01-16
+Mouse,North,150,10,2025-01-15
+Mouse,South,180,12,2025-01-16
+Keyboard,North,300,6,2025-01-17
+Keyboard,South,250,5,2025-01-17
+Monitor,North,800,4,2025-01-18
+Monitor,South,950,5,2025-01-18</code></pre>
                     </div>
 
                     <h4>3. Main application – app.py</h4>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">import streamlit as st
-        import pandas as pd
-        import numpy as np
-        import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-        # ─── Page Configuration ──────────────────────────────────────────
-        st.set_page_config(page_title="Sales Dashboard", layout="wide")
-        st.title("📈 Sales Performance Dashboard")
+# ─── Page Configuration ──────────────────────────────────────────
+st.set_page_config(page_title="Sales Dashboard", layout="wide")
+st.title("📈 Sales Performance Dashboard")
 
-        # ─── Load Data ────────────────────────────────────────────────────
-        @st.cache_data
-        def load_data():
-            # In a real app, you might read from CSV, DB, or API
-            # For this demo, we create the data inline
-            data = pd.DataFrame({
-                "product": ["Laptop", "Laptop", "Mouse", "Mouse", "Keyboard", "Keyboard", "Monitor", "Monitor"],
-                "region": ["North", "South", "North", "South", "North", "South", "North", "South"],
-                "sales": [1200, 900, 150, 180, 300, 250, 800, 950],
-                "quantity": [5, 3, 10, 12, 6, 5, 4, 5],
-                "date": pd.date_range("2025-01-15", periods=8, freq="D")
-            })
-            return data
+# ─── Load Data ────────────────────────────────────────────────────
+@st.cache_data
+def load_data():
+    # In a real app, you might read from CSV, DB, or API
+    # For this demo, we create the data inline
+    data = pd.DataFrame({
+        "product": ["Laptop", "Laptop", "Mouse", "Mouse", "Keyboard", "Keyboard", "Monitor", "Monitor"],
+        "region": ["North", "South", "North", "South", "North", "South", "North", "South"],
+        "sales": [1200, 900, 150, 180, 300, 250, 800, 950],
+        "quantity": [5, 3, 10, 12, 6, 5, 4, 5],
+        "date": pd.date_range("2025-01-15", periods=8, freq="D")
+    })
+    return data
 
-        df = load_data()
+df = load_data()
 
-        # ─── Sidebar Filters ─────────────────────────────────────────────
-        st.sidebar.header("Filters")
+# ─── Sidebar Filters ─────────────────────────────────────────────
+st.sidebar.header("Filters")
 
-        # Multi-select for product
-        products = st.sidebar.multiselect(
-            "Select Products",
-            options=df["product"].unique(),
-            default=df["product"].unique()
-        )
+# Multi-select for product
+products = st.sidebar.multiselect(
+    "Select Products",
+    options=df["product"].unique(),
+    default=df["product"].unique()
+)
 
-        # Slider for sales threshold
-        min_sales = st.sidebar.slider(
-            "Minimum Sales",
-            min_value=int(df["sales"].min()),
-            max_value=int(df["sales"].max()),
-            value=int(df["sales"].min())
-        )
+# Slider for sales threshold
+min_sales = st.sidebar.slider(
+    "Minimum Sales",
+    min_value=int(df["sales"].min()),
+    max_value=int(df["sales"].max()),
+    value=int(df["sales"].min())
+)
 
-        # ─── Filter Data ──────────────────────────────────────────────────
-        filtered_df = df[df["product"].isin(products)]
-        filtered_df = filtered_df[filtered_df["sales"] >= min_sales]
+# ─── Filter Data ──────────────────────────────────────────────────
+filtered_df = df[df["product"].isin(products)]
+filtered_df = filtered_df[filtered_df["sales"] >= min_sales]
 
-        # ─── Display Metrics ─────────────────────────────────────────────
-        col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Total Sales", f"${filtered_df['sales'].sum():,.0f}")
-        col2.metric("Total Quantity", filtered_df["quantity"].sum())
-        col3.metric("Avg Sales per Order", f"${filtered_df['sales'].mean():,.0f}")
-        col4.metric("Number of Orders", len(filtered_df))
+# ─── Display Metrics ─────────────────────────────────────────────
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("Total Sales", f"${filtered_df['sales'].sum():,.0f}")
+col2.metric("Total Quantity", filtered_df["quantity"].sum())
+col3.metric("Avg Sales per Order", f"${filtered_df['sales'].mean():,.0f}")
+col4.metric("Number of Orders", len(filtered_df))
 
-        # ─── Charts ──────────────────────────────────────────────────────
-        # Bar chart: Sales by Product
-        st.subheader("Sales by Product")
-        sales_by_product = filtered_df.groupby("product")["sales"].sum().sort_values(ascending=False)
-        fig1, ax1 = plt.subplots(figsize=(10, 6))
-        ax1.bar(sales_by_product.index, sales_by_product.values, color="steelblue")
-        ax1.set_xlabel("Product")
-        ax1.set_ylabel("Total Sales ($)")
-        ax1.set_title("Total Sales by Product")
-        st.pyplot(fig1)
+# ─── Charts ──────────────────────────────────────────────────────
+# Bar chart: Sales by Product
+st.subheader("Sales by Product")
+sales_by_product = filtered_df.groupby("product")["sales"].sum().sort_values(ascending=False)
+fig1, ax1 = plt.subplots(figsize=(10, 6))
+ax1.bar(sales_by_product.index, sales_by_product.values, color="steelblue")
+ax1.set_xlabel("Product")
+ax1.set_ylabel("Total Sales ($)")
+ax1.set_title("Total Sales by Product")
+st.pyplot(fig1)
 
-        # Bar chart: Sales by Region
-        st.subheader("Sales by Region")
-        sales_by_region = filtered_df.groupby("region")["sales"].sum()
-        fig2, ax2 = plt.subplots(figsize=(8, 5))
-        ax2.bar(sales_by_region.index, sales_by_region.values, color=["#4CAF50", "#FF9800"])
-        ax2.set_xlabel("Region")
-        ax2.set_ylabel("Total Sales ($)")
-        ax2.set_title("Total Sales by Region")
-        st.pyplot(fig2)
+# Bar chart: Sales by Region
+st.subheader("Sales by Region")
+sales_by_region = filtered_df.groupby("region")["sales"].sum()
+fig2, ax2 = plt.subplots(figsize=(8, 5))
+ax2.bar(sales_by_region.index, sales_by_region.values, color=["#4CAF50", "#FF9800"])
+ax2.set_xlabel("Region")
+ax2.set_ylabel("Total Sales ($)")
+ax2.set_title("Total Sales by Region")
+st.pyplot(fig2)
 
-        # ─── Data Table ──────────────────────────────────────────────────
-        st.subheader("Filtered Data")
-        st.dataframe(filtered_df)
+# ─── Data Table ──────────────────────────────────────────────────
+st.subheader("Filtered Data")
+st.dataframe(filtered_df)
 
-        # ─── Download Filtered Data ──────────────────────────────────────
-        csv = filtered_df.to_csv(index=False).encode("utf-8")
-        st.download_button(
-            label="Download Filtered Data as CSV",
-            data=csv,
-            file_name="filtered_sales.csv",
-            mime="text/csv"
-        )</code></pre>
+# ─── Download Filtered Data ──────────────────────────────────────
+csv = filtered_df.to_csv(index=False).encode("utf-8")
+st.download_button(
+    label="Download Filtered Data as CSV",
+    data=csv,
+    file_name="filtered_sales.csv",
+    mime="text/csv"
+)</code></pre>
                     </div>
 
                     <h4>🚀 Running the App</h4>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-bash"># Inside the project directory
-        $ uv run streamlit run app.py
+$ uv run streamlit run app.py
 
-        # Or if you prefer using the global streamlit
-        $ streamlit run app.py</code></pre>
+# Or if you prefer using the global streamlit
+$ streamlit run app.py</code></pre>
                     </div>
 
                     <p>This will open a browser tab with the interactive dashboard. You can filter products, adjust
@@ -7772,7 +7773,7 @@ $ cat output/weather_report.json | python -m json.tool
                     <h3>📁 Project Structure</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-plaintext">web_crawler/
+                        <pre class="line-numbers"><code class="language-plaintext">web_crawler/
 ├── crawler/
 │   ├── __init__.py
 │   ├── fetcher.py      – async HTTP requests with retry
@@ -7795,359 +7796,359 @@ $ cat output/weather_report.json | python -m json.tool
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        crawler/utils.py – Shared utilities.
-        """
-        import logging
-        import time
-        from functools import wraps
-        import os
+crawler/utils.py – Shared utilities.
+"""
+import logging
+import time
+from functools import wraps
+import os
 
-        def setup_logging(log_file="crawler.log", level=logging.INFO):
-            log_dir = os.path.dirname(log_file)
-            if log_dir and not os.path.exists(log_dir):
-                os.makedirs(log_dir)
+def setup_logging(log_file="crawler.log", level=logging.INFO):
+log_dir = os.path.dirname(log_file)
+if log_dir and not os.path.exists(log_dir):
+    os.makedirs(log_dir)
 
-            logger = logging.getLogger()
-            logger.setLevel(level)
-            if logger.hasHandlers():
-                logger.handlers.clear()
+logger = logging.getLogger()
+logger.setLevel(level)
+if logger.hasHandlers():
+    logger.handlers.clear()
 
-            fh = logging.FileHandler(log_file)
-            fh.setLevel(level)
-            fh.setFormatter(logging.Formatter(
-                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-            ))
-            ch = logging.StreamHandler()
-            ch.setLevel(level)
-            ch.setFormatter(logging.Formatter(
-                '%(asctime)s - %(levelname)s - %(message)s'
-            ))
-            logger.addHandler(fh)
-            logger.addHandler(ch)
-            return logger
+fh = logging.FileHandler(log_file)
+fh.setLevel(level)
+fh.setFormatter(logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+))
+ch = logging.StreamHandler()
+ch.setLevel(level)
+ch.setFormatter(logging.Formatter(
+    '%(asctime)s - %(levelname)s - %(message)s'
+))
+logger.addHandler(fh)
+logger.addHandler(ch)
+return logger
 
-        def timer(func):
-            @wraps(func)
-            def wrapper(*args, **kwargs):
-                start = time.perf_counter()
-                result = func(*args, **kwargs)
-                elapsed = time.perf_counter() - start
-                logging.getLogger(__name__).info(f"{func.__name__} took {elapsed:.4f}s")
-                return result
-            return wrapper
+def timer(func):
+@wraps(func)
+def wrapper(*args, **kwargs):
+    start = time.perf_counter()
+    result = func(*args, **kwargs)
+    elapsed = time.perf_counter() - start
+    logging.getLogger(__name__).info(f"{func.__name__} took {elapsed:.4f}s")
+    return result
+return wrapper
 
-        def retry(max_attempts=3, delay=1):
-            def decorator(func):
-                @wraps(func)
-                def wrapper(*args, **kwargs):
-                    logger = logging.getLogger(__name__)
-                    for attempt in range(1, max_attempts + 1):
-                        try:
-                            return func(*args, **kwargs)
-                        except Exception as e:
-                            logger.warning(f"Attempt {attempt}/{max_attempts} failed: {e}")
-                            if attempt == max_attempts:
-                                raise
-                            time.sleep(delay)
-                return wrapper
-            return decorator</code></pre>
+def retry(max_attempts=3, delay=1):
+def decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        logger = logging.getLogger(__name__)
+        for attempt in range(1, max_attempts + 1):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                logger.warning(f"Attempt {attempt}/{max_attempts} failed: {e}")
+                if attempt == max_attempts:
+                    raise
+                time.sleep(delay)
+    return wrapper
+return decorator</code></pre>
                     </div>
 
                     <h3>🐍 2. crawler/robots.py – Robots.txt Parser</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        crawler/robots.py – Fetch and parse robots.txt.
-        """
-        import requests
-        from urllib.parse import urljoin, urlparse
-        from .utils import retry
+crawler/robots.py – Fetch and parse robots.txt.
+"""
+import requests
+from urllib.parse import urljoin, urlparse
+from .utils import retry
 
-        class RobotsParser:
-            def __init__(self, base_url):
-                self.base_url = base_url
-                self.robots_url = urljoin(base_url, "/robots.txt")
-                self.parsed = {}
+class RobotsParser:
+def __init__(self, base_url):
+    self.base_url = base_url
+    self.robots_url = urljoin(base_url, "/robots.txt")
+    self.parsed = {}
 
-            @retry(max_attempts=2)
-            def fetch(self):
-                try:
-                    resp = requests.get(self.robots_url, timeout=5)
-                    if resp.status_code != 200:
-                        # assume no restrictions
-                        return
-                    lines = resp.text.splitlines()
-                    current_user_agent = None
-                    for line in lines:
-                        line = line.strip()
-                        if not line or line.startswith("#"):
-                            continue
-                        if line.startswith("User-agent:"):
-                            current_user_agent = line.split(":", 1)[1].strip()
-                            if current_user_agent not in self.parsed:
-                                self.parsed[current_user_agent] = []
-                        elif current_user_agent and line.startswith("Disallow:"):
-                            path = line.split(":", 1)[1].strip()
-                            self.parsed[current_user_agent].append(path)
-                except Exception as e:
-                    # If robots.txt is inaccessible, we proceed with caution
-                    logging.getLogger(__name__).warning(f"Could not fetch robots.txt: {e}")
+@retry(max_attempts=2)
+def fetch(self):
+    try:
+        resp = requests.get(self.robots_url, timeout=5)
+        if resp.status_code != 200:
+            # assume no restrictions
+            return
+        lines = resp.text.splitlines()
+        current_user_agent = None
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if line.startswith("User-agent:"):
+                current_user_agent = line.split(":", 1)[1].strip()
+                if current_user_agent not in self.parsed:
+                    self.parsed[current_user_agent] = []
+            elif current_user_agent and line.startswith("Disallow:"):
+                path = line.split(":", 1)[1].strip()
+                self.parsed[current_user_agent].append(path)
+    except Exception as e:
+        # If robots.txt is inaccessible, we proceed with caution
+        logging.getLogger(__name__).warning(f"Could not fetch robots.txt: {e}")
 
-            def is_allowed(self, url, user_agent="*"):
-                if not self.parsed:
-                    return True
-                path = urlparse(url).path or "/"
-                # Check for specific user_agent first, then fallback to "*"
-                for ua in [user_agent, "*"]:
-                    if ua in self.parsed:
-                        for disallow in self.parsed[ua]:
-                            if path.startswith(disallow):
-                                return False
-                return True</code></pre>
+def is_allowed(self, url, user_agent="*"):
+    if not self.parsed:
+        return True
+    path = urlparse(url).path or "/"
+    # Check for specific user_agent first, then fallback to "*"
+    for ua in [user_agent, "*"]:
+        if ua in self.parsed:
+            for disallow in self.parsed[ua]:
+                if path.startswith(disallow):
+                    return False
+    return True</code></pre>
                     </div>
 
                     <h3>🐍 3. crawler/fetcher.py – Async HTTP Fetcher</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        crawler/fetcher.py – Asynchronous HTTP requests with retry and rate limiting.
-        """
-        import asyncio
-        import aiohttp
-        import logging
-        from .utils import timer, retry
-        from .robots import RobotsParser
+crawler/fetcher.py – Asynchronous HTTP requests with retry and rate limiting.
+"""
+import asyncio
+import aiohttp
+import logging
+from .utils import timer, retry
+from .robots import RobotsParser
 
-        logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
-        class AsyncFetcher:
-            def __init__(self, rate_limit=5, timeout=10):
-                self.semaphore = asyncio.Semaphore(rate_limit)
-                self.timeout = aiohttp.ClientTimeout(total=timeout)
+class AsyncFetcher:
+def __init__(self, rate_limit=5, timeout=10):
+    self.semaphore = asyncio.Semaphore(rate_limit)
+    self.timeout = aiohttp.ClientTimeout(total=timeout)
 
-            @timer
-            @retry(max_attempts=3, delay=1)
-            async def fetch(self, url, user_agent="*"):
-                # Check robots.txt
-                robots = RobotsParser(url)
-                robots.fetch()
-                if not robots.is_allowed(url, user_agent):
-                    logger.info(f"Skipping {url} (disallowed by robots.txt)")
-                    return None
+@timer
+@retry(max_attempts=3, delay=1)
+async def fetch(self, url, user_agent="*"):
+    # Check robots.txt
+    robots = RobotsParser(url)
+    robots.fetch()
+    if not robots.is_allowed(url, user_agent):
+        logger.info(f"Skipping {url} (disallowed by robots.txt)")
+        return None
 
-                async with self.semaphore:
-                    try:
-                        async with aiohttp.ClientSession(timeout=self.timeout) as session:
-                            headers = {"User-Agent": user_agent}
-                            async with session.get(url, headers=headers) as resp:
-                                if resp.status == 200:
-                                    html = await resp.text()
-                                    return html
-                                else:
-                                    logger.warning(f"Status {resp.status} for {url}")
-                                    return None
-                    except asyncio.TimeoutError:
-                        logger.warning(f"Timeout fetching {url}")
-                        raise
-                    except Exception as e:
-                        logger.error(f"Error fetching {url}: {e}")
-                        raise</code></pre>
+    async with self.semaphore:
+        try:
+            async with aiohttp.ClientSession(timeout=self.timeout) as session:
+                headers = {"User-Agent": user_agent}
+                async with session.get(url, headers=headers) as resp:
+                    if resp.status == 200:
+                        html = await resp.text()
+                        return html
+                    else:
+                        logger.warning(f"Status {resp.status} for {url}")
+                        return None
+        except asyncio.TimeoutError:
+            logger.warning(f"Timeout fetching {url}")
+            raise
+        except Exception as e:
+            logger.error(f"Error fetching {url}: {e}")
+            raise</code></pre>
                     </div>
 
                     <h3>🐍 4. crawler/parser.py – HTML Parsing</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        crawler/parser.py – Extract links, titles, and meta data.
-        """
-        from bs4 import BeautifulSoup
-        from urllib.parse import urljoin, urlparse
-        import logging
+crawler/parser.py – Extract links, titles, and meta data.
+"""
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
+import logging
 
-        logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
-        class HTMLParser:
-            @staticmethod
-            def extract_links(html, base_url):
-                soup = BeautifulSoup(html, "html.parser")
-                links = []
-                for a_tag in soup.find_all("a", href=True):
-                    href = a_tag["href"]
-                    absolute_url = urljoin(base_url, href)
-                    if absolute_url.startswith(("http://", "https://")):
-                        links.append(absolute_url)
-                return links
+class HTMLParser:
+    @staticmethod
+    def extract_links(html, base_url):
+        soup = BeautifulSoup(html, "html.parser")
+        links = []
+        for a_tag in soup.find_all("a", href=True):
+            href = a_tag["href"]
+            absolute_url = urljoin(base_url, href)
+            if absolute_url.startswith(("http://", "https://")):
+                links.append(absolute_url)
+        return links
 
-            @staticmethod
-            def extract_title(html):
-                soup = BeautifulSoup(html, "html.parser")
-                title_tag = soup.find("title")
-                return title_tag.text.strip() if title_tag else "No Title"
+    @staticmethod
+    def extract_title(html):
+        soup = BeautifulSoup(html, "html.parser")
+        title_tag = soup.find("title")
+        return title_tag.text.strip() if title_tag else "No Title"
 
-            @staticmethod
-            def extract_meta(html, name="description"):
-                soup = BeautifulSoup(html, "html.parser")
-                meta = soup.find("meta", attrs={"name": name})
-                if meta and meta.get("content"):
-                    return meta["content"]
-                return ""</code></pre>
+    @staticmethod
+    def extract_meta(html, name="description"):
+        soup = BeautifulSoup(html, "html.parser")
+        meta = soup.find("meta", attrs={"name": name})
+        if meta and meta.get("content"):
+            return meta["content"]
+        return ""</code></pre>
                     </div>
 
                     <h3>🐍 5. crawler/store.py – SQLite Storage</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        crawler/store.py – Store crawled pages in SQLite.
-        """
-        import sqlite3
-        from contextlib import contextmanager
-        import logging
+crawler/store.py – Store crawled pages in SQLite.
+"""
+import sqlite3
+from contextlib import contextmanager
+import logging
 
-        logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
-        @contextmanager
-        def db_connection(db_path):
-            conn = sqlite3.connect(db_path)
-            conn.row_factory = sqlite3.Row
-            try:
-                yield conn
-                conn.commit()
-            except Exception:
-                conn.rollback()
-                raise
-            finally:
-                conn.close()
+@contextmanager
+def db_connection(db_path):
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    try:
+        yield conn
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
 
-        class CrawlStore:
-            def __init__(self, db_path="output/crawl.db"):
-                self.db_path = db_path
-                self._init_db()
+class CrawlStore:
+    def __init__(self, db_path="output/crawl.db"):
+        self.db_path = db_path
+        self._init_db()
 
-            def _init_db(self):
-                with db_connection(self.db_path) as conn:
-                    conn.execute("""
-                        CREATE TABLE IF NOT EXISTS pages (
-                            url TEXT PRIMARY KEY,
-                            title TEXT,
-                            description TEXT,
-                            content TEXT,
-                            crawled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                        )
-                    """)
-                    conn.execute("""
-                        CREATE INDEX IF NOT EXISTS idx_url ON pages(url)
-                    """)
+    def _init_db(self):
+        with db_connection(self.db_path) as conn:
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS pages (
+                    url TEXT PRIMARY KEY,
+                    title TEXT,
+                    description TEXT,
+                    content TEXT,
+                    crawled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            conn.execute("""
+                CREATE INDEX IF NOT EXISTS idx_url ON pages(url)
+            """)
 
-            def save_page(self, url, title, description, content):
-                with db_connection(self.db_path) as conn:
-                    conn.execute("""
-                        INSERT OR REPLACE INTO pages (url, title, description, content)
-                        VALUES (?, ?, ?, ?)
-                    """, (url, title, description, content))
-                    logger.info(f"Saved: {url}")
+    def save_page(self, url, title, description, content):
+        with db_connection(self.db_path) as conn:
+            conn.execute("""
+                INSERT OR REPLACE INTO pages (url, title, description, content)
+                VALUES (?, ?, ?, ?)
+            """, (url, title, description, content))
+            logger.info(f"Saved: {url}")
 
-            def get_all_urls(self):
-                with db_connection(self.db_path) as conn:
-                    cursor = conn.execute("SELECT url FROM pages")
-                    return [row["url"] for row in cursor.fetchall()]</code></pre>
+    def get_all_urls(self):
+        with db_connection(self.db_path) as conn:
+            cursor = conn.execute("SELECT url FROM pages")
+            return [row["url"] for row in cursor.fetchall()]</code></pre>
                     </div>
 
                     <h3>🐍 6. crawler/scheduler.py – Concurrency Control</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        crawler/scheduler.py – Orchestrate crawling with concurrency.
-        """
-        import asyncio
-        import logging
-        from .fetcher import AsyncFetcher
-        from .parser import HTMLParser
-        from .store import CrawlStore
-        from urllib.parse import urlparse
+crawler/scheduler.py – Orchestrate crawling with concurrency.
+"""
+import asyncio
+import logging
+from .fetcher import AsyncFetcher
+from .parser import HTMLParser
+from .store import CrawlStore
+from urllib.parse import urlparse
 
-        logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
-        class CrawlScheduler:
-            def __init__(self, max_concurrent=5, rate_limit=10):
-                self.fetcher = AsyncFetcher(rate_limit=rate_limit)
-                self.store = CrawlStore()
-                self.max_concurrent = max_concurrent
-                self.visited = set()
-                self.to_visit = set()
+class CrawlScheduler:
+    def __init__(self, max_concurrent=5, rate_limit=10):
+        self.fetcher = AsyncFetcher(rate_limit=rate_limit)
+        self.store = CrawlStore()
+        self.max_concurrent = max_concurrent
+        self.visited = set()
+        self.to_visit = set()
 
-            async def crawl(self, start_url, max_pages=100):
-                self.to_visit.add(start_url)
-                total_crawled = 0
+    async def crawl(self, start_url, max_pages=100):
+        self.to_visit.add(start_url)
+        total_crawled = 0
 
-                while self.to_visit and total_crawled < max_pages:
-                    # Take up to max_concurrent URLs from the queue
-                    batch = []
-                    for _ in range(min(self.max_concurrent, len(self.to_visit))):
-                        batch.append(self.to_visit.pop())
-                    # Crawl batch concurrently
-                    tasks = [self._crawl_single(url) for url in batch]
-                    results = await asyncio.gather(*tasks, return_exceptions=True)
-                    for result in results:
-                        if isinstance(result, Exception):
-                            logger.error(f"Error in batch: {result}")
-                    total_crawled += len(batch)
-                    logger.info(f"Crawled {total_crawled} pages so far")
+        while self.to_visit and total_crawled < max_pages:
+            # Take up to max_concurrent URLs from the queue
+            batch = []
+            for _ in range(min(self.max_concurrent, len(self.to_visit))):
+                batch.append(self.to_visit.pop())
+            # Crawl batch concurrently
+            tasks = [self._crawl_single(url) for url in batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            for result in results:
+                if isinstance(result, Exception):
+                    logger.error(f"Error in batch: {result}")
+            total_crawled += len(batch)
+            logger.info(f"Crawled {total_crawled} pages so far")
 
-                logger.info(f"Finished crawling {total_crawled} pages")
+        logger.info(f"Finished crawling {total_crawled} pages")
 
-            async def _crawl_single(self, url):
-                if url in self.visited:
-                    return
-                self.visited.add(url)
-                html = await self.fetcher.fetch(url)
-                if not html:
-                    return
-                title = HTMLParser.extract_title(html)
-                description = HTMLParser.extract_meta(html)
-                self.store.save_page(url, title, description, html[:1000])
-                # Extract new links
-                links = HTMLParser.extract_links(html, url)
-                for link in links:
-                    if link not in self.visited and link not in self.to_visit:
-                        self.to_visit.add(link)</code></pre>
+    async def _crawl_single(self, url):
+        if url in self.visited:
+            return
+        self.visited.add(url)
+        html = await self.fetcher.fetch(url)
+        if not html:
+            return
+        title = HTMLParser.extract_title(html)
+        description = HTMLParser.extract_meta(html)
+        self.store.save_page(url, title, description, html[:1000])
+        # Extract new links
+        links = HTMLParser.extract_links(html, url)
+        for link in links:
+            if link not in self.visited and link not in self.to_visit:
+                self.to_visit.add(link)</code></pre>
                     </div>
 
                     <h3>📄 7. run_crawler.py – Entry Point</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">#!/usr/bin/env python3
-        import asyncio
-        import sys
-        from crawler.scheduler import CrawlScheduler
-        from crawler.utils import setup_logging
+import asyncio
+import sys
+from crawler.scheduler import CrawlScheduler
+from crawler.utils import setup_logging
 
-        async def main():
-            setup_logging()
-            start_url = sys.argv[1] if len(sys.argv) > 1 else "https://example.com"
-            max_pages = int(sys.argv[2]) if len(sys.argv) > 2 else 50
-            scheduler = CrawlScheduler(max_concurrent=10, rate_limit=15)
-            await scheduler.crawl(start_url, max_pages=max_pages)
-            print("✅ Crawling completed. Data stored in output/crawl.db")
+async def main():
+    setup_logging()
+    start_url = sys.argv[1] if len(sys.argv) > 1 else "https://example.com"
+    max_pages = int(sys.argv[2]) if len(sys.argv) > 2 else 50
+    scheduler = CrawlScheduler(max_concurrent=10, rate_limit=15)
+    await scheduler.crawl(start_url, max_pages=max_pages)
+    print("✅ Crawling completed. Data stored in output/crawl.db")
 
-        if __name__ == "__main__":
-            asyncio.run(main())</code></pre>
+if __name__ == "__main__":
+    asyncio.run(main())</code></pre>
                     </div>
 
                     <h3>📄 8. requirements.txt</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-text">aiohttp>=3.8.0
-        beautifulsoup4>=4.12.0
-        requests>=2.31.0
-        pytest>=7.0.0</code></pre>
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+pytest>=7.0.0</code></pre>
                     </div>
 
                     <h3>🚀 How to Run</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-bash">$ pip install -r requirements.txt
-        $ python run_crawler.py https://en.wikipedia.org/wiki/Python_(programming_language) 20
-        # Crawls 20 pages starting from that Wikipedia page</code></pre>
+                        <pre class="line-numbers"><code class="language-bash">$ pip install -r requirements.txt
+$ python run_crawler.py https://en.wikipedia.org/wiki/Python_(programming_language) 20
+# Crawls 20 pages starting from that Wikipedia page</code></pre>
                     </div>
 
                     <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
@@ -8181,211 +8182,211 @@ $ cat output/weather_report.json | python -m json.tool
                     <h3>📁 Project Structure</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-plaintext">optimization_suite/
-        ├── slow_code.py        – original slow implementation
-        ├── fast_code.py        – optimised version
-        ├── profile.py          – run profilers and generate report
-        ├── test_speed.py       – measure speedups
-        ├── requirements.txt
-        └── README.md</code></pre>
+                        <pre class="line-numbers"><code class="language-plaintext">optimization_suite/
+├── slow_code.py        – original slow implementation
+├── fast_code.py        – optimised version
+├── profile.py          – run profilers and generate report
+├── test_speed.py       – measure speedups
+├── requirements.txt
+└── README.md</code></pre>
                     </div>
 
                     <h3>🐍 1. slow_code.py – The Original (Deliberately Inefficient)</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        slow_code.py – A deliberately slow implementation for profiling.
-        """
-        import math
-        import random
+slow_code.py – A deliberately slow implementation for profiling.
+"""
+import math
+import random
 
-        def compute_expensive(n):
-            """Compute sum of square roots of squares (simulates heavy calculation)."""
-            total = 0
-            for i in range(n):
-                total += math.sqrt(i**2 + 1)
-            return total
+def compute_expensive(n):
+    """Compute sum of square roots of squares (simulates heavy calculation)."""
+    total = 0
+    for i in range(n):
+        total += math.sqrt(i**2 + 1)
+    return total
 
-        def find_duplicates(lst):
-            """Find duplicates using O(n^2) nested loops."""
-            duplicates = []
-            for i in range(len(lst)):
-                for j in range(i+1, len(lst)):
-                    if lst[i] == lst[j] and lst[i] not in duplicates:
-                        duplicates.append(lst[i])
-            return duplicates
+def find_duplicates(lst):
+    """Find duplicates using O(n^2) nested loops."""
+    duplicates = []
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] == lst[j] and lst[i] not in duplicates:
+                duplicates.append(lst[i])
+    return duplicates
 
-        def slow_fibonacci(n):
-            """Recursive Fibonacci without memoization."""
-            if n <= 1:
-                return n
-            return slow_fibonacci(n-1) + slow_fibonacci(n-2)
+def slow_fibonacci(n):
+    """Recursive Fibonacci without memoization."""
+    if n <= 1:
+        return n
+    return slow_fibonacci(n-1) + slow_fibonacci(n-2)
 
-        def run_slow_tasks():
-            lst = [random.randint(0, 1000) for _ in range(2000)]
-            total = compute_expensive(10000)
-            dups = find_duplicates(lst[:500])  # only 500 to make it finish
-            fib = slow_fibonacci(30)
-            return total, dups, fib
+def run_slow_tasks():
+    lst = [random.randint(0, 1000) for _ in range(2000)]
+    total = compute_expensive(10000)
+    dups = find_duplicates(lst[:500])  # only 500 to make it finish
+    fib = slow_fibonacci(30)
+    return total, dups, fib
 
-        if __name__ == "__main__":
-            import time
-            start = time.perf_counter()
-            result = run_slow_tasks()
-            print(f"Slow code took {time.perf_counter() - start:.4f}s")</code></pre>
+if __name__ == "__main__":
+    import time
+    start = time.perf_counter()
+    result = run_slow_tasks()
+    print(f"Slow code took {time.perf_counter() - start:.4f}s")</code></pre>
                     </div>
 
                     <h3>🐍 2. fast_code.py – Optimised Version</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        fast_code.py – Optimised versions of the slow functions.
-        """
-        import math
-        import numpy as np
-        from functools import lru_cache
+fast_code.py – Optimised versions of the slow functions.
+"""
+import math
+import numpy as np
+from functools import lru_cache
 
-        # 1. Vectorised computation using NumPy
-        def compute_expensive_fast(n):
-            arr = np.arange(n, dtype=np.float64)
-            return np.sum(np.sqrt(arr**2 + 1))
+# 1. Vectorised computation using NumPy
+def compute_expensive_fast(n):
+    arr = np.arange(n, dtype=np.float64)
+    return np.sum(np.sqrt(arr**2 + 1))
 
-        # 2. Use set to find duplicates in O(n)
-        def find_duplicates_fast(lst):
-            seen = set()
-            duplicates = set()
-            for item in lst:
-                if item in seen:
-                    duplicates.add(item)
-                else:
-                    seen.add(item)
-            return list(duplicates)
+# 2. Use set to find duplicates in O(n)
+def find_duplicates_fast(lst):
+    seen = set()
+    duplicates = set()
+    for item in lst:
+        if item in seen:
+            duplicates.add(item)
+        else:
+            seen.add(item)
+    return list(duplicates)
 
-        # 3. Memoised Fibonacci
-        @lru_cache(maxsize=None)
-        def fast_fibonacci(n):
-            if n <= 1:
-                return n
-            return fast_fibonacci(n-1) + fast_fibonacci(n-2)
+# 3. Memoised Fibonacci
+@lru_cache(maxsize=None)
+def fast_fibonacci(n):
+    if n <= 1:
+        return n
+    return fast_fibonacci(n-1) + fast_fibonacci(n-2)
 
-        def run_fast_tasks(lst):
-            total = compute_expensive_fast(10000)
-            dups = find_duplicates_fast(lst[:500])
-            fib = fast_fibonacci(30)
-            return total, dups, fib
+def run_fast_tasks(lst):
+    total = compute_expensive_fast(10000)
+    dups = find_duplicates_fast(lst[:500])
+    fib = fast_fibonacci(30)
+    return total, dups, fib
 
-        if __name__ == "__main__":
-            import time
-            import random
-            lst = [random.randint(0, 1000) for _ in range(2000)]
-            start = time.perf_counter()
-            result = run_fast_tasks(lst)
-            print(f"Fast code took {time.perf_counter() - start:.4f}s")</code></pre>
+if __name__ == "__main__":
+    import time
+    import random
+    lst = [random.randint(0, 1000) for _ in range(2000)]
+    start = time.perf_counter()
+    result = run_fast_tasks(lst)
+    print(f"Fast code took {time.perf_counter() - start:.4f}s")</code></pre>
                     </div>
 
                     <h3>🐍 3. profile.py – Profiling Script</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        profile.py – Run cProfile, memory_profiler, and line_profiler.
-        """
-        import cProfile
-        import pstats
-        import io
-        import random
-        from slow_code import run_slow_tasks
-        from fast_code import run_fast_tasks, fast_fibonacci
+profile.py – Run cProfile, memory_profiler, and line_profiler.
+"""
+import cProfile
+import pstats
+import io
+import random
+from slow_code import run_slow_tasks
+from fast_code import run_fast_tasks, fast_fibonacci
 
-        def profile_cpu():
-            # Profile slow code
-            profiler = cProfile.Profile()
-            profiler.enable()
-            run_slow_tasks()
-            profiler.disable()
-            stream = io.StringIO()
-            stats = pstats.Stats(profiler, stream=stream)
-            stats.sort_stats('cumulative').print_stats(10)
-            print("=== CPU Profile (Slow) ===")
-            print(stream.getvalue())
+def profile_cpu():
+    # Profile slow code
+    profiler = cProfile.Profile()
+    profiler.enable()
+    run_slow_tasks()
+    profiler.disable()
+    stream = io.StringIO()
+    stats = pstats.Stats(profiler, stream=stream)
+    stats.sort_stats('cumulative').print_stats(10)
+    print("=== CPU Profile (Slow) ===")
+    print(stream.getvalue())
 
-            # Profile fast code
-            lst = [random.randint(0, 1000) for _ in range(2000)]
-            profiler = cProfile.Profile()
-            profiler.enable()
-            run_fast_tasks(lst)
-            profiler.disable()
-            stream = io.StringIO()
-            stats = pstats.Stats(profiler, stream=stream)
-            stats.sort_stats('cumulative').print_stats(10)
-            print("=== CPU Profile (Fast) ===")
-            print(stream.getvalue())
+    # Profile fast code
+    lst = [random.randint(0, 1000) for _ in range(2000)]
+    profiler = cProfile.Profile()
+    profiler.enable()
+    run_fast_tasks(lst)
+    profiler.disable()
+    stream = io.StringIO()
+    stats = pstats.Stats(profiler, stream=stream)
+    stats.sort_stats('cumulative').print_stats(10)
+    print("=== CPU Profile (Fast) ===")
+    print(stream.getvalue())
 
-        def profile_memory():
-            # Use memory_profiler decorator in a separate file, but here we simulate
-            print("Run with: python -m memory_profiler slow_code.py")
-            print("Run with: python -m memory_profiler fast_code.py")
+def profile_memory():
+    # Use memory_profiler decorator in a separate file, but here we simulate
+    print("Run with: python -m memory_profiler slow_code.py")
+    print("Run with: python -m memory_profiler fast_code.py")
 
-        def profile_line():
-            # Use line_profiler: add @profile decorator and run: kernprof -l -v slow_code.py
-            print("Run with: kernprof -l -v slow_code.py")
-            print("Run with: kernprof -l -v fast_code.py")
+def profile_line():
+    # Use line_profiler: add @profile decorator and run: kernprof -l -v slow_code.py
+    print("Run with: kernprof -l -v slow_code.py")
+    print("Run with: kernprof -l -v fast_code.py")
 
-        if __name__ == "__main__":
-            profile_cpu()
-            profile_memory()
-            profile_line()</code></pre>
+if __name__ == "__main__":
+    profile_cpu()
+    profile_memory()
+    profile_line()</code></pre>
                     </div>
 
                     <h3>🐍 4. test_speed.py – Measure Speedup</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-python">"""
-        test_speed.py – Measure and compare execution times.
-        """
-        import timeit
-        import random
-        from slow_code import run_slow_tasks, slow_fibonacci, compute_expensive, find_duplicates
-        from fast_code import run_fast_tasks, fast_fibonacci, compute_expensive_fast, find_duplicates_fast
+test_speed.py – Measure and compare execution times.
+"""
+import timeit
+import random
+from slow_code import run_slow_tasks, slow_fibonacci, compute_expensive, find_duplicates
+from fast_code import run_fast_tasks, fast_fibonacci, compute_expensive_fast, find_duplicates_fast
 
-        def benchmark():
-            lst = [random.randint(0, 1000) for _ in range(2000)]
+def benchmark():
+    lst = [random.randint(0, 1000) for _ in range(2000)]
 
-            # Fibonacci
-            slow_fib_time = timeit.timeit('slow_fibonacci(30)', globals=globals(), number=10)
-            fast_fib_time = timeit.timeit('fast_fibonacci(30)', globals=globals(), number=10)
-            print(f"Fibonacci (n=30): slow={slow_fib_time:.4f}s, fast={fast_fib_time:.4f}s")
+    # Fibonacci
+    slow_fib_time = timeit.timeit('slow_fibonacci(30)', globals=globals(), number=10)
+    fast_fib_time = timeit.timeit('fast_fibonacci(30)', globals=globals(), number=10)
+    print(f"Fibonacci (n=30): slow={slow_fib_time:.4f}s, fast={fast_fib_time:.4f}s")
 
-            # Compute expensive
-            slow_comp_time = timeit.timeit('compute_expensive(10000)', globals=globals(), number=5)
-            fast_comp_time = timeit.timeit('compute_expensive_fast(10000)', globals=globals(), number=5)
-            print(f"Compute expensive: slow={slow_comp_time:.4f}s, fast={fast_comp_time:.4f}s")
+    # Compute expensive
+    slow_comp_time = timeit.timeit('compute_expensive(10000)', globals=globals(), number=5)
+    fast_comp_time = timeit.timeit('compute_expensive_fast(10000)', globals=globals(), number=5)
+    print(f"Compute expensive: slow={slow_comp_time:.4f}s, fast={fast_comp_time:.4f}s")
 
-            # Find duplicates (using 500 elements for fairness)
-            slow_dup_time = timeit.timeit('find_duplicates(lst[:500])', globals=globals(), number=5)
-            fast_dup_time = timeit.timeit('find_duplicates_fast(lst[:500])', globals=globals(), number=5)
-            print(f"Find duplicates (500 items): slow={slow_dup_time:.4f}s, fast={fast_dup_time:.4f}s")
+    # Find duplicates (using 500 elements for fairness)
+    slow_dup_time = timeit.timeit('find_duplicates(lst[:500])', globals=globals(), number=5)
+    fast_dup_time = timeit.timeit('find_duplicates_fast(lst[:500])', globals=globals(), number=5)
+    print(f"Find duplicates (500 items): slow={slow_dup_time:.4f}s, fast={fast_dup_time:.4f}s")
 
-        if __name__ == "__main__":
-            benchmark()</code></pre>
+if __name__ == "__main__":
+    benchmark()</code></pre>
                     </div>
 
                     <h3>📄 5. requirements.txt</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-text">numpy>=1.24.0
-        memory_profiler>=0.61.0
-        line_profiler>=4.0.0
-        pytest>=7.0.0</code></pre>
+memory_profiler>=0.61.0
+line_profiler>=4.0.0
+pytest>=7.0.0</code></pre>
                     </div>
 
                     <h3>🚀 How to Run</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-bash">$ pip install -r requirements.txt
-        $ python slow_code.py             # baseline
-        $ python fast_code.py             # improved
-        $ python profile.py               # see where time goes
-        $ python test_speed.py            # measure the speedups</code></pre>
+                        <pre class="line-numbers"><code class="language-bash">$ pip install -r requirements.txt
+$ python slow_code.py             # baseline
+$ python fast_code.py             # improved
+$ python profile.py               # see where time goes
+$ python test_speed.py            # measure the speedups</code></pre>
                     </div>
 
                     <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
@@ -11477,17 +11478,17 @@ async def metrics():
                     <h3>📁 Project Structure</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-plaintext">ai_assistant/
-        ├── app.py                 # FastAPI entry point
-        ├── rag_engine.py          # RAG logic (Chroma + LLM)
-        ├── tools.py               # Agent tools (calculator, weather)
-        ├── prompts.py             # Prompt templates
-        ├── config.py              # Environment variables
-        ├── data/
-        │   └── documents/         # PDF/CSV files
-        ├── chroma_db/             # Vector store (created)
-        ├── requirements.txt
-        └── README.md</code></pre>
+                        <pre class="line-numbers"><code class="language-plaintext">ai_assistant/
+├── app.py                 # FastAPI entry point
+├── rag_engine.py          # RAG logic (Chroma + LLM)
+├── tools.py               # Agent tools (calculator, weather)
+├── prompts.py             # Prompt templates
+├── config.py              # Environment variables
+├── data/
+│   └── documents/         # PDF/CSV files
+├── chroma_db/             # Vector store (created)
+├── requirements.txt
+└── README.md</code></pre>
                     </div>
 
                     <h3>🐍 app.py – Main Entry Point</h3>
@@ -11606,7 +11607,7 @@ class RAGEngine:
                     <h3>📄 requirements.txt</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-text">fastapi>=0.104.0
+                        <pre class="line-numbers"><code class="language-text">fastapi>=0.104.0
 uvicorn>=0.24.0
 langchain>=0.1.0
 langchain-openai>=0.0.5
@@ -11620,7 +11621,7 @@ pydantic>=2.4.0</code></pre>
                     <h3>🚀 How to Run</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre><code class="language-bash"># 1. Set up environment
+                        <pre class="line-numbers"><code class="language-bash"># 1. Set up environment
 python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 

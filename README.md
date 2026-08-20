@@ -1,13 +1,24 @@
-# 🔥 SkillForge
+# 🔥 SkillForge - Forge Your Skills, Shape Your Future
 
-**SkillForge** is a self-driven learning hub designed to help learners master core technologies step by step.  
+>**SkillForge** is a self-driven learning hub designed to help learners master core technologies step by step.  
 It provides structured, phase-based roadmaps, guided challenges, and practical projects across multiple domains — starting with **Python, Java, DAS, and SQL**, with more technologies to be added gradually.
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://skill-forge-learning.netlify.app)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![Made with HTML/CSS/JS](https://img.shields.io/badge/Made_with-HTML%20%2F%20CSS%20%2F%20JS-blue?style=for-the-badge)]()
+
+
+### 🔴 Live Link: https://skill-forge-learning.netlify.app 
 
 ---
 
 ## 📚 Vision
 SkillForge empowers learners to **forge their skills** through clear milestones, hands-on exercises, and continuous progression.  
 The goal is to make the journey from **beginner → intermediate → expert** both achievable and motivating.
+
+---
+
+![SkillForge-GIF](images/skill-forge-learning.gif)
 
 ---
 
