@@ -1,38 +1,43 @@
 let currentPhase = 'prerequisite';                     // track which phase is active
 const activeDayMap = {};                        // store active day per phase so navigation remembers each tab
 const phaseFirstDay = {                         // default first day per phase
+    prerequisite: 'setup',
     phase1: 'day1',
-    phase2: 'day26',   // adjust if your Phase 2 starts at a different day
-    phase3: 'day51',   // placeholder for future
-    phase4: 'day76',   // placeholder for future
-    phase5: 'python-mcq-intermediate',
-    libraries: 'python-libraries',
-    prerequisite: 'python-setup',
-    'ai-data': ''
+    phase2: 'day26',
+    phase3: 'day51',
+    phase4: 'day76',
+    phase5: 'mcq-intermediate',
+    phase6: 'intro',
+    phase7: 'fundamentals',
+    libraries: 'libraries',
+
+    // 'ai-data': ''
 };
 // ─── PHASE SWITCHING ──────────────────────────────────────────
 // Collect the clickable phase tabs and their matching section containers.
 const phaseTabs = document.querySelectorAll('.tab-btn');
 const phaseSections = {
+    prerequisite: document.getElementById('prerequisite'),
     phase1: document.getElementById('phase1'),
     phase2: document.getElementById('phase2'),
     phase3: document.getElementById('phase3'),
     phase4: document.getElementById('phase4'),
     phase5: document.getElementById('phase5'),
-    libraries: document.getElementById('libraries'),
-    prerequisite: document.getElementById('prerequisite'),
-    phase7: document.getElementById('phase7')
+    phase6: document.getElementById('phase6'),
+    phase7: document.getElementById('phase7'),
+    libraries: document.getElementById('libraries')
 };
 // Store the heading subtitle for each phase so the page header stays in sync.
 const phaseSubtitles = {
-    phase1: 'Phase 1 · Foundations &amp; Core Syntax (Days 1–25)',
-    phase2: 'Phase 2 · Data Structures &amp; Object-Oriented Programming (Days 26–50)',
-    phase3: 'Phase 3 · Advanced Concepts &amp; Libraries (Days 51–75)',
-    phase4: 'Phase 4 · Expert Patterns &amp; Performance (Days 76–100)',
-    phase5: 'Test Your Python Knowledge',
-    libraries: 'Python Libraries – Essential Tools for Every Engineer',
-    prerequisite: 'Prerequisite – Setting Up Your Environment',
-    phase7: 'AI & Data – Bonus Track'
+    prerequisite: 'Setting Up Your Environment',
+    phase1: 'Foundations &amp; Core Syntax (Days 1–25)',
+    phase2: 'Data Structures &amp; Object-Oriented Programming (Days 26–50)',
+    phase3: 'Advanced Concepts &amp; Libraries (Days 51–75)',
+    phase4: 'Expert Patterns &amp; Performance (Days 76–100)',
+    phase5: 'Test Your Knowledge',
+    phase6: 'Bonus Track',
+    phase7: 'Quick Reference',
+    libraries: 'Essential Tools for Every Engineer'
 };
 
 (function () {

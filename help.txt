@@ -22,3 +22,15 @@ update the path of css files in python-readmap/index.html file
         </div>
     </div>
 </header>
+
+
+==================
+How to Deploy Python Flask Web App on Server [ 2025 Update ] Pythonanywhere Tutorial | Flask
+-----------------------------
+https://www.youtube.com/watch?v=H2Hxu7fDUOc
+
+
+
+Deploy Full Stack Web App | Frontend + Backend Deployment | Vercel | Netlify
+--------------
+https://www.youtube.com/watch?v=KuMbhQ4CLQ8
