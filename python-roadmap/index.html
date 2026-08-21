@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>100-Day Python Roadmap · Phase 1</title>
+    <title>100-Day Python Roadmap · SkillForge</title>
     <base href="/" />
 
     <!-- Prism Core CSS -->
@@ -27,8 +27,8 @@
         <a href="/"><div class="logo">Skill<span>Forge</span></div></a>
         <div>
             <a href="/">Home</a>
-            <a href="#" class="active">🐍 Python</a>
-            <a href="#" style="opacity:0.5;">Java (soon)</a>
+            <a href="/python-roadmap/" class="active">🐍 Python</a>
+            <a href="/java-roadmap/" style="opacity:0.5;">☕ Java</a>
             <a href="#" style="opacity:0.5;">DAS (soon)</a>
             <a href="#" style="opacity:0.5;">SQL (soon)</a>
         </div>
@@ -37,7 +37,7 @@
 <div  class="page-title">
     <h1>🐍 100‑Day Python Mastery</h1>
     <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
-        Prerequisite – Setting Up Your Environment
+        Setting Up Your Environment
     </p>
 </div>
 <div class="learning-container">
@@ -45,12 +45,13 @@
     <!-- ====== PHASE TABS ====== -->
     <div class="phase-tabs">
         <button class="tab-btn active" data-phase="prerequisite">Prerequisite</button>
-        <button class="tab-btn" data-phase="phase1">Phase 1 · Foundations</button>
-        <button class="tab-btn" data-phase="phase2">Phase 2 · Data &amp; OOP</button>
-        <button class="tab-btn" data-phase="phase3">Phase 3 · Advanced</button>
-        <button class="tab-btn" data-phase="phase4">Phase 4 · Expert</button>
+        <button class="tab-btn" data-phase="phase1">Foundations</button>
+        <button class="tab-btn" data-phase="phase2">Data &amp; OOP</button>
+        <button class="tab-btn" data-phase="phase3">Advanced</button>
+        <button class="tab-btn" data-phase="phase4">Expert</button>
         <button class="tab-btn" data-phase="phase5">MCQ</button>
-        <button class="tab-btn" data-phase="phase7">AI & Data</button>
+        <button class="tab-btn" data-phase="phase6">AI & Data</button>
+        <button class="tab-btn" data-phase="phase7">Quick Ref</button>
         <button class="tab-btn" data-phase="libraries">Libraries</button>
 
     </div>
@@ -64,7 +65,7 @@
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>Prerequisite Setups</h3>
-                <button class="day-btn active" data-day="python-setup">Python – Setup</button>
+                <button class="day-btn active" data-day="setup">Python – Setup</button>
                 <button class="day-btn" data-day="vs-code-setup">VS Code – Setup</button>
                 <button class="day-btn" data-day="sqlite3-setup"> SQLite3 – Setup</button>
                 <button class="day-btn" data-day="git-setup">Git – Setup</button>
@@ -8622,15 +8623,15 @@ $ python test_speed.py            # measure the speedups</code></pre>
         <div class="content-area">
             <div class="day-sidebar">
                 <h3>MCQ</h3>
-                <button class="day-btn" data-day="python-mcq-intermediate">Intermediate</button>
-                <button class="day-btn" data-day="python-mcq-expert">Expert</button>
-                <button class="day-btn" data-day="python-mcq-professional">Professional</button>
+                <button class="day-btn" data-day="mcq-intermediate">Intermediate</button>
+                <button class="day-btn" data-day="mcq-expert">Expert</button>
+                <button class="day-btn" data-day="mcq-professional">Professional</button>
             </div>
             <div class="main-content">
                 <!-- ========================================================== -->
                 <!-- MCQ – INTERMEDIATE (Full 60 Questions)                     -->
                 <!-- ========================================================== -->
-                <div id="python-mcq-intermediate" class="day-content active">
+                <div id="mcq-intermediate" class="day-content active">
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ –
                         Intermediate Level</h2>
                     <p style="font-size:1.1rem; color:#4a5568;">60 questions covering Python syntax, data
@@ -9326,7 +9327,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                 <!-- ========================================================== -->
                 <!-- MCQ – EXPERT (Full 60 Questions)                           -->
                 <!-- ========================================================== -->
-                <div id="python-mcq-expert" class="day-content">
+                <div id="mcq-expert" class="day-content">
 
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ – Expert
                         Level</h2>
@@ -10114,7 +10115,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                 <!-- ========================================================== -->
                 <!-- MCQ – PROFESSIONAL (Full 60 Questions)                     -->
                 <!-- ========================================================== -->
-                <div id="python-mcq-professional" class="day-content">
+                <div id="mcq-professional" class="day-content">
 
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ –
                         Professional Level (10+ years)</h2>
@@ -10880,13 +10881,13 @@ $ python test_speed.py            # measure the speedups</code></pre>
     <!-- ========================================================== -->
     <!-- AI & DATA PHASE (Bonus Track)                              -->
     <!-- ========================================================== -->
-    <div id="phase7" class="phase-section">
+    <div id="phase6" class="phase-section">
         <div class="content-area">
 
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>AI & Data Topics</h3>
-                <button class="day-btn active" data-day="ai-intro">🤖 AI & Data Intro</button>
+                <button class="day-btn active" data-day="intro">🤖 AI & Data Intro</button>
                 <button class="day-btn" data-day="pandas-deep">🐼 Pandas Deep Dive</button>
                 <button class="day-btn" data-day="visualisation">📊 Visualisation</button>
                 <button class="day-btn" data-day="sklearn">🧠 scikit‑learn</button>
@@ -11654,6 +11655,841 @@ curl -X POST http://localhost:8000/query -H "Content-Type: application/json" -d 
             </div><!-- /main-content -->
         </div><!-- /content-area -->
     </div><!-- /ai-data -->
+
+    <!-- ====== QUICK REVISION & REFERENCE GUIDE – PYTHON ====== -->
+    <div id="phase7" class="phase-section">
+        <div class="content-area">
+            <!-- ─── SIDEBAR ─── -->
+            <div class="day-sidebar">
+                <h3>Quick Reference</h3>
+                <button class="day-btn" data-day="fundamentals">Fundamentals</button>
+                <button class="day-btn" data-day="python-ref-controlflow">Control Flow</button>
+                <button class="day-btn" data-day="python-ref-functions">Functions</button>
+                <button class="day-btn" data-day="python-ref-oop-classes">OOP – Classes &amp; Objects</button>
+                <button class="day-btn" data-day="python-ref-oop-inheritance">Inheritance &amp; Polymorphism</button>
+                <button class="day-btn" data-day="python-ref-oop-abstract">Abstraction &amp; Magic Methods</button>
+                <button class="day-btn" data-day="python-ref-exceptions">Exceptions</button>
+                <button class="day-btn" data-day="python-ref-collections">Collections (list, tuple, set, dict)</button>
+                <button class="day-btn" data-day="python-ref-comprehensions">Comprehensions</button>
+                <button class="day-btn" data-day="python-ref-lambdas">Lambdas &amp; Functional Tools</button>
+                <button class="day-btn" data-day="python-ref-decorators">Decorators</button>
+                <button class="day-btn" data-day="python-ref-generators">Generators &amp; Iterators</button>
+                <button class="day-btn" data-day="python-ref-contextmanagers">Context Managers</button>
+                <button class="day-btn" data-day="python-ref-io">File I/O</button>
+                <button class="day-btn" data-day="python-ref-datetime">Date &amp; Time</button>
+                <button class="day-btn" data-day="python-ref-regex">Regex</button>
+                <button class="day-btn" data-day="python-ref-concurrency">Concurrency</button>
+                <button class="day-btn" data-day="python-ref-interview">Interview Q&amp;A</button>
+                <button class="day-btn" data-day="python-ref-libraries">Common Libraries</button>
+                <button class="day-btn" data-day="python-ref-gotchas">Gotchas &amp; Pitfalls</button>
+                <button class="day-btn" data-day="python-ref-tables">Quick Reference Tables</button>
+            </div>
+
+            <!-- ─── MAIN CONTENT ─── -->
+            <div class="main-content">
+
+                <!-- ========================================================== -->
+                <!-- 1. LANGUAGE FUNDAMENTALS                                   -->
+                <!-- ========================================================== -->
+                <div id="python-ref-fundamentals" class="day-content active">
+                    <h2>📘 Python Language Fundamentals</h2>
+
+                    <h3>Data Types</h3>
+                    <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
+                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Type</th><th style="padding:8px; border:1px solid #ddd;">Description</th><th style="padding:8px; border:1px solid #ddd;">Example</th></tr>
+                        <tr><td><code>int</code></td><td>Whole numbers</td><td><code>x = 42</code></td></tr>
+                        <tr><td><code>float</code></td><td>Decimal numbers</td><td><code>pi = 3.14</code></td></tr>
+                        <tr><td><code>str</code></td><td>Text (immutable)</td><td><code>s = "Hello"</code></td></tr>
+                        <tr><td><code>bool</code></td><td>True / False</td><td><code>flag = True</code></td></tr>
+                        <tr><td><code>list</code></td><td>Mutable, ordered</td><td><code>[1, 2, 3]</code></td></tr>
+                        <tr><td><code>tuple</code></td><td>Immutable, ordered</td><td><code>(1, 2, 3)</code></td></tr>
+                        <tr><td><code>set</code></td><td>Mutable, unordered, unique</td><td><code>{1, 2, 3}</code></td></tr>
+                        <tr><td><code>dict</code></td><td>Key-value pairs</td><td><code>{"a": 1, "b": 2}</code></td></tr>
+                        <tr><td><code>NoneType</code></td><td>Null value</td><td><code>None</code></td></tr>
+                    </table>
+
+                    <h3>Variables &amp; Naming</h3>
+                    <ul>
+                        <li><strong>snake_case</strong> – recommended for variables/functions.</li>
+                        <li><strong>Dynamic typing</strong> – variable can change type.</li>
+                        <li><strong>Type hints (Python 3.5+)</strong> – optional but recommended.</li>
+                    </ul>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># Dynamic typing
+x = 10          # int
+x = "Hello"     # str (reassigned)
+
+# Type hints
+def add(a: int, b: int) -> int:
+    return a + b</code></pre>
+                    </div>
+
+                    <div class="callout"><strong>💡 Key Points:</strong> Everything in Python is an object. Immutable types: int, float, str, tuple, frozenset. Mutable: list, set, dict.</div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 2. CONTROL FLOW                                            -->
+                <!-- ========================================================== -->
+                <div id="python-ref-controlflow" class="day-content">
+                    <h2>🔄 Control Flow</h2>
+
+                    <h3>Conditionals</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># if-elif-else
+if condition:
+    # ...
+elif other:
+    # ...
+else:
+    # ...
+
+# Ternary
+result = "Yes" if condition else "No"
+
+# Pattern matching (Python 3.10+)
+match value:
+    case 1:
+        print("One")
+    case 2:
+        print("Two")
+    case _:
+        print("Other")</code></pre>
+                    </div>
+
+                    <h3>Loops</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># for
+for i in range(10):
+    print(i)
+
+# for over iterable
+for item in collection:
+    print(item)
+
+# while
+while condition:
+    # ...
+
+# break, continue, else (else runs if no break)</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 3. FUNCTIONS                                               -->
+                <!-- ========================================================== -->
+                <div id="python-ref-functions" class="day-content">
+                    <h2>⚙️ Functions</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">def greet(name: str) -> str:
+    return f"Hello, {name}"
+
+# Default arguments
+def power(base, exp=2):
+    return base ** exp
+
+# *args (variable positional)
+def sum_all(*args):
+    return sum(args)
+
+# **kwargs (variable keyword)
+def print_info(**kwargs):
+    for k, v in kwargs.items():
+        print(f"{k}: {v}")
+
+# Positional-only (/), keyword-only (*)
+def func(a, b, /, c, *, d):
+    # a,b positional-only, c positional/keyword, d keyword-only</code></pre>
+                    </div>
+
+                    <ul>
+                        <li><strong>Scope:</strong> Local (inside function) vs Global (<code>global</code> keyword).</li>
+                        <li><strong>Nested functions:</strong> <code>nonlocal</code> for closure variables.</li>
+                    </ul>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 4. OOP – CLASSES & OBJECTS                                 -->
+                <!-- ========================================================== -->
+                <div id="python-ref-oop-classes" class="day-content">
+                    <h2>🏗️ OOP – Classes &amp; Objects</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">class Person:
+    # Class attribute (shared)
+    species = "Homo sapiens"
+
+    def __init__(self, name: str, age: int):
+        self.name = name      # Instance attribute
+        self._age = age       # Convention: protected
+
+    def greet(self) -> str:
+        return f"Hello, {self.name}"
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError("Age cannot be negative")
+        self._age = value
+
+# Usage
+p = Person("Alice", 30)
+print(p.greet())  # Hello, Alice
+print(p.age)      # 30</code></pre>
+                    </div>
+
+                    <ul>
+                        <li><strong>Encapsulation:</strong> <code>_</code> (protected), <code>__</code> (name mangling).</li>
+                        <li><strong>Properties:</strong> <code>@property</code>, <code>@setter</code>, <code>@deleter</code>.</li>
+                        <li><strong>Dataclasses:</strong> <code>@dataclass</code> (Python 3.7+) for boilerplate reduction.</li>
+                    </ul>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 5. INHERITANCE & POLYMORPHISM                             -->
+                <!-- ========================================================== -->
+                <div id="python-ref-oop-inheritance" class="day-content">
+                    <h2>🧬 Inheritance &amp; Polymorphism</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">class Animal:
+    def sound(self):
+        raise NotImplementedError
+
+class Dog(Animal):
+    def sound(self):
+        return "Woof"
+
+class Cat(Animal):
+    def sound(self):
+        return "Meow"
+
+# Polymorphism
+def make_sound(animal: Animal):
+    print(animal.sound())
+
+# Multiple inheritance
+class Flyable:
+    def fly(self):
+        return "Flying"
+
+class Duck(Animal, Flyable):
+    pass</code></pre>
+                    </div>
+
+                    <ul>
+                        <li><strong>MRO (Method Resolution Order):</strong> <code>ClassName.__mro__</code>.</li>
+                        <li><strong><code>super()</code>:</strong> Calls parent class method.</li>
+                    </ul>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 6. ABSTRACTION & MAGIC METHODS                            -->
+                <!-- ========================================================== -->
+                <div id="python-ref-oop-abstract" class="day-content">
+                    <h2>📐 Abstraction &amp; Magic Methods</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+# ─── Magic Methods ──────────────────────────────────────
+class Vector:
+    def __init__(self, x, y):
+        self.x = x; self.y = y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    def __str__(self):
+        return f"Vector({self.x}, {self.y})"
+
+    def __len__(self):
+        return 2</code></pre>
+                    </div>
+
+                    <ul>
+                        <li><strong>Common magic methods:</strong> <code>__init__</code>, <code>__str__</code>, <code>__repr__</code>, <code>__add__</code>, <code>__len__</code>, <code>__getitem__</code>.</li>
+                    </ul>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 7. EXCEPTIONS                                              -->
+                <!-- ========================================================== -->
+                <div id="python-ref-exceptions" class="day-content">
+                    <h2>⚠️ Exceptions</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print(f"Error: {e}")
+except Exception as e:
+    print(f"Generic: {e}")
+else:
+    print("No exception")
+finally:
+    print("Always runs")
+
+# Raising custom exceptions
+class CustomError(Exception):
+    pass
+
+raise CustomError("Something went wrong")</code></pre>
+                    </div>
+
+                    <ul>
+                        <li><strong>Built‑in exceptions:</strong> <code>ValueError</code>, <code>TypeError</code>, <code>IndexError</code>, <code>KeyError</code>, <code>FileNotFoundError</code>.</li>
+                    </ul>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 8. COLLECTIONS                                             -->
+                <!-- ========================================================== -->
+                <div id="python-ref-collections" class="day-content">
+                    <h2>📊 Collections (list, tuple, set, dict)</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># List – mutable, ordered
+lst = [1, 2, 3]
+lst.append(4)
+lst.pop()
+
+# Tuple – immutable, ordered
+tup = (1, 2, 3)
+
+# Set – mutable, unordered, unique
+s = {1, 2, 3}
+s.add(4)
+s.discard(2)
+
+# Dict – key-value pairs
+d = {"a": 1, "b": 2}
+d.get("c", 0)  # default 0
+d.items()      # (key, value) pairs
+
+# collections module
+from collections import defaultdict, Counter, deque
+dd = defaultdict(int)
+dd["apple"] += 1
+
+cnt = Counter("hello")
+# Counter({'l': 2, 'h': 1, 'e': 1, 'o': 1})</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 9. COMPREHENSIONS                                          -->
+                <!-- ========================================================== -->
+                <div id="python-ref-comprehensions" class="day-content">
+                    <h2>🌀 Comprehensions</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># List comprehension
+squares = [x**2 for x in range(10)]
+evens = [x for x in range(10) if x % 2 == 0]
+
+# Dict comprehension
+square_dict = {x: x**2 for x in range(5)}
+
+# Set comprehension
+unique = {x for x in [1, 1, 2, 3, 3]}
+
+# Generator comprehension (lazy)
+gen = (x**2 for x in range(10))
+
+# Nested comprehension
+matrix = [[1,2], [3,4]]
+flat = [num for row in matrix for num in row]</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 10. LAMBDAS & FUNCTIONAL TOOLS                             -->
+                <!-- ========================================================== -->
+                <div id="python-ref-lambdas" class="day-content">
+                    <h2>🔀 Lambdas &amp; Functional Tools</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># Lambda – anonymous function
+square = lambda x: x**2
+
+# map
+list(map(lambda x: x**2, [1,2,3]))  # [1,4,9]
+
+# filter
+list(filter(lambda x: x > 2, [1,2,3,4]))  # [3,4]
+
+# reduce (from functools)
+from functools import reduce
+reduce(lambda a,b: a+b, [1,2,3,4])  # 10
+
+# sorted with key
+sorted(["apple", "banana", "cherry"], key=len)</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 11. DECORATORS                                             -->
+                <!-- ========================================================== -->
+                <div id="python-ref-decorators" class="day-content">
+                    <h2>🎨 Decorators</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">from functools import wraps
+
+def timer(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        import time
+        start = time.time()
+        result = func(*args, **kwargs)
+        print(f"Elapsed: {time.time() - start:.4f}s")
+        return result
+    return wrapper
+
+@timer
+def slow_function():
+    time.sleep(1)
+
+# ─── Decorator with arguments ────────────────────────────
+def repeat(times):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for _ in range(times):
+                result = func(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator
+
+@repeat(3)
+def hello():
+    print("Hello")</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 12. GENERATORS & ITERATORS                                 -->
+                <!-- ========================================================== -->
+                <div id="python-ref-generators" class="day-content">
+                    <h2>⚡ Generators &amp; Iterators</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># Generator function (yield)
+def count_up_to(n):
+    i = 0
+    while i <= n:
+        yield i
+        i += 1
+
+for num in count_up_to(5):
+    print(num)
+
+# Generator expression
+gen = (x**2 for x in range(10))
+
+# send() – bidirectional
+def accumulator():
+    total = 0
+    while True:
+        value = yield total
+        if value is None:
+            break
+        total += value
+
+# Custom iterator
+class Fibonacci:
+    def __init__(self, limit):
+        self.limit = limit
+        self.a, self.b = 0, 1
+        self.n = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.n >= self.limit:
+            raise StopIteration
+        self.n += 1
+        result = self.a
+        self.a, self.b = self.b, self.a + self.b
+        return result</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 13. CONTEXT MANAGERS                                       -->
+                <!-- ========================================================== -->
+                <div id="python-ref-contextmanagers" class="day-content">
+                    <h2>📦 Context Managers</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># with statement
+with open("file.txt", "r") as f:
+    content = f.read()
+
+# Custom context manager (class)
+class ManagedFile:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
+
+# contextlib
+from contextlib import contextmanager
+
+@contextmanager
+def temporary_change(x):
+    original = x
+    try:
+        yield x * 2
+    finally:
+        print(f"Restored: {original}")</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 14. FILE I/O                                               -->
+                <!-- ========================================================== -->
+                <div id="python-ref-io" class="day-content">
+                    <h2>📂 File I/O</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># Reading text
+with open("file.txt", "r") as f:
+    content = f.read()
+    # Or line by line:
+    for line in f:
+        print(line)
+
+# Writing
+with open("file.txt", "w") as f:
+    f.write("Hello")
+
+# CSV
+import csv
+with open("data.csv", "r") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
+
+# JSON
+import json
+with open("data.json", "r") as f:
+    data = json.load(f)
+
+# File system (os, shutil, pathlib)
+from pathlib import Path
+p = Path("folder/file.txt")
+p.exists()
+p.read_text()
+p.write_text("Hello")</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 15. DATE & TIME                                            -->
+                <!-- ========================================================== -->
+                <div id="python-ref-datetime" class="day-content">
+                    <h2>🗓️ Date &amp; Time</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">from datetime import datetime, date, time, timedelta
+
+# Current
+now = datetime.now()
+today = date.today()
+
+# Formatting
+formatted = now.strftime("%Y-%m-%d %H:%M")
+
+# Parsing
+parsed = datetime.strptime("2025-01-15", "%Y-%m-%d")
+
+# Arithmetic
+tomorrow = today + timedelta(days=1)
+yesterday = today - timedelta(days=1)
+
+# Difference
+diff = (now - parsed).days
+
+# time module
+import time
+time.sleep(1)
+start = time.perf_counter()
+# ...
+end = time.perf_counter()</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 16. REGEX                                                  -->
+                <!-- ========================================================== -->
+                <div id="python-ref-regex" class="day-content">
+                    <h2>🔍 Regex (re module)</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">import re
+
+text = "The price is $12.99 and $10.00"
+
+# findall
+numbers = re.findall(r'\d+\.\d{2}', text)  # ['12.99', '10.00']
+
+# search
+match = re.search(r'\$(\d+\.\d{2})', text)
+if match:
+    print(match.group(1))  # 12.99
+
+# sub
+new_text = re.sub(r'\d+\.\d{2}', 'XX.XX', text)
+
+# split
+parts = re.split(r'\s+', text)
+
+# Named groups
+pattern = r'(?P<first>\w+)\s+(?P<last>\w+)'
+match = re.search(pattern, "John Doe")
+match.group('first')  # John</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 17. CONCURRENCY                                            -->
+                <!-- ========================================================== -->
+                <div id="python-ref-concurrency" class="day-content">
+                    <h2>⚡ Concurrency (threading, asyncio, multiprocessing)</h2>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># ─── threading (I/O-bound) ────────────────────────────────
+import threading
+
+def worker(name):
+    print(f"Worker {name}")
+
+threads = []
+for i in range(5):
+    t = threading.Thread(target=worker, args=(i,))
+    threads.append(t)
+    t.start()
+for t in threads:
+    t.join()
+
+# ─── asyncio (high-concurrency I/O) ──────────────────────
+import asyncio
+
+async def fetch_data(delay):
+    await asyncio.sleep(delay)
+    return "data"
+
+async def main():
+    results = await asyncio.gather(
+        fetch_data(1), fetch_data(2), fetch_data(3)
+    )
+    print(results)
+
+asyncio.run(main())
+
+# ─── multiprocessing (CPU-bound) ──────────────────────────
+from multiprocessing import Pool
+
+def cpu_intensive(n):
+    return sum(i*i for i in range(n))
+
+with Pool(processes=4) as pool:
+    results = pool.map(cpu_intensive, [100000, 200000])</code></pre>
+                    </div>
+
+                    <ul>
+                        <li><strong>threading:</strong> I/O-bound tasks (GIL limits CPU).</li>
+                        <li><strong>asyncio:</strong> High-concurrency I/O (single-threaded event loop).</li>
+                        <li><strong>multiprocessing:</strong> CPU-bound tasks (true parallelism).</li>
+                    </ul>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 18. COMMON LIBRARIES                                       -->
+                <!-- ========================================================== -->
+                <div id="python-ref-libraries" class="day-content">
+                    <h2>📚 Common Libraries</h2>
+
+                    <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
+                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Library</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
+                        <tr><td><code>requests</code></td><td>HTTP client – API calls, web scraping.</td></tr>
+                        <tr><td><code>pandas</code></td><td>Data analysis and manipulation.</td></tr>
+                        <tr><td><code>numpy</code></td><td>Numerical computing (arrays, maths).</td></tr>
+                        <tr><td><code>matplotlib</code></td><td>Plotting and visualisation.</td></tr>
+                        <tr><td><code>scikit-learn</code></td><td>Classical machine learning.</td></tr>
+                        <tr><td><code>pytorch</code> / <code>tensorflow</code></td><td>Deep learning.</td></tr>
+                        <tr><td><code>fastapi</code> / <code>flask</code></td><td>Web frameworks.</td></tr>
+                        <tr><td><code>sqlalchemy</code></td><td>SQL ORM and toolkit.</td></tr>
+                        <tr><td><code>pytest</code></td><td>Testing framework.</td></tr>
+                        <tr><td><code>uv</code></td><td>Fast package manager (modern alternative to pip/poetry).</td></tr>
+                    </table>
+                </div>
+
+
+                <!-- ========================================================== -->
+                <!-- 21. INTERVIEW Q&A                                          -->
+                <!-- ========================================================== -->
+                <div id="python-ref-interview" class="day-content">
+                    <h2>120 Most Common &amp; Important Python Interview Questions</h2>
+
+                    <embed
+                            src="assets/pdf/SkillForge-Python-Mastery.pdf"
+                            type="application/pdf"
+                            width="100%"
+                            height="1000"
+                            title="Embedded PDF Viewer"
+                    />
+
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 19. GOTCHAS & PITFALLS                                     -->
+                <!-- ========================================================== -->
+                <div id="python-ref-gotchas" class="day-content">
+                    <h2>⚠️ Common Gotchas &amp; Pitfalls</h2>
+
+                    <ul>
+                        <li><strong>Mutable default arguments:</strong> <code>def func(lst=[]):</code> – list persists across calls.</li>
+                        <li><strong>Late binding closures:</strong> lambdas in loops capture the loop variable by reference.</li>
+                        <li><strong><code>==</code> vs <code>is</code>:</strong> <code>==</code> compares values; <code>is</code> compares object identity.</li>
+                        <li><strong>Floating-point precision:</strong> <code>0.1 + 0.2 != 0.3</code> – use <code>decimal.Decimal</code> for money.</li>
+                        <li><strong>Modifying list while iterating:</strong> Use a copy or iterate over <code>list[:]</code>.</li>
+                        <li><strong>Shallow vs deep copy:</strong> <code>copy.copy()</code> vs <code>copy.deepcopy()</code>.</li>
+                        <li><strong><code>try-except</code> swallowing exceptions:</strong> Always log or re-raise.</li>
+                        <li><strong>Using <code>list</code>, <code>dict</code> as variable names:</strong> Shadows built-in types.</li>
+                        <li><strong>Global vs local variable confusion:</strong> Use <code>global</code> or <code>nonlocal</code> explicitly.</li>
+                    </ul>
+
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python"># ─── Mutable default ──────────────────────────────────────
+def add_to_list(item, lst=[]):
+    lst.append(item)
+    return lst
+
+print(add_to_list(1))  # [1]
+print(add_to_list(2))  # [1, 2]  ← surprising!
+
+# ─── Fix ──────────────────────────────────────────────────
+def add_to_list_fixed(item, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(item)
+    return lst
+
+# ─── Late binding closures ──────────────────────────────
+funcs = []
+for i in range(3):
+    funcs.append(lambda: i)  # all return 2
+
+funcs = []
+for i in range(3):
+    funcs.append(lambda x=i: x)  # correct</code></pre>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 20. QUICK REFERENCE TABLES                                 -->
+                <!-- ========================================================== -->
+                <div id="python-ref-tables" class="day-content">
+                    <h2>📋 Quick Reference Tables</h2>
+
+                    <h3>Common Built-in Functions</h3>
+                    <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
+                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Function</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
+                        <tr><td><code>len()</code></td><td>Get length.</td></tr>
+                        <tr><td><code>type()</code></td><td>Get type.</td></tr>
+                        <tr><td><code>int()</code>, <code>float()</code>, <code>str()</code></td><td>Type casting.</td></tr>
+                        <tr><td><code>sorted()</code></td><td>Return sorted list.</td></tr>
+                        <tr><td><code>enumerate()</code></td><td>Index-value pairs.</td></tr>
+                        <tr><td><code>zip()</code></td><td>Pair elements from multiple iterables.</td></tr>
+                        <tr><td><code>any()</code>, <code>all()</code></td><td>Boolean checks.</td></tr>
+                        <tr><td><code>help()</code></td><td>Interactive help.</td></tr>
+                        <tr><td><code>dir()</code></td><td>List attributes.</td></tr>
+                    </table>
+
+                    <h3>Common Decorators</h3>
+                    <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
+                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Decorator</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
+                        <tr><td><code>@staticmethod</code></td><td>Static method (no <code>self</code>).</td></tr>
+                        <tr><td><code>@classmethod</code></td><td>Class method (<code>cls</code> as first arg).</td></tr>
+                        <tr><td><code>@property</code></td><td>Create getter method.</td></tr>
+                        <tr><td><code>@abstractmethod</code></td><td>Abstract method (from <code>abc</code>).</td></tr>
+                        <tr><td><code>@dataclass</code></td><td>Data class generator.</td></tr>
+                        <tr><td><code>@functools.cache</code></td><td>Memoization.</td></tr>
+                    </table>
+
+                    <h3>Common Python Libraries by Category</h3>
+                    <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
+                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Category</th><th style="padding:8px; border:1px solid #ddd;">Libraries</th></tr>
+                        <tr><td>Web</td><td><code>FastAPI</code>, <code>Flask</code>, <code>Django</code></td></tr>
+                        <tr><td>Data Science</td><td><code>pandas</code>, <code>numpy</code>, <code>scipy</code></td></tr>
+                        <tr><td>Visualisation</td><td><code>matplotlib</code>, <code>seaborn</code>, <code>plotly</code></td></tr>
+                        <tr><td>ML / AI</td><td><code>scikit-learn</code>, <code>pytorch</code>, <code>tensorflow</code>, <code>transformers</code></td></tr>
+                        <tr><td>Testing</td><td><code>pytest</code>, <code>unittest</code></td></tr>
+                        <tr><td>CLI</td><td><code>click</code>, <code>typer</code></td></tr>
+                        <tr><td>HTTP</td><td><code>requests</code>, <code>httpx</code></td></tr>
+                        <tr><td>Database</td><td><code>sqlalchemy</code>, <code>psycopg2</code></td></tr>
+                    </table>
+
+                    <h3>Development Tools</h3>
+                    <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
+                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Tool</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
+                        <tr><td><code>pip</code> / <code>uv</code></td><td>Package management.</td></tr>
+                        <tr><td><code>venv</code></td><td>Virtual environment.</td></tr>
+                        <tr><td><code>black</code></td><td>Code formatter.</td></tr>
+                        <tr><td><code>ruff</code></td><td>Fast linter (replaces flake8, isort, etc.).</td></tr>
+                        <tr><td><code>mypy</code></td><td>Type checker.</td></tr>
+                        <tr><td><code>pre-commit</code></td><td>Git hooks.</td></tr>
+                    </table>
+                </div>
+
+            </div><!-- /main-content -->
+        </div><!-- /content-area -->
+    </div>
 
     <!-- ====== LIBRARIES SECTION (non-day, full‑width) ====== -->
     <div id="libraries" class="phase-section">
