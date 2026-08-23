@@ -4,8 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>100-Day Python Roadmap · SkillForge</title>
-    <base href="/" />
-
     <!-- Prism Core CSS -->
     <link
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
@@ -16,25 +14,34 @@
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
             rel="stylesheet"
     />
+
+    <!-- base setup -->
+    <!--  For Production-->
+    <base href="/" />
+    <!--For Local -->
+    <!--    <base href="/skill-forge-learning/" />-->
+
+    <!-- Shared CSS + roadmap-specific CSS -->
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="stylesheet" href="assets/css/roadmap-style.css"/>
 
 </head>
 <body>
 
+<!-- ========== HEADER ========== -->
 <header>
     <div class="container nav">
         <a href="/"><div class="logo">Skill<span>Forge</span></div></a>
         <div>
             <a href="/">Home</a>
             <a href="/python-roadmap/" class="active">🐍 Python</a>
-            <a href="/java-roadmap/" style="opacity:0.5;">☕ Java</a>
-            <a href="#" style="opacity:0.5;">DAS (soon)</a>
-            <a href="#" style="opacity:0.5;">SQL (soon)</a>
+            <a href="/java-roadmap/">☕ Java</a>
+            <a href="/sql-roadmap/">🗄️SQL</a>
+            <a href="/dsa-roadmap/">📊 DSA</a>
         </div>
     </div>
 </header>
-<div  class="page-title">
+<div class="page-title">
     <h1>🐍 100‑Day Python Mastery</h1>
     <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
         Setting Up Your Environment
@@ -44,220 +51,181 @@
 
     <!-- ====== PHASE TABS ====== -->
     <div class="phase-tabs">
-        <button class="tab-btn active" data-phase="prerequisite">Prerequisite</button>
-        <button class="tab-btn" data-phase="phase1">Foundations</button>
-        <button class="tab-btn" data-phase="phase2">Data &amp; OOP</button>
-        <button class="tab-btn" data-phase="phase3">Advanced</button>
-        <button class="tab-btn" data-phase="phase4">Expert</button>
-        <button class="tab-btn" data-phase="phase5">MCQ</button>
-        <button class="tab-btn" data-phase="phase6">AI & Data</button>
-        <button class="tab-btn" data-phase="phase7">Quick Ref</button>
-        <button class="tab-btn" data-phase="libraries">Libraries</button>
+        <button class="tab-btn active" data-phase="phase1">Prerequisite</button>
+        <button class="tab-btn" data-phase="phase2">Foundations</button>
+        <button class="tab-btn" data-phase="phase3">Data &amp; OOP</button>
+        <button class="tab-btn" data-phase="phase4">Advanced</button>
+        <button class="tab-btn" data-phase="phase5">Expert</button>
+        <button class="tab-btn" data-phase="phase6">MCQ</button>
+        <button class="tab-btn" data-phase="phase7">AI & Data</button>
+        <button class="tab-btn" data-phase="phase8">Quick Ref</button>
+        <button class="tab-btn" data-phase="phase9">Libraries</button>
 
     </div>
 
     <!-- ========================================================== -->
-    <!-- PREREQUISITE SECTION                                       -->
+    <!-- PHASE 1 - PREREQUISITE SECTION                             -->
     <!-- ========================================================== -->
-    <div id="prerequisite" class="phase-section active">
-        <div class="content-area">
-
-            <!-- ─── SIDEBAR ─── -->
-            <div class="day-sidebar">
-                <h3>Prerequisite Setups</h3>
-                <button class="day-btn active" data-day="setup">Python – Setup</button>
-                <button class="day-btn" data-day="vs-code-setup">VS Code – Setup</button>
-                <button class="day-btn" data-day="sqlite3-setup"> SQLite3 – Setup</button>
-                <button class="day-btn" data-day="git-setup">Git – Setup</button>
-                <button class="day-btn" data-day="uv-setup">uv – Setup</button>
-                <button class="day-btn" data-day="final-checklist">Final Checklist</button>
-                <button class="day-btn" data-day="trouble-shooting"> Trouble Shooting</button>
-            </div>
-
-            <!-- ─── MAIN CONTENT ─── -->
-            <div class="main-content">
-
-                <!-- 1️⃣ PYTHON -->
-                <div id="python-setup" class="day-content active">
-                    <h2>1️⃣ Install Python (3.10 or later)</h2>
-                    <p>Python is the core of this training. We recommend the latest stable version (3.11 or
-                        3.12).</p>
-
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>🖥️ Windows</strong>
-                            <ol style="margin:0.5rem 0 0 1.2rem;">
-                                <li>Download the installer from <a href="https://python.org"
-                                                                   target="_blank">python.org</a>.
-                                </li>
-                                <li><strong>Check</strong> “Add Python to PATH” during installation.</li>
-                                <li>Select “Install Now” (or customise installation).</li>
-                                <li>Verify installation:</li>
-                            </ol>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash">python --version
+    <div id="phase1" class="phase-section active">
+        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
+            <h2>1️⃣ Install Python (3.10 or later)</h2>
+            <p>Python is the core of this training. We recommend the latest stable version (3.11 or 3.12).</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>🖥️ Windows</strong>
+                    <ol style="margin:0.5rem 0 0 1.2rem;">
+                        <li>Download the installer from <a href="https://python.org" target="_blank">python.org</a>.
+                        </li>
+                        <li><strong>Check</strong> “Add Python to PATH” during installation.</li>
+                        <li>Select “Install Now” (or customise installation).</li>
+                        <li>Verify installation:</li>
+                    </ol>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">python --version
 pip --version</code></pre>
-                            </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and
-                                <code>pip
-                                    24.x</code></p>
-                        </div>
+                    </div>
+                    <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and <code>pip
+                        24.x</code></p>
+                </div>
 
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>🍎 macOS</strong>
-                            <ol style="margin:0.5rem 0 0 1.2rem;">
-                                <li>Download from <a href="https://python.org" target="_blank">python.org</a>
-                                    (recommended).
-                                </li>
-                                <li>Alternatively, use <code>brew install python</code>.</li>
-                                <li>Verify:</li>
-                            </ol>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash">python3 --version
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>🍎 macOS</strong>
+                    <ol style="margin:0.5rem 0 0 1.2rem;">
+                        <li>Download from <a href="https://python.org" target="_blank">python.org</a> (recommended).
+                        </li>
+                        <li>Alternatively, use <code>brew install python</code>.</li>
+                        <li>Verify:</li>
+                    </ol>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">python3 --version
 pip3 --version</code></pre>
-                            </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
-                                <code>pip3</code>
-                                by default.</p>
-                        </div>
+                    </div>
+                    <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
+                        <code>pip3</code> by default.</p>
+                </div>
 
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:span 2;">
-                            <strong>🐧 Linux (Ubuntu/Debian)</strong>
-                            <ol style="margin:0.5rem 0 0 1.2rem;">
-                                <li>Update and install:</li>
-                            </ol>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash">sudo apt update
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:span 2;">
+                    <strong>🐧 Linux (Ubuntu/Debian)</strong>
+                    <ol style="margin:0.5rem 0 0 1.2rem;">
+                        <li>Update and install:</li>
+                    </ol>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">sudo apt update
 sudo apt install python3 python3-pip python3-venv -y
 python3 --version
 pip3 --version</code></pre>
-                            </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Most distributions include Python 3.10+ by
-                                default.</p>
-                        </div>
                     </div>
+                    <p style="font-size:0.9rem; color:#64748b;">Most distributions include Python 3.10+ by default.</p>
                 </div>
+            </div>
 
-                <!-- 2️⃣ VS CODE -->
-                <div id="vs-code-setup" class="day-content">
-                    <h2>2️⃣ Install VS Code (or your preferred editor)</h2>
-                    <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
+            <!-- ===== SECTION 2: VS CODE ===== -->
+            <h2 style="margin-top:2rem;">2️⃣ Install VS Code (or your preferred editor)</h2>
+            <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>📥 Download &amp; Install</strong>
-                            <ol style="margin:0.5rem 0 0 1.2rem;">
-                                <li>Go to <a href="https://code.visualstudio.com"
-                                             target="_blank">code.visualstudio.com</a>.
-                                </li>
-                                <li>Download the installer for your OS.</li>
-                                <li>Run the installer (keep default settings).</li>
-                                <li>Launch VS Code.</li>
-                            </ol>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>🧩 Recommended Extensions</strong>
-                            <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
-                                <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
-                                <li><strong>Pylance</strong> – fast language server.</li>
-                                <li><strong>Python Debugger</strong> – debug scripts.</li>
-                                <li><strong>Jupyter</strong> – optional for notebooks.</li>
-                                <li><strong>Prettier</strong> – optional formatter.</li>
-                                <li><strong>GitLens</strong> – optional Git integration.</li>
-                            </ul>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>📥 Download &amp; Install</strong>
+                    <ol style="margin:0.5rem 0 0 1.2rem;">
+                        <li>Go to <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a>.
+                        </li>
+                        <li>Download the installer for your OS.</li>
+                        <li>Run the installer (keep default settings).</li>
+                        <li>Launch VS Code.</li>
+                    </ol>
+                </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>🧩 Recommended Extensions</strong>
+                    <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
+                    <ul style="margin:0.2rem 0 0 1.2rem;">
+                        <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
+                        <li><strong>Pylance</strong> – fast language server.</li>
+                        <li><strong>Python Debugger</strong> – debug scripts.</li>
+                        <li><strong>Jupyter</strong> – optional for notebooks.</li>
+                        <li><strong>Prettier</strong> – optional formatter.</li>
+                        <li><strong>GitLens</strong> – optional Git integration.</li>
+                    </ul>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
 ext install ms-python.python
 ext install ms-python.vscode-pylance</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
-                        <strong>💡 Pro Tip:</strong> After installing the Python extension, press
-                        <kbd>Ctrl+Shift+P</kbd>,
-                        type “Python: Select Interpreter” and choose your installed Python version.
                     </div>
                 </div>
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
+                <strong>💡 Pro Tip:</strong> After installing the Python extension, press <kbd>Ctrl+Shift+P</kbd>, type
+                “Python: Select Interpreter” and choose your installed Python version.
+            </div>
 
-                <!-- 3️⃣ SQLITE3 -->
-                <div id="sqlite3-setup" class="day-content">
-                    <h2>3️⃣ SQLite3 (Built‑in, but verify)</h2>
-                    <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
+            <!-- ===== SECTION 3: SQLITE3 ===== -->
+            <h2 style="margin-top:2rem;">3️⃣ SQLite3 (Built‑in, but verify)</h2>
+            <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>🐍 Verify Python's SQLite</strong>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
-                            </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>🖥️ Standalone CLI (Optional)</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
-                                <li><strong>Windows:</strong> Download from <a
-                                        href="https://sqlite.org/download.html"
-                                        target="_blank">sqlite.org</a> and add to
-                                    PATH.
-                                </li>
-                                <li><strong>macOS/Linux:</strong> <code>brew install sqlite3</code> or <code>sudo
-                                    apt
-                                    install sqlite3</code>.
-                                </li>
-                            </ul>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
-                            </div>
-                        </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>🐍 Verify Python's SQLite</strong>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
+                    </div>
+                    <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
+                </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>🖥️ Standalone CLI (Optional)</strong>
+                    <ul style="margin:0.2rem 0 0 1.2rem;">
+                        <li><strong>Windows:</strong> Download from <a href="https://sqlite.org/download.html"
+                                                                       target="_blank">sqlite.org</a> and add to PATH.
+                        </li>
+                        <li><strong>macOS/Linux:</strong> <code>brew install sqlite3</code> or <code>sudo apt install
+                            sqlite3</code>.
+                        </li>
+                    </ul>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
                     </div>
                 </div>
+            </div>
 
-                <!-- 4️⃣ GIT -->
-                <div id="git-setup" class="day-content">
-                    <h2>4️⃣ Git – Version Control</h2>
-                    <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
+            <!-- ===== SECTION 4: GIT ===== -->
+            <h2 style="margin-top:2rem;">4️⃣ Git – Version Control</h2>
+            <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>📥 Installation</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
-                                <li><strong>Windows:</strong> <a href="https://git-scm.com"
-                                                                 target="_blank">git-scm.com</a></li>
-                                <li><strong>macOS:</strong> <code>brew install git</code></li>
-                                <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
-                            </ul>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
-                            </div>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                            <strong>⚙️ Initial Configuration</strong>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>📥 Installation</strong>
+                    <ul style="margin:0.2rem 0 0 1.2rem;">
+                        <li><strong>Windows:</strong> <a href="https://git-scm.com" target="_blank">git-scm.com</a></li>
+                        <li><strong>macOS:</strong> <code>brew install git</code></li>
+                        <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
+                    </ul>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
+                    </div>
+                </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <strong>⚙️ Initial Configuration</strong>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</code></pre>
-                            </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
-                        </div>
                     </div>
+                    <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
                 </div>
+            </div>
 
-                <!-- 5️⃣ UV -->
-                <div id="uv-setup" class="day-content">
-                    <h2>5️⃣ uv – Fast Package Manager (Optional)</h2>
-                    <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
-                        <div class="code-container">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
+            <!-- ===== SECTION 5: UV ===== -->
+            <h2 style="margin-top:2rem;">5️⃣ uv – Fast Package Manager (Optional)</h2>
+            <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
+            <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or via pip (slower but works everywhere)
@@ -265,105 +233,87 @@ pip install uv
 
 # Verify
 uv --version</code></pre>
-                        </div>
-                        <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> +
-                            <code>venv</code>,
-                            that’s perfectly fine – <code>uv</code> is optional.</p>
-                    </div>
                 </div>
+                <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> + <code>venv</code>, that’s
+                    perfectly fine – <code>uv</code> is optional.</p>
+            </div>
 
-                <!-- 6️⃣ FINAL CHECKLIST -->
-                <div id="final-checklist" class="day-content">
-                    <h2>✅ Final Checklist</h2>
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🐍</div>
-                            <strong>Python</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python
-                                --version</code>
-                            </p>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">📝</div>
-                            <strong>VS Code</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
-                                --version</code></p>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🗄️</div>
-                            <strong>SQLite3</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import
-                                sqlite3</code></p>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🔧</div>
-                            <strong>Git</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git
-                                --version</code></p>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">📦</div>
-                            <strong>uv / pip</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip
-                                --version</code></p>
-                        </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🌐</div>
-                            <strong>Browser</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
-                        </div>
-                    </div>
+            <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
+            <h2 style="margin-top:2rem;">✅ Final Checklist</h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                    <div style="font-size:2rem;">🐍</div>
+                    <strong>Python</strong>
+                    <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python --version</code></p>
                 </div>
-
-                <!-- 7️⃣ TROUBLESHOOTING -->
-                <div id="trouble-shooting" class="day-content">
-                    <h2>⚠️ Troubleshooting – Common Issues</h2>
-                    <ul style="margin:1rem 0 0 1.2rem;">
-                        <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”.
-                            Re‑run the installer and select that option.
-                        </li>
-                        <li><strong>“pip is not installed”:</strong> Run <code>python -m ensurepip</code>.</li>
-                        <li><strong>“command not found: code” (macOS/Linux):</strong> Open VS Code, press <kbd>Cmd+Shift+P</kbd>
-                            (macOS) / <kbd>Ctrl+Shift+P</kbd> (Linux), type “Shell Command: Install 'code' command
-                            in
-                            PATH”.
-                        </li>
-                        <li><strong>“sqlite3” module not found:</strong> Extremely rare – reinstall Python.</li>
-                        <li><strong>Permission errors:</strong> Use <code>python -m pip install --user
-                            package_name</code> or use a virtual environment.
-                        </li>
-                    </ul>
-
-                    <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
-                        <strong>🎉 You're all set!</strong> Once these tools are installed, you have everything you
-                        need
-                        to complete the full 100‑day roadmap. Open your terminal, launch VS Code, and start with Day
-                        1.
-                        Happy coding!
-                    </div>
-
-                    <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
-                        <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ Ready to Code</span>
-                        <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 100 Days Ahead</span>
-                    </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                    <div style="font-size:2rem;">📝</div>
+                    <strong>VS Code</strong>
+                    <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
+                        --version</code></p>
                 </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                    <div style="font-size:2rem;">🗄️</div>
+                    <strong>SQLite3</strong>
+                    <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import sqlite3</code></p>
+                </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                    <div style="font-size:2rem;">🔧</div>
+                    <strong>Git</strong>
+                    <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git --version</code>
+                    </p>
+                </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                    <div style="font-size:2rem;">📦</div>
+                    <strong>uv / pip</strong>
+                    <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip --version</code>
+                    </p>
+                </div>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                    <div style="font-size:2rem;">🌐</div>
+                    <strong>Browser</strong>
+                    <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
+                </div>
+            </div>
 
-            </div><!-- /main-content -->
-        </div><!-- /content-area -->
-    </div><!-- /prerequisite -->
+            <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
+            <h2 style="margin-top:2rem;">⚠️ Troubleshooting – Common Issues</h2>
+            <ul style="margin:1rem 0 0 1.2rem;">
+                <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”. Re‑run the
+                    installer and select that option.
+                </li>
+                <li><strong>“pip is not installed”:</strong> Run <code>python -m ensurepip</code>.</li>
+                <li><strong>“command not found: code” (macOS/Linux):</strong> Open VS Code, press <kbd>Cmd+Shift+P</kbd>
+                    (macOS) / <kbd>Ctrl+Shift+P</kbd> (Linux), type “Shell Command: Install 'code' command in PATH”.
+                </li>
+                <li><strong>“sqlite3” module not found:</strong> Extremely rare – reinstall Python.</li>
+                <li><strong>Permission errors:</strong> Use <code>python -m pip install --user package_name</code> or
+                    use a virtual environment.
+                </li>
+            </ul>
 
+            <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
+                <strong>🎉 You're all set!</strong> Once these tools are installed, you have everything you need to
+                complete the full 100‑day roadmap. Open your terminal, launch VS Code, and start with Day 1. Happy
+                coding!
+            </div>
+
+            <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
+                <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ Ready to Code</span>
+                <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 100 Days Ahead</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ============================================================ -->
-    <!-- PHASE 1 — COMPLETE CONTENT (Days 1–25)                       -->
+    <!-- PHASE 2 — COMPLETE CONTENT (Days 1–25)                       -->
     <!-- ============================================================ -->
-    <div id="phase1" class="phase-section">
-
+    <div id="phase2" class="phase-section">
         <div class="content-area">
-
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>Days 1 – 25</h3>
-                <button class="day-btn active" data-day="day1">Day 1 · Setup</button>
+                <button class="day-btn active" data-day="phase2DefaultActiveSideBar">Day 1 · Setup</button>
                 <button class="day-btn" data-day="day2">Day 2 · Variables</button>
                 <button class="day-btn" data-day="day3">Day 3 · Data Types</button>
                 <button class="day-btn" data-day="day4">Day 4 · Type Casting</button>
@@ -394,9 +344,8 @@ uv --version</code></pre>
 
             <!-- ─── MAIN CONTENT ─── -->
             <div class="main-content">
-
                 <!-- ========== DAY 1 ========== -->
-                <div id="day1" class="day-content active">
+                <div id="phase2DefaultActiveSideBar" class="day-content active">
                     <h2>Day 1: Setup &amp; Hello, World!</h2>
                     <p><strong>Goal:</strong> Install Python, set up your environment, and write your first program.
                     </p>
@@ -1795,15 +1744,15 @@ if __name__ == "__main__":
     </div><!-- /phase1 -->
 
     <!-- ============================================================ -->
-    <!-- PHASE 2 — COMPLETE CONTENT (Days 26–50)                       -->
+    <!-- PHASE 3 — COMPLETE CONTENT (Days 26–50)                       -->
     <!-- ============================================================ -->
-    <div id="phase2" class="phase-section">
+    <div id="phase3" class="phase-section">
         <div class="content-area">
 
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>Days 26 – 50</h3>
-                <button class="day-btn" data-day="day26">Day 26 · Lists (basics)</button>
+                <button class="day-btn" data-day="phase3DefaultActiveSideBar">Day 26 · Lists (basics)</button>
                 <button class="day-btn" data-day="day27">Day 27 · List methods</button>
                 <button class="day-btn" data-day="day28">Day 28 · List comprehensions</button>
                 <button class="day-btn" data-day="day29">Day 29 · Tuples</button>
@@ -1836,7 +1785,7 @@ if __name__ == "__main__":
             <div class="main-content">
 
                 <!-- ===== DAY 26 ===== -->
-                <div id="day26" class="day-content">
+                <div id="phase3DefaultActiveSideBar" class="day-content">
                     <h2>Day 26: Lists – The Workhorse</h2>
                     <p><strong>Concept:</strong> Lists are ordered, mutable sequences. They hold any type of data.
                     </p>
@@ -3050,15 +2999,14 @@ def save_data(self, filename="library.json"):
     </div><!-- /phase2 -->
 
     <!-- ============================================================ -->
-    <!-- PHASE 3 — COMPLETE CONTENT (Days 51–75)                       -->
+    <!-- PHASE 4 — COMPLETE CONTENT (Days 51–75)                       -->
     <!-- ============================================================ -->
-    <div id="phase3" class="phase-section">
+    <div id="phase4" class="phase-section">
         <div class="content-area">
-
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>Days 51 – 75</h3>
-                <button class="day-btn" data-day="day51">Day 51 · Decorators</button>
+                <button class="day-btn" data-day="phase4DefaultActiveSideBar">Day 51 · Decorators</button>
                 <button class="day-btn" data-day="day52">Day 52 · Decorators with args</button>
                 <button class="day-btn" data-day="day53">Day 53 · functools (wraps, cache)</button>
                 <button class="day-btn" data-day="day54">Day 54 · Context managers</button>
@@ -3093,7 +3041,7 @@ def save_data(self, filename="library.json"):
             <div class="main-content">
 
                 <!-- ===== DAY 51 ===== -->
-                <div id="day51" class="day-content">
+                <div id="phase4DefaultActiveSideBar" class="day-content">
                     <h2>Day 51: Decorators – Wrapping Functions</h2>
                     <p><strong>Concept:</strong> Decorators modify or extend the behavior of functions without
                         changing
@@ -5968,15 +5916,15 @@ $ cat output/weather_report.json | python -m json.tool
     </div><!-- /phase3 -->
 
     <!-- ============================================================ -->
-    <!-- PHASE 4 — COMPLETE CONTENT (Days 76–100)                       -->
+    <!-- PHASE 5 — COMPLETE CONTENT (Days 76–100)                     -->
     <!-- ============================================================ -->
-    <div id="phase4" class="phase-section">
+    <div id="phase5" class="phase-section">
         <div class="content-area">
 
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>Days 76 – 100</h3>
-                <button class="day-btn" data-day="day76">Day 76 · Singleton &amp; Factory</button>
+                <button class="day-btn" data-day="phase5DefaultActiveSideBar">Day 76 · Singleton &amp; Factory</button>
                 <button class="day-btn" data-day="day77">Day 77 · Observer &amp; Strategy</button>
                 <button class="day-btn" data-day="day78">Day 78 · Decorator &amp; Adapter</button>
                 <button class="day-btn" data-day="day79">Day 79 · Metaclasses</button>
@@ -6010,7 +5958,7 @@ $ cat output/weather_report.json | python -m json.tool
             <div class="main-content">
 
                 <!-- ===== DAY 76 ===== -->
-                <div id="day76" class="day-content">
+                <div id="phase5DefaultActiveSideBar" class="day-content">
                     <h2>Day 76: Design Patterns – Singleton &amp; Factory</h2>
                     <p><strong>Concept:</strong> Design patterns are reusable solutions to common problems.
                         Singleton
@@ -8618,12 +8566,14 @@ $ python test_speed.py            # measure the speedups</code></pre>
         </div><!-- /content-area -->
     </div><!-- /phase4 -->
 
-    <!-- PHASE 5 : MCQ-->
-    <div id="phase5" class="phase-section">
+    <!-- ============================================================ -->
+    <!-- PHASE 6 — MCQ                                                -->
+    <!-- ============================================================ -->
+    <div id="phase6" class="phase-section">
         <div class="content-area">
             <div class="day-sidebar">
                 <h3>MCQ</h3>
-                <button class="day-btn" data-day="mcq-intermediate">Intermediate</button>
+                <button class="day-btn" data-day="phase6DefaultActiveSideBar">Intermediate</button>
                 <button class="day-btn" data-day="mcq-expert">Expert</button>
                 <button class="day-btn" data-day="mcq-professional">Professional</button>
             </div>
@@ -8631,7 +8581,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                 <!-- ========================================================== -->
                 <!-- MCQ – INTERMEDIATE (Full 60 Questions)                     -->
                 <!-- ========================================================== -->
-                <div id="mcq-intermediate" class="day-content active">
+                <div id="phase6DefaultActiveSideBar" class="day-content active">
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ –
                         Intermediate Level</h2>
                     <p style="font-size:1.1rem; color:#4a5568;">60 questions covering Python syntax, data
@@ -10879,24 +10829,23 @@ $ python test_speed.py            # measure the speedups</code></pre>
     </div>
 
     <!-- ========================================================== -->
-    <!-- AI & DATA PHASE (Bonus Track)                              -->
+    <!-- PHASE 7 : AI & DATA PHASE (Bonus Track)                    -->
     <!-- ========================================================== -->
-    <div id="phase6" class="phase-section">
+    <div id="phase7" class="phase-section">
         <div class="content-area">
-
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>AI & Data Topics</h3>
-                <button class="day-btn active" data-day="intro">🤖 AI & Data Intro</button>
-                <button class="day-btn" data-day="pandas-deep">🐼 Pandas Deep Dive</button>
-                <button class="day-btn" data-day="visualisation">📊 Visualisation</button>
-                <button class="day-btn" data-day="sklearn">🧠 scikit‑learn</button>
-                <button class="day-btn" data-day="llm-apis">🔗 LLM APIs (Gemini/OpenAI)</button>
-                <button class="day-btn" data-day="langchain">🦜 LangChain Basics</button>
-                <button class="day-btn" data-day="rag">📚 RAG & Vector DBs</button>
-                <button class="day-btn" data-day="ai-agents">🤖 Agents & Tools</button>
-                <button class="day-btn" data-day="mlops">🚀 MLOps & Deployment</button>
-                <button class="day-btn" data-day="ai-project">🏆 Final AI Project</button>
+                <button class="day-btn active" data-day="phase7DefaultActiveSideBar">AI & Data Intro</button>
+                <button class="day-btn" data-day="pandas-deep">Pandas Deep Dive</button>
+                <button class="day-btn" data-day="visualisation">Visualisation</button>
+                <button class="day-btn" data-day="sklearn">scikit‑learn</button>
+                <button class="day-btn" data-day="llm-apis">LLM APIs (Gemini/OpenAI)</button>
+                <button class="day-btn" data-day="langchain">LangChain Basics</button>
+                <button class="day-btn" data-day="rag">RAG & Vector DBs</button>
+                <button class="day-btn" data-day="ai-agents">Agents & Tools</button>
+                <button class="day-btn" data-day="mlops">MLOps & Deployment</button>
+                <button class="day-btn" data-day="ai-project">Final AI Project</button>
             </div>
 
             <!-- ─── MAIN CONTENT ─── -->
@@ -10905,14 +10854,14 @@ $ python test_speed.py            # measure the speedups</code></pre>
                 <!-- ========================================================== -->
                 <!-- TOPIC 1: AI & DATA INTRO                                    -->
                 <!-- ========================================================== -->
-                <div id="ai-intro" class="day-content active">
-                    <h2>🤖 AI & Data – Bridging the Gap</h2>
+                <div id="phase7DefaultActiveSideBar" class="day-content active">
+                    <h2>AI & Data – Bridging the Gap</h2>
                     <p>This bonus track builds on your 100‑day foundation. You’ll apply your Python skills to the
                         modern
                         AI & Data ecosystem – from data wrangling to deploying LLM‑powered applications.</p>
 
                     <div style="background:#f0fdf4; border-left:4px solid #15803d; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
-                        <strong>📌 Prerequisite:</strong> You should have completed at least the first 60 days of the
+                        <strong>Prerequisite:</strong> You should have completed at least the first 60 days of the
                         roadmap (through OOP, functions, and basic file I/O). Knowledge of decorators and async
                         (Days
                         51–72) is helpful but not mandatory.
@@ -10934,7 +10883,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                 <!-- TOPIC 2: PANDAS DEEP DIVE                                   -->
                 <!-- ========================================================== -->
                 <div id="pandas-deep" class="day-content">
-                    <h2>🐼 Pandas Deep Dive – Data Wrangling Mastery</h2>
+                    <h2>Pandas Deep Dive – Data Wrangling Mastery</h2>
                     <p>Pandas is the Swiss Army knife for data analysis. You already know the basics – now let’s go
                         further.</p>
 
@@ -11008,7 +10957,7 @@ print(merged)</code></pre>
                 <!-- TOPIC 3: VISUALISATION                                      -->
                 <!-- ========================================================== -->
                 <div id="visualisation" class="day-content">
-                    <h2>📊 Data Visualisation – Matplotlib, Seaborn &amp; Plotly</h2>
+                    <h2>Data Visualisation – Matplotlib, Seaborn &amp; Plotly</h2>
                     <p>Visualisations tell the story behind the numbers. We’ll cover Matplotlib for static charts,
                         Seaborn for statistical plots, and Plotly for interactive dashboards.</p>
 
@@ -11069,7 +11018,7 @@ fig2.show()</code></pre>
                 <!-- TOPIC 4: SCIKIT‑LEARN                                        -->
                 <!-- ========================================================== -->
                 <div id="sklearn" class="day-content">
-                    <h2>🧠 scikit‑learn – Classical Machine Learning</h2>
+                    <h2>scikit‑learn – Classical Machine Learning</h2>
                     <p>scikit‑learn is the go‑to library for classical ML. We’ll build a classification pipeline
                         from
                         data prep to evaluation.</p>
@@ -11126,7 +11075,7 @@ plt.show()</code></pre>
                 <!-- TOPIC 5: LLM APIS (Gemini / OpenAI)                        -->
                 <!-- ========================================================== -->
                 <div id="llm-apis" class="day-content">
-                    <h2>🔗 LLM APIs – Gemini &amp; OpenAI</h2>
+                    <h2>LLM APIs – Gemini &amp; OpenAI</h2>
                     <p>Connect to state‑of‑the‑art LLMs via their APIs. We’ll cover prompt engineering, structured
                         output, and streaming.</p>
 
@@ -11194,7 +11143,7 @@ print(response.steps)</code></pre>
                 <!-- TOPIC 6: LANGCHAIN BASICS                                  -->
                 <!-- ========================================================== -->
                 <div id="langchain" class="day-content">
-                    <h2>🦜 LangChain Basics – Chains &amp; Prompts</h2>
+                    <h2>LangChain Basics – Chains &amp; Prompts</h2>
                     <p>LangChain helps you build LLM applications. We’ll start with prompt templates, chains, and
                         output
                         parsers.</p>
@@ -11246,7 +11195,7 @@ print(f"Word count: {result['word_count']}")</code></pre>
                 <!-- TOPIC 7: RAG & VECTOR DATABASES                           -->
                 <!-- ========================================================== -->
                 <div id="rag" class="day-content">
-                    <h2>📚 RAG &amp; Vector Databases – Semantic Search</h2>
+                    <h2>RAG &amp; Vector Databases – Semantic Search</h2>
                     <p>Retrieval Augmented Generation (RAG) combines search with LLMs. We’ll use Chroma and FAISS to
                         build a document Q&A system.</p>
 
@@ -11321,7 +11270,7 @@ print(answer['result'])</code></pre>
                 <!-- TOPIC 8: AI AGENTS & TOOLS                                 -->
                 <!-- ========================================================== -->
                 <div id="ai-agents" class="day-content">
-                    <h2>🤖 AI Agents &amp; Tools – Give LLMs Superpowers</h2>
+                    <h2>AI Agents &amp; Tools – Give LLMs Superpowers</h2>
                     <p>Agents let LLMs use tools like calculators, search engines, and APIs. We’ll build a simple
                         agent
                         with LangChain.</p>
@@ -11385,7 +11334,7 @@ print(result2["output"])</code></pre>
                 <!-- TOPIC 9: MLOPS & DEPLOYMENT                               -->
                 <!-- ========================================================== -->
                 <div id="mlops" class="day-content">
-                    <h2>🚀 MLOps &amp; Deployment – Taking Models to Production</h2>
+                    <h2>MLOps &amp; Deployment – Taking Models to Production</h2>
                     <p>Deploy your model as a REST API, monitor performance, and handle model drift.</p>
 
                     <div class="code-container">
@@ -11468,7 +11417,7 @@ async def metrics():
                 <!-- TOPIC 10: FINAL AI PROJECT                                  -->
                 <!-- ========================================================== -->
                 <div id="ai-project" class="day-content">
-                    <h2>🏆 Final AI Project – Build an End‑to‑End AI System</h2>
+                    <h2>Final AI Project – Build an End‑to‑End AI System</h2>
 
                     <div style="background:#f0fdf4; border-left:4px solid #15803d; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
                         <strong>🎯 Project Goal:</strong> Build a complete AI application that ingests documents,
@@ -11656,13 +11605,16 @@ curl -X POST http://localhost:8000/query -H "Content-Type: application/json" -d 
         </div><!-- /content-area -->
     </div><!-- /ai-data -->
 
-    <!-- ====== QUICK REVISION & REFERENCE GUIDE – PYTHON ====== -->
-    <div id="phase7" class="phase-section">
+    <!-- ========================================================== -->
+    <!-- PHASE 8 : QUICK REVISION & REFERENCE GUIDE                 -->
+    <!-- ========================================================== -->
+    <div id="phase8" class="phase-section">
         <div class="content-area">
             <!-- ─── SIDEBAR ─── -->
             <div class="day-sidebar">
                 <h3>Quick Reference</h3>
-                <button class="day-btn" data-day="fundamentals">Fundamentals</button>
+                <button class="day-btn" data-day="phase8DefaultActiveSideBar">Interview Q&amp;A</button>
+                <button class="day-btn" data-day="python-ref-fundamentals">Fundamentals</button>
                 <button class="day-btn" data-day="python-ref-controlflow">Control Flow</button>
                 <button class="day-btn" data-day="python-ref-functions">Functions</button>
                 <button class="day-btn" data-day="python-ref-oop-classes">OOP – Classes &amp; Objects</button>
@@ -11679,7 +11631,6 @@ curl -X POST http://localhost:8000/query -H "Content-Type: application/json" -d 
                 <button class="day-btn" data-day="python-ref-datetime">Date &amp; Time</button>
                 <button class="day-btn" data-day="python-ref-regex">Regex</button>
                 <button class="day-btn" data-day="python-ref-concurrency">Concurrency</button>
-                <button class="day-btn" data-day="python-ref-interview">Interview Q&amp;A</button>
                 <button class="day-btn" data-day="python-ref-libraries">Common Libraries</button>
                 <button class="day-btn" data-day="python-ref-gotchas">Gotchas &amp; Pitfalls</button>
                 <button class="day-btn" data-day="python-ref-tables">Quick Reference Tables</button>
@@ -11689,23 +11640,79 @@ curl -X POST http://localhost:8000/query -H "Content-Type: application/json" -d 
             <div class="main-content">
 
                 <!-- ========================================================== -->
-                <!-- 1. LANGUAGE FUNDAMENTALS                                   -->
+                <!-- 1. INTERVIEW Q&A                                          -->
                 <!-- ========================================================== -->
-                <div id="python-ref-fundamentals" class="day-content active">
+                <div id="phase8DefaultActiveSideBar" class="day-content active">
+                    <h2>120 Most Common &amp; Important Python Interview Questions</h2>
+
+                    <embed
+                            src="assets/pdf/SkillForge-Python-Mastery.pdf"
+                            type="application/pdf"
+                            width="100%"
+                            height="1000"
+                            title="Embedded PDF Viewer"
+                    />
+
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- 2. LANGUAGE FUNDAMENTALS                                   -->
+                <!-- ========================================================== -->
+                <div id="python-ref-fundamentals" class="day-content">
                     <h2>📘 Python Language Fundamentals</h2>
 
                     <h3>Data Types</h3>
                     <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
-                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Type</th><th style="padding:8px; border:1px solid #ddd;">Description</th><th style="padding:8px; border:1px solid #ddd;">Example</th></tr>
-                        <tr><td><code>int</code></td><td>Whole numbers</td><td><code>x = 42</code></td></tr>
-                        <tr><td><code>float</code></td><td>Decimal numbers</td><td><code>pi = 3.14</code></td></tr>
-                        <tr><td><code>str</code></td><td>Text (immutable)</td><td><code>s = "Hello"</code></td></tr>
-                        <tr><td><code>bool</code></td><td>True / False</td><td><code>flag = True</code></td></tr>
-                        <tr><td><code>list</code></td><td>Mutable, ordered</td><td><code>[1, 2, 3]</code></td></tr>
-                        <tr><td><code>tuple</code></td><td>Immutable, ordered</td><td><code>(1, 2, 3)</code></td></tr>
-                        <tr><td><code>set</code></td><td>Mutable, unordered, unique</td><td><code>{1, 2, 3}</code></td></tr>
-                        <tr><td><code>dict</code></td><td>Key-value pairs</td><td><code>{"a": 1, "b": 2}</code></td></tr>
-                        <tr><td><code>NoneType</code></td><td>Null value</td><td><code>None</code></td></tr>
+                        <tr style="background:#f1f5f9;">
+                            <th style="padding:8px; border:1px solid #ddd;">Type</th>
+                            <th style="padding:8px; border:1px solid #ddd;">Description</th>
+                            <th style="padding:8px; border:1px solid #ddd;">Example</th>
+                        </tr>
+                        <tr>
+                            <td><code>int</code></td>
+                            <td>Whole numbers</td>
+                            <td><code>x = 42</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>float</code></td>
+                            <td>Decimal numbers</td>
+                            <td><code>pi = 3.14</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>str</code></td>
+                            <td>Text (immutable)</td>
+                            <td><code>s = "Hello"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>bool</code></td>
+                            <td>True / False</td>
+                            <td><code>flag = True</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>list</code></td>
+                            <td>Mutable, ordered</td>
+                            <td><code>[1, 2, 3]</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>tuple</code></td>
+                            <td>Immutable, ordered</td>
+                            <td><code>(1, 2, 3)</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>set</code></td>
+                            <td>Mutable, unordered, unique</td>
+                            <td><code>{1, 2, 3}</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>dict</code></td>
+                            <td>Key-value pairs</td>
+                            <td><code>{"a": 1, "b": 2}</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>NoneType</code></td>
+                            <td>Null value</td>
+                            <td><code>None</code></td>
+                        </tr>
                     </table>
 
                     <h3>Variables &amp; Naming</h3>
@@ -11726,11 +11733,13 @@ def add(a: int, b: int) -> int:
     return a + b</code></pre>
                     </div>
 
-                    <div class="callout"><strong>💡 Key Points:</strong> Everything in Python is an object. Immutable types: int, float, str, tuple, frozenset. Mutable: list, set, dict.</div>
+                    <div class="callout"><strong>💡 Key Points:</strong> Everything in Python is an object. Immutable
+                        types: int, float, str, tuple, frozenset. Mutable: list, set, dict.
+                    </div>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 2. CONTROL FLOW                                            -->
+                <!-- 3. CONTROL FLOW                                            -->
                 <!-- ========================================================== -->
                 <div id="python-ref-controlflow" class="day-content">
                     <h2>🔄 Control Flow</h2>
@@ -11779,7 +11788,7 @@ while condition:
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 3. FUNCTIONS                                               -->
+                <!-- 4. FUNCTIONS                                               -->
                 <!-- ========================================================== -->
                 <div id="python-ref-functions" class="day-content">
                     <h2>⚙️ Functions</h2>
@@ -11808,13 +11817,14 @@ def func(a, b, /, c, *, d):
                     </div>
 
                     <ul>
-                        <li><strong>Scope:</strong> Local (inside function) vs Global (<code>global</code> keyword).</li>
+                        <li><strong>Scope:</strong> Local (inside function) vs Global (<code>global</code> keyword).
+                        </li>
                         <li><strong>Nested functions:</strong> <code>nonlocal</code> for closure variables.</li>
                     </ul>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 4. OOP – CLASSES & OBJECTS                                 -->
+                <!-- 5. OOP – CLASSES & OBJECTS                                 -->
                 <!-- ========================================================== -->
                 <div id="python-ref-oop-classes" class="day-content">
                     <h2>🏗️ OOP – Classes &amp; Objects</h2>
@@ -11849,14 +11859,19 @@ print(p.age)      # 30</code></pre>
                     </div>
 
                     <ul>
-                        <li><strong>Encapsulation:</strong> <code>_</code> (protected), <code>__</code> (name mangling).</li>
-                        <li><strong>Properties:</strong> <code>@property</code>, <code>@setter</code>, <code>@deleter</code>.</li>
-                        <li><strong>Dataclasses:</strong> <code>@dataclass</code> (Python 3.7+) for boilerplate reduction.</li>
+                        <li><strong>Encapsulation:</strong> <code>_</code> (protected), <code>__</code> (name mangling).
+                        </li>
+                        <li><strong>Properties:</strong> <code>@property</code>, <code>@setter</code>,
+                            <code>@deleter</code>.
+                        </li>
+                        <li><strong>Dataclasses:</strong> <code>@dataclass</code> (Python 3.7+) for boilerplate
+                            reduction.
+                        </li>
                     </ul>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 5. INHERITANCE & POLYMORPHISM                             -->
+                <!-- 6. INHERITANCE & POLYMORPHISM                             -->
                 <!-- ========================================================== -->
                 <div id="python-ref-oop-inheritance" class="day-content">
                     <h2>🧬 Inheritance &amp; Polymorphism</h2>
@@ -11895,7 +11910,7 @@ class Duck(Animal, Flyable):
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 6. ABSTRACTION & MAGIC METHODS                            -->
+                <!-- 7. ABSTRACTION & MAGIC METHODS                            -->
                 <!-- ========================================================== -->
                 <div id="python-ref-oop-abstract" class="day-content">
                     <h2>📐 Abstraction &amp; Magic Methods</h2>
@@ -11931,12 +11946,14 @@ class Vector:
                     </div>
 
                     <ul>
-                        <li><strong>Common magic methods:</strong> <code>__init__</code>, <code>__str__</code>, <code>__repr__</code>, <code>__add__</code>, <code>__len__</code>, <code>__getitem__</code>.</li>
+                        <li><strong>Common magic methods:</strong> <code>__init__</code>, <code>__str__</code>, <code>__repr__</code>,
+                            <code>__add__</code>, <code>__len__</code>, <code>__getitem__</code>.
+                        </li>
                     </ul>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 7. EXCEPTIONS                                              -->
+                <!-- 8. EXCEPTIONS                                              -->
                 <!-- ========================================================== -->
                 <div id="python-ref-exceptions" class="day-content">
                     <h2>⚠️ Exceptions</h2>
@@ -11962,12 +11979,14 @@ raise CustomError("Something went wrong")</code></pre>
                     </div>
 
                     <ul>
-                        <li><strong>Built‑in exceptions:</strong> <code>ValueError</code>, <code>TypeError</code>, <code>IndexError</code>, <code>KeyError</code>, <code>FileNotFoundError</code>.</li>
+                        <li><strong>Built‑in exceptions:</strong> <code>ValueError</code>, <code>TypeError</code>,
+                            <code>IndexError</code>, <code>KeyError</code>, <code>FileNotFoundError</code>.
+                        </li>
                     </ul>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 8. COLLECTIONS                                             -->
+                <!-- 9. COLLECTIONS                                             -->
                 <!-- ========================================================== -->
                 <div id="python-ref-collections" class="day-content">
                     <h2>📊 Collections (list, tuple, set, dict)</h2>
@@ -12003,7 +12022,7 @@ cnt = Counter("hello")
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 9. COMPREHENSIONS                                          -->
+                <!-- 10. COMPREHENSIONS                                          -->
                 <!-- ========================================================== -->
                 <div id="python-ref-comprehensions" class="day-content">
                     <h2>🌀 Comprehensions</h2>
@@ -12030,7 +12049,7 @@ flat = [num for row in matrix for num in row]</code></pre>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 10. LAMBDAS & FUNCTIONAL TOOLS                             -->
+                <!-- 11. LAMBDAS & FUNCTIONAL TOOLS                             -->
                 <!-- ========================================================== -->
                 <div id="python-ref-lambdas" class="day-content">
                     <h2>🔀 Lambdas &amp; Functional Tools</h2>
@@ -12056,7 +12075,7 @@ sorted(["apple", "banana", "cherry"], key=len)</code></pre>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 11. DECORATORS                                             -->
+                <!-- 12. DECORATORS                                             -->
                 <!-- ========================================================== -->
                 <div id="python-ref-decorators" class="day-content">
                     <h2>🎨 Decorators</h2>
@@ -12097,7 +12116,7 @@ def hello():
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 12. GENERATORS & ITERATORS                                 -->
+                <!-- 13. GENERATORS & ITERATORS                                 -->
                 <!-- ========================================================== -->
                 <div id="python-ref-generators" class="day-content">
                     <h2>⚡ Generators &amp; Iterators</h2>
@@ -12147,7 +12166,7 @@ class Fibonacci:
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 13. CONTEXT MANAGERS                                       -->
+                <!-- 14. CONTEXT MANAGERS                                       -->
                 <!-- ========================================================== -->
                 <div id="python-ref-contextmanagers" class="day-content">
                     <h2>📦 Context Managers</h2>
@@ -12185,7 +12204,7 @@ def temporary_change(x):
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 14. FILE I/O                                               -->
+                <!-- 15. FILE I/O                                               -->
                 <!-- ========================================================== -->
                 <div id="python-ref-io" class="day-content">
                     <h2>📂 File I/O</h2>
@@ -12225,7 +12244,7 @@ p.write_text("Hello")</code></pre>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 15. DATE & TIME                                            -->
+                <!-- 16. DATE & TIME                                            -->
                 <!-- ========================================================== -->
                 <div id="python-ref-datetime" class="day-content">
                     <h2>🗓️ Date &amp; Time</h2>
@@ -12261,7 +12280,7 @@ end = time.perf_counter()</code></pre>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 16. REGEX                                                  -->
+                <!-- 17. REGEX                                                  -->
                 <!-- ========================================================== -->
                 <div id="python-ref-regex" class="day-content">
                     <h2>🔍 Regex (re module)</h2>
@@ -12294,7 +12313,7 @@ match.group('first')  # John</code></pre>
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 17. CONCURRENCY                                            -->
+                <!-- 18. CONCURRENCY                                            -->
                 <!-- ========================================================== -->
                 <div id="python-ref-concurrency" class="day-content">
                     <h2>⚡ Concurrency (threading, asyncio, multiprocessing)</h2>
@@ -12348,59 +12367,91 @@ with Pool(processes=4) as pool:
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 18. COMMON LIBRARIES                                       -->
+                <!-- 19. COMMON LIBRARIES                                       -->
                 <!-- ========================================================== -->
                 <div id="python-ref-libraries" class="day-content">
                     <h2>📚 Common Libraries</h2>
 
                     <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
-                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Library</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
-                        <tr><td><code>requests</code></td><td>HTTP client – API calls, web scraping.</td></tr>
-                        <tr><td><code>pandas</code></td><td>Data analysis and manipulation.</td></tr>
-                        <tr><td><code>numpy</code></td><td>Numerical computing (arrays, maths).</td></tr>
-                        <tr><td><code>matplotlib</code></td><td>Plotting and visualisation.</td></tr>
-                        <tr><td><code>scikit-learn</code></td><td>Classical machine learning.</td></tr>
-                        <tr><td><code>pytorch</code> / <code>tensorflow</code></td><td>Deep learning.</td></tr>
-                        <tr><td><code>fastapi</code> / <code>flask</code></td><td>Web frameworks.</td></tr>
-                        <tr><td><code>sqlalchemy</code></td><td>SQL ORM and toolkit.</td></tr>
-                        <tr><td><code>pytest</code></td><td>Testing framework.</td></tr>
-                        <tr><td><code>uv</code></td><td>Fast package manager (modern alternative to pip/poetry).</td></tr>
+                        <tr style="background:#f1f5f9;">
+                            <th style="padding:8px; border:1px solid #ddd;">Library</th>
+                            <th style="padding:8px; border:1px solid #ddd;">Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><code>requests</code></td>
+                            <td>HTTP client – API calls, web scraping.</td>
+                        </tr>
+                        <tr>
+                            <td><code>pandas</code></td>
+                            <td>Data analysis and manipulation.</td>
+                        </tr>
+                        <tr>
+                            <td><code>numpy</code></td>
+                            <td>Numerical computing (arrays, maths).</td>
+                        </tr>
+                        <tr>
+                            <td><code>matplotlib</code></td>
+                            <td>Plotting and visualisation.</td>
+                        </tr>
+                        <tr>
+                            <td><code>scikit-learn</code></td>
+                            <td>Classical machine learning.</td>
+                        </tr>
+                        <tr>
+                            <td><code>pytorch</code> / <code>tensorflow</code></td>
+                            <td>Deep learning.</td>
+                        </tr>
+                        <tr>
+                            <td><code>fastapi</code> / <code>flask</code></td>
+                            <td>Web frameworks.</td>
+                        </tr>
+                        <tr>
+                            <td><code>sqlalchemy</code></td>
+                            <td>SQL ORM and toolkit.</td>
+                        </tr>
+                        <tr>
+                            <td><code>pytest</code></td>
+                            <td>Testing framework.</td>
+                        </tr>
+                        <tr>
+                            <td><code>uv</code></td>
+                            <td>Fast package manager (modern alternative to pip/poetry).</td>
+                        </tr>
                     </table>
                 </div>
 
-
                 <!-- ========================================================== -->
-                <!-- 21. INTERVIEW Q&A                                          -->
-                <!-- ========================================================== -->
-                <div id="python-ref-interview" class="day-content">
-                    <h2>120 Most Common &amp; Important Python Interview Questions</h2>
-
-                    <embed
-                            src="assets/pdf/SkillForge-Python-Mastery.pdf"
-                            type="application/pdf"
-                            width="100%"
-                            height="1000"
-                            title="Embedded PDF Viewer"
-                    />
-
-                </div>
-
-                <!-- ========================================================== -->
-                <!-- 19. GOTCHAS & PITFALLS                                     -->
+                <!-- 20. GOTCHAS & PITFALLS                                     -->
                 <!-- ========================================================== -->
                 <div id="python-ref-gotchas" class="day-content">
                     <h2>⚠️ Common Gotchas &amp; Pitfalls</h2>
 
                     <ul>
-                        <li><strong>Mutable default arguments:</strong> <code>def func(lst=[]):</code> – list persists across calls.</li>
-                        <li><strong>Late binding closures:</strong> lambdas in loops capture the loop variable by reference.</li>
-                        <li><strong><code>==</code> vs <code>is</code>:</strong> <code>==</code> compares values; <code>is</code> compares object identity.</li>
-                        <li><strong>Floating-point precision:</strong> <code>0.1 + 0.2 != 0.3</code> – use <code>decimal.Decimal</code> for money.</li>
-                        <li><strong>Modifying list while iterating:</strong> Use a copy or iterate over <code>list[:]</code>.</li>
-                        <li><strong>Shallow vs deep copy:</strong> <code>copy.copy()</code> vs <code>copy.deepcopy()</code>.</li>
+                        <li><strong>Mutable default arguments:</strong> <code>def func(lst=[]):</code> – list persists
+                            across calls.
+                        </li>
+                        <li><strong>Late binding closures:</strong> lambdas in loops capture the loop variable by
+                            reference.
+                        </li>
+                        <li><strong><code>==</code> vs <code>is</code>:</strong> <code>==</code> compares values; <code>is</code>
+                            compares object identity.
+                        </li>
+                        <li><strong>Floating-point precision:</strong> <code>0.1 + 0.2 != 0.3</code> – use <code>decimal.Decimal</code>
+                            for money.
+                        </li>
+                        <li><strong>Modifying list while iterating:</strong> Use a copy or iterate over
+                            <code>list[:]</code>.
+                        </li>
+                        <li><strong>Shallow vs deep copy:</strong> <code>copy.copy()</code> vs
+                            <code>copy.deepcopy()</code>.
+                        </li>
                         <li><strong><code>try-except</code> swallowing exceptions:</strong> Always log or re-raise.</li>
-                        <li><strong>Using <code>list</code>, <code>dict</code> as variable names:</strong> Shadows built-in types.</li>
-                        <li><strong>Global vs local variable confusion:</strong> Use <code>global</code> or <code>nonlocal</code> explicitly.</li>
+                        <li><strong>Using <code>list</code>, <code>dict</code> as variable names:</strong> Shadows
+                            built-in types.
+                        </li>
+                        <li><strong>Global vs local variable confusion:</strong> Use <code>global</code> or <code>nonlocal</code>
+                            explicitly.
+                        </li>
                     </ul>
 
                     <div class="code-container">
@@ -12432,58 +12483,158 @@ for i in range(3):
                 </div>
 
                 <!-- ========================================================== -->
-                <!-- 20. QUICK REFERENCE TABLES                                 -->
+                <!-- 21. QUICK REFERENCE TABLES                                 -->
                 <!-- ========================================================== -->
                 <div id="python-ref-tables" class="day-content">
                     <h2>📋 Quick Reference Tables</h2>
 
                     <h3>Common Built-in Functions</h3>
                     <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
-                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Function</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
-                        <tr><td><code>len()</code></td><td>Get length.</td></tr>
-                        <tr><td><code>type()</code></td><td>Get type.</td></tr>
-                        <tr><td><code>int()</code>, <code>float()</code>, <code>str()</code></td><td>Type casting.</td></tr>
-                        <tr><td><code>sorted()</code></td><td>Return sorted list.</td></tr>
-                        <tr><td><code>enumerate()</code></td><td>Index-value pairs.</td></tr>
-                        <tr><td><code>zip()</code></td><td>Pair elements from multiple iterables.</td></tr>
-                        <tr><td><code>any()</code>, <code>all()</code></td><td>Boolean checks.</td></tr>
-                        <tr><td><code>help()</code></td><td>Interactive help.</td></tr>
-                        <tr><td><code>dir()</code></td><td>List attributes.</td></tr>
+                        <tr style="background:#f1f5f9;">
+                            <th style="padding:8px; border:1px solid #ddd;">Function</th>
+                            <th style="padding:8px; border:1px solid #ddd;">Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><code>len()</code></td>
+                            <td>Get length.</td>
+                        </tr>
+                        <tr>
+                            <td><code>type()</code></td>
+                            <td>Get type.</td>
+                        </tr>
+                        <tr>
+                            <td><code>int()</code>, <code>float()</code>, <code>str()</code></td>
+                            <td>Type casting.</td>
+                        </tr>
+                        <tr>
+                            <td><code>sorted()</code></td>
+                            <td>Return sorted list.</td>
+                        </tr>
+                        <tr>
+                            <td><code>enumerate()</code></td>
+                            <td>Index-value pairs.</td>
+                        </tr>
+                        <tr>
+                            <td><code>zip()</code></td>
+                            <td>Pair elements from multiple iterables.</td>
+                        </tr>
+                        <tr>
+                            <td><code>any()</code>, <code>all()</code></td>
+                            <td>Boolean checks.</td>
+                        </tr>
+                        <tr>
+                            <td><code>help()</code></td>
+                            <td>Interactive help.</td>
+                        </tr>
+                        <tr>
+                            <td><code>dir()</code></td>
+                            <td>List attributes.</td>
+                        </tr>
                     </table>
 
                     <h3>Common Decorators</h3>
                     <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
-                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Decorator</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
-                        <tr><td><code>@staticmethod</code></td><td>Static method (no <code>self</code>).</td></tr>
-                        <tr><td><code>@classmethod</code></td><td>Class method (<code>cls</code> as first arg).</td></tr>
-                        <tr><td><code>@property</code></td><td>Create getter method.</td></tr>
-                        <tr><td><code>@abstractmethod</code></td><td>Abstract method (from <code>abc</code>).</td></tr>
-                        <tr><td><code>@dataclass</code></td><td>Data class generator.</td></tr>
-                        <tr><td><code>@functools.cache</code></td><td>Memoization.</td></tr>
+                        <tr style="background:#f1f5f9;">
+                            <th style="padding:8px; border:1px solid #ddd;">Decorator</th>
+                            <th style="padding:8px; border:1px solid #ddd;">Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><code>@staticmethod</code></td>
+                            <td>Static method (no <code>self</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>@classmethod</code></td>
+                            <td>Class method (<code>cls</code> as first arg).</td>
+                        </tr>
+                        <tr>
+                            <td><code>@property</code></td>
+                            <td>Create getter method.</td>
+                        </tr>
+                        <tr>
+                            <td><code>@abstractmethod</code></td>
+                            <td>Abstract method (from <code>abc</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>@dataclass</code></td>
+                            <td>Data class generator.</td>
+                        </tr>
+                        <tr>
+                            <td><code>@functools.cache</code></td>
+                            <td>Memoization.</td>
+                        </tr>
                     </table>
 
                     <h3>Common Python Libraries by Category</h3>
                     <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
-                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Category</th><th style="padding:8px; border:1px solid #ddd;">Libraries</th></tr>
-                        <tr><td>Web</td><td><code>FastAPI</code>, <code>Flask</code>, <code>Django</code></td></tr>
-                        <tr><td>Data Science</td><td><code>pandas</code>, <code>numpy</code>, <code>scipy</code></td></tr>
-                        <tr><td>Visualisation</td><td><code>matplotlib</code>, <code>seaborn</code>, <code>plotly</code></td></tr>
-                        <tr><td>ML / AI</td><td><code>scikit-learn</code>, <code>pytorch</code>, <code>tensorflow</code>, <code>transformers</code></td></tr>
-                        <tr><td>Testing</td><td><code>pytest</code>, <code>unittest</code></td></tr>
-                        <tr><td>CLI</td><td><code>click</code>, <code>typer</code></td></tr>
-                        <tr><td>HTTP</td><td><code>requests</code>, <code>httpx</code></td></tr>
-                        <tr><td>Database</td><td><code>sqlalchemy</code>, <code>psycopg2</code></td></tr>
+                        <tr style="background:#f1f5f9;">
+                            <th style="padding:8px; border:1px solid #ddd;">Category</th>
+                            <th style="padding:8px; border:1px solid #ddd;">Libraries</th>
+                        </tr>
+                        <tr>
+                            <td>Web</td>
+                            <td><code>FastAPI</code>, <code>Flask</code>, <code>Django</code></td>
+                        </tr>
+                        <tr>
+                            <td>Data Science</td>
+                            <td><code>pandas</code>, <code>numpy</code>, <code>scipy</code></td>
+                        </tr>
+                        <tr>
+                            <td>Visualisation</td>
+                            <td><code>matplotlib</code>, <code>seaborn</code>, <code>plotly</code></td>
+                        </tr>
+                        <tr>
+                            <td>ML / AI</td>
+                            <td><code>scikit-learn</code>, <code>pytorch</code>, <code>tensorflow</code>, <code>transformers</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Testing</td>
+                            <td><code>pytest</code>, <code>unittest</code></td>
+                        </tr>
+                        <tr>
+                            <td>CLI</td>
+                            <td><code>click</code>, <code>typer</code></td>
+                        </tr>
+                        <tr>
+                            <td>HTTP</td>
+                            <td><code>requests</code>, <code>httpx</code></td>
+                        </tr>
+                        <tr>
+                            <td>Database</td>
+                            <td><code>sqlalchemy</code>, <code>psycopg2</code></td>
+                        </tr>
                     </table>
 
                     <h3>Development Tools</h3>
                     <table style="width:100%; border-collapse:collapse; margin:0.5rem 0;">
-                        <tr style="background:#f1f5f9;"><th style="padding:8px; border:1px solid #ddd;">Tool</th><th style="padding:8px; border:1px solid #ddd;">Purpose</th></tr>
-                        <tr><td><code>pip</code> / <code>uv</code></td><td>Package management.</td></tr>
-                        <tr><td><code>venv</code></td><td>Virtual environment.</td></tr>
-                        <tr><td><code>black</code></td><td>Code formatter.</td></tr>
-                        <tr><td><code>ruff</code></td><td>Fast linter (replaces flake8, isort, etc.).</td></tr>
-                        <tr><td><code>mypy</code></td><td>Type checker.</td></tr>
-                        <tr><td><code>pre-commit</code></td><td>Git hooks.</td></tr>
+                        <tr style="background:#f1f5f9;">
+                            <th style="padding:8px; border:1px solid #ddd;">Tool</th>
+                            <th style="padding:8px; border:1px solid #ddd;">Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><code>pip</code> / <code>uv</code></td>
+                            <td>Package management.</td>
+                        </tr>
+                        <tr>
+                            <td><code>venv</code></td>
+                            <td>Virtual environment.</td>
+                        </tr>
+                        <tr>
+                            <td><code>black</code></td>
+                            <td>Code formatter.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ruff</code></td>
+                            <td>Fast linter (replaces flake8, isort, etc.).</td>
+                        </tr>
+                        <tr>
+                            <td><code>mypy</code></td>
+                            <td>Type checker.</td>
+                        </tr>
+                        <tr>
+                            <td><code>pre-commit</code></td>
+                            <td>Git hooks.</td>
+                        </tr>
                     </table>
                 </div>
 
@@ -12491,8 +12642,10 @@ for i in range(3):
         </div><!-- /content-area -->
     </div>
 
-    <!-- ====== LIBRARIES SECTION (non-day, full‑width) ====== -->
-    <div id="libraries" class="phase-section">
+    <!-- ========================================================== -->
+    <!-- PHASE 9 : LIBRARIES SECTION                                -->
+    <!-- ========================================================== -->
+    <div id="phase9" class="phase-section">
         <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
 
             <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">Python Libraries

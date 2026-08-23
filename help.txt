@@ -9,6 +9,18 @@ when you run locally then update few things
 
 update the path of css files in python-readmap/index.html file
 1) <base href="/" /> to <base href="/skill-forge-learning/" />
+<!-- base setup -->
+<!--  For Production-->
+<base href="/" />
+<!--For Local -->
+<!--    <base href="/skill-forge-learning/" />-->
+
+<!-- Shared CSS + roadmap-specific CSS -->
+<link rel="stylesheet" href="assets/css/style.css"/>
+<link rel="stylesheet" href="assets/css/roadmap-style.css"/>
+for local run, update the path of css files in python-readmap/index.html file
+<link rel="stylesheet" href="../assets/css/style.css"/>
+<link rel="stylesheet" href="../assets/css/roadmap-style.css"/>
 2)
 <header>
     <div class="container nav">
@@ -22,3 +34,15 @@ update the path of css files in python-readmap/index.html file
         </div>
     </div>
 </header>
+
+
+==================
+How to Deploy Python Flask Web App on Server [ 2025 Update ] Pythonanywhere Tutorial | Flask
+-----------------------------
+https://www.youtube.com/watch?v=H2Hxu7fDUOc
+
+
+
+Deploy Full Stack Web App | Frontend + Backend Deployment | Vercel | Netlify
+--------------
+https://www.youtube.com/watch?v=KuMbhQ4CLQ8
