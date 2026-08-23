@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>SkillForge – Forge Your Skills</title>
-    <link rel="stylesheet" href="/skill-forge-learning/assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
 
 </head>
 
@@ -15,10 +15,10 @@
     <div class="container nav">
         <div class="logo">Skill<span>Forge</span></div>
         <div>
-            <a href="/skill-forge-learning/python-roadmap/">🐍 Python</a>
-            <a href="/skill-forge-learning/java-roadmap/" >☕ Java</a>
-            <a href="#" >DAS (soon)</a>
-            <a href="#" >SQL (soon)</a>
+            <a href="python-roadmap/">🐍 Python</a>
+            <a href="java-roadmap/">☕ Java</a>
+            <a href="sql-roadmap/">🗄️SQL</a>
+            <a href="dsa-roadmap/">DAS</a>
         </div>
     </div>
 </header>
@@ -30,7 +30,10 @@
         <p class="tagline">SkillForge – self‑driven learning hub for developers and data enthusiasts.</p>
         <p>Structured, phase‑based roadmaps with hands‑on projects and daily challenges.</p>
         <br>
-        <a href="/python-roadmap/" class="btn">🚀 Start the Python Roadmap</a>
+        <a href="python-roadmap/" class="btn">🐍 Python Roadmap</a>
+        <a href="java-roadmap/" class="btn">☕ Java Roadmap</a>
+        <a href="sql-roadmap/" class="btn">🗄️ SQL Roadmap</a>
+        <a href="dsa-roadmap/" class="btn">📊 DSA Roadmap</a>
     </div>
 </section>
 
@@ -41,7 +44,7 @@
         <div class="grid-2">
             <div class="card">
                 <h3>📖 Phase‑by‑Phase Roadmaps</h3>
-                <p>100‑day structured journeys that take you from beginner to expert, with clear milestones and daily
+                <p>Day wise structured journeys that take you from beginner to expert, with clear milestones and daily
                     tasks.</p>
             </div>
             <div class="card">
@@ -65,26 +68,27 @@
     <div class="container">
         <h2>🛤️ Current Learning Tracks</h2>
         <div class="track-list">
-            <div class="track-item">
+            <div class="track-item" onclick="window.location.href='python-roadmap/';">
                 <div class="icon">🐍</div>
                 <div class="name">Python</div>
                 <div class="status"><span class="badge active">Active</span> – 100‑day roadmap</div>
             </div>
-            <div class="track-item">
+            <div class="track-item" onclick="window.location.href='java-roadmap/';">
                 <div class="icon">☕</div>
                 <div class="name">Java</div>
                 <div class="status"><span class="badge active">Active</span> – 100‑day roadmap</div>
             </div>
-            <div class="track-item">
-                <div class="icon">📊</div>
-                <div class="name">DAS</div>
-                <div class="status"><span class="badge coming">Coming Soon</span></div>
-            </div>
-            <div class="track-item">
+            <div class="track-item" onclick="window.location.href='sql-roadmap/';">
                 <div class="icon">🗄️</div>
                 <div class="name">SQL</div>
-                <div class="status"><span class="badge coming">Coming Soon</span></div>
+                <div class="status"><span class="badge active">Active</span> – 45‑day roadmap</div>
             </div>
+            <div class="track-item" onclick="window.location.href='dsa-roadmap/';">
+                <div class="icon">📊</div>
+                <div class="name">DAS</div>
+                <div class="status"><span class="badge active">Active</span> – 50‑day roadmap</div>
+            </div>
+
         </div>
         <p style="margin-top:1rem; color:#64748b;">More technologies will be added gradually to expand the SkillForge
             ecosystem.</p>
@@ -99,6 +103,8 @@
 SkillForge/
 ├── <span class="highlight">index.html</span> ← landing page (you are here)
 ├── <span class="highlight">python-roadmap/</span> ← Python 100‑day roadmap
+│ └── index.html
+├── <span class="highlight">java-roadmap/</span> ← Java 100‑day roadmap
 │ └── index.html
 ├── data-science-roadmap/ (future)
 ├── devops-roadmap/ (future)
@@ -117,8 +123,8 @@ SkillForge/
         <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem;">
             <li style="background:#e5e7eb; padding:0.4rem 1rem; border-radius:20px;">✅ Python Track</li>
             <li style="background:#e5e7eb; padding:0.4rem 1rem; border-radius:20px;">✅ Java Track</li>
-            <li style="background:#fef3c7; padding:0.4rem 1rem; border-radius:20px;">🔜 DAS Track</li>
-            <li style="background:#fef3c7; padding:0.4rem 1rem; border-radius:20px;">🔜 SQL Track</li>
+            <li style="background:#fef3c7; padding:0.4rem 1rem; border-radius:20px;">✅ SQL Track</li>
+            <li style="background:#fef3c7; padding:0.4rem 1rem; border-radius:20px;">✅ DSA Track</li>
             <li style="background:#fef3c7; padding:0.4rem 1rem; border-radius:20px;">🔜 Cloud &amp; AI specialisations
             </li>
             <li style="background:#fef3c7; padding:0.4rem 1rem; border-radius:20px;">🔜 Community contributions</li>
@@ -132,8 +138,6 @@ SkillForge/
     <div class="container">
         <h2>📜 License</h2>
         <p>SkillForge is open‑source under the <strong>MIT License</strong> – free to use, modify, and share.</p>
-        <p style="color:#64748b; margin-top:0.3rem;">See the <a href="/LICENSE" style="color:#2563eb;">LICENSE</a> file
-            for details.</p>
     </div>
 </section>
 
