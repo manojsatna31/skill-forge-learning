@@ -1,23 +1,19 @@
 let currentPhase = 'prerequisite';                     // track which phase is active
 const activeDayMap = {};                        // store active day per phase so navigation remembers each tab
-const phaseFirstDay = {                         // default first day per phase
-    prerequisite: 'setup',
-    phase1: 'day1',
-    phase2: 'day26',
-    phase3: 'day51',
-    phase4: 'day76',
-    phase5: 'mcq-intermediate',
-    phase6: 'intro',
-    phase7: 'fundamentals',
-    libraries: 'libraries',
-
-    // 'ai-data': ''
+const phaseSelectedSideBar = {                         // default first day per phase
+    phase2: 'phase2DefaultActiveSideBar',
+    phase3: 'phase3DefaultActiveSideBar',
+    phase4: 'phase4DefaultActiveSideBar',
+    phase5: 'phase5DefaultActiveSideBar',
+    phase6: 'phase6DefaultActiveSideBar',
+    phase7: 'phase7DefaultActiveSideBar',
+    phase8: 'phase8DefaultActiveSideBar',
+    phase9: 'phase9',
 };
 // ─── PHASE SWITCHING ──────────────────────────────────────────
 // Collect the clickable phase tabs and their matching section containers.
 const phaseTabs = document.querySelectorAll('.tab-btn');
 const phaseSections = {
-    prerequisite: document.getElementById('prerequisite'),
     phase1: document.getElementById('phase1'),
     phase2: document.getElementById('phase2'),
     phase3: document.getElementById('phase3'),
@@ -25,19 +21,20 @@ const phaseSections = {
     phase5: document.getElementById('phase5'),
     phase6: document.getElementById('phase6'),
     phase7: document.getElementById('phase7'),
-    libraries: document.getElementById('libraries')
+    phase8: document.getElementById('phase8'),
+    phase9: document.getElementById('phase9'),
 };
 // Store the heading subtitle for each phase so the page header stays in sync.
 const phaseSubtitles = {
-    prerequisite: 'Setting Up Your Environment',
-    phase1: 'Foundations &amp; Core Syntax (Days 1–25)',
-    phase2: 'Data Structures &amp; Object-Oriented Programming (Days 26–50)',
-    phase3: 'Advanced Concepts &amp; Libraries (Days 51–75)',
-    phase4: 'Expert Patterns &amp; Performance (Days 76–100)',
-    phase5: 'Test Your Knowledge',
-    phase6: 'Bonus Track',
-    phase7: 'Quick Reference',
-    libraries: 'Essential Tools for Every Engineer'
+    phase1: 'Setting Up Your Environment',
+    phase2: 'Foundations &amp; Core Syntax',
+    phase3: 'Core Data Structures & Modeling',
+    phase4: 'Advanced Concepts &amp; Optimization',
+    phase5: 'Expert Patterns & Production Systems',
+    phase6: 'Test Your Knowledge',
+    phase7: 'Bonus Track – Applied Projects',
+    phase8: 'Quick Reference Guide',
+    phase9: 'Essential Tools & Ecosystem'
 };
 
 (function () {
@@ -118,7 +115,7 @@ const phaseSubtitles = {
 
     function restoreActiveDay(phaseId) {
         // Get the saved day for this phase, or use the first day
-        const savedDay = activeDayMap[phaseId] || phaseFirstDay[phaseId];
+        const savedDay = activeDayMap[phaseId] || phaseSelectedSideBar[phaseId];
         if (!savedDay) return;
 
         // Find the corresponding day button within this phase
