@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>60-Day Sql Roadmap · SkillForge</title>
-    <!--    <base href="/" />-->
-    <!--    <base href="../" />-->
-
+    <title>45-Day Sql Roadmap · SkillForge</title>
     <!-- Prism Core CSS -->
     <link
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
@@ -17,30 +14,34 @@
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="../assets/css/style.css"/>
-    <link rel="stylesheet" href="../assets/css/roadmap-style.css"/>
+
+    <!-- base setup -->
+    <!--  For Production-->
+    <base href="/" />
+    <!--For Local -->
+    <!--    <base href="/skill-forge-learning/" />-->
+
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/roadmap-style.css"/>
 
 </head>
 <body>
 
+<!-- ========== HEADER ========== -->
 <header>
     <div class="container nav">
-        <!--        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>-->
-        <a href="../">
-            <div class="logo">Skill<span>Forge</span></div>
-        </a>
+        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>
         <div>
-            <!--            <a href="/">Home</a>-->
-            <a href="../">Home</a>
-            <a href="../python-roadmap/">🐍 Python</a>
-            <a href="../java-roadmap/">☕ Java</a>
-            <a href="../sql-roadmap/" class="active">🗄️SQL</a>
-            <a href="../dsa-roadmap/">📊 DSA</a>
+            <a href="/">Home</a>
+            <a href="/python-roadmap/">🐍 Python</a>
+            <a href="/java-roadmap/">☕ Java</a>
+            <a href="/sql-roadmap/"  class="active">🗄️SQL</a>
+            <a href="/dsa-roadmap/">📊 DSA</a>
         </div>
     </div>
 </header>
 <div class="page-title">
-    <h1>🐍 60‑Day SQL Mastery</h1>
+    <h1>🗄️ 45‑Day SQL Mastery</h1>
     <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
         Setting Up Your Environment
     </p>
@@ -4985,7 +4986,7 @@ BEGIN; -- SQL operations COMMIT; -- or ROLLBACK;</code></pre>
                     <h2>100 Most Common &amp; Important SQL Interview Questions</h2>
 
                     <embed
-                            src="../assets/pdf/SkillForge-SQL-Mastery.pdf"
+                            src="assets/pdf/SkillForge-SQL-Mastery.pdf"
                             type="application/pdf"
                             width="100%"
                             height="1000"
@@ -5080,8 +5081,8 @@ BEGIN; -- SQL operations COMMIT; -- or ROLLBACK;</code></pre>
     </script>
 
     <!-- Shared JS + roadmap-specific JS -->
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/roadmap-script.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/roadmap-script.js"></script>
 
 </body>
 </html>
