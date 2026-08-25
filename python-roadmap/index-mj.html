@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roadmap - Fix Test</title>
+    <!--<style>
+        /* =========================================================
+               BASE RESET & SHARED STYLES (from your roadmap-style.css)
+            ========================================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            &#45;&#45;primary: #2c3e50;
+            &#45;&#45;secondary: #3498db;
+            &#45;&#45;bg: #f4f7f6;
+            &#45;&#45;text: #1f2937;
+            &#45;&#45;tab-bg: #e0e0e0;
+            &#45;&#45;radius: 8px;
+            &#45;&#45;code-bg: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .learning-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* =========================================================
+               PHASE TABS
+            ========================================================= */
+        .phase-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(&#45;&#45;primary);
+            padding-bottom: 0.75rem;
+        }
+
+        .tab-btn {
+            padding: 0.6rem 1.6rem;
+            border: none;
+            border-radius: var(&#45;&#45;radius) var(&#45;&#45;radius) 0 0;
+            background: var(&#45;&#45;tab-bg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s ease;
+            font-size: 0.95rem;
+        }
+
+        .tab-btn:hover {
+            background: #c8c8c8;
+        }
+
+        .tab-btn.active {
+            background: var(&#45;&#45;primary);
+            color: #fff;
+        }
+
+        /* =========================================================
+               PHASE SECTIONS
+            ========================================================= */
+        .phase-section {
+            display: none;
+            background: #fff;
+            border-radius: var(&#45;&#45;radius);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+            padding: 1.5rem;
+        }
+
+        .phase-section.active {
+            display: block;
+        }
+
+        /* =========================================================
+               TWO-COLUMN LAYOUT (the grid that causes the gap)
+            ========================================================= */
+        .content-area {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 1.5rem;
+        }
+
+        /* -&#45;&#45; Sidebar -&#45;&#45; */
+        .day-sidebar {
+            border-right: 1px solid #ddd;
+            padding-right: 0.75rem;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .day-sidebar h3 {
+            margin: 0 0 0.7rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+        }
+
+        .day-btn {
+            display: block;
+            width: 100%;
+            padding: 0.45rem 0.7rem;
+            margin-bottom: 3px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .day-btn:hover {
+            background: #eef6fc;
+        }
+
+        .day-btn.active {
+            background: var(&#45;&#45;secondary);
+            color: #fff;
+            border-color: var(&#45;&#45;secondary);
+        }
+
+        /* -&#45;&#45; Main content -&#45;&#45; */
+        .main-content {
+            min-height: 300px;
+        }
+
+        .main-content h2 {
+            margin-top: 0;
+            color: var(&#45;&#45;primary);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.4rem;
+        }
+
+        .main-content p {
+            margin: 1rem 0;
+            color: #2d3748;
+        }
+
+        /* =========================================================
+               🎯 THE FIX – Applied to phases with NO sidebar
+            ========================================================= */
+        /*
+               When we add class="no-sidebar" to the phase-section,
+               we override the grid and hide the empty sidebar.
+            */
+        .phase-section.no-sidebar .content-area {
+            display: block !important; /* Remove the 2-column grid */
+        }
+
+        .phase-section.no-sidebar .day-sidebar {
+            display: none !important; /* Hide the empty sidebar */
+        }
+
+        /*
+               OPTIONAL: If you want the content to look perfectly
+               centered without the right gap, you can add:
+               .phase-section.no-sidebar .main-content {
+                   max-width: 100%;
+               }
+            */
+
+        /* =========================================================
+               RESPONSIVE (so it looks decent on small screens)
+            ========================================================= */
+        @media (max-width: 700px) {
+            .content-area {
+                grid-template-columns: 1fr;
+            }
+            .day-sidebar {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 0.75rem;
+                max-height: 250px;
+                overflow-y: auto;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+            .day-sidebar h3 {
+                width: 100%;
+            }
+            .day-btn {
+                width: auto;
+                padding: 0.3rem 0.8rem;
+                flex: 0 0 auto;
+            }
+        }
+    </style>-->
+    <link rel="stylesheet" href="../assets/css/style.css"/>
+    <link rel="stylesheet" href="../assets/css/roadmap-style.css"/>
+</head>
+<body>
+
+<div class="learning-container">
+
+    <!-- ===== TAB BUTTONS ===== -->
+    <div class="phase-tabs">
+        <button class="tab-btn active" data-phase="phase-1">Phase 1: Prerequisite</button>
+        <button class="tab-btn" data-phase="phase-2">Phase 2: Foundations</button>
+        <button class="tab-btn" data-phase="phase-9">Phase 9: Libraries</button>
+    </div>
+
+    <!-- ============================================================
+         PHASE 1 – PREREQUISITE (NO SIDEBAR)
+         ✅ Added class="no-sidebar" – THIS IS THE FIX!
+         ============================================================ -->
+    <div class="phase-section active no-sidebar" id="phase1">
+        <div class="content-area">
+            <!-- Sidebar is completely MISSING from the HTML -->
+            <div class="main-content">
+                <h2>1️⃣ Install Python (3.10 or later)</h2>
+                <p>Python is the core of this training. We recommend the latest stable version (3.11 or 3.12).</p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🖥️ Windows</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Download the installer from <a href="https://python.org" target="_blank">python.org</a>.
+                            </li>
+                            <li><strong>Check</strong> “Add Python to PATH” during installation.</li>
+                            <li>Select “Install Now” (or customise installation).</li>
+                            <li>Verify installation:</li>
+                        </ol>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">python --version
+pip --version</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and <code>pip
+                            24.x</code></p>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🍎 macOS</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Download from <a href="https://python.org" target="_blank">python.org</a> (recommended).
+                            </li>
+                            <li>Alternatively, use <code>brew install python</code>.</li>
+                            <li>Verify:</li>
+                        </ol>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">python3 --version
+pip3 --version</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
+                            <code>pip3</code> by default.</p>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:span 2;">
+                        <strong>🐧 Linux (Ubuntu/Debian)</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Update and install:</li>
+                        </ol>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">sudo apt update
+sudo apt install python3 python3-pip python3-venv -y
+python3 --version
+pip3 --version</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Most distributions include Python 3.10+ by default.</p>
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 2: VS CODE ===== -->
+                <h2 style="margin-top:2rem;">2️⃣ Install VS Code (or your preferred editor)</h2>
+                <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>📥 Download &amp; Install</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Go to <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a>.
+                            </li>
+                            <li>Download the installer for your OS.</li>
+                            <li>Run the installer (keep default settings).</li>
+                            <li>Launch VS Code.</li>
+                        </ol>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🧩 Recommended Extensions</strong>
+                        <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
+                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
+                            <li><strong>Pylance</strong> – fast language server.</li>
+                            <li><strong>Python Debugger</strong> – debug scripts.</li>
+                            <li><strong>Jupyter</strong> – optional for notebooks.</li>
+                            <li><strong>Prettier</strong> – optional formatter.</li>
+                            <li><strong>GitLens</strong> – optional Git integration.</li>
+                        </ul>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
+ext install ms-python.python
+ext install ms-python.vscode-pylance</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
+                    <strong>💡 Pro Tip:</strong> After installing the Python extension, press <kbd>Ctrl+Shift+P</kbd>, type
+                    “Python: Select Interpreter” and choose your installed Python version.
+                </div>
+
+                <!-- ===== SECTION 3: SQLITE3 ===== -->
+                <h2 style="margin-top:2rem;">3️⃣ SQLite3 (Built‑in, but verify)</h2>
+                <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🐍 Verify Python's SQLite</strong>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🖥️ Standalone CLI (Optional)</strong>
+                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <li><strong>Windows:</strong> Download from <a href="https://sqlite.org/download.html"
+                                                                           target="_blank">sqlite.org</a> and add to PATH.
+                            </li>
+                            <li><strong>macOS/Linux:</strong> <code>brew install sqlite3</code> or <code>sudo apt install
+                                sqlite3</code>.
+                            </li>
+                        </ul>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 4: GIT ===== -->
+                <h2 style="margin-top:2rem;">4️⃣ Git – Version Control</h2>
+                <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>📥 Installation</strong>
+                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <li><strong>Windows:</strong> <a href="https://git-scm.com" target="_blank">git-scm.com</a></li>
+                            <li><strong>macOS:</strong> <code>brew install git</code></li>
+                            <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
+                        </ul>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
+                        </div>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>⚙️ Initial Configuration</strong>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 5: UV ===== -->
+                <h2 style="margin-top:2rem;">5️⃣ uv – Fast Package Manager (Optional)</h2>
+                <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Or via pip (slower but works everywhere)
+pip install uv
+
+# Verify
+uv --version</code></pre>
+                    </div>
+                    <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> + <code>venv</code>, that’s
+                        perfectly fine – <code>uv</code> is optional.</p>
+                </div>
+
+                <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
+                <h2 style="margin-top:2rem;">✅ Final Checklist</h2>
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🐍</div>
+                        <strong>Python</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python --version</code></p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">📝</div>
+                        <strong>VS Code</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
+                            --version</code></p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🗄️</div>
+                        <strong>SQLite3</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import sqlite3</code></p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🔧</div>
+                        <strong>Git</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git --version</code>
+                        </p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">📦</div>
+                        <strong>uv / pip</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip --version</code>
+                        </p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🌐</div>
+                        <strong>Browser</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
+                <h2 style="margin-top:2rem;">⚠️ Troubleshooting – Common Issues</h2>
+                <ul style="margin:1rem 0 0 1.2rem;">
+                    <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”. Re‑run the
+                        installer and select that option.
+                    </li>
+                    <li><strong>“pip is not installed”:</strong> Run <code>python -m ensurepip</code>.</li>
+                    <li><strong>“command not found: code” (macOS/Linux):</strong> Open VS Code, press <kbd>Cmd+Shift+P</kbd>
+                        (macOS) / <kbd>Ctrl+Shift+P</kbd> (Linux), type “Shell Command: Install 'code' command in PATH”.
+                    </li>
+                    <li><strong>“sqlite3” module not found:</strong> Extremely rare – reinstall Python.</li>
+                    <li><strong>Permission errors:</strong> Use <code>python -m pip install --user package_name</code> or
+                        use a virtual environment.
+                    </li>
+                </ul>
+
+                <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
+                    <strong>🎉 You're all set!</strong> Once these tools are installed, you have everything you need to
+                    complete the full 100‑day roadmap. Open your terminal, launch VS Code, and start with Day 1. Happy
+                    coding!
+                </div>
+
+                <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
+                    <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ Ready to Code</span>
+                    <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 100 Days Ahead</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         PHASE 2 – FOUNDATIONS (HAS SIDEBAR)
+         ❌ Does NOT have class="no-sidebar" – grid stays intact
+         ============================================================ -->
+    <div class="phase-section" id="phase2">
+        <div class="content-area">
+            <!-- Sidebar EXISTS with day buttons -->
+            <div class="day-sidebar">
+                <h3>📅 Days 1–25</h3>
+                <button class="day-btn active">Day 1: Setup &amp; Hello</button>
+                <button class="day-btn">Day 2: Variables</button>
+                <button class="day-btn">Day 3: Data Types</button>
+                <button class="day-btn">Day 4: Type Casting</button>
+                <button class="day-btn">Day 5: Strings</button>
+                <button class="day-btn">Day 6: Conditionals</button>
+                <button class="day-btn">Day 7: Loops (for)</button>
+                <button class="day-btn">Day 8: Loops (while)</button>
+                <button class="day-btn">Day 9: I/O</button>
+                <button class="day-btn">Day 10: Review</button>
+            </div>
+            <div class="main-content">
+                <h2>🧱 Foundations &amp; Core Syntax</h2>
+                <p><strong>Days 1–25</strong></p>
+                <p>This phase has a sidebar with day buttons. The 2‑column grid is active, and it looks balanced.</p>
+                <div style="background:#f0fdf4;border:1px solid #86efac;padding:1rem;border-radius:8px;">
+                    ✅ This phase <strong>has a sidebar</strong> – the layout looks correct.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         PHASE 9 – LIBRARIES (NO SIDEBAR)
+         ✅ Added class="no-sidebar" – THIS IS THE FIX!
+         ============================================================ -->
+    <div class="phase-section no-sidebar" id="phase9">
+        <div class="content-area">
+            <!-- Sidebar is completely MISSING from the HTML -->
+            <div class="main-content">
+                <h2>📚 Libraries &amp; Quick Reference</h2>
+                <p>Handy libraries and quick reference materials for Python development.</p>
+                <ul>
+                    <li><strong>Requests</strong> – HTTP library</li>
+                    <li><strong>Pandas</strong> – Data analysis</li>
+                    <li><strong>NumPy</strong> – Numerical computing</li>
+                    <li><strong>Matplotlib</strong> – Plotting</li>
+                    <li><strong>Flask</strong> – Web framework</li>
+                </ul>
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:1rem;border-radius:8px;">
+                    ✅ This phase also has <strong>no sidebar</strong> – the fix makes it stretch full width.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================================= -->
+<!-- Prism JS                                                      -->
+<!-- ============================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js">
+</script>
+
+<!-- Shared JS + roadmap-specific JS -->
+<script src="../assets/js/script.js"></script>
+<script src="../assets/js/roadmap-script.js"></script>
+
+
+<!-- ============================================================
+     SIMPLE TAB SWITCHING (NO EXTERNAL JS NEEDED)
+     ============================================================ -->
+<!--<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const phases = {
+            'phase-1': document.getElementById('phase1'),
+            'phase-2': document.getElementById('phase2'),
+            'phase-9': document.getElementById('phase9')
+        };
+
+        tabs.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                // Remove active class from all tabs
+                tabs.forEach(function(b) { b.classList.remove('active'); });
+                // Add active class to clicked tab
+                btn.classList.add('active');
+
+                // Hide all phases
+                Object.values(phases).forEach(function(p) {
+                    p.classList.remove('active');
+                });
+
+                // Show the selected phase
+                const phaseId = btn.getAttribute('data-phase');
+                if (phases[phaseId]) {
+                    phases[phaseId].classList.add('active');
+                }
+            });
+        });
+    });
+</script>-->
+
+</body>
+</html>

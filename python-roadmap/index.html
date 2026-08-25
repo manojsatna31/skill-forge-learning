@@ -4,9 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>100-Day Python Roadmap · SkillForge</title>
-    <!--    <base href="/" />-->
-    <!--    <base href="../" />-->
-
     <!-- Prism Core CSS -->
     <link
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
@@ -23,6 +20,7 @@
 </head>
 <body>
 
+<!-- ─── Header ─── -->
 <header>
     <div class="container nav">
         <!--        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>-->
@@ -64,166 +62,172 @@
     <!-- ========================================================== -->
     <!-- PHASE 1 - PREREQUISITE SECTION                             -->
     <!-- ========================================================== -->
-    <div id="phase1" class="phase-section active">
-        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
-            <h2>1️⃣ Install Python (3.10 or later)</h2>
-            <p>Python is the core of this training. We recommend the latest stable version (3.11 or 3.12).</p>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>🖥️ Windows</strong>
-                    <ol style="margin:0.5rem 0 0 1.2rem;">
-                        <li>Download the installer from <a href="https://python.org" target="_blank">python.org</a>.
-                        </li>
-                        <li><strong>Check</strong> “Add Python to PATH” during installation.</li>
-                        <li>Select “Install Now” (or customise installation).</li>
-                        <li>Verify installation:</li>
-                    </ol>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash">python --version
+    <div id="phase1" class="phase-section active no-sidebar">
+        <div class="content-area">
+            <div class="main-content">
+                <h2>1️⃣ Install Python (3.10 or later)</h2>
+                <p>Python is the core of this training. We recommend the latest stable version (3.11 or 3.12).</p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🖥️ Windows</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Download the installer from <a href="https://python.org" target="_blank">python.org</a>.
+                            </li>
+                            <li><strong>Check</strong> “Add Python to PATH” during installation.</li>
+                            <li>Select “Install Now” (or customise installation).</li>
+                            <li>Verify installation:</li>
+                        </ol>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">python --version
 pip --version</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and <code>pip
+                            24.x</code></p>
                     </div>
-                    <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and <code>pip
-                        24.x</code></p>
-                </div>
 
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>🍎 macOS</strong>
-                    <ol style="margin:0.5rem 0 0 1.2rem;">
-                        <li>Download from <a href="https://python.org" target="_blank">python.org</a> (recommended).
-                        </li>
-                        <li>Alternatively, use <code>brew install python</code>.</li>
-                        <li>Verify:</li>
-                    </ol>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash">python3 --version
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🍎 macOS</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Download from <a href="https://python.org" target="_blank">python.org</a> (recommended).
+                            </li>
+                            <li>Alternatively, use <code>brew install python</code>.</li>
+                            <li>Verify:</li>
+                        </ol>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">python3 --version
 pip3 --version</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
+                            <code>pip3</code> by default.</p>
                     </div>
-                    <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
-                        <code>pip3</code> by default.</p>
-                </div>
 
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:span 2;">
-                    <strong>🐧 Linux (Ubuntu/Debian)</strong>
-                    <ol style="margin:0.5rem 0 0 1.2rem;">
-                        <li>Update and install:</li>
-                    </ol>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash">sudo apt update
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:span 2;">
+                        <strong>🐧 Linux (Ubuntu/Debian)</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Update and install:</li>
+                        </ol>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">sudo apt update
 sudo apt install python3 python3-pip python3-venv -y
 python3 --version
 pip3 --version</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Most distributions include Python 3.10+ by
+                            default.</p>
                     </div>
-                    <p style="font-size:0.9rem; color:#64748b;">Most distributions include Python 3.10+ by default.</p>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 2: VS CODE ===== -->
-            <h2 style="margin-top:2rem;">2️⃣ Install VS Code (or your preferred editor)</h2>
-            <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
+                <!-- ===== SECTION 2: VS CODE ===== -->
+                <h2 style="margin-top:2rem;">2️⃣ Install VS Code (or your preferred editor)</h2>
+                <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
 
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>📥 Download &amp; Install</strong>
-                    <ol style="margin:0.5rem 0 0 1.2rem;">
-                        <li>Go to <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a>.
-                        </li>
-                        <li>Download the installer for your OS.</li>
-                        <li>Run the installer (keep default settings).</li>
-                        <li>Launch VS Code.</li>
-                    </ol>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>🧩 Recommended Extensions</strong>
-                    <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
-                        <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
-                        <li><strong>Pylance</strong> – fast language server.</li>
-                        <li><strong>Python Debugger</strong> – debug scripts.</li>
-                        <li><strong>Jupyter</strong> – optional for notebooks.</li>
-                        <li><strong>Prettier</strong> – optional formatter.</li>
-                        <li><strong>GitLens</strong> – optional Git integration.</li>
-                    </ul>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>📥 Download &amp; Install</strong>
+                        <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <li>Go to <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a>.
+                            </li>
+                            <li>Download the installer for your OS.</li>
+                            <li>Run the installer (keep default settings).</li>
+                            <li>Launch VS Code.</li>
+                        </ol>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🧩 Recommended Extensions</strong>
+                        <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
+                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
+                            <li><strong>Pylance</strong> – fast language server.</li>
+                            <li><strong>Python Debugger</strong> – debug scripts.</li>
+                            <li><strong>Jupyter</strong> – optional for notebooks.</li>
+                            <li><strong>Prettier</strong> – optional formatter.</li>
+                            <li><strong>GitLens</strong> – optional Git integration.</li>
+                        </ul>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
 ext install ms-python.python
 ext install ms-python.vscode-pylance</code></pre>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
-                <strong>💡 Pro Tip:</strong> After installing the Python extension, press <kbd>Ctrl+Shift+P</kbd>, type
-                “Python: Select Interpreter” and choose your installed Python version.
-            </div>
-
-            <!-- ===== SECTION 3: SQLITE3 ===== -->
-            <h2 style="margin-top:2rem;">3️⃣ SQLite3 (Built‑in, but verify)</h2>
-            <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>🐍 Verify Python's SQLite</strong>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
-                    </div>
-                    <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
+                <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
+                    <strong>💡 Pro Tip:</strong> After installing the Python extension, press <kbd>Ctrl+Shift+P</kbd>,
+                    type
+                    “Python: Select Interpreter” and choose your installed Python version.
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>🖥️ Standalone CLI (Optional)</strong>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
-                        <li><strong>Windows:</strong> Download from <a href="https://sqlite.org/download.html"
-                                                                       target="_blank">sqlite.org</a> and add to PATH.
-                        </li>
-                        <li><strong>macOS/Linux:</strong> <code>brew install sqlite3</code> or <code>sudo apt install
-                            sqlite3</code>.
-                        </li>
-                    </ul>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
+
+                <!-- ===== SECTION 3: SQLITE3 ===== -->
+                <h2 style="margin-top:2rem;">3️⃣ SQLite3 (Built‑in, but verify)</h2>
+                <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🐍 Verify Python's SQLite</strong>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
                     </div>
-                </div>
-            </div>
-
-            <!-- ===== SECTION 4: GIT ===== -->
-            <h2 style="margin-top:2rem;">4️⃣ Git – Version Control</h2>
-            <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>📥 Installation</strong>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
-                        <li><strong>Windows:</strong> <a href="https://git-scm.com" target="_blank">git-scm.com</a></li>
-                        <li><strong>macOS:</strong> <code>brew install git</code></li>
-                        <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
-                    </ul>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>🖥️ Standalone CLI (Optional)</strong>
+                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <li><strong>Windows:</strong> Download from <a href="https://sqlite.org/download.html"
+                                                                           target="_blank">sqlite.org</a> and add to
+                                PATH.
+                            </li>
+                            <li><strong>macOS/Linux:</strong> <code>brew install sqlite3</code> or <code>sudo apt
+                                install
+                                sqlite3</code>.
+                            </li>
+                        </ul>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
+                        </div>
                     </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>⚙️ Initial Configuration</strong>
-                    <div class="code-container" style="margin-top:0.5rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
+
+                <!-- ===== SECTION 4: GIT ===== -->
+                <h2 style="margin-top:2rem;">4️⃣ Git – Version Control</h2>
+                <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>📥 Installation</strong>
+                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <li><strong>Windows:</strong> <a href="https://git-scm.com" target="_blank">git-scm.com</a>
+                            </li>
+                            <li><strong>macOS:</strong> <code>brew install git</code></li>
+                            <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
+                        </ul>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
+                        </div>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>⚙️ Initial Configuration</strong>
+                        <div class="code-container" style="margin-top:0.5rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
                     </div>
-                    <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 5: UV ===== -->
-            <h2 style="margin-top:2rem;">5️⃣ uv – Fast Package Manager (Optional)</h2>
-            <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
-            <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
-                <div class="code-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
+                <!-- ===== SECTION 5: UV ===== -->
+                <h2 style="margin-top:2rem;">5️⃣ uv – Fast Package Manager (Optional)</h2>
+                <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
+                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or via pip (slower but works everywhere)
@@ -231,74 +235,82 @@ pip install uv
 
 # Verify
 uv --version</code></pre>
+                    </div>
+                    <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> + <code>venv</code>,
+                        that’s
+                        perfectly fine – <code>uv</code> is optional.</p>
                 </div>
-                <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> + <code>venv</code>, that’s
-                    perfectly fine – <code>uv</code> is optional.</p>
-            </div>
 
-            <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
-            <h2 style="margin-top:2rem;">✅ Final Checklist</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                    <div style="font-size:2rem;">🐍</div>
-                    <strong>Python</strong>
-                    <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python --version</code></p>
+                <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
+                <h2 style="margin-top:2rem;">✅ Final Checklist</h2>
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🐍</div>
+                        <strong>Python</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python --version</code></p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">📝</div>
+                        <strong>VS Code</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
+                            --version</code></p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🗄️</div>
+                        <strong>SQLite3</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import sqlite3</code>
+                        </p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🔧</div>
+                        <strong>Git</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git
+                            --version</code>
+                        </p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">📦</div>
+                        <strong>uv / pip</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip
+                            --version</code>
+                        </p>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                        <div style="font-size:2rem;">🌐</div>
+                        <strong>Browser</strong>
+                        <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                    <div style="font-size:2rem;">📝</div>
-                    <strong>VS Code</strong>
-                    <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
-                        --version</code></p>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                    <div style="font-size:2rem;">🗄️</div>
-                    <strong>SQLite3</strong>
-                    <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import sqlite3</code></p>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                    <div style="font-size:2rem;">🔧</div>
-                    <strong>Git</strong>
-                    <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git --version</code>
-                    </p>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                    <div style="font-size:2rem;">📦</div>
-                    <strong>uv / pip</strong>
-                    <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip --version</code>
-                    </p>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                    <div style="font-size:2rem;">🌐</div>
-                    <strong>Browser</strong>
-                    <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
-                </div>
-            </div>
 
-            <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
-            <h2 style="margin-top:2rem;">⚠️ Troubleshooting – Common Issues</h2>
-            <ul style="margin:1rem 0 0 1.2rem;">
-                <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”. Re‑run the
-                    installer and select that option.
-                </li>
-                <li><strong>“pip is not installed”:</strong> Run <code>python -m ensurepip</code>.</li>
-                <li><strong>“command not found: code” (macOS/Linux):</strong> Open VS Code, press <kbd>Cmd+Shift+P</kbd>
-                    (macOS) / <kbd>Ctrl+Shift+P</kbd> (Linux), type “Shell Command: Install 'code' command in PATH”.
-                </li>
-                <li><strong>“sqlite3” module not found:</strong> Extremely rare – reinstall Python.</li>
-                <li><strong>Permission errors:</strong> Use <code>python -m pip install --user package_name</code> or
-                    use a virtual environment.
-                </li>
-            </ul>
+                <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
+                <h2 style="margin-top:2rem;">⚠️ Troubleshooting – Common Issues</h2>
+                <ul style="margin:1rem 0 0 1.2rem;">
+                    <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”. Re‑run
+                        the
+                        installer and select that option.
+                    </li>
+                    <li><strong>“pip is not installed”:</strong> Run <code>python -m ensurepip</code>.</li>
+                    <li><strong>“command not found: code” (macOS/Linux):</strong> Open VS Code, press
+                        <kbd>Cmd+Shift+P</kbd>
+                        (macOS) / <kbd>Ctrl+Shift+P</kbd> (Linux), type “Shell Command: Install 'code' command in PATH”.
+                    </li>
+                    <li><strong>“sqlite3” module not found:</strong> Extremely rare – reinstall Python.</li>
+                    <li><strong>Permission errors:</strong> Use <code>python -m pip install --user package_name</code>
+                        or
+                        use a virtual environment.
+                    </li>
+                </ul>
 
-            <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
-                <strong>🎉 You're all set!</strong> Once these tools are installed, you have everything you need to
-                complete the full 100‑day roadmap. Open your terminal, launch VS Code, and start with Day 1. Happy
-                coding!
-            </div>
+                <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
+                    <strong>🎉 You're all set!</strong> Once these tools are installed, you have everything you need to
+                    complete the full 100‑day roadmap. Open your terminal, launch VS Code, and start with Day 1. Happy
+                    coding!
+                </div>
 
-            <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
-                <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ Ready to Code</span>
-                <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 100 Days Ahead</span>
+                <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
+                    <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ Ready to Code</span>
+                    <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 100 Days Ahead</span>
+                </div>
             </div>
         </div>
     </div>
@@ -12643,318 +12655,320 @@ for i in range(3):
     <!-- ========================================================== -->
     <!-- PHASE 9 : LIBRARIES SECTION                                -->
     <!-- ========================================================== -->
-    <div id="phase9" class="phase-section">
-        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
+    <div id="phase9" class="phase-section no-sidebar">
+        <div class="content-area">
+            <div class="main-content">
 
-            <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">Python Libraries
-                Every
-                Engineer Should Know</h2>
+                <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">Python Libraries
+                    Every
+                    Engineer Should Know</h2>
 
-            <p style="font-size:1.1rem; color:#4a5568;">
-                A curated list of 60+ essential Python libraries across 7 key domains. Each entry includes a brief
-                description,
-                <strong>when to use</strong>, and <strong>why it matters</strong>. Master these to become a
-                well‑rounded
-                Python engineer.
-            </p>
+                <p style="font-size:1.1rem; color:#4a5568;">
+                    A curated list of 60+ essential Python libraries across 7 key domains. Each entry includes a brief
+                    description,
+                    <strong>when to use</strong>, and <strong>why it matters</strong>. Master these to become a
+                    well‑rounded
+                    Python engineer.
+                </p>
 
-            <!-- ─── CATEGORY: Core Development & APIs ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🔌
-                Core
-                Development &amp; APIs</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>requests</strong><br>
-                    <span style="font-size:0.9rem;">HTTP client for humans. <strong>Use:</strong> Making API calls, scraping, webhooks. <strong>Why:</strong> Simplicity and widespread adoption.</span>
+                <!-- ─── CATEGORY: Core Development & APIs ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🔌
+                    Core
+                    Development &amp; APIs</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>requests</strong><br>
+                        <span style="font-size:0.9rem;">HTTP client for humans. <strong>Use:</strong> Making API calls, scraping, webhooks. <strong>Why:</strong> Simplicity and widespread adoption.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>httpx</strong><br>
+                        <span style="font-size:0.9rem;">Async HTTP client. <strong>Use:</strong> When you need async/await for high‑concurrency networking. <strong>Why:</strong> Modern, supports HTTP/2.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>fastapi</strong><br>
+                        <span style="font-size:0.9rem;">Modern web framework (async). <strong>Use:</strong> Building APIs with auto‑generated OpenAPI docs. <strong>Why:</strong> Speed, async support, and built‑in validation.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>flask</strong><br>
+                        <span style="font-size:0.9rem;">Micro‑framework for web apps. <strong>Use:</strong> Simple web applications, prototypes, small APIs. <strong>Why:</strong> Lightweight, flexible, huge ecosystem.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>django</strong><br>
+                        <span style="font-size:0.9rem;">Full‑stack web framework. <strong>Use:</strong> Large, data‑driven web applications with admin panels. <strong>Why:</strong> Batteries‑included, security, ORM.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>click / typer</strong><br>
+                        <span style="font-size:0.9rem;">CLI building tools. <strong>Use:</strong> Creating command‑line interfaces. <strong>Why:</strong> Typer is based on type hints; Click is mature and flexible.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>pydantic</strong><br>
+                        <span style="font-size:0.9rem;">Data validation with type hints. <strong>Use:</strong> Parsing and validating configs, request bodies, responses. <strong>Why:</strong> Fast, integrates with FastAPI, great error messages.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>python-dotenv</strong><br>
+                        <span style="font-size:0.9rem;">Load environment variables from <code>.env</code>. <strong>Use:</strong> Managing config in development and production. <strong>Why:</strong> Keeps secrets out of code.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>loguru</strong><br>
+                        <span style="font-size:0.9rem;">Modern logging. <strong>Use:</strong> When you need easy, colorful, structured logging. <strong>Why:</strong> Simpler than <code>logging</code>, great defaults.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>structlog</strong><br>
+                        <span style="font-size:0.9rem;">Structured logging. <strong>Use:</strong> For machine‑readable logs (JSON). <strong>Why:</strong> Better for observability and log aggregation.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>httpx</strong><br>
-                    <span style="font-size:0.9rem;">Async HTTP client. <strong>Use:</strong> When you need async/await for high‑concurrency networking. <strong>Why:</strong> Modern, supports HTTP/2.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>fastapi</strong><br>
-                    <span style="font-size:0.9rem;">Modern web framework (async). <strong>Use:</strong> Building APIs with auto‑generated OpenAPI docs. <strong>Why:</strong> Speed, async support, and built‑in validation.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>flask</strong><br>
-                    <span style="font-size:0.9rem;">Micro‑framework for web apps. <strong>Use:</strong> Simple web applications, prototypes, small APIs. <strong>Why:</strong> Lightweight, flexible, huge ecosystem.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>django</strong><br>
-                    <span style="font-size:0.9rem;">Full‑stack web framework. <strong>Use:</strong> Large, data‑driven web applications with admin panels. <strong>Why:</strong> Batteries‑included, security, ORM.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>click / typer</strong><br>
-                    <span style="font-size:0.9rem;">CLI building tools. <strong>Use:</strong> Creating command‑line interfaces. <strong>Why:</strong> Typer is based on type hints; Click is mature and flexible.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>pydantic</strong><br>
-                    <span style="font-size:0.9rem;">Data validation with type hints. <strong>Use:</strong> Parsing and validating configs, request bodies, responses. <strong>Why:</strong> Fast, integrates with FastAPI, great error messages.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>python-dotenv</strong><br>
-                    <span style="font-size:0.9rem;">Load environment variables from <code>.env</code>. <strong>Use:</strong> Managing config in development and production. <strong>Why:</strong> Keeps secrets out of code.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>loguru</strong><br>
-                    <span style="font-size:0.9rem;">Modern logging. <strong>Use:</strong> When you need easy, colorful, structured logging. <strong>Why:</strong> Simpler than <code>logging</code>, great defaults.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>structlog</strong><br>
-                    <span style="font-size:0.9rem;">Structured logging. <strong>Use:</strong> For machine‑readable logs (JSON). <strong>Why:</strong> Better for observability and log aggregation.</span>
-                </div>
-            </div>
 
-            <!-- ─── CATEGORY: Data Analysis & Wrangling ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">📊
-                Data
-                Analysis &amp; Wrangling</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>pandas</strong><br>
-                    <span style="font-size:0.9rem;">Data manipulation and analysis. <strong>Use:</strong> Any tabular data work. <strong>Why:</strong> The gold standard; powerful, flexible, and huge ecosystem.</span>
+                <!-- ─── CATEGORY: Data Analysis & Wrangling ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">📊
+                    Data
+                    Analysis &amp; Wrangling</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>pandas</strong><br>
+                        <span style="font-size:0.9rem;">Data manipulation and analysis. <strong>Use:</strong> Any tabular data work. <strong>Why:</strong> The gold standard; powerful, flexible, and huge ecosystem.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>polars</strong><br>
+                        <span style="font-size:0.9rem;">Fast DataFrame library (Rust). <strong>Use:</strong> When performance matters (large datasets). <strong>Why:</strong> Faster than pandas, parallel, memory‑efficient.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>numpy</strong><br>
+                        <span style="font-size:0.9rem;">Numerical computing. <strong>Use:</strong> Core library for arrays and math. <strong>Why:</strong> Foundation of the data science ecosystem, fast C operations.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>scipy</strong><br>
+                        <span style="font-size:0.9rem;">Scientific computing. <strong>Use:</strong> Advanced math, statistics, optimisation. <strong>Why:</strong> Builds on NumPy, adds many scientific algorithms.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>openpyxl / xlsxwriter</strong><br>
+                        <span style="font-size:0.9rem;">Read/write Excel files. <strong>Use:</strong> When you need to interact with Excel. <strong>Why:</strong> openpyxl supports reading/writing, xlsxwriter for writing only.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>dask</strong><br>
+                        <span style="font-size:0.9rem;">Parallel computing (out‑of‑core). <strong>Use:</strong> When datasets don't fit in memory. <strong>Why:</strong> Scales pandas and NumPy to clusters or large single machines.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>pyarrow</strong><br>
+                        <span style="font-size:0.9rem;">Columnar data format. <strong>Use:</strong> For efficient data interchange (with Spark, Dask, etc.). <strong>Why:</strong> Fast, zero‑copy, memory‑efficient.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>modin</strong><br>
+                        <span style="font-size:0.9rem;">Pandas drop‑in replacement. <strong>Use:</strong> To accelerate pandas workflows. <strong>Why:</strong> Uses Dask or Ray under the hood for parallel execution.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>polars</strong><br>
-                    <span style="font-size:0.9rem;">Fast DataFrame library (Rust). <strong>Use:</strong> When performance matters (large datasets). <strong>Why:</strong> Faster than pandas, parallel, memory‑efficient.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>numpy</strong><br>
-                    <span style="font-size:0.9rem;">Numerical computing. <strong>Use:</strong> Core library for arrays and math. <strong>Why:</strong> Foundation of the data science ecosystem, fast C operations.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>scipy</strong><br>
-                    <span style="font-size:0.9rem;">Scientific computing. <strong>Use:</strong> Advanced math, statistics, optimisation. <strong>Why:</strong> Builds on NumPy, adds many scientific algorithms.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>openpyxl / xlsxwriter</strong><br>
-                    <span style="font-size:0.9rem;">Read/write Excel files. <strong>Use:</strong> When you need to interact with Excel. <strong>Why:</strong> openpyxl supports reading/writing, xlsxwriter for writing only.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>dask</strong><br>
-                    <span style="font-size:0.9rem;">Parallel computing (out‑of‑core). <strong>Use:</strong> When datasets don't fit in memory. <strong>Why:</strong> Scales pandas and NumPy to clusters or large single machines.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>pyarrow</strong><br>
-                    <span style="font-size:0.9rem;">Columnar data format. <strong>Use:</strong> For efficient data interchange (with Spark, Dask, etc.). <strong>Why:</strong> Fast, zero‑copy, memory‑efficient.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>modin</strong><br>
-                    <span style="font-size:0.9rem;">Pandas drop‑in replacement. <strong>Use:</strong> To accelerate pandas workflows. <strong>Why:</strong> Uses Dask or Ray under the hood for parallel execution.</span>
-                </div>
-            </div>
 
-            <!-- ─── CATEGORY: Machine Learning & AI Engineering ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🤖
-                Machine Learning &amp; AI Engineering</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>scikit‑learn</strong><br>
-                    <span style="font-size:0.9rem;">Classical ML algorithms. <strong>Use:</strong> Regression, classification, clustering, preprocessing. <strong>Why:</strong> Simple, consistent API, and battle‑tested.</span>
+                <!-- ─── CATEGORY: Machine Learning & AI Engineering ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🤖
+                    Machine Learning &amp; AI Engineering</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>scikit‑learn</strong><br>
+                        <span style="font-size:0.9rem;">Classical ML algorithms. <strong>Use:</strong> Regression, classification, clustering, preprocessing. <strong>Why:</strong> Simple, consistent API, and battle‑tested.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>xgboost / lightgbm / catboost</strong><br>
+                        <span style="font-size:0.9rem;">Gradient boosting frameworks. <strong>Use:</strong> For structured/tabular data, competitions. <strong>Why:</strong> State‑of‑the‑art performance, handles missing values.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>pytorch</strong><br>
+                        <span style="font-size:0.9rem;">Deep learning framework. <strong>Use:</strong> Research and production deep learning. <strong>Why:</strong> Dynamic computation graphs, pythonic, huge community.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>tensorflow / keras</strong><br>
+                        <span style="font-size:0.9rem;">Deep learning framework. <strong>Use:</strong> Production‑focused, mobile/edge deployment. <strong>Why:</strong> Mature ecosystem, TensorFlow Serving, TFLite.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>jax</strong><br>
+                        <span style="font-size:0.9rem;">Accelerated computing with autograd. <strong>Use:</strong> For high‑performance research, differentiable programming. <strong>Why:</strong> Fast, GPU/TPU support, functional.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>transformers</strong><br>
+                        <span style="font-size:0.9rem;">Hugging Face library for NLP. <strong>Use:</strong> Working with pretrained language models (BERT, GPT, etc.). <strong>Why:</strong> Access to thousands of models, easy fine‑tuning.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>datasets</strong><br>
+                        <span style="font-size:0.9rem;">Hugging Face datasets. <strong>Use:</strong> Loading and processing ML datasets. <strong>Why:</strong> Huge catalogue, streaming, memory‑efficient.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>evaluate</strong><br>
+                        <span style="font-size:0.9rem;">Evaluation metrics. <strong>Use:</strong> For benchmarking models. <strong>Why:</strong> Standardised metrics, works with datasets and transformers.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>xgboost / lightgbm / catboost</strong><br>
-                    <span style="font-size:0.9rem;">Gradient boosting frameworks. <strong>Use:</strong> For structured/tabular data, competitions. <strong>Why:</strong> State‑of‑the‑art performance, handles missing values.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>pytorch</strong><br>
-                    <span style="font-size:0.9rem;">Deep learning framework. <strong>Use:</strong> Research and production deep learning. <strong>Why:</strong> Dynamic computation graphs, pythonic, huge community.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>tensorflow / keras</strong><br>
-                    <span style="font-size:0.9rem;">Deep learning framework. <strong>Use:</strong> Production‑focused, mobile/edge deployment. <strong>Why:</strong> Mature ecosystem, TensorFlow Serving, TFLite.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>jax</strong><br>
-                    <span style="font-size:0.9rem;">Accelerated computing with autograd. <strong>Use:</strong> For high‑performance research, differentiable programming. <strong>Why:</strong> Fast, GPU/TPU support, functional.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>transformers</strong><br>
-                    <span style="font-size:0.9rem;">Hugging Face library for NLP. <strong>Use:</strong> Working with pretrained language models (BERT, GPT, etc.). <strong>Why:</strong> Access to thousands of models, easy fine‑tuning.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>datasets</strong><br>
-                    <span style="font-size:0.9rem;">Hugging Face datasets. <strong>Use:</strong> Loading and processing ML datasets. <strong>Why:</strong> Huge catalogue, streaming, memory‑efficient.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>evaluate</strong><br>
-                    <span style="font-size:0.9rem;">Evaluation metrics. <strong>Use:</strong> For benchmarking models. <strong>Why:</strong> Standardised metrics, works with datasets and transformers.</span>
-                </div>
-            </div>
 
-            <!-- ─── CATEGORY: Core Foundations & Data Prep ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🧱
-                Core
-                Foundations &amp; Data Prep</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>sqlalchemy</strong><br>
-                    <span style="font-size:0.9rem;">SQL ORM and toolkit. <strong>Use:</strong> Interacting with relational databases. <strong>Why:</strong> Pythonic, supports multiple DBs, async support.</span>
+                <!-- ─── CATEGORY: Core Foundations & Data Prep ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🧱
+                    Core
+                    Foundations &amp; Data Prep</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>sqlalchemy</strong><br>
+                        <span style="font-size:0.9rem;">SQL ORM and toolkit. <strong>Use:</strong> Interacting with relational databases. <strong>Why:</strong> Pythonic, supports multiple DBs, async support.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>psycopg2</strong><br>
+                        <span style="font-size:0.9rem;">PostgreSQL adapter. <strong>Use:</strong> Connecting to PostgreSQL. <strong>Why:</strong> Fast, reliable, supports async.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>duckdb</strong><br>
+                        <span style="font-size:0.9rem;">Embedded analytics database. <strong>Use:</strong> In‑process analytical queries. <strong>Why:</strong> Fast, supports SQL, integrates with pandas/polars.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>great_expectations</strong><br>
+                        <span style="font-size:0.9rem;">Data quality testing. <strong>Use:</strong> Validating data pipelines. <strong>Why:</strong> Ensures data meets expectations, catches issues early.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>ydata‑profiling (formerly pandas‑profiling)</strong><br>
+                        <span style="font-size:0.9rem;">Automated data profiling. <strong>Use:</strong> Exploratory Data Analysis (EDA). <strong>Why:</strong> Generates comprehensive reports in one line.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>redis‑py</strong><br>
+                        <span style="font-size:0.9rem;">Redis client. <strong>Use:</strong> Caching, message queues, real‑time data. <strong>Why:</strong> Fast, widely used, supports pub/sub.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>psycopg2</strong><br>
-                    <span style="font-size:0.9rem;">PostgreSQL adapter. <strong>Use:</strong> Connecting to PostgreSQL. <strong>Why:</strong> Fast, reliable, supports async.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>duckdb</strong><br>
-                    <span style="font-size:0.9rem;">Embedded analytics database. <strong>Use:</strong> In‑process analytical queries. <strong>Why:</strong> Fast, supports SQL, integrates with pandas/polars.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>great_expectations</strong><br>
-                    <span style="font-size:0.9rem;">Data quality testing. <strong>Use:</strong> Validating data pipelines. <strong>Why:</strong> Ensures data meets expectations, catches issues early.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>ydata‑profiling (formerly pandas‑profiling)</strong><br>
-                    <span style="font-size:0.9rem;">Automated data profiling. <strong>Use:</strong> Exploratory Data Analysis (EDA). <strong>Why:</strong> Generates comprehensive reports in one line.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>redis‑py</strong><br>
-                    <span style="font-size:0.9rem;">Redis client. <strong>Use:</strong> Caching, message queues, real‑time data. <strong>Why:</strong> Fast, widely used, supports pub/sub.</span>
-                </div>
-            </div>
 
-            <!-- ─── CATEGORY: Model Training & Inference ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🧪
-                Model
-                Training &amp; Inference</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>mlflow</strong><br>
-                    <span style="font-size:0.9rem;">ML lifecycle management. <strong>Use:</strong> Tracking experiments, packaging models. <strong>Why:</strong> End‑to‑end, supports multiple ML frameworks.</span>
+                <!-- ─── CATEGORY: Model Training & Inference ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🧪
+                    Model
+                    Training &amp; Inference</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>mlflow</strong><br>
+                        <span style="font-size:0.9rem;">ML lifecycle management. <strong>Use:</strong> Tracking experiments, packaging models. <strong>Why:</strong> End‑to‑end, supports multiple ML frameworks.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>wandb</strong><br>
+                        <span style="font-size:0.9rem;">Weights &amp; Biases – experiment tracking. <strong>Use:</strong> Visualising experiments, hyperparameter sweeps. <strong>Why:</strong> Excellent UI, collaboration, cloud‑based.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>optuna / hyperopt</strong><br>
+                        <span style="font-size:0.9rem;">Hyperparameter optimisation. <strong>Use:</strong> Tuning model hyperparameters. <strong>Why:</strong> Efficient search algorithms (TPE, Bayes, etc.).</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>onnx / onnxruntime</strong><br>
+                        <span style="font-size:0.9rem;">Open Neural Network Exchange. <strong>Use:</strong> Interoperability and inference speed. <strong>Why:</strong> Deploy models across frameworks, hardware acceleration.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>tensorrt / openvino</strong><br>
+                        <span style="font-size:0.9rem;">Hardware‑specific inference engines. <strong>Use:</strong> Optimising inference on NVIDIA (TensorRT) or Intel (OpenVINO). <strong>Why:</strong> Significant speedups on specific hardware.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>wandb</strong><br>
-                    <span style="font-size:0.9rem;">Weights &amp; Biases – experiment tracking. <strong>Use:</strong> Visualising experiments, hyperparameter sweeps. <strong>Why:</strong> Excellent UI, collaboration, cloud‑based.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>optuna / hyperopt</strong><br>
-                    <span style="font-size:0.9rem;">Hyperparameter optimisation. <strong>Use:</strong> Tuning model hyperparameters. <strong>Why:</strong> Efficient search algorithms (TPE, Bayes, etc.).</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>onnx / onnxruntime</strong><br>
-                    <span style="font-size:0.9rem;">Open Neural Network Exchange. <strong>Use:</strong> Interoperability and inference speed. <strong>Why:</strong> Deploy models across frameworks, hardware acceleration.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>tensorrt / openvino</strong><br>
-                    <span style="font-size:0.9rem;">Hardware‑specific inference engines. <strong>Use:</strong> Optimising inference on NVIDIA (TensorRT) or Intel (OpenVINO). <strong>Why:</strong> Significant speedups on specific hardware.</span>
-                </div>
-            </div>
 
-            <!-- ─── CATEGORY: LLM Orchestration & Structured Output ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🧠
-                LLM
-                Orchestration &amp; Structured Output</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>langchain</strong><br>
-                    <span style="font-size:0.9rem;">LLM application framework. <strong>Use:</strong> Building RAG, agents, and chains. <strong>Why:</strong> Comprehensive, integrates with many tools.</span>
+                <!-- ─── CATEGORY: LLM Orchestration & Structured Output ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🧠
+                    LLM
+                    Orchestration &amp; Structured Output</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>langchain</strong><br>
+                        <span style="font-size:0.9rem;">LLM application framework. <strong>Use:</strong> Building RAG, agents, and chains. <strong>Why:</strong> Comprehensive, integrates with many tools.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>llama‑index</strong><br>
+                        <span style="font-size:0.9rem;">RAG framework. <strong>Use:</strong> Indexing and retrieving data for LLMs. <strong>Why:</strong> Focused on data ingestion and retrieval.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>instructor</strong><br>
+                        <span style="font-size:0.9rem;">Structured LLM outputs. <strong>Use:</strong> When you need typed, validated outputs from LLMs. <strong>Why:</strong> Uses Pydantic, easy to integrate.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>guidance / outline</strong><br>
+                        <span style="font-size:0.9rem;">Structured generation. <strong>Use:</strong> Constraining LLM output to a grammar. <strong>Why:</strong> Guarantees valid JSON, regex, or custom formats.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>litellm</strong><br>
+                        <span style="font-size:0.9rem;">Unified LLM interface. <strong>Use:</strong> Call 100+ LLMs with the same API. <strong>Why:</strong> Simplifies switching between providers (OpenAI, Anthropic, Cohere, etc.).</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>vllm</strong><br>
+                        <span style="font-size:0.9rem;">Fast LLM inference. <strong>Use:</strong> High‑throughput serving. <strong>Why:</strong> PagedAttention, continuous batching, state‑of‑the‑art performance.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>tiktoken</strong><br>
+                        <span style="font-size:0.9rem;">Tokenisation for OpenAI models. <strong>Use:</strong> Counting tokens for pricing and context limits. <strong>Why:</strong> Fast, accurate, official.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>huggingface_hub</strong><br>
+                        <span style="font-size:0.9rem;">Hugging Face Hub client. <strong>Use:</strong> Downloading and uploading models, datasets. <strong>Why:</strong> Essential for using the Hugging Face ecosystem.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>llama‑index</strong><br>
-                    <span style="font-size:0.9rem;">RAG framework. <strong>Use:</strong> Indexing and retrieving data for LLMs. <strong>Why:</strong> Focused on data ingestion and retrieval.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>instructor</strong><br>
-                    <span style="font-size:0.9rem;">Structured LLM outputs. <strong>Use:</strong> When you need typed, validated outputs from LLMs. <strong>Why:</strong> Uses Pydantic, easy to integrate.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>guidance / outline</strong><br>
-                    <span style="font-size:0.9rem;">Structured generation. <strong>Use:</strong> Constraining LLM output to a grammar. <strong>Why:</strong> Guarantees valid JSON, regex, or custom formats.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>litellm</strong><br>
-                    <span style="font-size:0.9rem;">Unified LLM interface. <strong>Use:</strong> Call 100+ LLMs with the same API. <strong>Why:</strong> Simplifies switching between providers (OpenAI, Anthropic, Cohere, etc.).</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>vllm</strong><br>
-                    <span style="font-size:0.9rem;">Fast LLM inference. <strong>Use:</strong> High‑throughput serving. <strong>Why:</strong> PagedAttention, continuous batching, state‑of‑the‑art performance.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>tiktoken</strong><br>
-                    <span style="font-size:0.9rem;">Tokenisation for OpenAI models. <strong>Use:</strong> Counting tokens for pricing and context limits. <strong>Why:</strong> Fast, accurate, official.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>huggingface_hub</strong><br>
-                    <span style="font-size:0.9rem;">Hugging Face Hub client. <strong>Use:</strong> Downloading and uploading models, datasets. <strong>Why:</strong> Essential for using the Hugging Face ecosystem.</span>
-                </div>
-            </div>
 
-            <!-- ─── CATEGORY: Search, Retrieval & Databases ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🔍
-                Search, Retrieval &amp; Databases</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>elasticsearch / opensearch‑py</strong><br>
-                    <span style="font-size:0.9rem;">Clients for Elasticsearch / OpenSearch. <strong>Use:</strong> Text search, analytics, logging. <strong>Why:</strong> Powerful full‑text search, distributed.</span>
+                <!-- ─── CATEGORY: Search, Retrieval & Databases ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🔍
+                    Search, Retrieval &amp; Databases</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>elasticsearch / opensearch‑py</strong><br>
+                        <span style="font-size:0.9rem;">Clients for Elasticsearch / OpenSearch. <strong>Use:</strong> Text search, analytics, logging. <strong>Why:</strong> Powerful full‑text search, distributed.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>pinecone‑client / weaviate‑client / qdrant‑client</strong><br>
+                        <span style="font-size:0.9rem;">Vector databases. <strong>Use:</strong> Similarity search for embeddings. <strong>Why:</strong> Essential for RAG, recommendation, semantic search.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>chromadb</strong><br>
+                        <span style="font-size:0.9rem;">Embedded vector database. <strong>Use:</strong> Local vector storage for prototyping. <strong>Why:</strong> Lightweight, easy to set up, no external service.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>faiss</strong><br>
+                        <span style="font-size:0.9rem;">Facebook AI Similarity Search. <strong>Use:</strong> Efficient similarity search on dense vectors. <strong>Why:</strong> CPU/GPU accelerated, state‑of‑the‑art.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>annoy</strong><br>
+                        <span style="font-size:0.9rem;">Approximate Nearest Neighbours (Spotify). <strong>Use:</strong> Similarity search with static indexes. <strong>Why:</strong> Memory‑efficient, fast.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>sentence‑transformers</strong><br>
+                        <span style="font-size:0.9rem;">Sentence embeddings. <strong>Use:</strong> Generating embeddings for text. <strong>Why:</strong> Easy to use, state‑of‑the‑art, integrates with Hugging Face.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>pinecone‑client / weaviate‑client / qdrant‑client</strong><br>
-                    <span style="font-size:0.9rem;">Vector databases. <strong>Use:</strong> Similarity search for embeddings. <strong>Why:</strong> Essential for RAG, recommendation, semantic search.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>chromadb</strong><br>
-                    <span style="font-size:0.9rem;">Embedded vector database. <strong>Use:</strong> Local vector storage for prototyping. <strong>Why:</strong> Lightweight, easy to set up, no external service.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>faiss</strong><br>
-                    <span style="font-size:0.9rem;">Facebook AI Similarity Search. <strong>Use:</strong> Efficient similarity search on dense vectors. <strong>Why:</strong> CPU/GPU accelerated, state‑of‑the‑art.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>annoy</strong><br>
-                    <span style="font-size:0.9rem;">Approximate Nearest Neighbours (Spotify). <strong>Use:</strong> Similarity search with static indexes. <strong>Why:</strong> Memory‑efficient, fast.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>sentence‑transformers</strong><br>
-                    <span style="font-size:0.9rem;">Sentence embeddings. <strong>Use:</strong> Generating embeddings for text. <strong>Why:</strong> Easy to use, state‑of‑the‑art, integrates with Hugging Face.</span>
-                </div>
-            </div>
 
-            <!-- ─── CATEGORY: Production Deployment & Observability ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🚀
-                Production Deployment &amp; Observability</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>prometheus_client</strong><br>
-                    <span style="font-size:0.9rem;">Metrics for Prometheus. <strong>Use:</strong> Exposing application metrics. <strong>Why:</strong> Standard for cloud‑native monitoring.</span>
+                <!-- ─── CATEGORY: Production Deployment & Observability ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🚀
+                    Production Deployment &amp; Observability</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>prometheus_client</strong><br>
+                        <span style="font-size:0.9rem;">Metrics for Prometheus. <strong>Use:</strong> Exposing application metrics. <strong>Why:</strong> Standard for cloud‑native monitoring.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>opentelemetry</strong><br>
+                        <span style="font-size:0.9rem;">Observability framework. <strong>Use:</strong> Distributed tracing, metrics, logging. <strong>Why:</strong> Vendor‑neutral, standardised.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>sentry‑sdk</strong><br>
+                        <span style="font-size:0.9rem;">Error monitoring. <strong>Use:</strong> Tracking exceptions in production. <strong>Why:</strong> Easy setup, captures context, alerts.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>gunicorn / uvicorn</strong><br>
+                        <span style="font-size:0.9rem;">WSGI/ASGI servers. <strong>Use:</strong> Serving web applications in production. <strong>Why:</strong> Gunicorn for WSGI (Flask, Django), Uvicorn for ASGI (FastAPI).</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>celery / rq</strong><br>
+                        <span style="font-size:0.9rem;">Task queues. <strong>Use:</strong> Background job processing. <strong>Why:</strong> Celery for complex workflows, RQ for simplicity.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>docker‑py / kubernetes</strong><br>
+                        <span style="font-size:0.9rem;">Container and K8s API clients. <strong>Use:</strong> Automating container operations. <strong>Why:</strong> Essential for cloud‑native deployment.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>newrelic / datadog</strong><br>
+                        <span style="font-size:0.9rem;">Application performance monitoring. <strong>Use:</strong> Full‑stack performance insights. <strong>Why:</strong> Enterprise‑grade, dashboards, alerts.</span>
+                    </div>
                 </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>opentelemetry</strong><br>
-                    <span style="font-size:0.9rem;">Observability framework. <strong>Use:</strong> Distributed tracing, metrics, logging. <strong>Why:</strong> Vendor‑neutral, standardised.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>sentry‑sdk</strong><br>
-                    <span style="font-size:0.9rem;">Error monitoring. <strong>Use:</strong> Tracking exceptions in production. <strong>Why:</strong> Easy setup, captures context, alerts.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>gunicorn / uvicorn</strong><br>
-                    <span style="font-size:0.9rem;">WSGI/ASGI servers. <strong>Use:</strong> Serving web applications in production. <strong>Why:</strong> Gunicorn for WSGI (Flask, Django), Uvicorn for ASGI (FastAPI).</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>celery / rq</strong><br>
-                    <span style="font-size:0.9rem;">Task queues. <strong>Use:</strong> Background job processing. <strong>Why:</strong> Celery for complex workflows, RQ for simplicity.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>docker‑py / kubernetes</strong><br>
-                    <span style="font-size:0.9rem;">Container and K8s API clients. <strong>Use:</strong> Automating container operations. <strong>Why:</strong> Essential for cloud‑native deployment.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>newrelic / datadog</strong><br>
-                    <span style="font-size:0.9rem;">Application performance monitoring. <strong>Use:</strong> Full‑stack performance insights. <strong>Why:</strong> Enterprise‑grade, dashboards, alerts.</span>
-                </div>
-            </div>
 
-            <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:1rem 1.5rem; margin:2rem 0; border-radius:6px;">
-                <strong>💡 Pro Tip:</strong> You don't need to master every library at once. Focus on the ones
-                relevant
-                to your current project. Use this list as a reference when you encounter new problems – there's
-                almost
-                always a library that solves it.
-            </div>
+                <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:1rem 1.5rem; margin:2rem 0; border-radius:6px;">
+                    <strong>💡 Pro Tip:</strong> You don't need to master every library at once. Focus on the ones
+                    relevant
+                    to your current project. Use this list as a reference when you encounter new problems – there's
+                    almost
+                    always a library that solves it.
+                </div>
 
-            <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
-                <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">📚 60+ Libraries</span>
-                <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ 7 Domains</span>
-                <span style="background:#7c3aed; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 Production‑Ready</span>
+                <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
+                    <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">📚 60+ Libraries</span>
+                    <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ 7 Domains</span>
+                    <span style="background:#7c3aed; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 Production‑Ready</span>
+                </div>
             </div>
         </div>
     </div>
@@ -12984,6 +12998,16 @@ for i in range(3):
 <!-- Shared JS + roadmap-specific JS -->
 <script src="../assets/js/script.js"></script>
 <script src="../assets/js/roadmap-script.js"></script>
-
+<!--<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.phase-section').forEach(function(phase) {
+            // Check if sidebar is missing OR has no day buttons
+            const sidebar = phase.querySelector('.day-sidebar');
+            if (!sidebar || sidebar.querySelectorAll('.day-btn').length === 0) {
+                phase.classList.add('no-sidebar');
+            }
+        });
+    });
+</script>-->
 </body>
 </html>
