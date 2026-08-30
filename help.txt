@@ -46,3 +46,35 @@ https://www.youtube.com/watch?v=H2Hxu7fDUOc
 Deploy Full Stack Web App | Frontend + Backend Deployment | Vercel | Netlify
 --------------
 https://www.youtube.com/watch?v=KuMbhQ4CLQ8
+
+
+
+## Solution 1: Switch to a JavaScript Dynamic Base (Recommended)
+Instead of hardcoding a static HTML tag, let JavaScript determine where the site is running at runtime and insert the correct base URL automatically.
+Replace your commented <base> tags in the <head> of your HTML with this script:
+
+<script>
+  const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+  const base = document.createElement('base');
+
+  // Set local path vs production path
+  base.href = isLocal ? "/skill-forge-learning/" : "/";
+
+  document.head.appendChild(base);
+</script>
+
+## Solution 2: Automate with Netlify Snippet Injection
+If you want to keep your HTML clean and hardcoded for your local development setup, you can have Netlify automatically swap the base tag out during deployment.
+
+   1. In your local index.html, set your base tag strictly for local development:
+
+   <base href="/skill-forge-learning/" />
+
+   2. Log into your Netlify Dashboard.
+   3. Navigate to Site configuration > Build & deploy > Snippet injection.
+   4. Click Add snippet and configure it with these settings:
+   * Injection URL match: All pages
+      * Script name: Production Base Fix
+      * HTML: <base href="/" />
+      * Placement: Insert before </head>
+   5. Because an HTML document can technically evaluate the topmost <base> tag first, you can remove the local base tag via JavaScript on production, or let the injected tag override it depending on your exact asset structure.

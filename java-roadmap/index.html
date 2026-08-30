@@ -9,28 +9,23 @@
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
           rel="stylesheet"/>
-
-    <!-- base setup -->
-    <!--  For Production-->
-    <base href="/" />
-    <!--For Local -->
-    <!--    <base href="/skill-forge-learning/" />-->
-
     <!-- Shared CSS + roadmap-specific CSS -->
-    <link rel="stylesheet" href="assets/css/style.css"/>
-    <link rel="stylesheet" href="assets/css/roadmap-style.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/roadmap-style.css"/>
 
 <body>
 
 <!-- ========== HEADER ========== -->
 <header>
-    <div class="container nav">
-        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>
+    <div class="container nav nav-links">
+        <a href="/">
+            <div class="logo">Skill<span>Forge</span></div>
+        </a>
         <div>
             <a href="/">Home</a>
             <a href="/python-roadmap/">🐍 Python</a>
             <a href="/java-roadmap/" class="active">☕ Java</a>
-            <a href="/sql-roadmap/">🗄️SQL</a>
+            <a href="/sql-roadmap/">🛢️ SQL</a>
             <a href="/dsa-roadmap/">📊 DSA</a>
         </div>
     </div>
@@ -61,237 +56,245 @@
     <!-- ========================================================== -->
     <!-- PHASE 1 - PREREQUISITE SECTION                             -->
     <!-- ========================================================== -->
-    <div id="phase1" class="phase-section active">
-        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
-            <h2>🛠️ Prerequisite – Setting Up Your Java Environment</h2>
+    <div id="phase1" class="phase-section no-sidebar active">
+        <div class="content-area">
+            <div class="main-content">
+                <h2>🛠️ Prerequisite – Setting Up Your Java Environment</h2>
 
-            <p style="font-size:1.1rem; color:#4a5568;">
-                A solid setup is the foundation of your Java journey. This guide walks you through installing Java,
-                IntelliJ IDEA, MySQL, Maven, and Git. Follow these steps <strong>before</strong> you start Day 1.
-            </p>
+                <p style="font-size:1.1rem; color:#4a5568;">
+                    A solid setup is the foundation of your Java journey. This guide walks you through installing Java,
+                    IntelliJ IDEA, MySQL, Maven, and Git. Follow these steps <strong>before</strong> you start Day 1.
+                </p>
 
-            <!-- ===== SECTION 1: JAVA ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">1️⃣ Install Java (JDK 17 or later)</h3>
-                <p style="margin:0.3rem 0;">Java is the foundation. We use the latest LTS version (JDK 17 or 21).</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Download the latest <a
-                                    href="https://www.oracle.com/java/technologies/javase-downloads.html"
-                                    target="_blank">Java JDK</a>.
-                            </li>
-                            <li>Install it (e.g., <code>C:\Program Files\Java\jdk-17</code>).</li>
-                            <li>Set <code>JAVA_HOME</code> in Environment Variables → point to JDK path.</li>
-                            <li>Add <code>%JAVA_HOME%\bin</code> to <code>Path</code>.</li>
-                            <li>Verify: Open Command Prompt &amp; run <code>java -version</code>.</li>
-                        </ol>
+                <!-- ===== SECTION 1: JAVA ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">1️⃣ Install Java (JDK 17 or later)</h3>
+                    <p style="margin:0.3rem 0;">Java is the foundation. We use the latest LTS version (JDK 17 or
+                        21).</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Download the latest <a
+                                        href="https://www.oracle.com/java/technologies/javase-downloads.html"
+                                        target="_blank">Java JDK</a>.
+                                </li>
+                                <li>Install it (e.g., <code>C:\Program Files\Java\jdk-17</code>).</li>
+                                <li>Set <code>JAVA_HOME</code> in Environment Variables → point to JDK path.</li>
+                                <li>Add <code>%JAVA_HOME%\bin</code> to <code>Path</code>.</li>
+                                <li>Verify: Open Command Prompt &amp; run <code>java -version</code>.</li>
+                            </ol>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS / 🐧 Linux</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Install via Homebrew: <code>brew install openjdk@17</code> (macOS) or <code>sudo apt
+                                    install openjdk-17-jdk</code> (Ubuntu).
+                                </li>
+                                <li>Add to shell config (<code>~/.zshrc</code>): <code>export
+                                    JAVA_HOME=$(/usr/libexec/java_home)</code>.
+                                </li>
+                                <li>Run <code>source ~/.zshrc</code>.</li>
+                                <li>Verify: Open Terminal &amp; run <code>java -version</code>.</li>
+                            </ol>
+                        </div>
                     </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS / 🐧 Linux</strong>
-                        <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Install via Homebrew: <code>brew install openjdk@17</code> (macOS) or <code>sudo apt
-                                install openjdk-17-jdk</code> (Ubuntu).
-                            </li>
-                            <li>Add to shell config (<code>~/.zshrc</code>): <code>export
-                                JAVA_HOME=$(/usr/libexec/java_home)</code>.
-                            </li>
-                            <li>Run <code>source ~/.zshrc</code>.</li>
-                            <li>Verify: Open Terminal &amp; run <code>java -version</code>.</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="code-container" style="margin-top:0.5rem;">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash">java -version
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">java -version
 java version "21.0.11" 2026-04-21 LTS
 Java(TM) SE Runtime Environment (build 21.0.11+9-LTS-211)
 Java HotSpot(TM) 64-Bit Server VM (build 21.0.11+9-LTS-211, mixed mode, sharing)</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 2: INTELLIJ ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">2️⃣ Install IntelliJ IDEA (Community Edition)</h3>
-                <p style="margin:0.3rem 0;">IntelliJ is the most popular Java IDE, with excellent refactoring and
-                    debugging tools.</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Download from <a href="https://www.jetbrains.com/idea/download/" target="_blank">jetbrains.com</a>.
-                            </li>
-                            <li>Install and launch.</li>
-                            <li>Create a new project and select JDK 17.</li>
-                            <li>Install plugins: <strong>Lombok</strong>, <strong>Spring Boot</strong> (optional).</li>
-                        </ul>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS / 🐧 Linux</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Download DMG from JetBrains site.</li>
-                            <li>Drag IntelliJ IDEA to Applications folder.</li>
-                            <li>Launch and complete the setup wizard.</li>
-                        </ul>
+                <!-- ===== SECTION 2: INTELLIJ ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">2️⃣ Install IntelliJ IDEA (Community Edition)</h3>
+                    <p style="margin:0.3rem 0;">IntelliJ is the most popular Java IDE, with excellent refactoring and
+                        debugging tools.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Download from <a href="https://www.jetbrains.com/idea/download/" target="_blank">jetbrains.com</a>.
+                                </li>
+                                <li>Install and launch.</li>
+                                <li>Create a new project and select JDK 17.</li>
+                                <li>Install plugins: <strong>Lombok</strong>, <strong>Spring Boot</strong> (optional).
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS / 🐧 Linux</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Download DMG from JetBrains site.</li>
+                                <li>Drag IntelliJ IDEA to Applications folder.</li>
+                                <li>Launch and complete the setup wizard.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 3: MYSQL ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">3️⃣ Install MySQL (or use Docker)</h3>
-                <p style="margin:0.3rem 0;">MySQL is used for database projects.</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Download MySQL Installer from <a href="https://dev.mysql.com/downloads/installer/"
-                                                                 target="_blank">MySQL</a>.
-                            </li>
-                            <li>Run installer, choose Developer Default setup.</li>
-                            <li>Configure root password and server settings.</li>
-                        </ul>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS / 🐧 Linux</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Install via Homebrew: <code>brew install mysql</code>.</li>
-                            <li>Start service: <code>brew services start mysql</code>.</li>
-                            <li>Secure installation: <code>mysql_secure_installation</code>.</li>
-                        </ul>
+                <!-- ===== SECTION 3: MYSQL ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">3️⃣ Install MySQL (or use Docker)</h3>
+                    <p style="margin:0.3rem 0;">MySQL is used for database projects.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Download MySQL Installer from <a href="https://dev.mysql.com/downloads/installer/"
+                                                                     target="_blank">MySQL</a>.
+                                </li>
+                                <li>Run installer, choose Developer Default setup.</li>
+                                <li>Configure root password and server settings.</li>
+                            </ul>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS / 🐧 Linux</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Install via Homebrew: <code>brew install mysql</code>.</li>
+                                <li>Start service: <code>brew services start mysql</code>.</li>
+                                <li>Secure installation: <code>mysql_secure_installation</code>.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 4: MAVEN ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">4️⃣ Install Maven (Build Tool)</h3>
-                <p style="margin:0.3rem 0;">Maven manages dependencies and builds your projects.</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Get the binary zip from <a href="https://maven.apache.org/download.cgi" target="_blank">Apache
-                                Maven Downloads</a>.
-                            </li>
-                            <li>Extract to <code>C:\Program Files\Apache\Maven</code>.</li>
-                            <li>Add <code>M2_HOME</code> = Maven folder path.</li>
-                            <li>Add <code>MAVEN_HOME</code> = same as <code>M2_HOME</code>.</li>
-                            <li>Update <code>Path</code>: add <code>%M2_HOME%\bin</code>.</li>
-                            <li>Verify: Open Command Prompt &amp; run <code>mvn -version</code>.</li>
-                        </ul>
+                <!-- ===== SECTION 4: MAVEN ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">4️⃣ Install Maven (Build Tool)</h3>
+                    <p style="margin:0.3rem 0;">Maven manages dependencies and builds your projects.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Get the binary zip from <a href="https://maven.apache.org/download.cgi"
+                                                               target="_blank">Apache
+                                    Maven Downloads</a>.
+                                </li>
+                                <li>Extract to <code>C:\Program Files\Apache\Maven</code>.</li>
+                                <li>Add <code>M2_HOME</code> = Maven folder path.</li>
+                                <li>Add <code>MAVEN_HOME</code> = same as <code>M2_HOME</code>.</li>
+                                <li>Update <code>Path</code>: add <code>%M2_HOME%\bin</code>.</li>
+                                <li>Verify: Open Command Prompt &amp; run <code>mvn -version</code>.</li>
+                            </ul>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS / 🐧 Linux</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Option 1: Download binary zip from <a href="https://maven.apache.org/download.cgi"
+                                                                          target="_blank">Apache Maven</a> and extract
+                                    to
+                                    <code>/usr/local/apache-maven</code>.
+                                </li>
+                                <li>Option 2: Use Homebrew → <code>brew install maven</code>.</li>
+                                <li>Edit <code>~/.zshrc</code> or <code>~/.bash_profile</code>.</li>
+                                <li>Add: <code>export M2_HOME=/usr/local/apache-maven</code> and <code>export
+                                    PATH=$M2_HOME/bin:$PATH</code>.
+                                </li>
+                                <li>Run <code>source ~/.zshrc</code> (or <code>source ~/.bash_profile</code>).</li>
+                                <li>Verify: Open Terminal &amp; run <code>mvn -version</code>.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS / 🐧 Linux</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Option 1: Download binary zip from <a href="https://maven.apache.org/download.cgi"
-                                                                      target="_blank">Apache Maven</a> and extract to
-                                <code>/usr/local/apache-maven</code>.
-                            </li>
-                            <li>Option 2: Use Homebrew → <code>brew install maven</code>.</li>
-                            <li>Edit <code>~/.zshrc</code> or <code>~/.bash_profile</code>.</li>
-                            <li>Add: <code>export M2_HOME=/usr/local/apache-maven</code> and <code>export
-                                PATH=$M2_HOME/bin:$PATH</code>.
-                            </li>
-                            <li>Run <code>source ~/.zshrc</code> (or <code>source ~/.bash_profile</code>).</li>
-                            <li>Verify: Open Terminal &amp; run <code>mvn -version</code>.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="code-container" style="margin-top:0.5rem;">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash">mvn --version
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">mvn --version
 Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
 Maven home: C:\tools\apache-maven-3.9.16
 Java version: 21.0.11, vendor: Oracle Corporation
 Default locale: en_IN, platform encoding: UTF-8</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 5: GIT ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">5️⃣ Install Git (Version Control)</h3>
-                <p style="margin:0.3rem 0;">Git helps you track changes and collaborate.</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Download from <a href="https://git-scm.com/download/win" target="_blank">Git SCM</a>.
-                            </li>
-                            <li>Run installer and configure Git Bash.</li>
-                        </ul>
+                <!-- ===== SECTION 5: GIT ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">5️⃣ Install Git (Version Control)</h3>
+                    <p style="margin:0.3rem 0;">Git helps you track changes and collaborate.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Download from <a href="https://git-scm.com/download/win" target="_blank">Git SCM</a>.
+                                </li>
+                                <li>Run installer and configure Git Bash.</li>
+                            </ul>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS / 🐧 Linux</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Install via Homebrew: <code>brew install git</code>.</li>
+                                <li>Verify with <code>git --version</code>.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS / 🐧 Linux</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Install via Homebrew: <code>brew install git</code>.</li>
-                            <li>Verify with <code>git --version</code>.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="code-container" style="margin-top:0.5rem;">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</code></pre>
+                    </div>
+                    <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
                 </div>
-                <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
-            </div>
 
-            <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
-            <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#15803d;">✅ Final Checklist</h3>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
-                        <div style="font-size:2rem;">☕</div>
-                        <strong>Java</strong>
-                        <p style="font-size:0.85rem; margin:0;">JDK 17+<br><code>java -version</code></p>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
-                        <div style="font-size:2rem;">🧠</div>
-                        <strong>IntelliJ</strong>
-                        <p style="font-size:0.85rem; margin:0;">Installed<br><code>idea --version</code></p>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
-                        <div style="font-size:2rem;">🐬</div>
-                        <strong>MySQL</strong>
-                        <p style="font-size:0.85rem; margin:0;">Running<br><code>mysql --version</code></p>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
-                        <div style="font-size:2rem;">📦</div>
-                        <strong>Maven</strong>
-                        <p style="font-size:0.85rem; margin:0;">Installed<br><code>mvn --version</code></p>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
-                        <div style="font-size:2rem;">🔧</div>
-                        <strong>Git</strong>
-                        <p style="font-size:0.85rem; margin:0;">Installed + configured<br><code>git --version</code></p>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
-                        <div style="font-size:2rem;">🌐</div>
-                        <strong>Browser</strong>
-                        <p style="font-size:0.85rem; margin:0;">Chrome / Firefox / Edge</p>
+                <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
+                <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#15803d;">✅ Final Checklist</h3>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
+                            <div style="font-size:2rem;">☕</div>
+                            <strong>Java</strong>
+                            <p style="font-size:0.85rem; margin:0;">JDK 17+<br><code>java -version</code></p>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
+                            <div style="font-size:2rem;">🧠</div>
+                            <strong>IntelliJ</strong>
+                            <p style="font-size:0.85rem; margin:0;">Installed<br><code>idea --version</code></p>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
+                            <div style="font-size:2rem;">🐬</div>
+                            <strong>MySQL</strong>
+                            <p style="font-size:0.85rem; margin:0;">Running<br><code>mysql --version</code></p>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
+                            <div style="font-size:2rem;">📦</div>
+                            <strong>Maven</strong>
+                            <p style="font-size:0.85rem; margin:0;">Installed<br><code>mvn --version</code></p>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
+                            <div style="font-size:2rem;">🔧</div>
+                            <strong>Git</strong>
+                            <p style="font-size:0.85rem; margin:0;">Installed + configured<br><code>git --version</code>
+                            </p>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
+                            <div style="font-size:2rem;">🌐</div>
+                            <strong>Browser</strong>
+                            <p style="font-size:0.85rem; margin:0;">Chrome / Firefox / Edge</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
-            <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#b91c1c;">⚠️ Troubleshooting – Common Issues</h3>
-                <ul style="margin:0.3rem 0 0 1.2rem;">
-                    <li><strong>"java" not recognized:</strong> Set <code>JAVA_HOME</code> and add
-                        <code>%JAVA_HOME%\bin</code> to PATH (Windows).
-                    </li>
-                    <li><strong>Maven not found:</strong> Set <code>MAVEN_HOME</code> and add to PATH.</li>
-                    <li><strong>MySQL access denied:</strong> Reset root password or use <code>sudo</code>.</li>
-                    <li><strong>IntelliJ not detecting JDK:</strong> Go to File → Project Structure → SDK → select JDK.
-                    </li>
-                </ul>
-                <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.8rem 1rem; margin-top:0.8rem; border-radius:4px;">
-                    <strong>🎉 You're all set!</strong> Now you're ready to start the 100‑day Java journey.
+                <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
+                <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#b91c1c;">⚠️ Troubleshooting – Common Issues</h3>
+                    <ul style="margin:0.3rem 0 0 1.2rem;">
+                        <li><strong>"java" not recognized:</strong> Set <code>JAVA_HOME</code> and add
+                            <code>%JAVA_HOME%\bin</code> to PATH (Windows).
+                        </li>
+                        <li><strong>Maven not found:</strong> Set <code>MAVEN_HOME</code> and add to PATH.</li>
+                        <li><strong>MySQL access denied:</strong> Reset root password or use <code>sudo</code>.</li>
+                        <li><strong>IntelliJ not detecting JDK:</strong> Go to File → Project Structure → SDK → select
+                            JDK.
+                        </li>
+                    </ul>
+                    <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.8rem 1rem; margin-top:0.8rem; border-radius:4px;">
+                        <strong>🎉 You're all set!</strong> Now you're ready to start the 100‑day Java journey.
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
     <!-- ========================================================= -->
@@ -9030,7 +9033,7 @@ services:
                 <div id="phase8DefaultActiveSideBar" class="day-content">
                     <h2>120 Most Common &amp; Important Java Interview Questions</h2>
                     <embed
-                            src="assets/pdf/SkillForge-Java-Mastery.pdf"
+                            src="../assets/pdf/SkillForge-Java-Mastery.pdf"
                             type="application/pdf"
                             width="100%"
                             height="1000"
@@ -9852,590 +9855,592 @@ void testGetUser() {
     <!-- ========================================================== -->
     <!-- PHASE 9 : LIBRARIES SECTION                                -->
     <!-- ========================================================== -->
-    <div id="phase9" class="phase-section">
-        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
+    <div id="phase9" class="phase-section no-sidebar">
+        <div class="content-area">
+            <div class="main-content">
 
-            <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">Java Libraries Every
-                Engineer Should Know</h2>
+                <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">Java Libraries Every
+                    Engineer Should Know</h2>
 
-            <p style="font-size:1.1rem; color:#4a5568;">
-                A curated list of 60+ essential Java libraries across 10 key domains. Each entry includes a brief
-                description,
-                <strong>when to use</strong>, and <strong>why it matters</strong>. Master these to become a
-                well‑rounded Java engineer.
-            </p>
+                <p style="font-size:1.1rem; color:#4a5568;">
+                    A curated list of 60+ essential Java libraries across 10 key domains. Each entry includes a brief
+                    description,
+                    <strong>when to use</strong>, and <strong>why it matters</strong>. Master these to become a
+                    well‑rounded Java engineer.
+                </p>
 
-            <!-- ─── CATEGORY 1: Core Development & Utilities ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Core
-                Development &amp; Utilities</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                <!-- ─── CATEGORY 1: Core Development & Utilities ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Core
+                    Development &amp; Utilities</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
 
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Apache Commons (Lang, IO, Collections)</strong><br>
-                    <span style="font-size:0.9rem;">Utilities for string manipulation, I/O, and collections.
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Apache Commons (Lang, IO, Collections)</strong><br>
+                        <span style="font-size:0.9rem;">Utilities for string manipulation, I/O, and collections.
                         <strong>Use:</strong> For common helper methods not in the JDK.
                         <strong>Why:</strong> Saves time with robust, battle‑tested utility functions.
                     </span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Guava</strong><br>
+                        <span style="font-size:0.9rem;">Google's core libraries for collections, caching, and concurrency. <strong>Use:</strong> For immutable collections, cache, and advanced string utilities. <strong>Why:</strong> High‑quality, well‑tested, and widely adopted.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Lombok</strong><br>
+                        <span style="font-size:0.9rem;">Annotation‑based boilerplate reducer. <strong>Use:</strong> To generate getters, setters, constructors, and builders. <strong>Why:</strong> Significantly reduces verbosity in data classes.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Jsoup</strong><br>
+                        <span style="font-size:0.9rem;">HTML parsing and manipulation. <strong>Use:</strong> For web scraping and working with HTML documents. <strong>Why:</strong> Clean API, handles malformed HTML gracefully.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Jackson (Databind)</strong><br>
+                        <span style="font-size:0.9rem;">JSON parsing and serialisation. <strong>Use:</strong> To convert Java objects to/from JSON. <strong>Why:</strong> Fast, flexible, and the de‑facto standard for JSON in Java.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Gson</strong><br>
+                        <span style="font-size:0.9rem;">Google's JSON library. <strong>Use:</strong> For simple JSON serialisation/deserialisation. <strong>Why:</strong> Lightweight, easy to use, and handles generic types well.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Reflections</strong><br>
+                        <span style="font-size:0.9rem;">Runtime reflection and classpath scanning. <strong>Use:</strong> For dynamic class loading and annotation scanning. <strong>Why:</strong> Simplifies dependency injection and plugin architectures.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Vavr</strong><br>
+                        <span style="font-size:0.9rem;">Functional programming library for Java. <strong>Use:</strong> For immutable collections, Option, Try, and pattern matching. <strong>Why:</strong> Brings modern functional concepts to Java 8+.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Apache PDFBox</strong><br>
+                        <span style="font-size:0.9rem;">PDF creation and manipulation. <strong>Use:</strong> To generate, extract, and modify PDF documents. <strong>Why:</strong> Open‑source, pure Java alternative to iText.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>MapStruct</strong><br>
+                        <span style="font-size:0.9rem;">Object mapping and DTO conversion. <strong>Use:</strong> To map between Entity and DTO objects. <strong>Why:</strong> Generates type‑safe, fast code at compile‑time.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 2: Web & REST Frameworks ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Web
+                    &amp; REST Frameworks</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Boot</strong><br>
+                        <span style="font-size:0.9rem;">Microservices and web application framework. <strong>Use:</strong> For building production‑ready Spring applications. <strong>Why:</strong> Auto‑configuration, embedded servers, and huge ecosystem.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring MVC</strong><br>
+                        <span style="font-size:0.9rem;">Web MVC framework. <strong>Use:</strong> For building web applications with REST APIs. <strong>Why:</strong> Flexible, annotation‑driven, and integrates with Spring Boot.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Quarkus</strong><br>
+                        <span style="font-size:0.9rem;">Cloud‑native, container‑first framework. <strong>Use:</strong> For microservices and serverless applications. <strong>Why:</strong> Fast startup, low memory, native image support.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Micronaut</strong><br>
+                        <span style="font-size:0.9rem;">Modern JVM framework with AOT compilation. <strong>Use:</strong> For microservices with fast startup and low memory. <strong>Why:</strong> Dependency injection at compile‑time, built‑in support for reactive.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Apache Struts</strong><br>
+                        <span style="font-size:0.9rem;">MVC framework for enterprise web apps. <strong>Use:</strong> Legacy enterprise Java applications. <strong>Why:</strong> Mature, widely adopted in large enterprises.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Play Framework</strong><br>
+                        <span style="font-size:0.9rem;">Reactive web framework. <strong>Use:</strong> For building scalable web applications. <strong>Why:</strong> Lightweight, stateless, and built on Akka.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Jersey</strong><br>
+                        <span style="font-size:0.9rem;">JAX‑RS reference implementation. <strong>Use:</strong> For building RESTful web services. <strong>Why:</strong> Standard API, integrates with Java EE/Spring.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>REST Assured</strong><br>
+                        <span style="font-size:0.9rem;">Testing REST APIs. <strong>Use:</strong> For testing REST endpoints. <strong>Why:</strong> DSL for HTTP validation, integrates with JUnit.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 3: Data & Databases ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Data
+                    &amp; Databases</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Hibernate</strong><br>
+                        <span style="font-size:0.9rem;">JPA implementation and ORM. <strong>Use:</strong> For object‑relational mapping. <strong>Why:</strong> Most popular JPA provider, rich features, and mature.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Data JPA</strong><br>
+                        <span style="font-size:0.9rem;">Spring's abstraction for JPA repositories. <strong>Use:</strong> For data access with Spring Boot. <strong>Why:</strong> Reduces boilerplate, automatic query generation.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>MyBatis</strong><br>
+                        <span style="font-size:0.9rem;">SQL mapping framework. <strong>Use:</strong> For custom SQL queries with flexibility. <strong>Why:</strong> Full control over SQL, great for existing databases.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Flyway</strong><br>
+                        <span style="font-size:0.9rem;">Database migration tool. <strong>Use:</strong> For version‑controlled schema changes. <strong>Why:</strong> Simple, reliable, and integrates with Spring Boot.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Liquibase</strong><br>
+                        <span style="font-size:0.9rem;">Database refactoring and migration. <strong>Use:</strong> For managing schema changes. <strong>Why:</strong> Supports XML, YAML, JSON, and SQL formats.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>MongoDB Driver</strong><br>
+                        <span style="font-size:0.9rem;">MongoDB connectivity. <strong>Use:</strong> For document‑based NoSQL databases. <strong>Why:</strong> Reactive and synchronous support, Spring Data integration.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Elasticsearch Java Client</strong><br>
+                        <span style="font-size:0.9rem;">Elasticsearch connectivity. <strong>Use:</strong> For search and analytics. <strong>Why:</strong> High‑performance, supports async and streaming.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>H2 Database</strong><br>
+                        <span style="font-size:0.9rem;">Embedded SQL database. <strong>Use:</strong> For development, testing, and prototyping. <strong>Why:</strong> Fast, zero‑configuration, and in‑memory support.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Redis Client (Jedis / Lettuce)</strong><br>
+                        <span style="font-size:0.9rem;">Redis connectivity. <strong>Use:</strong> For caching, session storage, and rate limiting. <strong>Why:</strong> Lettuce supports async and reactive; Jedis is synchronous.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 4: Testing & Quality ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
+                    Testing &amp; Quality</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>JUnit 5</strong><br>
+                        <span style="font-size:0.9rem;">Unit testing framework. <strong>Use:</strong> For writing and running unit tests. <strong>Why:</strong> The standard for Java testing, with great IDE support.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Mockito</strong><br>
+                        <span style="font-size:0.9rem;">Mocking framework. <strong>Use:</strong> For creating mock objects in tests. <strong>Why:</strong> Simple API, integrates with JUnit, and supports spy/verify.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>AssertJ</strong><br>
+                        <span style="font-size:0.9rem;">Fluent assertions. <strong>Use:</strong> For expressive and readable test assertions. <strong>Why:</strong> Rich API, chaining, and IDE autocomplete.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Testcontainers</strong><br>
+                        <span style="font-size:0.9rem;">Docker‑based integration testing. <strong>Use:</strong> For testing with real databases, message brokers, etc. <strong>Why:</strong> Clean, isolated, and reproducible test environments.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Selenium</strong><br>
+                        <span style="font-size:0.9rem;">Web application testing. <strong>Use:</strong> For browser automation and end‑to‑end testing. <strong>Why:</strong> Industry standard for web UI testing.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Cucumber</strong><br>
+                        <span style="font-size:0.9rem;">BDD testing framework. <strong>Use:</strong> For behaviour‑driven development. <strong>Why:</strong> Collaboration between business and technical teams.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>ArchUnit</strong><br>
+                        <span style="font-size:0.9rem;">Architecture testing. <strong>Use:</strong> To enforce architectural rules (layers, dependencies). <strong>Why:</strong> Keeps codebase clean and prevents regressions.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Pact (Consumer‑Driven Contracts)</strong><br>
+                        <span style="font-size:0.9rem;">Contract testing for microservices. <strong>Use:</strong> For testing service communication. <strong>Why:</strong> Ensures API compatibility between services.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 5: Logging & Monitoring ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
+                    Logging &amp; Monitoring</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>SLF4J</strong><br>
+                        <span style="font-size:0.9rem;">Logging facade. <strong>Use:</strong> For consistent logging across libraries. <strong>Why:</strong> Avoids vendor lock‑in; switch implementations easily.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Log4j 2</strong><br>
+                        <span style="font-size:0.9rem;">High‑performance logging. <strong>Use:</strong> For production logging. <strong>Why:</strong> Fast, asynchronous logging, and rich configuration.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Logback</strong><br>
+                        <span style="font-size:0.9rem;">Logging implementation. <strong>Use:</strong> As SLF4J implementation. <strong>Why:</strong> Reliable, flexible, and widely used in Spring Boot.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Micrometer</strong><br>
+                        <span style="font-size:0.9rem;">Metrics and observability. <strong>Use:</strong> For application metrics (Prometheus, Graphite). <strong>Why:</strong> Vendor‑neutral metrics API with binders for Spring.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>OpenTelemetry</strong><br>
+                        <span style="font-size:0.9rem;">Distributed tracing. <strong>Use:</strong> For tracing requests across microservices. <strong>Why:</strong> Standard, vendor‑agnostic, and supports Jaeger/Zipkin.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Prometheus Java Client</strong><br>
+                        <span style="font-size:0.9rem;">Metrics for Prometheus. <strong>Use:</strong> Exposing application metrics. <strong>Why:</strong> Standard for cloud‑native monitoring.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>ELK Stack (Elasticsearch, Logstash, Kibana)</strong><br>
+                        <span style="font-size:0.9rem;">Log aggregation and visualisation. <strong>Use:</strong> For centralised logging. <strong>Why:</strong> Powerful search, dashboards, and alerting.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 6: Security & Authentication ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
+                    Security &amp; Authentication</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Security</strong><br>
+                        <span style="font-size:0.9rem;">Authentication and authorisation. <strong>Use:</strong> For securing web applications and APIs. <strong>Why:</strong> Comprehensive, integrates with Spring Boot and OAuth2.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>jjwt (Java JWT)</strong><br>
+                        <span style="font-size:0.9rem;">JWT token handling. <strong>Use:</strong> For creating, signing, and validating JWT tokens. <strong>Why:</strong> Lightweight, easy to use, and widely adopted.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Bouncy Castle</strong><br>
+                        <span style="font-size:0.9rem;">Cryptographic library. <strong>Use:</strong> For advanced encryption and hashing. <strong>Why:</strong> Comprehensive support for cryptography standards.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Keycloak</strong><br>
+                        <span style="font-size:0.9rem;">Identity and access management. <strong>Use:</strong> For SSO, OAuth2, and OpenID Connect. <strong>Why:</strong> Open‑source, feature‑rich, and integrates with Spring.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>OWASP Java Encoder</strong><br>
+                        <span style="font-size:0.9rem;">XSS prevention. <strong>Use:</strong> For encoding HTML, JavaScript, and XML. <strong>Why:</strong> Prevents cross‑site scripting vulnerabilities.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Cloud Security</strong><br>
+                        <span style="font-size:0.9rem;">Security for microservices. <strong>Use:</strong> For OAuth2 and JWT in distributed systems. <strong>Why:</strong> Integrates with Spring Cloud and service discovery.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 7: Build Tools & Dependency Management ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
+                    Build Tools &amp; Dependency Management</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Maven</strong><br>
+                        <span style="font-size:0.9rem;">Build automation and dependency management. <strong>Use:</strong> For building Java projects. <strong>Why:</strong> Standard for enterprise Java, with rich ecosystem.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Gradle</strong><br>
+                        <span style="font-size:0.9rem;">Flexible build tool. <strong>Use:</strong> For building and automating tasks. <strong>Why:</strong> More flexible than Maven, faster incremental builds.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Boot Starter Parent</strong><br>
+                        <span style="font-size:0.9rem;">Dependency management for Spring Boot. <strong>Use:</strong> For consistent Spring Boot versions. <strong>Why:</strong> Manages compatible dependency versions.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>BOM (Bill of Materials)</strong><br>
+                        <span style="font-size:0.9rem;">Dependency version management. <strong>Use:</strong> To manage versions across multi‑module projects. <strong>Why:</strong> Ensures compatibility and reduces conflicts.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 8: Reactive & Asynchronous ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
+                    Reactive &amp; Asynchronous</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Project Reactor</strong><br>
+                        <span style="font-size:0.9rem;">Reactive streams implementation. <strong>Use:</strong> For building reactive applications. <strong>Why:</strong> Core of Spring WebFlux, supports backpressure.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>RxJava</strong><br>
+                        <span style="font-size:0.9rem;">Reactive extensions for Java. <strong>Use:</strong> For asynchronous and event‑based programming. <strong>Why:</strong> Mature library with rich operator set.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Akka</strong><br>
+                        <span style="font-size:0.9rem;">Actor‑based concurrency. <strong>Use:</strong> For building distributed, concurrent systems. <strong>Why:</strong> Fault‑tolerant, resilient, and scalable.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Vert.x</strong><br>
+                        <span style="font-size:0.9rem;">Event‑driven reactive toolkit. <strong>Use:</strong> For building reactive microservices. <strong>Why:</strong> Polyglot, lightweight, and high‑performance.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring WebFlux</strong><br>
+                        <span style="font-size:0.9rem;">Reactive web framework. <strong>Use:</strong> For building non‑blocking REST APIs. <strong>Why:</strong> Integrates with Spring, supports functional endpoints.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 9: Cloud & Microservices ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
+                    Cloud &amp; Microservices</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Cloud</strong><br>
+                        <span style="font-size:0.9rem;">Microservices toolkit. <strong>Use:</strong> For service discovery, configuration, and gateways. <strong>Why:</strong> Comprehensive, integrates with Spring Boot.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Netflix Eureka</strong><br>
+                        <span style="font-size:0.9rem;">Service discovery. <strong>Use:</strong> For locating services in a microservices architecture. <strong>Why:</strong> Simple, battle‑tested, and integrates with Spring Cloud.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Cloud Config</strong><br>
+                        <span style="font-size:0.9rem;">Externalised configuration. <strong>Use:</strong> For managing configuration across environments. <strong>Why:</strong> Centralised, supports Git backends.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Cloud Gateway</strong><br>
+                        <span style="font-size:0.9rem;">API Gateway. <strong>Use:</strong> For routing and filtering requests. <strong>Why:</strong> Reactive, lightweight, and declarative routing.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Resilience4j</strong><br>
+                        <span style="font-size:0.9rem;">Circuit breaker and resilience. <strong>Use:</strong> For fault‑tolerant microservices. <strong>Why:</strong> Modern, lightweight alternative to Hystrix.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Kafka (Spring Kafka)</strong><br>
+                        <span style="font-size:0.9rem;">Event streaming. <strong>Use:</strong> For building event‑driven architectures. <strong>Why:</strong> High‑throughput, durable, and supports exactly‑once semantics.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>RabbitMQ (Spring AMQP)</strong><br>
+                        <span style="font-size:0.9rem;">Message broker. <strong>Use:</strong> For asynchronous messaging. <strong>Why:</strong> Reliable, supports multiple protocols, and easy to set up.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Apache Camel</strong><br>
+                        <span style="font-size:0.9rem;">Integration framework. <strong>Use:</strong> For routing and mediating between systems. <strong>Why:</strong> Enterprise Integration Patterns (EIP) implementation.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 10: Data Science & ML ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Data
+                    Science &amp; Machine Learning</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Smile (SML)</strong><br>
+                        <span style="font-size:0.9rem;">Statistical Machine Intelligence &amp; Learning. <strong>Use:</strong> For classical ML (regression, classification, clustering). <strong>Why:</strong> Pure Java, comprehensive algorithms, and high performance.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Deeplearning4j (DL4J)</strong><br>
+                        <span style="font-size:0.9rem;">Deep learning library. <strong>Use:</strong> For training and deploying neural networks. <strong>Why:</strong> Java‑native, GPU support, and integrates with Spark.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>ONNX Runtime</strong><br>
+                        <span style="font-size:0.9rem;">Cross‑platform inference engine. <strong>Use:</strong> For running pre‑trained models (PyTorch, TensorFlow). <strong>Why:</strong> Fast, hardware‑accelerated, and supports Java.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Weka</strong><br>
+                        <span style="font-size:0.9rem;">Data mining and ML toolkit. <strong>Use:</strong> For experimentation and educational ML. <strong>Why:</strong> Rich GUI, mature, and easy to use.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Apache Spark MLlib</strong><br>
+                        <span style="font-size:0.9rem;">Distributed ML library. <strong>Use:</strong> For large‑scale ML on big data. <strong>Why:</strong> Scales to terabytes, integrates with Spark.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>TensorFlow Java API</strong><br>
+                        <span style="font-size:0.9rem;">TensorFlow for Java. <strong>Use:</strong> For running TensorFlow models. <strong>Why:</strong> Official API, supports inference and training.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>LangChain4j</strong><br>
+                        <span style="font-size:0.9rem;">Java port of LangChain. <strong>Use:</strong> For building LLM‑powered applications. <strong>Why:</strong> Chains, agents, and RAG support in Java.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring AI</strong><br>
+                        <span style="font-size:0.9rem;">AI abstractions for Spring. <strong>Use:</strong> For integrating LLMs into Spring applications. <strong>Why:</strong> Consistent API for OpenAI, Gemini, and more.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 11: Serialization & Messaging ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">📨
+                    Serialization &amp; Messaging</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Protocol Buffers (protobuf)</strong><br>
+                        <span style="font-size:0.9rem;">Language‑neutral serialisation. <strong>Use:</strong> For efficient binary serialisation. <strong>Why:</strong> Fast, compact, and backward‑compatible.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Avro</strong><br>
+                        <span style="font-size:0.9rem;">Data serialisation system. <strong>Use:</strong> For schema‑based serialisation. <strong>Why:</strong> Dynamic schemas, supports schema evolution, and integrates with Kafka.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Apache Kafka (Java client)</strong><br>
+                        <span style="font-size:0.9rem;">Distributed streaming platform. <strong>Use:</strong> For building real‑time data pipelines. <strong>Why:</strong> High‑throughput, fault‑tolerant, and widely used.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>RabbitMQ Java Client</strong><br>
+                        <span style="font-size:0.9rem;">AMQP messaging. <strong>Use:</strong> For reliable messaging between services. <strong>Why:</strong> Easy to use, supports multiple exchange types.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Spring Cloud Stream</strong><br>
+                        <span style="font-size:0.9rem;">Message‑driven microservices. <strong>Use:</strong> For event‑driven architectures. <strong>Why:</strong> Abstracts messaging middleware (Kafka, RabbitMQ).</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 12: DevOps & Containerization ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🐳
+                    DevOps &amp; Containerization</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Docker Java Client (docker‑java)</strong><br>
+                        <span style="font-size:0.9rem;">Docker API for Java. <strong>Use:</strong> For programmatically managing Docker containers. <strong>Why:</strong> Automates container workflows.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Kubernetes Java Client</strong><br>
+                        <span style="font-size:0.9rem;">Kubernetes API for Java. <strong>Use:</strong> For interacting with Kubernetes clusters. <strong>Why:</strong> Automates deployments and scaling.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Jib</strong><br>
+                        <span style="font-size:0.9rem;">Containerisation for Java. <strong>Use:</strong> For building Docker images without Docker. <strong>Why:</strong> Fast, reproducible builds, and no Dockerfile needed.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Helm (Java client)</strong><br>
+                        <span style="font-size:0.9rem;">Kubernetes package manager. <strong>Use:</strong> For managing Kubernetes charts. <strong>Why:</strong> Simplifies deploying complex applications.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 13: UI & Visualization ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🖥️
+                    UI &amp; Visualization</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>JavaFX</strong><br>
+                        <span style="font-size:0.9rem;">Rich client applications. <strong>Use:</strong> For building desktop UIs. <strong>Why:</strong> Modern, CSS‑stylable, and FXML support.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>JFreeChart</strong><br>
+                        <span style="font-size:0.9rem;">2D chart library. <strong>Use:</strong> For generating charts (line, bar, pie). <strong>Why:</strong> Mature, feature‑rich, and open‑source.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Apache POI</strong><br>
+                        <span style="font-size:0.9rem;">Microsoft Office file format support. <strong>Use:</strong> For reading/writing Excel and Word files. <strong>Why:</strong> Standard for Office document generation.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>JasperReports</strong><br>
+                        <span style="font-size:0.9rem;">Reporting engine. <strong>Use:</strong> For generating PDF, Excel, and HTML reports. <strong>Why:</strong> Powerful, supports subreports and charts.</span>
+                    </div>
+
+                </div>
+
+                <!-- ─── CATEGORY 14: Code Quality & Static Analysis ─── -->
+                <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🔍
+                    Code Quality &amp; Static Analysis</h3>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>SonarQube</strong><br>
+                        <span style="font-size:0.9rem;">Continuous code quality. <strong>Use:</strong> For code inspection and quality gates. <strong>Why:</strong> Catches bugs, vulnerabilities, and code smells.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Checkstyle</strong><br>
+                        <span style="font-size:0.9rem;">Code style checking. <strong>Use:</strong> For enforcing coding conventions. <strong>Why:</strong> Ensures consistent style across teams.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>PMD</strong><br>
+                        <span style="font-size:0.9rem;">Static code analysis. <strong>Use:</strong> For finding bugs, dead code, and style issues. <strong>Why:</strong> Fast, configurable, and integrates with Maven/Gradle.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>SpotBugs</strong><br>
+                        <span style="font-size:0.9rem;">Bug detection (successor to FindBugs). <strong>Use:</strong> For finding potential bugs. <strong>Why:</strong> Detects common coding errors and performance issues.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>OWASP Dependency Check</strong><br>
+                        <span style="font-size:0.9rem;">Vulnerability scanning. <strong>Use:</strong> For scanning dependencies for known vulnerabilities. <strong>Why:</strong> Identifies CVEs in your dependencies.</span>
+                    </div>
+
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Snyk</strong><br>
+                        <span style="font-size:0.9rem;">Security vulnerability scanning. <strong>Use:</strong> For open‑source dependencies. <strong>Why:</strong> Real‑time alerts, fixes, and integrates with CI/CD.</span>
+                    </div>
+
+                </div>
+
+                <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:1rem 1.5rem; margin:2rem 0; border-radius:6px;">
+                    <strong>💡 Pro Tip:</strong> You don't need to master every library at once. Focus on the ones
+                    relevant to your current project. Use this list as a reference when you encounter new problems –
+                    there's almost always a Java library that solves it.
+                </div>
+
+                <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
+                    <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">📚 70+ Libraries</span>
+                    <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ 14 Domains</span>
+                    <span style="background:#7c3aed; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 Production‑Ready</span>
                 </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Guava</strong><br>
-                    <span style="font-size:0.9rem;">Google's core libraries for collections, caching, and concurrency. <strong>Use:</strong> For immutable collections, cache, and advanced string utilities. <strong>Why:</strong> High‑quality, well‑tested, and widely adopted.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Lombok</strong><br>
-                    <span style="font-size:0.9rem;">Annotation‑based boilerplate reducer. <strong>Use:</strong> To generate getters, setters, constructors, and builders. <strong>Why:</strong> Significantly reduces verbosity in data classes.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Jsoup</strong><br>
-                    <span style="font-size:0.9rem;">HTML parsing and manipulation. <strong>Use:</strong> For web scraping and working with HTML documents. <strong>Why:</strong> Clean API, handles malformed HTML gracefully.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Jackson (Databind)</strong><br>
-                    <span style="font-size:0.9rem;">JSON parsing and serialisation. <strong>Use:</strong> To convert Java objects to/from JSON. <strong>Why:</strong> Fast, flexible, and the de‑facto standard for JSON in Java.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Gson</strong><br>
-                    <span style="font-size:0.9rem;">Google's JSON library. <strong>Use:</strong> For simple JSON serialisation/deserialisation. <strong>Why:</strong> Lightweight, easy to use, and handles generic types well.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Reflections</strong><br>
-                    <span style="font-size:0.9rem;">Runtime reflection and classpath scanning. <strong>Use:</strong> For dynamic class loading and annotation scanning. <strong>Why:</strong> Simplifies dependency injection and plugin architectures.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Vavr</strong><br>
-                    <span style="font-size:0.9rem;">Functional programming library for Java. <strong>Use:</strong> For immutable collections, Option, Try, and pattern matching. <strong>Why:</strong> Brings modern functional concepts to Java 8+.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Apache PDFBox</strong><br>
-                    <span style="font-size:0.9rem;">PDF creation and manipulation. <strong>Use:</strong> To generate, extract, and modify PDF documents. <strong>Why:</strong> Open‑source, pure Java alternative to iText.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>MapStruct</strong><br>
-                    <span style="font-size:0.9rem;">Object mapping and DTO conversion. <strong>Use:</strong> To map between Entity and DTO objects. <strong>Why:</strong> Generates type‑safe, fast code at compile‑time.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 2: Web & REST Frameworks ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Web
-                &amp; REST Frameworks</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Boot</strong><br>
-                    <span style="font-size:0.9rem;">Microservices and web application framework. <strong>Use:</strong> For building production‑ready Spring applications. <strong>Why:</strong> Auto‑configuration, embedded servers, and huge ecosystem.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring MVC</strong><br>
-                    <span style="font-size:0.9rem;">Web MVC framework. <strong>Use:</strong> For building web applications with REST APIs. <strong>Why:</strong> Flexible, annotation‑driven, and integrates with Spring Boot.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Quarkus</strong><br>
-                    <span style="font-size:0.9rem;">Cloud‑native, container‑first framework. <strong>Use:</strong> For microservices and serverless applications. <strong>Why:</strong> Fast startup, low memory, native image support.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Micronaut</strong><br>
-                    <span style="font-size:0.9rem;">Modern JVM framework with AOT compilation. <strong>Use:</strong> For microservices with fast startup and low memory. <strong>Why:</strong> Dependency injection at compile‑time, built‑in support for reactive.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Apache Struts</strong><br>
-                    <span style="font-size:0.9rem;">MVC framework for enterprise web apps. <strong>Use:</strong> Legacy enterprise Java applications. <strong>Why:</strong> Mature, widely adopted in large enterprises.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Play Framework</strong><br>
-                    <span style="font-size:0.9rem;">Reactive web framework. <strong>Use:</strong> For building scalable web applications. <strong>Why:</strong> Lightweight, stateless, and built on Akka.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Jersey</strong><br>
-                    <span style="font-size:0.9rem;">JAX‑RS reference implementation. <strong>Use:</strong> For building RESTful web services. <strong>Why:</strong> Standard API, integrates with Java EE/Spring.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>REST Assured</strong><br>
-                    <span style="font-size:0.9rem;">Testing REST APIs. <strong>Use:</strong> For testing REST endpoints. <strong>Why:</strong> DSL for HTTP validation, integrates with JUnit.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 3: Data & Databases ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Data
-                &amp; Databases</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Hibernate</strong><br>
-                    <span style="font-size:0.9rem;">JPA implementation and ORM. <strong>Use:</strong> For object‑relational mapping. <strong>Why:</strong> Most popular JPA provider, rich features, and mature.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Data JPA</strong><br>
-                    <span style="font-size:0.9rem;">Spring's abstraction for JPA repositories. <strong>Use:</strong> For data access with Spring Boot. <strong>Why:</strong> Reduces boilerplate, automatic query generation.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>MyBatis</strong><br>
-                    <span style="font-size:0.9rem;">SQL mapping framework. <strong>Use:</strong> For custom SQL queries with flexibility. <strong>Why:</strong> Full control over SQL, great for existing databases.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Flyway</strong><br>
-                    <span style="font-size:0.9rem;">Database migration tool. <strong>Use:</strong> For version‑controlled schema changes. <strong>Why:</strong> Simple, reliable, and integrates with Spring Boot.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Liquibase</strong><br>
-                    <span style="font-size:0.9rem;">Database refactoring and migration. <strong>Use:</strong> For managing schema changes. <strong>Why:</strong> Supports XML, YAML, JSON, and SQL formats.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>MongoDB Driver</strong><br>
-                    <span style="font-size:0.9rem;">MongoDB connectivity. <strong>Use:</strong> For document‑based NoSQL databases. <strong>Why:</strong> Reactive and synchronous support, Spring Data integration.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Elasticsearch Java Client</strong><br>
-                    <span style="font-size:0.9rem;">Elasticsearch connectivity. <strong>Use:</strong> For search and analytics. <strong>Why:</strong> High‑performance, supports async and streaming.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>H2 Database</strong><br>
-                    <span style="font-size:0.9rem;">Embedded SQL database. <strong>Use:</strong> For development, testing, and prototyping. <strong>Why:</strong> Fast, zero‑configuration, and in‑memory support.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Redis Client (Jedis / Lettuce)</strong><br>
-                    <span style="font-size:0.9rem;">Redis connectivity. <strong>Use:</strong> For caching, session storage, and rate limiting. <strong>Why:</strong> Lettuce supports async and reactive; Jedis is synchronous.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 4: Testing & Quality ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
-                Testing &amp; Quality</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>JUnit 5</strong><br>
-                    <span style="font-size:0.9rem;">Unit testing framework. <strong>Use:</strong> For writing and running unit tests. <strong>Why:</strong> The standard for Java testing, with great IDE support.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Mockito</strong><br>
-                    <span style="font-size:0.9rem;">Mocking framework. <strong>Use:</strong> For creating mock objects in tests. <strong>Why:</strong> Simple API, integrates with JUnit, and supports spy/verify.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>AssertJ</strong><br>
-                    <span style="font-size:0.9rem;">Fluent assertions. <strong>Use:</strong> For expressive and readable test assertions. <strong>Why:</strong> Rich API, chaining, and IDE autocomplete.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Testcontainers</strong><br>
-                    <span style="font-size:0.9rem;">Docker‑based integration testing. <strong>Use:</strong> For testing with real databases, message brokers, etc. <strong>Why:</strong> Clean, isolated, and reproducible test environments.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Selenium</strong><br>
-                    <span style="font-size:0.9rem;">Web application testing. <strong>Use:</strong> For browser automation and end‑to‑end testing. <strong>Why:</strong> Industry standard for web UI testing.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Cucumber</strong><br>
-                    <span style="font-size:0.9rem;">BDD testing framework. <strong>Use:</strong> For behaviour‑driven development. <strong>Why:</strong> Collaboration between business and technical teams.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>ArchUnit</strong><br>
-                    <span style="font-size:0.9rem;">Architecture testing. <strong>Use:</strong> To enforce architectural rules (layers, dependencies). <strong>Why:</strong> Keeps codebase clean and prevents regressions.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Pact (Consumer‑Driven Contracts)</strong><br>
-                    <span style="font-size:0.9rem;">Contract testing for microservices. <strong>Use:</strong> For testing service communication. <strong>Why:</strong> Ensures API compatibility between services.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 5: Logging & Monitoring ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
-                Logging &amp; Monitoring</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>SLF4J</strong><br>
-                    <span style="font-size:0.9rem;">Logging facade. <strong>Use:</strong> For consistent logging across libraries. <strong>Why:</strong> Avoids vendor lock‑in; switch implementations easily.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Log4j 2</strong><br>
-                    <span style="font-size:0.9rem;">High‑performance logging. <strong>Use:</strong> For production logging. <strong>Why:</strong> Fast, asynchronous logging, and rich configuration.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Logback</strong><br>
-                    <span style="font-size:0.9rem;">Logging implementation. <strong>Use:</strong> As SLF4J implementation. <strong>Why:</strong> Reliable, flexible, and widely used in Spring Boot.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Micrometer</strong><br>
-                    <span style="font-size:0.9rem;">Metrics and observability. <strong>Use:</strong> For application metrics (Prometheus, Graphite). <strong>Why:</strong> Vendor‑neutral metrics API with binders for Spring.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>OpenTelemetry</strong><br>
-                    <span style="font-size:0.9rem;">Distributed tracing. <strong>Use:</strong> For tracing requests across microservices. <strong>Why:</strong> Standard, vendor‑agnostic, and supports Jaeger/Zipkin.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Prometheus Java Client</strong><br>
-                    <span style="font-size:0.9rem;">Metrics for Prometheus. <strong>Use:</strong> Exposing application metrics. <strong>Why:</strong> Standard for cloud‑native monitoring.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>ELK Stack (Elasticsearch, Logstash, Kibana)</strong><br>
-                    <span style="font-size:0.9rem;">Log aggregation and visualisation. <strong>Use:</strong> For centralised logging. <strong>Why:</strong> Powerful search, dashboards, and alerting.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 6: Security & Authentication ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
-                Security &amp; Authentication</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Security</strong><br>
-                    <span style="font-size:0.9rem;">Authentication and authorisation. <strong>Use:</strong> For securing web applications and APIs. <strong>Why:</strong> Comprehensive, integrates with Spring Boot and OAuth2.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>jjwt (Java JWT)</strong><br>
-                    <span style="font-size:0.9rem;">JWT token handling. <strong>Use:</strong> For creating, signing, and validating JWT tokens. <strong>Why:</strong> Lightweight, easy to use, and widely adopted.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Bouncy Castle</strong><br>
-                    <span style="font-size:0.9rem;">Cryptographic library. <strong>Use:</strong> For advanced encryption and hashing. <strong>Why:</strong> Comprehensive support for cryptography standards.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Keycloak</strong><br>
-                    <span style="font-size:0.9rem;">Identity and access management. <strong>Use:</strong> For SSO, OAuth2, and OpenID Connect. <strong>Why:</strong> Open‑source, feature‑rich, and integrates with Spring.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>OWASP Java Encoder</strong><br>
-                    <span style="font-size:0.9rem;">XSS prevention. <strong>Use:</strong> For encoding HTML, JavaScript, and XML. <strong>Why:</strong> Prevents cross‑site scripting vulnerabilities.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Cloud Security</strong><br>
-                    <span style="font-size:0.9rem;">Security for microservices. <strong>Use:</strong> For OAuth2 and JWT in distributed systems. <strong>Why:</strong> Integrates with Spring Cloud and service discovery.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 7: Build Tools & Dependency Management ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
-                Build Tools &amp; Dependency Management</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Maven</strong><br>
-                    <span style="font-size:0.9rem;">Build automation and dependency management. <strong>Use:</strong> For building Java projects. <strong>Why:</strong> Standard for enterprise Java, with rich ecosystem.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Gradle</strong><br>
-                    <span style="font-size:0.9rem;">Flexible build tool. <strong>Use:</strong> For building and automating tasks. <strong>Why:</strong> More flexible than Maven, faster incremental builds.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Boot Starter Parent</strong><br>
-                    <span style="font-size:0.9rem;">Dependency management for Spring Boot. <strong>Use:</strong> For consistent Spring Boot versions. <strong>Why:</strong> Manages compatible dependency versions.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>BOM (Bill of Materials)</strong><br>
-                    <span style="font-size:0.9rem;">Dependency version management. <strong>Use:</strong> To manage versions across multi‑module projects. <strong>Why:</strong> Ensures compatibility and reduces conflicts.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 8: Reactive & Asynchronous ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
-                Reactive &amp; Asynchronous</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Project Reactor</strong><br>
-                    <span style="font-size:0.9rem;">Reactive streams implementation. <strong>Use:</strong> For building reactive applications. <strong>Why:</strong> Core of Spring WebFlux, supports backpressure.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>RxJava</strong><br>
-                    <span style="font-size:0.9rem;">Reactive extensions for Java. <strong>Use:</strong> For asynchronous and event‑based programming. <strong>Why:</strong> Mature library with rich operator set.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Akka</strong><br>
-                    <span style="font-size:0.9rem;">Actor‑based concurrency. <strong>Use:</strong> For building distributed, concurrent systems. <strong>Why:</strong> Fault‑tolerant, resilient, and scalable.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Vert.x</strong><br>
-                    <span style="font-size:0.9rem;">Event‑driven reactive toolkit. <strong>Use:</strong> For building reactive microservices. <strong>Why:</strong> Polyglot, lightweight, and high‑performance.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring WebFlux</strong><br>
-                    <span style="font-size:0.9rem;">Reactive web framework. <strong>Use:</strong> For building non‑blocking REST APIs. <strong>Why:</strong> Integrates with Spring, supports functional endpoints.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 9: Cloud & Microservices ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">
-                Cloud &amp; Microservices</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Cloud</strong><br>
-                    <span style="font-size:0.9rem;">Microservices toolkit. <strong>Use:</strong> For service discovery, configuration, and gateways. <strong>Why:</strong> Comprehensive, integrates with Spring Boot.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Netflix Eureka</strong><br>
-                    <span style="font-size:0.9rem;">Service discovery. <strong>Use:</strong> For locating services in a microservices architecture. <strong>Why:</strong> Simple, battle‑tested, and integrates with Spring Cloud.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Cloud Config</strong><br>
-                    <span style="font-size:0.9rem;">Externalised configuration. <strong>Use:</strong> For managing configuration across environments. <strong>Why:</strong> Centralised, supports Git backends.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Cloud Gateway</strong><br>
-                    <span style="font-size:0.9rem;">API Gateway. <strong>Use:</strong> For routing and filtering requests. <strong>Why:</strong> Reactive, lightweight, and declarative routing.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Resilience4j</strong><br>
-                    <span style="font-size:0.9rem;">Circuit breaker and resilience. <strong>Use:</strong> For fault‑tolerant microservices. <strong>Why:</strong> Modern, lightweight alternative to Hystrix.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Kafka (Spring Kafka)</strong><br>
-                    <span style="font-size:0.9rem;">Event streaming. <strong>Use:</strong> For building event‑driven architectures. <strong>Why:</strong> High‑throughput, durable, and supports exactly‑once semantics.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>RabbitMQ (Spring AMQP)</strong><br>
-                    <span style="font-size:0.9rem;">Message broker. <strong>Use:</strong> For asynchronous messaging. <strong>Why:</strong> Reliable, supports multiple protocols, and easy to set up.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Apache Camel</strong><br>
-                    <span style="font-size:0.9rem;">Integration framework. <strong>Use:</strong> For routing and mediating between systems. <strong>Why:</strong> Enterprise Integration Patterns (EIP) implementation.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 10: Data Science & ML ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Data
-                Science &amp; Machine Learning</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Smile (SML)</strong><br>
-                    <span style="font-size:0.9rem;">Statistical Machine Intelligence &amp; Learning. <strong>Use:</strong> For classical ML (regression, classification, clustering). <strong>Why:</strong> Pure Java, comprehensive algorithms, and high performance.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Deeplearning4j (DL4J)</strong><br>
-                    <span style="font-size:0.9rem;">Deep learning library. <strong>Use:</strong> For training and deploying neural networks. <strong>Why:</strong> Java‑native, GPU support, and integrates with Spark.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>ONNX Runtime</strong><br>
-                    <span style="font-size:0.9rem;">Cross‑platform inference engine. <strong>Use:</strong> For running pre‑trained models (PyTorch, TensorFlow). <strong>Why:</strong> Fast, hardware‑accelerated, and supports Java.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Weka</strong><br>
-                    <span style="font-size:0.9rem;">Data mining and ML toolkit. <strong>Use:</strong> For experimentation and educational ML. <strong>Why:</strong> Rich GUI, mature, and easy to use.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Apache Spark MLlib</strong><br>
-                    <span style="font-size:0.9rem;">Distributed ML library. <strong>Use:</strong> For large‑scale ML on big data. <strong>Why:</strong> Scales to terabytes, integrates with Spark.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>TensorFlow Java API</strong><br>
-                    <span style="font-size:0.9rem;">TensorFlow for Java. <strong>Use:</strong> For running TensorFlow models. <strong>Why:</strong> Official API, supports inference and training.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>LangChain4j</strong><br>
-                    <span style="font-size:0.9rem;">Java port of LangChain. <strong>Use:</strong> For building LLM‑powered applications. <strong>Why:</strong> Chains, agents, and RAG support in Java.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring AI</strong><br>
-                    <span style="font-size:0.9rem;">AI abstractions for Spring. <strong>Use:</strong> For integrating LLMs into Spring applications. <strong>Why:</strong> Consistent API for OpenAI, Gemini, and more.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 11: Serialization & Messaging ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">📨
-                Serialization &amp; Messaging</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Protocol Buffers (protobuf)</strong><br>
-                    <span style="font-size:0.9rem;">Language‑neutral serialisation. <strong>Use:</strong> For efficient binary serialisation. <strong>Why:</strong> Fast, compact, and backward‑compatible.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Avro</strong><br>
-                    <span style="font-size:0.9rem;">Data serialisation system. <strong>Use:</strong> For schema‑based serialisation. <strong>Why:</strong> Dynamic schemas, supports schema evolution, and integrates with Kafka.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Apache Kafka (Java client)</strong><br>
-                    <span style="font-size:0.9rem;">Distributed streaming platform. <strong>Use:</strong> For building real‑time data pipelines. <strong>Why:</strong> High‑throughput, fault‑tolerant, and widely used.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>RabbitMQ Java Client</strong><br>
-                    <span style="font-size:0.9rem;">AMQP messaging. <strong>Use:</strong> For reliable messaging between services. <strong>Why:</strong> Easy to use, supports multiple exchange types.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Spring Cloud Stream</strong><br>
-                    <span style="font-size:0.9rem;">Message‑driven microservices. <strong>Use:</strong> For event‑driven architectures. <strong>Why:</strong> Abstracts messaging middleware (Kafka, RabbitMQ).</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 12: DevOps & Containerization ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🐳
-                DevOps &amp; Containerization</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Docker Java Client (docker‑java)</strong><br>
-                    <span style="font-size:0.9rem;">Docker API for Java. <strong>Use:</strong> For programmatically managing Docker containers. <strong>Why:</strong> Automates container workflows.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Kubernetes Java Client</strong><br>
-                    <span style="font-size:0.9rem;">Kubernetes API for Java. <strong>Use:</strong> For interacting with Kubernetes clusters. <strong>Why:</strong> Automates deployments and scaling.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Jib</strong><br>
-                    <span style="font-size:0.9rem;">Containerisation for Java. <strong>Use:</strong> For building Docker images without Docker. <strong>Why:</strong> Fast, reproducible builds, and no Dockerfile needed.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Helm (Java client)</strong><br>
-                    <span style="font-size:0.9rem;">Kubernetes package manager. <strong>Use:</strong> For managing Kubernetes charts. <strong>Why:</strong> Simplifies deploying complex applications.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 13: UI & Visualization ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🖥️
-                UI &amp; Visualization</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>JavaFX</strong><br>
-                    <span style="font-size:0.9rem;">Rich client applications. <strong>Use:</strong> For building desktop UIs. <strong>Why:</strong> Modern, CSS‑stylable, and FXML support.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>JFreeChart</strong><br>
-                    <span style="font-size:0.9rem;">2D chart library. <strong>Use:</strong> For generating charts (line, bar, pie). <strong>Why:</strong> Mature, feature‑rich, and open‑source.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Apache POI</strong><br>
-                    <span style="font-size:0.9rem;">Microsoft Office file format support. <strong>Use:</strong> For reading/writing Excel and Word files. <strong>Why:</strong> Standard for Office document generation.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>JasperReports</strong><br>
-                    <span style="font-size:0.9rem;">Reporting engine. <strong>Use:</strong> For generating PDF, Excel, and HTML reports. <strong>Why:</strong> Powerful, supports subreports and charts.</span>
-                </div>
-
-            </div>
-
-            <!-- ─── CATEGORY 14: Code Quality & Static Analysis ─── -->
-            <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🔍
-                Code Quality &amp; Static Analysis</h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>SonarQube</strong><br>
-                    <span style="font-size:0.9rem;">Continuous code quality. <strong>Use:</strong> For code inspection and quality gates. <strong>Why:</strong> Catches bugs, vulnerabilities, and code smells.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Checkstyle</strong><br>
-                    <span style="font-size:0.9rem;">Code style checking. <strong>Use:</strong> For enforcing coding conventions. <strong>Why:</strong> Ensures consistent style across teams.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>PMD</strong><br>
-                    <span style="font-size:0.9rem;">Static code analysis. <strong>Use:</strong> For finding bugs, dead code, and style issues. <strong>Why:</strong> Fast, configurable, and integrates with Maven/Gradle.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>SpotBugs</strong><br>
-                    <span style="font-size:0.9rem;">Bug detection (successor to FindBugs). <strong>Use:</strong> For finding potential bugs. <strong>Why:</strong> Detects common coding errors and performance issues.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>OWASP Dependency Check</strong><br>
-                    <span style="font-size:0.9rem;">Vulnerability scanning. <strong>Use:</strong> For scanning dependencies for known vulnerabilities. <strong>Why:</strong> Identifies CVEs in your dependencies.</span>
-                </div>
-
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Snyk</strong><br>
-                    <span style="font-size:0.9rem;">Security vulnerability scanning. <strong>Use:</strong> For open‑source dependencies. <strong>Why:</strong> Real‑time alerts, fixes, and integrates with CI/CD.</span>
-                </div>
-
-            </div>
-
-            <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:1rem 1.5rem; margin:2rem 0; border-radius:6px;">
-                <strong>💡 Pro Tip:</strong> You don't need to master every library at once. Focus on the ones
-                relevant to your current project. Use this list as a reference when you encounter new problems –
-                there's almost always a Java library that solves it.
-            </div>
-
-            <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
-                <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">📚 70+ Libraries</span>
-                <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ 14 Domains</span>
-                <span style="background:#7c3aed; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 Production‑Ready</span>
             </div>
         </div>
     </div>
@@ -10456,8 +10461,8 @@ void testGetUser() {
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 <!-- Shared JS + roadmap-specific JS -->
-<script src="assets/js/script.js"></script>
-<script src="assets/js/roadmap-script.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/roadmap-script.js"></script>
 
 </body>
 </html>

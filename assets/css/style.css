@@ -1,32 +1,87 @@
-/* ── Reset & Global ── */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/*
+  Landing page styles
+  Used by: index.html and the homepage sections.
+*/
+
+/* --- Global reset and base styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f9fafb;
     color: #1f2937;
     line-height: 1.6;
 }
-.container { max-width: 1800px; margin: 0 auto; padding: 0 1.5rem; }
 
-/* ── Header / Nav ── */
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Header and navigation --- */
 header {
     background: #1e293b;
     color: #fff;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.nav { display: flex; justify-content: space-between; align-items: center; }
-.nav .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.5px; }
-.nav .logo span { color: #60a5fa; }
-.nav a { color: #e5e7eb; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.2s; }
-.nav a:hover, .nav a.active { color: #60a5fa; }
-.nav a.active { border-bottom: 2px solid #60a5fa; padding-bottom: 0.25rem; }
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
 
-/* ── Hero ── */
+.nav .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav .logo span {
+    color: #60a5fa;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    margin-left: 0.8rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #60a5fa;
+    padding-bottom: 0.2rem;
+}
+
+/* --- Hero section --- */
 .hero {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: #fff;
@@ -34,53 +89,167 @@ header {
     text-align: center;
     border-bottom: 4px solid #60a5fa;
 }
-.hero h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -1px; }
-.hero h1 span { color: #60a5fa; }
-.hero p { font-size: 1.25rem; max-width: 700px; margin: 1rem auto 2rem; opacity: 0.85; }
-.hero .tagline { font-size: 1.1rem; font-weight: 300; font-style: italic; color: #94a3b8; margin-top: -0.5rem; }
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    color: #60a5fa;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 1rem auto 2rem;
+    opacity: 0.85;
+}
+
+.hero .tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #94a3b8;
+    margin-top: -0.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
 .hero .btn {
     display: inline-block;
     background: #60a5fa;
     color: #0f172a;
-    padding: 0.75rem 2.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 40px;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+    min-width: 140px;
 }
-.hero .btn:hover { background: #93bbfc; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(96, 165, 250, 0.5); }
 
-/* ── Sections (Landing Page) ── */
-section { padding: 3rem 0; border-bottom: 1px solid #e5e7eb; }
-section:last-of-type { border-bottom: none; }
-h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #0f172a; border-left: 5px solid #60a5fa; padding-left: 1rem; }
+.hero .btn:hover {
+    background: #93bbfc;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(96, 165, 250, 0.5);
+}
 
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+/* --- Content sections and cards --- */
+section {
+    padding: 3rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    border-left: 5px solid #60a5fa;
+    padding-left: 1rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
 .card {
     background: #fff;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e7eb;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s ease;
 }
-.card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-.card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #0f172a; }
-.card p { color: #475569; }
 
-.badge { display: inline-block; background: #dbeafe; color: #1e40af; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.7rem; border-radius: 20px; margin-top: 0.5rem; }
-.badge.active { background: #d1fae5; color: #065f46; }
-.badge.coming { background: #fef3c7; color: #92400e; }
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
 
-.track-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-.track-item { background: #fff; padding: 1.2rem; border-radius: 10px; border: 1px solid #e5e7eb; text-align: center; transition: all 0.2s; }
-.track-item:hover { border-color: #60a5fa; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-.track-item .icon { font-size: 2.5rem; margin-bottom: 0.3rem; }
-.track-item .name { font-weight: 600; }
-.track-item .status { font-size: 0.8rem; color: #64748b; margin-top: 0.2rem; }
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
 
+.card p {
+    color: #475569;
+}
+
+/* --- Badges and track listing --- */
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+.badge.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge.coming {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.track-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.track-item {
+    background: #fff;
+    padding: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.track-item:hover {
+    border-color: #60a5fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.track-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.track-item .name {
+    font-weight: 600;
+}
+
+.track-item .status {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 0.2rem;
+}
+
+/* --- Repository structure block --- */
 .code-structure {
     background: #1e293b;
     color: #e5e7eb;
@@ -93,8 +262,12 @@ h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #0f172a; border-left: 5px so
     line-height: 1.8;
     margin: 1rem 0;
 }
-.code-structure .highlight { color: #60a5fa; }
 
+.code-structure .highlight {
+    color: #60a5fa;
+}
+
+/* --- Footer --- */
 footer {
     background: #0f172a;
     color: #94a3b8;
@@ -102,11 +275,157 @@ footer {
     text-align: center;
     font-size: 0.9rem;
 }
-footer a { color: #60a5fa; text-decoration: none; }
 
-@media (max-width: 768px) {
-    .grid-2 { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.4rem; }
-    .nav .logo { font-size: 1.2rem; }
-    .nav a { margin-left: 1rem; }
+footer a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+/* --- Responsive layout (Mobile + Tablet) --- */
+
+/* Small tablets and large phones */
+@media (max-width: 850px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 700px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Header - wrap navigation */
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+    }
+
+    .nav .logo {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.2rem;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: -0.5px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin: 0.8rem auto 1.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .hero .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+        min-width: 120px;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    /* Section heading */
+    h2 {
+        font-size: 1.6rem;
+        padding-left: 0.8rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Tracks */
+    .track-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .track-item {
+        padding: 1rem;
+    }
+
+    .track-item .icon {
+        font-size: 2rem;
+    }
+
+    /* Code structure */
+    .code-structure {
+        font-size: 0.8rem;
+        padding: 1rem;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 0;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .track-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+        max-width: 220px;
+    }
 }

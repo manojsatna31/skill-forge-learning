@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>45-Day Sql Roadmap · SkillForge</title>
+    <title>60-Day Sql Roadmap · SkillForge</title>
     <!-- Prism Core CSS -->
     <link
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
@@ -14,34 +14,28 @@
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
             rel="stylesheet"
     />
-
-    <!-- base setup -->
-    <!--  For Production-->
-    <base href="/" />
-    <!--For Local -->
-    <!--    <base href="/skill-forge-learning/" />-->
-
-    <link rel="stylesheet" href="assets/css/style.css"/>
-    <link rel="stylesheet" href="assets/css/roadmap-style.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/roadmap-style.css"/>
 
 </head>
 <body>
-
-<!-- ========== HEADER ========== -->
+<!-- ─── Header ─── -->
 <header>
-    <div class="container nav">
-        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>
+    <div class="container nav nav-links">
+        <a href="/">
+            <div class="logo">Skill<span>Forge</span></div>
+        </a>
         <div>
             <a href="/">Home</a>
             <a href="/python-roadmap/">🐍 Python</a>
             <a href="/java-roadmap/">☕ Java</a>
-            <a href="/sql-roadmap/"  class="active">🗄️SQL</a>
+            <a href="/sql-roadmap/" class="active">🛢️ SQL</a>
             <a href="/dsa-roadmap/">📊 DSA</a>
         </div>
     </div>
 </header>
 <div class="page-title">
-    <h1>🗄️ 45‑Day SQL Mastery</h1>
+    <h1>🛢️ 45 ‑Day SQL Mastery</h1>
     <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
         Setting Up Your Environment
     </p>
@@ -66,148 +60,158 @@
     <!-- ========================================================== -->
     <!-- PHASE 1 – SQL PREREQUISITE SECTION (COMPACT)              -->
     <!-- ========================================================== -->
-    <div id="phase1" class="phase-section active">
-        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
-            <h2>🛠️ Prerequisite – Setting Up Your SQL Environment</h2>
+    <div id="phase1" class="phase-section no-sidebar active">
+        <div class="content-area">
+            <div class="main-content">
+                <h2>🛠️ Prerequisite – Setting Up Your SQL Environment</h2>
 
-            <p style="font-size:1.1rem; color:#4a5568; margin-bottom:1rem;">
-                A solid database setup is essential for your SQL journey. This guide walks you through installing
-                PostgreSQL or MySQL (locally or via Docker), configuring GUI clients, and verifying your environment.
-                Choose the path that works best for you.
-            </p>
-
-            <!-- ===== DB SCRIPT NOTICE ===== -->
-            <div style="background:#e0f2fe; border-left:4px solid #0284c7; padding:0.8rem 1rem; border-radius:4px; margin-bottom:1.5rem;">
-                <strong>📄 Database Setup Script Included:</strong> This roadmap comes with a complete SQL script
-                (<code>library_setup.sql</code>) that creates all tables and inserts sample data for the <strong>Library
-                Management System</strong>.
-                You will run this script <strong>after</strong> you have installed and verified your database – it will
-                be the foundation for all your practice queries in the coming days.
-            </div>
-
-            <!-- ===== SECTION 1: CHOOSE YOUR DATABASE ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">1️⃣ Choose Your Database</h3>
-
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#ecfdf5; padding:1rem; border-radius:6px; border:1px solid #86efac;">
-                        <strong>🐘 PostgreSQL (Recommended)</strong>
-                        <ul style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>✅ Advanced feature set (JSON, full-text search).</li>
-                            <li>✅ ACID compliant, highly extensible.</li>
-                            <li>✅ Great for production and learning.</li>
-                        </ul>
-                    </div>
-                    <div style="background:#eff6ff; padding:1rem; border-radius:6px; border:1px solid #93c5fd;">
-                        <strong>🐬 MySQL</strong>
-                        <ul style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>✅ Widely used in web applications.</li>
-                            <li>✅ Simple setup, large community.</li>
-                            <li>✅ Great for learning standard SQL.</li>
-                        </ul>
-                    </div>
-                    <div style="background:#fef3c7; padding:1rem; border-radius:6px; border:1px solid #f59e0b;">
-                        <strong>🗄️ SQLite</strong>
-                        <ul style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>✅ File‑based, zero configuration.</li>
-                            <li>✅ Perfect for local practice.</li>
-                            <li>✅ Comes built‑in with Python.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="background:#f8fafc; border-left:4px solid #2563eb; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
-                    <strong>📌 Recommendation:</strong> Use <strong>PostgreSQL</strong> for the full experience. If
-                    you're new to databases, <strong>SQLite</strong> is a great starting point (no installation needed).
-                </div>
-            </div>
-
-            <!-- ===== SECTION 2: LOCAL INSTALLATION ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">2️⃣ Local Installation (Traditional)</h3>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🐘 PostgreSQL</h4>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-bottom:0.5rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Download installer from <a href="https://www.postgresql.org/download/windows/"
-                                                           target="_blank">postgresql.org</a>.
-                            </li>
-                            <li>Run installer, set password, and keep default port (5432).</li>
-                        </ul>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li><code>brew install postgresql</code></li>
-                            <li><code>brew services start postgresql</code></li>
-                        </ul>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🐧 Linux</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li><code>sudo apt install postgresql postgresql-contrib</code></li>
-                            <li><code>sudo systemctl start postgresql</code></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🐬 MySQL</h4>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>Download MySQL Installer from <a href="https://dev.mysql.com/downloads/installer/"
-                                                                 target="_blank">mysql.com</a>.
-                            </li>
-                            <li>Choose Developer Default, set root password.</li>
-                        </ul>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li><code>brew install mysql</code></li>
-                            <li><code>brew services start mysql</code></li>
-                            <li><code>mysql_secure_installation</code></li>
-                        </ul>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🐧 Linux</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li><code>sudo apt install mysql-server</code></li>
-                            <li><code>sudo systemctl start mysql</code></li>
-                            <li><code>sudo mysql_secure_installation</code></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== SECTION 3: DOCKER INSTALLATION ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">3️⃣ Docker Installation (Recommended – Best for Isolation &amp;
-                    Portability)</h3>
-                <p style="margin:0.3rem 0;">
-                    Docker is the cleanest way to run databases. It isolates your database from your OS, makes version
-                    switching easy,
-                    and allows you to <strong>persist data on your local drive</strong> using volumes.
+                <p style="font-size:1.1rem; color:#4a5568; margin-bottom:1rem;">
+                    A solid database setup is essential for your SQL journey. This guide walks you through installing
+                    PostgreSQL or MySQL (locally or via Docker), configuring GUI clients, and verifying your
+                    environment.
+                    Choose the path that works best for you.
                 </p>
 
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step A: Install Docker</h4>
-                <ul style="margin:0.2rem 0 0 1.2rem;">
-                    <li><strong>Windows/macOS:</strong> Download <a
-                            href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop</a>
-                        and install.
-                    </li>
-                    <li><strong>Linux:</strong> <code>sudo apt install docker.io</code> (Ubuntu) or follow your distro's
-                        guide.
-                    </li>
-                    <li>Verify: <code>docker --version</code></li>
-                </ul>
+                <!-- ===== DB SCRIPT NOTICE ===== -->
+                <div style="background:#e0f2fe; border-left:4px solid #0284c7; padding:0.8rem 1rem; border-radius:4px; margin-bottom:1.5rem;">
+                    <strong>📄 Database Setup Script Included:</strong> This roadmap comes with a complete SQL script
+                    (<code>library_setup.sql</code>) that creates all tables and inserts sample data for the <strong>Library
+                    Management System</strong>.
+                    You will run this script <strong>after</strong> you have installed and verified your database – it
+                    will
+                    be the foundation for all your practice queries in the coming days.
+                </div>
 
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step B: Run PostgreSQL with Persistent Storage</h4>
-                <div class="code-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash"># Create a local directory for PostgreSQL data
+                <!-- ===== SECTION 1: CHOOSE YOUR DATABASE ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">1️⃣ Choose Your Database</h3>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#ecfdf5; padding:1rem; border-radius:6px; border:1px solid #86efac;">
+                            <strong>🐘 PostgreSQL (Recommended)</strong>
+                            <div style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Advanced feature set (JSON, full-text search).</span><br/>
+                                <span>✅ ACID compliant, highly extensible.</span><br/>
+                                <span>✅ Great for production and learning.</span>
+                            </div>
+                        </div>
+                        <div style="background:#eff6ff; padding:1rem; border-radius:6px; border:1px solid #93c5fd;">
+                            <strong>🐬 MySQL</strong>
+                            <div style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Widely used in web applications.</span><br/>
+                                <span>✅ Simple setup, large community.</span><br/>
+                                <span>✅ Great for learning standard SQL.</span>
+                            </div>
+                        </div>
+                        <div style="background:#fef3c7; padding:1rem; border-radius:6px; border:1px solid #f59e0b;">
+                            <strong>🗄️ SQLite</strong>
+                            <div style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ File‑based, zero configuration.</span><br/>
+                                <span>✅ Perfect for local practice.</span><br/>
+                                <span>✅ Comes built‑in with Python.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background:#f8fafc; border-left:4px solid #2563eb; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
+                        <strong>📌 Recommendation:</strong> Use <strong>PostgreSQL</strong> for the full experience. If
+                        you're new to databases, <strong>SQLite</strong> is a great starting point (no installation
+                        needed).
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 2: LOCAL INSTALLATION ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">2️⃣ Local Installation (Traditional)</h3>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🐘 PostgreSQL</h4>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-bottom:0.5rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Download installer from <a href="https://www.postgresql.org/download/windows/"
+                                                               target="_blank">postgresql.org</a>.
+                                </li>
+                                <li>Run installer, set password, and keep default port (5432).</li>
+                            </ol>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li><code>brew install postgresql</code></li>
+                                <li><code>brew services start postgresql</code></li>
+                            </ol>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🐧 Linux</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li><code>sudo apt install postgresql postgresql-contrib</code></li>
+                                <li><code>sudo systemctl start postgresql</code></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🐬 MySQL</h4>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li>Download MySQL Installer from <a href="https://dev.mysql.com/downloads/installer/"
+                                                                     target="_blank">mysql.com</a>.
+                                </li>
+                                <li>Choose Developer Default, set root password.</li>
+                            </ol>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li><code>brew install mysql</code></li>
+                                <li><code>brew services start mysql</code></li>
+                                <li><code>mysql_secure_installation</code></li>
+                            </ol>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🐧 Linux</strong>
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <li><code>sudo apt install mysql-server</code></li>
+                                <li><code>sudo systemctl start mysql</code></li>
+                                <li><code>sudo mysql_secure_installation</code></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 3: DOCKER INSTALLATION ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">3️⃣ Docker Installation (Recommended – Best for Isolation &amp;
+                        Portability)</h3>
+                    <p style="margin:0.3rem 0;">
+                        Docker is the cleanest way to run databases. It isolates your database from your OS, makes
+                        version
+                        switching easy,
+                        and allows you to <strong>persist data on your local drive</strong> using volumes.
+                    </p>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step A: Install Docker</h4>
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span><strong>Windows/macOS:</strong> Download <a
+                                href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker
+                            Desktop</a>
+                            and install.
+                        </span>
+                        </br>
+                        <span><strong>Linux:</strong> <code>sudo apt install docker.io</code> (Ubuntu) or follow your
+                            distro's
+                            guide.
+                        </span>
+                        </br>
+                        <span>Verify: <code>docker --version</code></span>
+                    </div>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step B: Run PostgreSQL with Persistent
+                        Storage</h4>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Create a local directory for PostgreSQL data
 mkdir -p ~/postgres_data
 
 # Run PostgreSQL container with volume mount
@@ -219,12 +223,12 @@ docker run -d \
   -p 5432:5432 \
   -v ~/postgres_data:/var/lib/postgresql/data \
   postgres:15</code></pre>
-                </div>
+                    </div>
 
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step C: Run MySQL with Persistent Storage</h4>
-                <div class="code-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash"># Create a local directory for MySQL data
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step C: Run MySQL with Persistent Storage</h4>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Create a local directory for MySQL data
 mkdir -p ~/mysql_data
 
 # Run MySQL container with volume mount
@@ -235,12 +239,12 @@ docker run -d \
   -p 3306:3306 \
   -v ~/mysql_data:/var/lib/mysql \
   mysql:8</code></pre>
-                </div>
+                    </div>
 
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step D: Useful Docker Commands</h4>
-                <div class="code-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash"># Check if container is running
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step D: Useful Docker Commands</h4>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Check if container is running
 docker ps
 
 # Connect to PostgreSQL from host
@@ -254,208 +258,236 @@ docker stop postgres-dev
 
 # Start container again (data is preserved)
 docker start postgres-dev</code></pre>
-                </div>
-
-                <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
-                    <strong>⚠️ Important:</strong> The <code>-v</code> flag mounts your local folder to the container.
-                    Even if you delete the container, your database files stay safe in <code>~/postgres_data</code>.
-                    This is how you achieve <strong>data persistence</strong> with Docker.
-                </div>
-            </div>
-
-            <!-- ===== SECTION 4: GUI CLIENTS ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">4️⃣ Install a GUI Client (Optional but Highly Recommended)</h3>
-                <p style="margin:0.3rem 0;">A GUI client makes it easier to browse schemas, run queries, and visualise
-                    data.</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:1rem; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">🐘</div>
-                        <strong>pgAdmin</strong>
-                        <p style="font-size:0.85rem; margin:0.2rem 0;">Official PostgreSQL GUI.<br>Download from <a
-                                href="https://www.pgadmin.org/download/" target="_blank">pgadmin.org</a>.</p>
                     </div>
-                    <div style="background:#fff; padding:1rem; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">🐬</div>
-                        <strong>MySQL Workbench</strong>
-                        <p style="font-size:0.85rem; margin:0.2rem 0;">Official MySQL GUI.<br>Download from <a
-                                href="https://dev.mysql.com/downloads/workbench/" target="_blank">mysql.com</a>.</p>
-                    </div>
-                    <div style="background:#fff; padding:1rem; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">📊</div>
-                        <strong>DBeaver</strong>
-                        <p style="font-size:0.85rem; margin:0.2rem 0;">Universal, free GUI.<br>Download from <a
-                                href="https://dbeaver.io/" target="_blank">dbeaver.io</a>.</p>
+
+                    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
+                        <strong>⚠️ Important:</strong> The <code>-v</code> flag mounts your local folder to the
+                        container.
+                        Even if you delete the container, your database files stay safe in <code>~/postgres_data</code>.
+                        This is how you achieve <strong>data persistence</strong> with Docker.
                     </div>
                 </div>
-            </div>
 
-            <!-- ===== SECTION 5: VERIFY YOUR SETUP ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">5️⃣ Verify Your Setup</h3>
-                <p>Run these tests to confirm everything is working.</p>
+                <!-- ===== SECTION 4: GUI CLIENTS ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">4️⃣ Install a GUI Client (Optional but Highly Recommended)</h3>
+                    <p style="margin:0.3rem 0;">A GUI client makes it easier to browse schemas, run queries, and
+                        visualise
+                        data.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:1rem; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">🐘</div>
+                            <strong>pgAdmin</strong>
+                            <p style="font-size:0.85rem; margin:0.2rem 0;">Official PostgreSQL GUI.<br>Download from <a
+                                    href="https://www.pgadmin.org/download/" target="_blank">pgadmin.org</a>.</p>
+                        </div>
+                        <div style="background:#fff; padding:1rem; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">🐬</div>
+                            <strong>MySQL Workbench</strong>
+                            <p style="font-size:0.85rem; margin:0.2rem 0;">Official MySQL GUI.<br>Download from <a
+                                    href="https://dev.mysql.com/downloads/workbench/" target="_blank">mysql.com</a>.</p>
+                        </div>
+                        <div style="background:#fff; padding:1rem; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">📊</div>
+                            <strong>DBeaver</strong>
+                            <p style="font-size:0.85rem; margin:0.2rem 0;">Universal, free GUI.<br>Download from <a
+                                    href="https://dbeaver.io/" target="_blank">dbeaver.io</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 5: VERIFY YOUR SETUP ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">5️⃣ Verify Your Setup</h3>
+                    <p>Run these tests to confirm everything is working.</p>
 
 
-                <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                    <strong>🐘 PostgreSQL</strong>
-                    <div class="code-container" style="margin-top:0.3rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash"># Local install
+                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                        <strong>🐘 PostgreSQL</strong>
+                        <div class="code-container" style="margin-top:0.3rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash"># Local install
 psql -U postgres -c "SELECT version();"
 
 # Docker
 docker exec -it postgres-dev psql -U admin -d library -c "SELECT version();"</code></pre>
+                        </div>
                     </div>
-                </div>
-                <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                    <strong>🐬 MySQL</strong>
-                    <div class="code-container" style="margin-top:0.3rem;">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash"># Local install
+                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                        <strong>🐬 MySQL</strong>
+                        <div class="code-container" style="margin-top:0.3rem;">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash"># Local install
 mysql -u root -p -e "SELECT VERSION();"
 
 # Docker
 docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code></pre>
+                        </div>
+                    </div>
+
+
+                    <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:6px; padding:0.8rem; margin-top:0.8rem;">
+                        <strong>✅ Expected Output:</strong> You should see the database version (e.g., <code>PostgreSQL
+                        15.x</code> or <code>MySQL 8.x</code>).
                     </div>
                 </div>
 
+                <!-- ===== SECTION 6: DATABASE SETUP SCRIPT ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">6️⃣ Database Setup Script – How to Use It</h3>
+                    <p style="margin:0.3rem 0;">
+                        This roadmap provides a complete SQL script (<code>library_setup.sql</code>) that creates all
+                        tables
+                        and inserts sample data for the <strong>Library Management System</strong>.
+                        <strong>Run this script after you have verified your database is running.</strong>
 
-                <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:6px; padding:0.8rem; margin-top:0.8rem;">
-                    <strong>✅ Expected Output:</strong> You should see the database version (e.g., <code>PostgreSQL
-                    15.x</code> or <code>MySQL 8.x</code>).
+                    </p>
+                    <a href="/assets/scripts/library_setup.sql" download class="btn" style="background:#2563eb; color:#fff; padding:0.5rem 1.5rem; border-radius:6px; text-decoration:none;">📥 Download library_setup.sql</a>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">📄 What the Script Does</h4>
+                    <ol style="padding-left:1.2rem; margin:0.2rem 0 0 1.2rem;">
+                        <li><strong>Drops existing tables</strong> (if any) for a clean start.</li>
+                        <li><strong>Creates 7 tables</strong>: <code>publishers</code>, <code>authors</code>,
+                            <code>books</code>, <code>book_author</code> (junction), <code>members</code>,
+                            <code>loans</code>, <code>fines</code>.
+                        </li>
+                        <li><strong>Inserts sample data</strong> – 15 authors, 40 books, 20 members, 80+ loans, and 20
+                            fines.
+                        </li>
+                        <li><strong>Includes validation queries</strong> at the end to confirm the data loaded
+                            correctly.
+                        </li>
+                    </ol>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🚀 When to Run It</h4>
+                    <ol style="padding-left:1.2rem; margin:0.2rem 0 0 1.2rem;">
+                        <li><strong>After</strong> you have installed and verified your database (PostgreSQL/MySQL).
+                        </li>
+                        <li><strong>Before</strong> you start Day 1 of the SQL roadmap – the data is used for all
+                            exercises.
+                        </li>
+                        <li>If you are using Docker, make sure your container is running and you can connect to it.</li>
+                    </ol>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">💻 How to Run It</h4>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🐘 PostgreSQL</strong>
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span><strong>Using psql:</strong> <code>psql -U admin -d library -f
+                                    library_setup.sql</code>
+                                </span>
+                                </br>
+                                <span><strong>In pgAdmin:</strong> Open the Query Tool, load the file, and execute.</span>
+                                </br>
+                                <span><strong>Docker:</strong> <code>docker exec -i postgres-dev psql -U admin -d library
+                                    &lt;
+                                    library_setup.sql</code></span>
+                            </div>
+                        </div>
+                        <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🐬 MySQL</strong>
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span><strong>Using command line:</strong> <code>mysql -u root -p library &lt;
+                                    library_setup.sql</code></span>
+                                </br>
+                                <span><strong>In Workbench:</strong> Open the file, click the lightning bolt to execute.
+                                </span>
+                                </br>
+                                <span><strong>Docker:</strong> <code>docker exec -i mysql-dev mysql -u root -p library
+                                    &lt;
+                                    library_setup.sql</code></li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background:#f0fdf4; border-left:4px solid #15803d; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
+                        <strong>✅ After Running:</strong> The validation queries at the end of the script will show row
+                        counts.
+                        You should see: <code>authors=15, publishers=8, books=40, book_author=30, members=20, loans=80,
+                        fines=20</code>.
+                        If the counts match, you are ready to start the roadmap!
+                    </div>
                 </div>
+
+                <!-- ===== SECTION 7: FINAL CHECKLIST ===== -->
+                <!--<div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#15803d;">✅ Final Checklist</h3>-->
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                        <h3 style="margin:0; color:#2563eb;">7. Final Checklist</h3>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
+                            <div style="font-size:2rem;">🐘</div>
+                            <strong>PostgreSQL / MySQL</strong>
+                            <p style="font-size:0.85rem; margin:0;">Installed &amp; running<br><code>psql
+                                --version</code>
+                            </p>
+                        </div>
+                        <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
+                            <div style="font-size:2rem;">📊</div>
+                            <strong>GUI Client</strong>
+                            <p style="font-size:0.85rem; margin:0;">Connected to database<br><code>DBeaver /
+                                pgAdmin</code>
+                            </p>
+                        </div>
+                        <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
+                            <div style="font-size:2rem;">🗄️</div>
+                            <strong>Sample DB Loaded</strong>
+                            <p style="font-size:0.85rem; margin:0;"><code>library_setup.sql</code> executed<br>Row
+                                counts
+                                verified</p>
+                        </div>
+                    </div>
+                    <p style="margin:0.5rem 0 0; font-style:italic;">"Your SQL environment is ready.
+                        Let's
+                        start Day 1!"</p>
+                </div>
+
+                <!-- ===== SECTION 8: TROUBLESHOOTING ===== -->
+                <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#b91c1c;">⚠️ Troubleshooting – Common Issues</h3>
+                    <div style="padding-left:0.5rem; margin:0.3rem 0 0 1.2rem;">
+                        <span><strong>Port conflict (5432/3306 already in use):</strong> Stop the conflicting service, or
+                            change the host port: <code>-p 5433:5432</code> (Docker).
+                        </span>
+                        </br>
+                        <span><strong>“psql: could not connect to server”:</strong> Check if PostgreSQL is running: <code>brew
+                            services list</code> or <code>docker ps</code>.
+                        </span>
+                        </br>
+                        <span><strong>“Access denied” for MySQL:</strong> Reset root password: <code>sudo mysql -u
+                            root</code>
+                            (Linux) or follow Docker logs.
+                        </span>
+                        </br>
+                        <span></span><strong>Docker permission denied (Linux):</strong> Add your user to the docker group: <code>sudo
+                            usermod -aG docker $USER</code> and restart.
+                        </span>
+                        </br>
+                        <span><strong>Volume mount not persisting:</strong> Ensure the host directory exists before
+                            running
+                            the container (<code>mkdir -p ~/postgres_data</code>).
+                        </span>
+                        </br>
+                        <span><strong>Script execution errors:</strong> Check if you are connected to the correct database
+                            (<code>library</code>) and have the necessary permissions.
+                        </span>
+                    </div>
+
+                    <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.8rem 1rem; margin-top:0.8rem; border-radius:4px;">
+                        <strong>🎉 You're all set!</strong> Your database environment is now ready. Open your terminal,
+                        launch your GUI client, and start with Day 1. Happy querying!
+                    </div>
+
+                    <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap;">
+                        <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ Ready to Query</span>
+                        <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 45 Days Ahead</span>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- ===== SECTION 6: DATABASE SETUP SCRIPT ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">6️⃣ Database Setup Script – How to Use It</h3>
-                <p style="margin:0.3rem 0;">
-                    This roadmap provides a complete SQL script (<code>library_setup.sql</code>) that creates all tables
-                    and inserts sample data for the <strong>Library Management System</strong>.
-                    <strong>Run this script after you have verified your database is running.</strong>
-                </p>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">📄 What the Script Does</h4>
-                <ul style="margin:0.2rem 0 0 1.2rem;">
-                    <li><strong>Drops existing tables</strong> (if any) for a clean start.</li>
-                    <li><strong>Creates 7 tables</strong>: <code>publishers</code>, <code>authors</code>,
-                        <code>books</code>, <code>book_author</code> (junction), <code>members</code>,
-                        <code>loans</code>, <code>fines</code>.
-                    </li>
-                    <li><strong>Inserts sample data</strong> – 15 authors, 40 books, 20 members, 80+ loans, and 20
-                        fines.
-                    </li>
-                    <li><strong>Includes validation queries</strong> at the end to confirm the data loaded correctly.
-                    </li>
-                </ul>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🚀 When to Run It</h4>
-                <ul style="margin:0.2rem 0 0 1.2rem;">
-                    <li><strong>After</strong> you have installed and verified your database (PostgreSQL/MySQL).</li>
-                    <li><strong>Before</strong> you start Day 1 of the SQL roadmap – the data is used for all exercises.
-                    </li>
-                    <li>If you are using Docker, make sure your container is running and you can connect to it.</li>
-                </ul>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">💻 How to Run It</h4>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🐘 PostgreSQL</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li><strong>Using psql:</strong> <code>psql -U admin -d library -f library_setup.sql</code>
-                            </li>
-                            <li><strong>In pgAdmin:</strong> Open the Query Tool, load the file, and execute.</li>
-                            <li><strong>Docker:</strong> <code>docker exec -i postgres-dev psql -U admin -d library &lt;
-                                library_setup.sql</code></li>
-                        </ul>
-                    </div>
-                    <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
-                        <strong>🐬 MySQL</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li><strong>Using command line:</strong> <code>mysql -u root -p library &lt;
-                                library_setup.sql</code></li>
-                            <li><strong>In Workbench:</strong> Open the file, click the lightning bolt to execute.</li>
-                            <li><strong>Docker:</strong> <code>docker exec -i mysql-dev mysql -u root -p library &lt;
-                                library_setup.sql</code></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div style="background:#f0fdf4; border-left:4px solid #15803d; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
-                    <strong>✅ After Running:</strong> The validation queries at the end of the script will show row
-                    counts.
-                    You should see: <code>authors=15, publishers=8, books=40, book_author=30, members=20, loans=80,
-                    fines=20</code>.
-                    If the counts match, you are ready to start the roadmap!
-                </div>
-            </div>
-
-            <!-- ===== SECTION 7: FINAL CHECKLIST ===== -->
-            <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#15803d;">✅ Final Checklist</h3>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
-                        <div style="font-size:2rem;">🐘</div>
-                        <strong>PostgreSQL / MySQL</strong>
-                        <p style="font-size:0.85rem; margin:0;">Installed &amp; running<br><code>psql --version</code>
-                        </p>
-                    </div>
-                    <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
-                        <div style="font-size:2rem;">📊</div>
-                        <strong>GUI Client</strong>
-                        <p style="font-size:0.85rem; margin:0;">Connected to database<br><code>DBeaver / pgAdmin</code>
-                        </p>
-                    </div>
-                    <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
-                        <div style="font-size:2rem;">🗄️</div>
-                        <strong>Sample DB Loaded</strong>
-                        <p style="font-size:0.85rem; margin:0;"><code>library_setup.sql</code> executed<br>Row counts
-                            verified</p>
-                    </div>
-                </div>
-                <p style="margin:0.5rem 0 0; color:#065f46; font-style:italic;">"Your SQL environment is ready. Let's
-                    start Day 1!"</p>
-            </div>
-
-            <!-- ===== SECTION 8: TROUBLESHOOTING ===== -->
-            <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#b91c1c;">⚠️ Troubleshooting – Common Issues</h3>
-                <ul style="margin:0.3rem 0 0 1.2rem;">
-                    <li><strong>Port conflict (5432/3306 already in use):</strong> Stop the conflicting service, or
-                        change the host port: <code>-p 5433:5432</code> (Docker).
-                    </li>
-                    <li><strong>“psql: could not connect to server”:</strong> Check if PostgreSQL is running: <code>brew
-                        services list</code> or <code>docker ps</code>.
-                    </li>
-                    <li><strong>“Access denied” for MySQL:</strong> Reset root password: <code>sudo mysql -u root</code>
-                        (Linux) or follow Docker logs.
-                    </li>
-                    <li><strong>Docker permission denied (Linux):</strong> Add your user to the docker group: <code>sudo
-                        usermod -aG docker $USER</code> and restart.
-                    </li>
-                    <li><strong>Volume mount not persisting:</strong> Ensure the host directory exists before running
-                        the container (<code>mkdir -p ~/postgres_data</code>).
-                    </li>
-                    <li><strong>Script execution errors:</strong> Check if you are connected to the correct database
-                        (<code>library</code>) and have the necessary permissions.
-                    </li>
-                </ul>
-
-                <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.8rem 1rem; margin-top:0.8rem; border-radius:4px;">
-                    <strong>🎉 You're all set!</strong> Your database environment is now ready. Open your terminal,
-                    launch your GUI client, and start with Day 1. Happy querying!
-                </div>
-
-                <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap;">
-                    <span style="background:#15803d; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">✅ Ready to Query</span>
-                    <span style="background:#2563eb; color:#fff; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.8rem;">🚀 45 Days Ahead</span>
-                </div>
-            </div>
-
-        </div><!-- /day-content -->
-
-
-    </div><!-- /phase1 -->
+        </div>
+    </div>
 
     <!-- ============================================================ -->
     <!-- PHASE 2 - FOUNDATIONS & CORE SYNTAX (Days 1–12)              -->
@@ -4986,7 +5018,7 @@ BEGIN; -- SQL operations COMMIT; -- or ROLLBACK;</code></pre>
                     <h2>100 Most Common &amp; Important SQL Interview Questions</h2>
 
                     <embed
-                            src="assets/pdf/SkillForge-SQL-Mastery.pdf"
+                            src="../assets/pdf/SkillForge-SQL-Mastery.pdf"
                             type="application/pdf"
                             width="100%"
                             height="1000"
@@ -5001,88 +5033,90 @@ BEGIN; -- SQL operations COMMIT; -- or ROLLBACK;</code></pre>
     <!-- ========================================================== -->
     <!-- PHASE 9 – ESSENTIAL TOOLS & ECOSYSTEM                     -->
     <!-- ========================================================== -->
-    <div id="phase9" class="phase-section">
-        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
-            <h2>Essential SQL &amp; Database Libraries/Tools</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>PostgreSQL</strong><br>
-                    <span style="font-size:0.9rem;">Advanced open‑source relational database. <strong>Use:</strong> Production applications, complex queries. <strong>Why:</strong> Rich feature set, extensibility, and active community.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>MySQL</strong><br>
-                    <span style="font-size:0.9rem;">Popular open‑source RDBMS. <strong>Use:</strong> Web applications, LAMP stack. <strong>Why:</strong> Speed, ease of use, and wide adoption.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>SQLite</strong><br>
-                    <span style="font-size:0.9rem;">Embedded, file‑based database. <strong>Use:</strong> Local applications, prototypes. <strong>Why:</strong> Zero configuration, lightweight, and portable.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>DBeaver</strong><br>
-                    <span style="font-size:0.9rem;">Universal database GUI client. <strong>Use:</strong> Querying, schema browsing, and data visualisation. <strong>Why:</strong> Free, cross‑platform, supports all major DBs.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>pgAdmin</strong><br>
-                    <span style="font-size:0.9rem;">Admin GUI for PostgreSQL. <strong>Use:</strong> Managing PostgreSQL databases. <strong>Why:</strong> Feature‑rich and free.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>MySQL Workbench</strong><br>
-                    <span style="font-size:0.9rem;">MySQL admin GUI. <strong>Use:</strong> Designing and managing MySQL databases. <strong>Why:</strong> Official tool with EER modeling.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>SQLAlchemy</strong><br>
-                    <span style="font-size:0.9rem;">Python SQL toolkit and ORM. <strong>Use:</strong> Connecting Python applications to databases. <strong>Why:</strong> Pythonic, powerful, and supports multiple DBs.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>psycopg2</strong><br>
-                    <span style="font-size:0.9rem;">PostgreSQL adapter for Python. <strong>Use:</strong> High‑performance DB access from Python. <strong>Why:</strong> Fast, stable, and supports async.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Flyway</strong><br>
-                    <span style="font-size:0.9rem;">Database migration tool. <strong>Use:</strong> Version‑controlled schema changes. <strong>Why:</strong> Simple, reliable, integrates with CI/CD.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Liquibase</strong><br>
-                    <span style="font-size:0.9rem;">Database refactoring and migration. <strong>Use:</strong> Managing schema changes. <strong>Why:</strong> Supports multiple formats (XML, YAML, JSON, SQL).</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>DuckDB</strong><br>
-                    <span style="font-size:0.9rem;">In‑process analytical database. <strong>Use:</strong> Data analysis and OLAP on large datasets. <strong>Why:</strong> Fast, embedded, SQL‑compatible.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>TimescaleDB</strong><br>
-                    <span style="font-size:0.9rem;">Time‑series database on PostgreSQL. <strong>Use:</strong> Monitoring, IoT, financial data. <strong>Why:</strong> Time‑series optimisation with PostgreSQL reliability.</span>
+    <div id="phase9" class="phase-section no-sidebar">
+        <div class="content-area">
+            <div class="main-content">
+                <h2>Essential SQL &amp; Database Libraries/Tools</h2>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>PostgreSQL</strong><br>
+                        <span style="font-size:0.9rem;">Advanced open‑source relational database. <strong>Use:</strong> Production applications, complex queries. <strong>Why:</strong> Rich feature set, extensibility, and active community.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>MySQL</strong><br>
+                        <span style="font-size:0.9rem;">Popular open‑source RDBMS. <strong>Use:</strong> Web applications, LAMP stack. <strong>Why:</strong> Speed, ease of use, and wide adoption.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>SQLite</strong><br>
+                        <span style="font-size:0.9rem;">Embedded, file‑based database. <strong>Use:</strong> Local applications, prototypes. <strong>Why:</strong> Zero configuration, lightweight, and portable.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>DBeaver</strong><br>
+                        <span style="font-size:0.9rem;">Universal database GUI client. <strong>Use:</strong> Querying, schema browsing, and data visualisation. <strong>Why:</strong> Free, cross‑platform, supports all major DBs.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>pgAdmin</strong><br>
+                        <span style="font-size:0.9rem;">Admin GUI for PostgreSQL. <strong>Use:</strong> Managing PostgreSQL databases. <strong>Why:</strong> Feature‑rich and free.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>MySQL Workbench</strong><br>
+                        <span style="font-size:0.9rem;">MySQL admin GUI. <strong>Use:</strong> Designing and managing MySQL databases. <strong>Why:</strong> Official tool with EER modeling.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>SQLAlchemy</strong><br>
+                        <span style="font-size:0.9rem;">Python SQL toolkit and ORM. <strong>Use:</strong> Connecting Python applications to databases. <strong>Why:</strong> Pythonic, powerful, and supports multiple DBs.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>psycopg2</strong><br>
+                        <span style="font-size:0.9rem;">PostgreSQL adapter for Python. <strong>Use:</strong> High‑performance DB access from Python. <strong>Why:</strong> Fast, stable, and supports async.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Flyway</strong><br>
+                        <span style="font-size:0.9rem;">Database migration tool. <strong>Use:</strong> Version‑controlled schema changes. <strong>Why:</strong> Simple, reliable, integrates with CI/CD.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>Liquibase</strong><br>
+                        <span style="font-size:0.9rem;">Database refactoring and migration. <strong>Use:</strong> Managing schema changes. <strong>Why:</strong> Supports multiple formats (XML, YAML, JSON, SQL).</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>DuckDB</strong><br>
+                        <span style="font-size:0.9rem;">In‑process analytical database. <strong>Use:</strong> Data analysis and OLAP on large datasets. <strong>Why:</strong> Fast, embedded, SQL‑compatible.</span>
+                    </div>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <strong>TimescaleDB</strong><br>
+                        <span style="font-size:0.9rem;">Time‑series database on PostgreSQL. <strong>Use:</strong> Monitoring, IoT, financial data. <strong>Why:</strong> Time‑series optimisation with PostgreSQL reliability.</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- ============================================================= -->
-    <!-- Prism JS                                                      -->
-    <!-- ============================================================= -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js">
-    </script>
+<!-- ============================================================= -->
+<!-- Prism JS                                                      -->
+<!-- ============================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js">
+</script>
 
-    <!-- Shared JS + roadmap-specific JS -->
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/roadmap-script.js"></script>
-
+<!-- Shared JS + roadmap-specific JS -->
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/roadmap-script.js"></script>
 </body>
 </html>

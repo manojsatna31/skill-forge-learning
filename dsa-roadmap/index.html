@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>50-Day DSA Roadmap · SkillForge</title>
-    <!-- Prism Core CSS -->
+    <title>60-Day Sql Roadmap · SkillForge</title>
     <link
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
             rel="stylesheet"
@@ -14,28 +13,22 @@
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
             rel="stylesheet"
     />
-    <!-- base setup -->
-    <!--  For Production-->
-    <base href="/" />
-    <!--For Local -->
-    <!--    <base href="/skill-forge-learning/" />-->
-
-    <!-- Shared CSS + roadmap-specific CSS -->
-    <link rel="stylesheet" href="assets/css/style.css"/>
-    <link rel="stylesheet" href="assets/css/roadmap-style.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/roadmap-style.css"/>
 
 </head>
 <body>
-
-<!-- ========== HEADER ========== -->
+<!-- ─── Header ─── -->
 <header>
-    <div class="container nav">
-        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>
+    <div class="container nav nav-links">
+        <a href="/">
+            <div class="logo">Skill<span>Forge</span></div>
+        </a>
         <div>
             <a href="/">Home</a>
             <a href="/python-roadmap/">🐍 Python</a>
             <a href="/java-roadmap/">☕ Java</a>
-            <a href="/sql-roadmap/">🗄️SQL</a>
+            <a href="/sql-roadmap/">🛢️ SQL</a>
             <a href="/dsa-roadmap/" class="active">📊 DSA</a>
         </div>
     </div>
@@ -67,137 +60,159 @@
     <!-- ========================================================== -->
     <!-- PHASE 1 – DSA SETTING UP YOUR ENVIRONMENT                      -->
     <!-- ========================================================== -->
-    <div id="phase1" class="phase-section active">
-        <div style="max-width:1200px; margin:0 auto; padding:0 0.5rem;">
-            <h2>🛠️ Prerequisite – Setting Up Your DSA Environment</h2>
+    <div id="phase1" class="phase-section no-sidebar active">
+        <div class="content-area">
+            <div class="main-content">
+                <h2>🛠️ Prerequisite – Setting Up Your DSA Environment</h2>
 
-            <p style="font-size:1.1rem; color:#4a5568;">
-                A solid setup is the foundation of your DSA journey. This guide walks you through choosing your
-                language,
-                setting up your local development environment, configuring online platforms, and mastering input/output
-                handling.
-                Follow these steps <strong>before</strong> you start Day 1.
-            </p>
-
-            <!-- ===== SECTION 1: CHOOSE YOUR LANGUAGE ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">1. Choose Your Weapon – Python vs Java</h3>
-                <p style="margin:0.3rem 0;">Both languages are widely accepted in interviews. Pick the one you're most
-                    comfortable with.</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                    <div style="background:#ecfdf5; padding:0.8rem; border-radius:6px; border:1px solid #86efac;">
-                        <strong>🐍 Python – Recommended for beginners</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>✅ Concise syntax – write less code.</li>
-                            <li>✅ Built‑in data structures (lists, dicts, sets).</li>
-                            <li>✅ Rich standard library (heapq, collections, itertools).</li>
-                            <li>✅ Most popular for DSA in interviews.</li>
-                            <li>⚠️ Slower execution (rarely an issue in coding interviews).</li>
-                        </ul>
-                    </div>
-                    <div style="background:#eff6ff; padding:0.8rem; border-radius:6px; border:1px solid #93c5fd;">
-                        <strong>☕ Java – Standard in big‑tech</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                            <li>✅ Verbose but explicit – better for learning OOP.</li>
-                            <li>✅ Strongly typed – catches errors early.</li>
-                            <li>✅ Rich standard library (Collections, PriorityQueue).</li>
-                            <li>✅ Preferred in many large companies (Google, Amazon).</li>
-                            <li>⚠️ More boilerplate – requires more typing.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
-                    <strong>📌 Recommendation:</strong> If you're just starting with DSA, <strong>choose Python</strong>.
-                    It lets you focus on problem‑solving logic rather than language syntax. If you're targeting
-                    companies that use Java (e.g., Amazon), practice both.
-                </div>
-            </div>
-
-            <!-- ===== SECTION 2: LOCAL SETUP ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">2. Local Setup – Install &amp; Configure</h3>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step A: Install Python</h4>
-                <ul style="margin:0.2rem 0 0 1.2rem;">
-                    <li><strong>Windows:</strong> Download from <a href="https://python.org"
-                                                                   target="_blank">python.org</a>. <strong>Check "Add
-                        Python to PATH"</strong> during installation.
-                    </li>
-                    <li><strong>macOS:</strong> <code>brew install python</code> or download from python.org.</li>
-                    <li><strong>Linux:</strong> <code>sudo apt install python3 python3-pip</code>.</li>
-                    <li>Verify: <code>python --version</code> (Windows) or <code>python3 --version</code> (macOS/Linux).
-                    </li>
-                </ul>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step B: Install Java (JDK 17+)</h4>
-                <ul style="margin:0.2rem 0 0 1.2rem;">
-                    <li><strong>Windows/macOS:</strong> Download from <a href="https://adoptium.net/" target="_blank">Adoptium</a>.
-                    </li>
-                    <li><strong>Linux:</strong> <code>sudo apt install openjdk-17-jdk</code>.</li>
-                    <li>Verify: <code>java -version</code> and <code>javac -version</code>.</li>
-                </ul>
-
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step C: Install VS Code (or IntelliJ/IDEA)</h4>
-                <ul style="margin:0.2rem 0 0 1.2rem;">
-                    <li>Download from <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a>.
-                    </li>
-                    <li><strong>Essential Extensions:</strong>
-                        <ul>
-                            <li><strong>For Python:</strong> <code>Python</code> (by Microsoft), <code>Pylance</code>.
-                            </li>
-                            <li><strong>For Java:</strong> <code>Extension Pack for Java</code> (includes Language
-                                Support, Debugger, and Maven).
-                            </li>
-                            <li><strong>Common:</strong> <code>LeetCode</code> (practice directly in VS Code), <code>Prettier</code>
-                                (formatting).
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="code-container" style="margin-top:0.5rem;">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-bash"># Quick VS Code command to install Python extension (Ctrl+P)
-ext install ms-python.python
-ext install ms-vscode.vscode-java-pack</code></pre>
-                </div>
-            </div>
-
-            <!-- ===== SECTION 3: ONLINE PLATFORMS ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">3. Set Up Online Platforms</h3>
-                <ul style="margin:0.3rem 0 0 1.2rem;">
-                    <li><strong>LeetCode:</strong> Create a free account at <a href="https://leetcode.com"
-                                                                               target="_blank">leetcode.com</a>. Explore
-                        the "Problems" section and the "Playground".
-                    </li>
-                    <li><strong>HackerRank:</strong> Create an account at <a href="https://hackerrank.com"
-                                                                             target="_blank">hackerrank.com</a>.
-                        Practice in the "Interview Preparation Kit".
-                    </li>
-                    <li><strong>Why both?</strong> LeetCode has the best interview questions; HackerRank has great
-                        input/output tutorials for beginners.
-                    </li>
-                </ul>
-                <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
-                    <strong>💡 Tip:</strong> Use LeetCode's "Playground" to test code quickly without leaving the
-                    browser.
-                </div>
-            </div>
-
-            <!-- ===== SECTION 4: INPUT/OUTPUT MASTERY ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">4. Input/Output Mastery – The Hidden Interview Skill</h3>
-                <p style="margin:0.3rem 0;">
-                    In coding interviews, you're often given a function signature. But in competitive programming (and
-                    sometimes in interviews),
-                    you need to handle input from <code>stdin</code> and output to <code>stdout</code>. Master these
-                    templates.
+                <p style="font-size:1.1rem; color:#4a5568;">
+                    A solid setup is the foundation of your DSA journey. This guide walks you through choosing your
+                    language,
+                    setting up your local development environment, configuring online platforms, and mastering
+                    input/output
+                    handling.
+                    Follow these steps <strong>before</strong> you start Day 1.
                 </p>
 
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🐍 Python – Fast I/O Template</h4>
-                <div class="code-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-python">import sys
+                <!-- ===== SECTION 1: CHOOSE YOUR LANGUAGE ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">1. Choose Your Weapon – Python vs Java</h3>
+                    <p style="margin:0.3rem 0;">Both languages are widely accepted in interviews. Pick the one you're
+                        most
+                        comfortable with.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#ecfdf5; padding:0.8rem; border-radius:6px; border:1px solid #86efac;">
+                            <strong>🐍 Python – Recommended for beginners</strong>
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Concise syntax – write less code.</span><br/>
+                                <span>✅ Built‑in data structures (lists, dicts, sets).</span><br/>
+                                <span>✅ Rich standard library (heapq, collections, itertools).</span><br/>
+                                <span>✅ Most popular for DSA in interviews.</span><br/>
+                                <span>⚠️ Slower execution (rarely an issue in coding interviews).</span>
+                            </div>
+                        </div>
+                        <div style="background:#eff6ff; padding:0.8rem; border-radius:6px; border:1px solid #93c5fd;">
+                            <strong>☕ Java – Standard in big‑tech</strong>
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Verbose but explicit – better for learning OOP.</span><br/>
+                                <span>✅ Strongly typed – catches errors early.</span><br/>
+                                <span>✅ Rich standard library (Collections, PriorityQueue).</span><br/>
+                                <span>✅ Preferred in many large companies (Google, Amazon).</span><br/>
+                                <span>⚠️ More boilerplate – requires more typing.</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
+                        <strong>📌 Recommendation:</strong> If you're just starting with DSA, <strong>choose
+                        Python</strong>.
+                        It lets you focus on problem‑solving logic rather than language syntax. If you're targeting
+                        companies that use Java (e.g., Amazon), practice both.
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 2: LOCAL SETUP ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">2. Local Setup – Install &amp; Configure</h3>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step A: Install Python</h4>
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span><strong>Windows:</strong> Download from <a href="https://python.org"
+                                                                       target="_blank">python.org</a>. <strong>Check
+                            "Add
+                            Python to PATH"</strong> during installation.
+                        </span>
+                        </br>
+                        <span><strong>macOS:</strong> <code>brew install python</code> or download from python.org.</span>
+                        </br>
+                        <span><strong>Linux:</strong> <code>sudo apt install python3 python3-pip</code>.</span>
+                        </br>
+                        <span>Verify: <code>python --version</code> (Windows) or <code>python3 --version</code>
+                            (macOS/Linux).
+                        </span>
+                    </div>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step B: Install Java (JDK 17+)</h4>
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span><strong>Windows/macOS:</strong> Download from <a href="https://adoptium.net/"
+                                                                             target="_blank">Adoptium</a>.
+                        </span>
+                        </br>
+                        <span><strong>Linux:</strong> <code>sudo apt install openjdk-17-jdk</code>.</span>
+                        </br>
+                        <span>Verify: <code>java -version</code> and <code>javac -version</code>.</span>
+                    </div>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step C: Install VS Code (or IntelliJ/IDEA)</h4>
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span>Download from <a href="https://code.visualstudio.com/"
+                                             target="_blank">code.visualstudio.com</a>.
+                        </span>
+                        </br>
+                        <span><strong>Essential Extensions:</strong>
+                            <div>
+                                <span><strong>For Python:</strong> <code>Python</code> (by Microsoft),
+                                    <code>Pylance</code>.
+                                </span>
+                                </br>
+                                <span><strong>For Java:</strong> <code>Extension Pack for Java</code> (includes Language
+                                    Support, Debugger, and Maven).
+                                </span>
+                                </br>
+                                <span><strong>Common:</strong> <code>LeetCode</code> (practice directly in VS Code),
+                                    <code>Prettier</code>
+                                    (formatting).
+                                </span>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="code-container" style="margin-top:0.5rem;">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Quick VS Code command to install Python extension (Ctrl+P)
+ext install ms-python.python
+ext install ms-vscode.vscode-java-pack</code></pre>
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 3: ONLINE PLATFORMS ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">3. Set Up Online Platforms</h3>
+                    <div style="margin:0.3rem 0 0 1.2rem;">
+                        <span><strong>LeetCode:</strong> Create a free account at <a href="https://leetcode.com"
+                                                                                   target="_blank">leetcode.com</a>.
+                            Explore
+                            the "Problems" section and the "Playground".
+                        </span>
+                        </br>
+                        <span><strong>HackerRank:</strong> Create an account at <a href="https://hackerrank.com"
+                                                                                 target="_blank">hackerrank.com</a>.
+                            Practice in the "Interview Preparation Kit".
+                        </span>
+                        </br>
+                        <span><strong>Why both?</strong> LeetCode has the best interview questions; HackerRank has great
+                            input/output tutorials for beginners.
+                        </span>
+                    </div>
+                    <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
+                        <strong>💡 Tip:</strong> Use LeetCode's "Playground" to test code quickly without leaving the
+                        browser.
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 4: INPUT/OUTPUT MASTERY ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">4. Input/Output Mastery – The Hidden Interview Skill</h3>
+                    <p style="margin:0.3rem 0;">
+                        In coding interviews, you're often given a function signature. But in competitive programming
+                        (and
+                        sometimes in interviews),
+                        you need to handle input from <code>stdin</code> and output to <code>stdout</code>. Master these
+                        templates.
+                    </p>
+
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🐍 Python – Fast I/O Template</h4>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-python">import sys
 
 def solve():
     # Read all input
@@ -214,12 +229,12 @@ def solve():
 
 if __name__ == "__main__":
     solve()</code></pre>
-                </div>
+                    </div>
 
-                <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">☕ Java – Fast I/O Template</h4>
-                <div class="code-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre class="line-numbers"><code class="language-java">import java.io.*;
+                    <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">☕ Java – Fast I/O Template</h4>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-java">import java.io.*;
 import java.util.*;
 
 public class Main {
@@ -238,115 +253,125 @@ public class Main {
         System.out.println(sum);
     }
 }</code></pre>
-                </div>
-
-                <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
-                    <strong>⚠️ Common Pitfall:</strong> In LeetCode, you don't need to handle input/output – you just
-                    implement the function. But in HackerRank and actual coding tests, you <strong>must</strong> read
-                    from stdin and print to stdout.
-                </div>
-            </div>
-
-            <!-- ===== SECTION 5: ENVIRONMENT VERIFICATION ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">5. Verify Your Setup – "Hello, World!"</h3>
-                <p>Write and run a simple program to confirm everything works.</p>
-
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-                    <div>
-                        <strong>🐍 Python</strong>
-                        <div class="code-container">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code
-                                    class="language-python">print("Hello, DSA World!")</code></pre>
-                        </div>
                     </div>
-                    <div>
-                        <strong>☕ Java</strong>
-                        <div class="code-container">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-java">public class Main {
+
+                    <div style="background:#fef3c7; border-left:4px solid #f59e0b; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
+                        <strong>⚠️ Common Pitfall:</strong> In LeetCode, you don't need to handle input/output – you
+                        just
+                        implement the function. But in HackerRank and actual coding tests, you <strong>must</strong>
+                        read
+                        from stdin and print to stdout.
+                    </div>
+                </div>
+
+                <!-- ===== SECTION 5: ENVIRONMENT VERIFICATION ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">5. Verify Your Setup – "Hello, World!"</h3>
+                    <p>Write and run a simple program to confirm everything works.</p>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                        <div>
+                            <strong>🐍 Python</strong>
+                            <div class="code-container">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code
+                                        class="language-python">print("Hello, DSA World!")</code></pre>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>☕ Java</strong>
+                            <div class="code-container">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-java">public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, DSA World!");
     }
 }</code></pre>
+                            </div>
                         </div>
+                    </div>
+
+                    <div style="margin:0.5rem 0 0 1.2rem;">
+                        <span><strong>Run in VS Code:</strong> Press <kbd>Ctrl+F5</kbd> (or <kbd>Cmd+F5</kbd> on Mac) to
+                            execute.
+                        </span>
+                        </br>
+                        <span><strong>Run in LeetCode Playground:</strong> Paste the code and click "Run".</span>
+                        </br>
+                        <span><strong>Run in HackerRank:</strong> Use the "Run Code" button.</span>
                     </div>
                 </div>
 
-                <ul style="margin:0.5rem 0 0 1.2rem;">
-                    <li><strong>Run in VS Code:</strong> Press <kbd>Ctrl+F5</kbd> (or <kbd>Cmd+F5</kbd> on Mac) to
-                        execute.
-                    </li>
-                    <li><strong>Run in LeetCode Playground:</strong> Paste the code and click "Run".</li>
-                    <li><strong>Run in HackerRank:</strong> Use the "Run Code" button.</li>
-                </ul>
-            </div>
-
-            <!-- ===== SECTION 6: TROUBLESHOOTING ===== -->
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#2563eb;">6. Common Setup Issues &amp; Fixes</h3>
-                <div style="overflow-x:auto;">
-                    <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                        <thead>
-                        <tr style="background:#1e293b; color:white;">
-                            <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Issue</th>
-                            <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Fix</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">"python" not recognized</td>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">Re‑run Python installer and check "Add
-                                Python to PATH".
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">"javac" not found</td>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">Add <code>%JAVA_HOME%\bin</code> to
-                                PATH (Windows) or use <code>export PATH=$PATH:$JAVA_HOME/bin</code> (macOS/Linux).
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">LeetCode extension not working in VS
-                                Code
-                            </td>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">Sign in to LeetCode inside VS Code
-                                (<kbd>Ctrl+Shift+P</kbd> → "LeetCode: Sign in").
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">Input reading hangs</td>
-                            <td style="padding:6px 10px; border:1px solid #ddd;">Check if you're reading from the
-                                correct source; use <code>sys.stdin.read()</code> or <code>BufferedReader</code>.
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <!-- ===== SECTION 6: TROUBLESHOOTING ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">6. Common Setup Issues &amp; Fixes</h3>
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Issue</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Fix</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">"python" not recognized</td>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">Re‑run Python installer and check
+                                    "Add
+                                    Python to PATH".
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">"javac" not found</td>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">Add <code>%JAVA_HOME%\bin</code> to
+                                    PATH (Windows) or use <code>export PATH=$PATH:$JAVA_HOME/bin</code> (macOS/Linux).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">LeetCode extension not working in
+                                    VS
+                                    Code
+                                </td>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">Sign in to LeetCode inside VS Code
+                                    (<kbd>Ctrl+Shift+P</kbd> → "LeetCode: Sign in").
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">Input reading hangs</td>
+                                <td style="padding:6px 10px; border:1px solid #ddd;">Check if you're reading from the
+                                    correct source; use <code>sys.stdin.read()</code> or <code>BufferedReader</code>.
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
-            <!-- ===== FINAL CHECKLIST ===== -->
-            <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                <h3 style="margin:0; color:#15803d;">✅ Final Checklist – Before You Start</h3>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;">
-                    <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ Python/Java installed and verified</span>
-                    <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ VS Code with required extensions</span>
-                    <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ LeetCode &amp; HackerRank accounts created</span>
-                    <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ I/O template ready for your chosen language</span>
-                    <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ "Hello, DSA World!" runs successfully</span>
-                    <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ Familiar with LeetCode interface (playground, problems)</span>
+                <!-- ===== FINAL CHECKLIST ===== -->
+<!--                <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">-->
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">7. Final Checklist – Before You Start</h3>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;">
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ Python/Java installed and verified</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ VS Code with required extensions</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ LeetCode &amp; HackerRank accounts created</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ I/O template ready for your chosen language</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ "Hello, DSA World!" runs successfully</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ Familiar with LeetCode interface (playground, problems)</strong></span>
+                    </div>
+                    <p style="margin:0.5rem 0 0;font-style:italic;">"You're now ready to start Day 1 –
+                        Big‑O
+                        Notation."</p>
                 </div>
-                <p style="margin:0.5rem 0 0; color:#065f46; font-style:italic;">"You're now ready to start Day 1 – Big‑O
-                    Notation."</p>
-            </div>
 
-            <div class="callout" style="margin-top:1rem;">
-                <strong>💡 Pro Tip:</strong> Stick with one language for at least the first 50 problems. Switching too
-                early breaks momentum.
-                Once you're comfortable with the patterns, you can always translate solutions to the other language.
-            </div>
+                <div class="callout" style="margin-top:1rem;">
+                    <strong>💡 Pro Tip:</strong> Stick with one language for at least the first 50 problems. Switching
+                    too
+                    early breaks momentum.
+                    Once you're comfortable with the patterns, you can always translate solutions to the other language.
+                </div>
 
+            </div>
         </div>
     </div>
     <!-- ========================================================== -->
@@ -6539,7 +6564,7 @@ def generate_codes(node, code="", codes={}):
                 <div id="interviewQA" class="day-content">
                     <h2>120 Most Common &amp; Important Java Interview Questions</h2>
                     <embed
-                            src="assets/pdf/SkillForge-DSA-Mastery.pdf"
+                            src="../assets/pdf/SkillForge-DSA-Mastery.pdf"
                             type="application/pdf"
                             width="100%"
                             height="1000"
@@ -7068,994 +7093,1052 @@ for r in range(n):
     <!-- ========================================================== -->
     <!-- PHASE 9 – ESSENTIAL TOOLS & ECOSYSTEM                     -->
     <!-- ========================================================== -->
-    <div id="phase9" class="phase-section">
-        <details
-                style="background:#f8fafc; border-radius:8px; padding:0.5rem 1.5rem 1.5rem 1.5rem; border:1px solid #e2e8f0; margin-top:2rem;">
-            <summary style="font-weight:bold; font-size:1.1rem; cursor:pointer; padding:0.5rem 0; user-select:none;">
-                📋 LeetCode Study Plan – 100 Essential Problems
-            </summary>
-            <p style="color:#4a5568;">
-                This is a carefully curated list of <strong>100 hand‑picked LeetCode problems</strong>, organised by
-                pattern.
-                Start from the top and work your way down. Each problem reinforces a specific data structure or
-                algorithm.
-                <strong>Aim to solve at least 2–3 problems per day</strong> to complete this in ~6 weeks.
-            </p>
+    <div id="phase9" class="phase-section no-sidebar">
+        <div class="content-area">
+            <div class="main-content">
+                <h2 style="color:#1e293b; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Essential LeetCode
+                    List and Platform to know</h2>
+                <details
+                        style="background:#f8fafc; border-radius:8px; padding:0.5rem 1.5rem 1.5rem 1.5rem; border:1px solid #e2e8f0; margin-top:2rem;">
+                    <summary
+                            style="font-weight:bold; font-size:1.1rem; cursor:pointer; padding:0.5rem 0; user-select:none;">
+                        📋 LeetCode Study Plan – 100 Essential Problems
+                    </summary>
+                    <p style="color:#4a5568;">
+                        This is a carefully curated list of <strong>100 hand‑picked LeetCode problems</strong>,
+                        organised by
+                        pattern.
+                        Start from the top and work your way down. Each problem reinforces a specific data structure or
+                        algorithm.
+                        <strong>Aim to solve at least 2–3 problems per day</strong> to complete this in ~6 weeks.
+                    </p>
 
-            <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.8rem 1rem; border-radius:4px; margin:0.5rem 0;">
-                <strong>📌 How to Use This List:</strong>
-                <ul style="margin:0.2rem 0 0 1.2rem; color:#4a5568;">
-                    <li><strong>Don't look at the solution</strong> for at least 20 minutes.</li>
-                    <li><strong>Write the brute force</strong> first, then optimise.</li>
-                    <li><strong>Revisit problems</strong> you solved a week ago – spaced repetition is key.</li>
-                    <li><strong>Track your progress</strong> (mark completed problems in a spreadsheet).</li>
-                </ul>
-            </div>
+                    <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.8rem 1rem; border-radius:4px; margin:0.5rem 0;">
+                        <strong>📌 How to Use This List:</strong>
+                        <ul style="margin:0.2rem 0 0 1.2rem; color:#4a5568;">
+                            <li><strong>Don't look at the solution</strong> for at least 20 minutes.</li>
+                            <li><strong>Write the brute force</strong> first, then optimise.</li>
+                            <li><strong>Revisit problems</strong> you solved a week ago – spaced repetition is key.</li>
+                            <li><strong>Track your progress</strong> (mark completed problems in a spreadsheet).</li>
+                        </ul>
+                    </div>
 
-            <!-- ===== CATEGORY 1: ARRAYS & HASHING (15) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 1. Arrays &amp; Hashing (15 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td><a href="https://leetcode.com/problems/two-sum/" target="_blank" style="color:#2563eb;">Two
-                            Sum</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">HashMap</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank"
-                               style="color:#2563eb;">Contains Duplicate</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Set</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><a href="https://leetcode.com/problems/valid-anagram/" target="_blank"
-                               style="color:#2563eb;">Valid Anagram</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">HashMap</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td><a href="https://leetcode.com/problems/group-anagrams/" target="_blank"
-                               style="color:#2563eb;">Group Anagrams</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">HashMap</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank"
-                               style="color:#2563eb;">Top K Frequent Elements</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Heap / HashMap</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td><a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank"
-                               style="color:#2563eb;">Product of Array Except Self</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Prefix/Suffix</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank"
-                               style="color:#2563eb;">Longest Consecutive Sequence</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Set</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank"
-                               style="color:#2563eb;">Subarray Sum Equals K</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Prefix Sum</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td><a href="https://leetcode.com/problems/majority-element/" target="_blank"
-                               style="color:#2563eb;">Majority Element</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">HashMap</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/" target="_blank"
-                               style="color:#2563eb;">Find All Duplicates</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Cycle / Negate</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td><a href="https://leetcode.com/problems/missing-number/" target="_blank"
-                               style="color:#2563eb;">Missing Number</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">XOR / Sum</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td><a href="https://leetcode.com/problems/first-missing-positive/" target="_blank"
-                               style="color:#2563eb;">First Missing Positive</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Cyclic Sort</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td><a href="https://leetcode.com/problems/merge-intervals/" target="_blank"
-                               style="color:#2563eb;">Merge Intervals</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Sorting</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td><a href="https://leetcode.com/problems/insert-interval/" target="_blank"
-                               style="color:#2563eb;">Insert Interval</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Interval</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td><a href="https://leetcode.com/problems/non-overlapping-intervals/" target="_blank"
-                               style="color:#2563eb;">Non‑overlapping Intervals</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Greedy</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 1: ARRAYS & HASHING (15) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 1. Arrays &amp; Hashing (15 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><a href="https://leetcode.com/problems/two-sum/" target="_blank"
+                                       style="color:#2563eb;">Two
+                                    Sum</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">HashMap</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank"
+                                       style="color:#2563eb;">Contains Duplicate</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Set</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><a href="https://leetcode.com/problems/valid-anagram/" target="_blank"
+                                       style="color:#2563eb;">Valid Anagram</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">HashMap</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><a href="https://leetcode.com/problems/group-anagrams/" target="_blank"
+                                       style="color:#2563eb;">Group Anagrams</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">HashMap</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank"
+                                       style="color:#2563eb;">Top K Frequent Elements</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Heap / HashMap</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><a href="https://leetcode.com/problems/product-of-array-except-self/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Product of Array Except Self</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Prefix/Suffix</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><a href="https://leetcode.com/problems/longest-consecutive-sequence/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Longest Consecutive Sequence</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Set</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank"
+                                       style="color:#2563eb;">Subarray Sum Equals K</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Prefix Sum</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><a href="https://leetcode.com/problems/majority-element/" target="_blank"
+                                       style="color:#2563eb;">Majority Element</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">HashMap</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Find All Duplicates</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Cycle / Negate</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td><a href="https://leetcode.com/problems/missing-number/" target="_blank"
+                                       style="color:#2563eb;">Missing Number</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">XOR / Sum</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td><a href="https://leetcode.com/problems/first-missing-positive/" target="_blank"
+                                       style="color:#2563eb;">First Missing Positive</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Cyclic Sort</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td><a href="https://leetcode.com/problems/merge-intervals/" target="_blank"
+                                       style="color:#2563eb;">Merge Intervals</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Sorting</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td><a href="https://leetcode.com/problems/insert-interval/" target="_blank"
+                                       style="color:#2563eb;">Insert Interval</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Interval</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td><a href="https://leetcode.com/problems/non-overlapping-intervals/" target="_blank"
+                                       style="color:#2563eb;">Non‑overlapping Intervals</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Greedy</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 2: TWO POINTERS (8) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 2. Two Pointers (8 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>16</td>
-                        <td><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank"
-                               style="color:#2563eb;">Valid Palindrome</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td><a href="https://leetcode.com/problems/3sum/" target="_blank"
-                               style="color:#2563eb;">3Sum</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank"
-                               style="color:#2563eb;">Container With Most Water</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank"
-                               style="color:#2563eb;">Trapping Rain Water</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank"
-                               style="color:#2563eb;">Remove Duplicates</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>21</td>
-                        <td><a href="https://leetcode.com/problems/move-zeroes/" target="_blank" style="color:#2563eb;">Move
-                            Zeroes</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>22</td>
-                        <td><a href="https://leetcode.com/problems/squares-of-a-sorted-array/" target="_blank"
-                               style="color:#2563eb;">Squares of a Sorted Array</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>23</td>
-                        <td><a href="https://leetcode.com/problems/partition-labels/" target="_blank"
-                               style="color:#2563eb;">Partition Labels</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Two Pointers + Greedy</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 2: TWO POINTERS (8) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 2. Two Pointers (8 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>16</td>
+                                <td><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank"
+                                       style="color:#2563eb;">Valid Palindrome</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td><a href="https://leetcode.com/problems/3sum/" target="_blank"
+                                       style="color:#2563eb;">3Sum</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank"
+                                       style="color:#2563eb;">Container With Most Water</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank"
+                                       style="color:#2563eb;">Trapping Rain Water</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Remove Duplicates</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td><a href="https://leetcode.com/problems/move-zeroes/" target="_blank"
+                                       style="color:#2563eb;">Move
+                                    Zeroes</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td><a href="https://leetcode.com/problems/squares-of-a-sorted-array/" target="_blank"
+                                       style="color:#2563eb;">Squares of a Sorted Array</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td><a href="https://leetcode.com/problems/partition-labels/" target="_blank"
+                                       style="color:#2563eb;">Partition Labels</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Two Pointers + Greedy</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 3: SLIDING WINDOW (6) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 3. Sliding Window (6 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>24</td>
-                        <td><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/"
-                               target="_blank" style="color:#2563eb;">Longest Substring Without Repeating</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Variable Window</td>
-                    </tr>
-                    <tr>
-                        <td>25</td>
-                        <td><a href="https://leetcode.com/problems/longest-repeating-character-replacement/"
-                               target="_blank" style="color:#2563eb;">Longest Repeating Character Replacement</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Variable Window</td>
-                    </tr>
-                    <tr>
-                        <td>26</td>
-                        <td><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank"
-                               style="color:#2563eb;">Minimum Window Substring</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Variable Window</td>
-                    </tr>
-                    <tr>
-                        <td>27</td>
-                        <td><a href="https://leetcode.com/problems/permutation-in-string/" target="_blank"
-                               style="color:#2563eb;">Permutation in String</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Fixed Window</td>
-                    </tr>
-                    <tr>
-                        <td>28</td>
-                        <td><a href="https://leetcode.com/problems/sliding-window-maximum/" target="_blank"
-                               style="color:#2563eb;">Sliding Window Maximum</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Deque</td>
-                    </tr>
-                    <tr>
-                        <td>29</td>
-                        <td><a href="https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/"
-                               target="_blank" style="color:#2563eb;">Max Sum Distinct Subarray</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Fixed Window</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 3: SLIDING WINDOW (6) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 3. Sliding Window (6 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>24</td>
+                                <td>
+                                    <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+                                       target="_blank" style="color:#2563eb;">Longest Substring Without Repeating</a>
+                                </td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Variable Window</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td><a href="https://leetcode.com/problems/longest-repeating-character-replacement/"
+                                       target="_blank" style="color:#2563eb;">Longest Repeating Character
+                                    Replacement</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Variable Window</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank"
+                                       style="color:#2563eb;">Minimum Window Substring</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Variable Window</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td><a href="https://leetcode.com/problems/permutation-in-string/" target="_blank"
+                                       style="color:#2563eb;">Permutation in String</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Fixed Window</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td><a href="https://leetcode.com/problems/sliding-window-maximum/" target="_blank"
+                                       style="color:#2563eb;">Sliding Window Maximum</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Deque</td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td>
+                                    <a href="https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/"
+                                       target="_blank" style="color:#2563eb;">Max Sum Distinct Subarray</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Fixed Window</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 4: STACK & QUEUE (6) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 4. Stack &amp; Queue (6 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>30</td>
-                        <td><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank"
-                               style="color:#2563eb;">Valid Parentheses</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Stack</td>
-                    </tr>
-                    <tr>
-                        <td>31</td>
-                        <td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation/" target="_blank"
-                               style="color:#2563eb;">Evaluate Reverse Polish Notation</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Stack</td>
-                    </tr>
-                    <tr>
-                        <td>32</td>
-                        <td><a href="https://leetcode.com/problems/daily-temperatures/" target="_blank"
-                               style="color:#2563eb;">Daily Temperatures</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Monotonic Stack</td>
-                    </tr>
-                    <tr>
-                        <td>33</td>
-                        <td><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank"
-                               style="color:#2563eb;">Largest Rectangle in Histogram</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Monotonic Stack</td>
-                    </tr>
-                    <tr>
-                        <td>34</td>
-                        <td><a href="https://leetcode.com/problems/number-of-islands/" target="_blank"
-                               style="color:#2563eb;">Number of Islands</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">BFS / DFS</td>
-                    </tr>
-                    <tr>
-                        <td>35</td>
-                        <td><a href="https://leetcode.com/problems/rotting-oranges/" target="_blank"
-                               style="color:#2563eb;">Rotting Oranges</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Multi‑source BFS</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 4: STACK & QUEUE (6) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 4. Stack &amp; Queue (6 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>30</td>
+                                <td><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank"
+                                       style="color:#2563eb;">Valid Parentheses</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Stack</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Evaluate Reverse Polish Notation</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Stack</td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td><a href="https://leetcode.com/problems/daily-temperatures/" target="_blank"
+                                       style="color:#2563eb;">Daily Temperatures</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Monotonic Stack</td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Largest Rectangle in Histogram</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Monotonic Stack</td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td><a href="https://leetcode.com/problems/number-of-islands/" target="_blank"
+                                       style="color:#2563eb;">Number of Islands</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">BFS / DFS</td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td><a href="https://leetcode.com/problems/rotting-oranges/" target="_blank"
+                                       style="color:#2563eb;">Rotting Oranges</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Multi‑source BFS</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 5: LINKED LISTS (6) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 5. Linked Lists (6 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>36</td>
-                        <td><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank"
-                               style="color:#2563eb;">Reverse Linked List</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Iterative / Recursive</td>
-                    </tr>
-                    <tr>
-                        <td>37</td>
-                        <td><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank"
-                               style="color:#2563eb;">Linked List Cycle</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Tortoise &amp; Hare</td>
-                    </tr>
-                    <tr>
-                        <td>38</td>
-                        <td><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank"
-                               style="color:#2563eb;">Merge Two Sorted Lists</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Dummy Node</td>
-                    </tr>
-                    <tr>
-                        <td>39</td>
-                        <td><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank"
-                               style="color:#2563eb;">Remove Nth Node From End</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Two Pointers</td>
-                    </tr>
-                    <tr>
-                        <td>40</td>
-                        <td><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank"
-                               style="color:#2563eb;">Palindrome Linked List</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Reverse Second Half</td>
-                    </tr>
-                    <tr>
-                        <td>41</td>
-                        <td><a href="https://leetcode.com/problems/lru-cache/" target="_blank" style="color:#2563eb;">LRU
-                            Cache</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">HashMap + Doubly Linked List</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 5: LINKED LISTS (6) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 5. Linked Lists (6 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>36</td>
+                                <td><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank"
+                                       style="color:#2563eb;">Reverse Linked List</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Iterative / Recursive</td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank"
+                                       style="color:#2563eb;">Linked List Cycle</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Tortoise &amp; Hare</td>
+                            </tr>
+                            <tr>
+                                <td>38</td>
+                                <td><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank"
+                                       style="color:#2563eb;">Merge Two Sorted Lists</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Dummy Node</td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Remove Nth Node From End</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Two Pointers</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank"
+                                       style="color:#2563eb;">Palindrome Linked List</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Reverse Second Half</td>
+                            </tr>
+                            <tr>
+                                <td>41</td>
+                                <td><a href="https://leetcode.com/problems/lru-cache/" target="_blank"
+                                       style="color:#2563eb;">LRU
+                                    Cache</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">HashMap + Doubly Linked List</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 6: TREES (10) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 6. Trees (10 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>42</td>
-                        <td><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank"
-                               style="color:#2563eb;">Maximum Depth</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">DFS / BFS</td>
-                    </tr>
-                    <tr>
-                        <td>43</td>
-                        <td><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank"
-                               style="color:#2563eb;">Validate BST</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">BST</td>
-                    </tr>
-                    <tr>
-                        <td>44</td>
-                        <td><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank"
-                               style="color:#2563eb;">Symmetric Tree</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">DFS / BFS</td>
-                    </tr>
-                    <tr>
-                        <td>45</td>
-                        <td><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/" target="_blank"
-                               style="color:#2563eb;">Level Order Traversal</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">BFS</td>
-                    </tr>
-                    <tr>
-                        <td>46</td>
-                        <td><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
-                               target="_blank" style="color:#2563eb;">LCA (BST)</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">BST</td>
-                    </tr>
-                    <tr>
-                        <td>47</td>
-                        <td><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
-                               target="_blank" style="color:#2563eb;">LCA (Binary Tree)</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">DFS</td>
-                    </tr>
-                    <tr>
-                        <td>48</td>
-                        <td><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank"
-                               style="color:#2563eb;">Diameter of Binary Tree</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Height</td>
-                    </tr>
-                    <tr>
-                        <td>49</td>
-                        <td><a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
-                               target="_blank" style="color:#2563eb;">Zigzag Level Order</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">BFS</td>
-                    </tr>
-                    <tr>
-                        <td>50</td>
-                        <td><a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
-                               target="_blank" style="color:#2563eb;">Serialize/Deserialize</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">DFS</td>
-                    </tr>
-                    <tr>
-                        <td>51</td>
-                        <td><a href="https://leetcode.com/problems/path-sum/" target="_blank" style="color:#2563eb;">Path
-                            Sum</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">DFS</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 6: TREES (10) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 6. Trees (10 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>42</td>
+                                <td><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Maximum Depth</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">DFS / BFS</td>
+                            </tr>
+                            <tr>
+                                <td>43</td>
+                                <td><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank"
+                                       style="color:#2563eb;">Validate BST</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">BST</td>
+                            </tr>
+                            <tr>
+                                <td>44</td>
+                                <td><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank"
+                                       style="color:#2563eb;">Symmetric Tree</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">DFS / BFS</td>
+                            </tr>
+                            <tr>
+                                <td>45</td>
+                                <td><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Level Order Traversal</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">BFS</td>
+                            </tr>
+                            <tr>
+                                <td>46</td>
+                                <td>
+                                    <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+                                       target="_blank" style="color:#2563eb;">LCA (BST)</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">BST</td>
+                            </tr>
+                            <tr>
+                                <td>47</td>
+                                <td><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+                                       target="_blank" style="color:#2563eb;">LCA (Binary Tree)</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">DFS</td>
+                            </tr>
+                            <tr>
+                                <td>48</td>
+                                <td><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank"
+                                       style="color:#2563eb;">Diameter of Binary Tree</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Height</td>
+                            </tr>
+                            <tr>
+                                <td>49</td>
+                                <td><a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+                                       target="_blank" style="color:#2563eb;">Zigzag Level Order</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">BFS</td>
+                            </tr>
+                            <tr>
+                                <td>50</td>
+                                <td><a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+                                       target="_blank" style="color:#2563eb;">Serialize/Deserialize</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">DFS</td>
+                            </tr>
+                            <tr>
+                                <td>51</td>
+                                <td><a href="https://leetcode.com/problems/path-sum/" target="_blank"
+                                       style="color:#2563eb;">Path
+                                    Sum</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">DFS</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 7: HEAPS (5) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 7. Heaps / Priority Queues (5 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>52</td>
-                        <td><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/" target="_blank"
-                               style="color:#2563eb;">Kth Largest Element</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Min‑Heap</td>
-                    </tr>
-                    <tr>
-                        <td>53</td>
-                        <td><a href="https://leetcode.com/problems/k-closest-points-to-origin/" target="_blank"
-                               style="color:#2563eb;">K Closest Points</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Max‑Heap</td>
-                    </tr>
-                    <tr>
-                        <td>54</td>
-                        <td><a href="https://leetcode.com/problems/top-k-frequent-words/" target="_blank"
-                               style="color:#2563eb;">Top K Frequent Words</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Heap / Trie</td>
-                    </tr>
-                    <tr>
-                        <td>55</td>
-                        <td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank"
-                               style="color:#2563eb;">Merge K Sorted Lists</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Heap</td>
-                    </tr>
-                    <tr>
-                        <td>56</td>
-                        <td><a href="https://leetcode.com/problems/find-median-from-data-stream/" target="_blank"
-                               style="color:#2563eb;">Find Median from Data Stream</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Two Heaps</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 7: HEAPS (5) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 7. Heaps / Priority Queues (5 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>52</td>
+                                <td><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Kth Largest Element</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Min‑Heap</td>
+                            </tr>
+                            <tr>
+                                <td>53</td>
+                                <td><a href="https://leetcode.com/problems/k-closest-points-to-origin/" target="_blank"
+                                       style="color:#2563eb;">K Closest Points</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Max‑Heap</td>
+                            </tr>
+                            <tr>
+                                <td>54</td>
+                                <td><a href="https://leetcode.com/problems/top-k-frequent-words/" target="_blank"
+                                       style="color:#2563eb;">Top K Frequent Words</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Heap / Trie</td>
+                            </tr>
+                            <tr>
+                                <td>55</td>
+                                <td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank"
+                                       style="color:#2563eb;">Merge K Sorted Lists</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Heap</td>
+                            </tr>
+                            <tr>
+                                <td>56</td>
+                                <td><a href="https://leetcode.com/problems/find-median-from-data-stream/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Find Median from Data Stream</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Two Heaps</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 8: BACKTRACKING (6) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 8. Backtracking (6 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>57</td>
-                        <td><a href="https://leetcode.com/problems/subsets/" target="_blank" style="color:#2563eb;">Subsets</a>
-                        </td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Backtracking</td>
-                    </tr>
-                    <tr>
-                        <td>58</td>
-                        <td><a href="https://leetcode.com/problems/subsets-ii/" target="_blank" style="color:#2563eb;">Subsets
-                            II</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Backtracking + Skip Dups</td>
-                    </tr>
-                    <tr>
-                        <td>59</td>
-                        <td><a href="https://leetcode.com/problems/permutations/" target="_blank"
-                               style="color:#2563eb;">Permutations</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Backtracking</td>
-                    </tr>
-                    <tr>
-                        <td>60</td>
-                        <td><a href="https://leetcode.com/problems/permutations-ii/" target="_blank"
-                               style="color:#2563eb;">Permutations II</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Backtracking + Dups</td>
-                    </tr>
-                    <tr>
-                        <td>61</td>
-                        <td><a href="https://leetcode.com/problems/combination-sum/" target="_blank"
-                               style="color:#2563eb;">Combination Sum</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Backtracking</td>
-                    </tr>
-                    <tr>
-                        <td>62</td>
-                        <td><a href="https://leetcode.com/problems/n-queens/" target="_blank" style="color:#2563eb;">N‑Queens</a>
-                        </td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Backtracking</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 8: BACKTRACKING (6) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 8. Backtracking (6 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>57</td>
+                                <td><a href="https://leetcode.com/problems/subsets/" target="_blank"
+                                       style="color:#2563eb;">Subsets</a>
+                                </td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Backtracking</td>
+                            </tr>
+                            <tr>
+                                <td>58</td>
+                                <td><a href="https://leetcode.com/problems/subsets-ii/" target="_blank"
+                                       style="color:#2563eb;">Subsets
+                                    II</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Backtracking + Skip Dups</td>
+                            </tr>
+                            <tr>
+                                <td>59</td>
+                                <td><a href="https://leetcode.com/problems/permutations/" target="_blank"
+                                       style="color:#2563eb;">Permutations</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Backtracking</td>
+                            </tr>
+                            <tr>
+                                <td>60</td>
+                                <td><a href="https://leetcode.com/problems/permutations-ii/" target="_blank"
+                                       style="color:#2563eb;">Permutations II</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Backtracking + Dups</td>
+                            </tr>
+                            <tr>
+                                <td>61</td>
+                                <td><a href="https://leetcode.com/problems/combination-sum/" target="_blank"
+                                       style="color:#2563eb;">Combination Sum</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Backtracking</td>
+                            </tr>
+                            <tr>
+                                <td>62</td>
+                                <td><a href="https://leetcode.com/problems/n-queens/" target="_blank"
+                                       style="color:#2563eb;">N‑Queens</a>
+                                </td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Backtracking</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 9: GRAPHS (10) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 9. Graphs (10 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>63</td>
-                        <td><a href="https://leetcode.com/problems/clone-graph/" target="_blank" style="color:#2563eb;">Clone
-                            Graph</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">BFS / DFS</td>
-                    </tr>
-                    <tr>
-                        <td>64</td>
-                        <td><a href="https://leetcode.com/problems/course-schedule/" target="_blank"
-                               style="color:#2563eb;">Course Schedule</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Topological Sort</td>
-                    </tr>
-                    <tr>
-                        <td>65</td>
-                        <td><a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank"
-                               style="color:#2563eb;">Course Schedule II</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Topological Sort</td>
-                    </tr>
-                    <tr>
-                        <td>66</td>
-                        <td><a href="https://leetcode.com/problems/number-of-islands/" target="_blank"
-                               style="color:#2563eb;">Number of Islands</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">BFS / DFS</td>
-                    </tr>
-                    <tr>
-                        <td>67</td>
-                        <td><a href="https://leetcode.com/problems/word-ladder/" target="_blank" style="color:#2563eb;">Word
-                            Ladder</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">BFS</td>
-                    </tr>
-                    <tr>
-                        <td>68</td>
-                        <td><a href="https://leetcode.com/problems/network-delay-time/" target="_blank"
-                               style="color:#2563eb;">Network Delay Time</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Dijkstra</td>
-                    </tr>
-                    <tr>
-                        <td>69</td>
-                        <td><a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/" target="_blank"
-                               style="color:#2563eb;">Cheapest Flights</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Bellman‑Ford / Dijkstra</td>
-                    </tr>
-                    <tr>
-                        <td>70</td>
-                        <td><a href="https://leetcode.com/problems/pacific-atlantic-water-flow/" target="_blank"
-                               style="color:#2563eb;">Pacific Atlantic</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">DFS / BFS</td>
-                    </tr>
-                    <tr>
-                        <td>71</td>
-                        <td><a href="https://leetcode.com/problems/reconstruct-itinerary/" target="_blank"
-                               style="color:#2563eb;">Reconstruct Itinerary</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">DFS</td>
-                    </tr>
-                    <tr>
-                        <td>72</td>
-                        <td><a href="https://leetcode.com/problems/alien-dictionary/" target="_blank"
-                               style="color:#2563eb;">Alien Dictionary</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Topological Sort</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 9: GRAPHS (10) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 9. Graphs (10 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>63</td>
+                                <td><a href="https://leetcode.com/problems/clone-graph/" target="_blank"
+                                       style="color:#2563eb;">Clone
+                                    Graph</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">BFS / DFS</td>
+                            </tr>
+                            <tr>
+                                <td>64</td>
+                                <td><a href="https://leetcode.com/problems/course-schedule/" target="_blank"
+                                       style="color:#2563eb;">Course Schedule</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Topological Sort</td>
+                            </tr>
+                            <tr>
+                                <td>65</td>
+                                <td><a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank"
+                                       style="color:#2563eb;">Course Schedule II</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Topological Sort</td>
+                            </tr>
+                            <tr>
+                                <td>66</td>
+                                <td><a href="https://leetcode.com/problems/number-of-islands/" target="_blank"
+                                       style="color:#2563eb;">Number of Islands</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">BFS / DFS</td>
+                            </tr>
+                            <tr>
+                                <td>67</td>
+                                <td><a href="https://leetcode.com/problems/word-ladder/" target="_blank"
+                                       style="color:#2563eb;">Word
+                                    Ladder</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">BFS</td>
+                            </tr>
+                            <tr>
+                                <td>68</td>
+                                <td><a href="https://leetcode.com/problems/network-delay-time/" target="_blank"
+                                       style="color:#2563eb;">Network Delay Time</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Dijkstra</td>
+                            </tr>
+                            <tr>
+                                <td>69</td>
+                                <td><a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Cheapest Flights</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Bellman‑Ford / Dijkstra</td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                                <td><a href="https://leetcode.com/problems/pacific-atlantic-water-flow/" target="_blank"
+                                       style="color:#2563eb;">Pacific Atlantic</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">DFS / BFS</td>
+                            </tr>
+                            <tr>
+                                <td>71</td>
+                                <td><a href="https://leetcode.com/problems/reconstruct-itinerary/" target="_blank"
+                                       style="color:#2563eb;">Reconstruct Itinerary</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">DFS</td>
+                            </tr>
+                            <tr>
+                                <td>72</td>
+                                <td><a href="https://leetcode.com/problems/alien-dictionary/" target="_blank"
+                                       style="color:#2563eb;">Alien Dictionary</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Topological Sort</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 10: DYNAMIC PROGRAMMING (12) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 10. Dynamic Programming (12 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>73</td>
-                        <td><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank"
-                               style="color:#2563eb;">Climbing Stairs</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">1D DP</td>
-                    </tr>
-                    <tr>
-                        <td>74</td>
-                        <td><a href="https://leetcode.com/problems/house-robber/" target="_blank"
-                               style="color:#2563eb;">House Robber</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">1D DP</td>
-                    </tr>
-                    <tr>
-                        <td>75</td>
-                        <td><a href="https://leetcode.com/problems/coin-change/" target="_blank" style="color:#2563eb;">Coin
-                            Change</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Unbounded Knapsack</td>
-                    </tr>
-                    <tr>
-                        <td>76</td>
-                        <td><a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank"
-                               style="color:#2563eb;">LIS</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">LIS</td>
-                    </tr>
-                    <tr>
-                        <td>77</td>
-                        <td><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank"
-                               style="color:#2563eb;">Partition Equal Subset Sum</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">0/1 Knapsack</td>
-                    </tr>
-                    <tr>
-                        <td>78</td>
-                        <td><a href="https://leetcode.com/problems/target-sum/" target="_blank" style="color:#2563eb;">Target
-                            Sum</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">0/1 Knapsack</td>
-                    </tr>
-                    <tr>
-                        <td>79</td>
-                        <td><a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank"
-                               style="color:#2563eb;">LCS</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">LCS</td>
-                    </tr>
-                    <tr>
-                        <td>80</td>
-                        <td><a href="https://leetcode.com/problems/edit-distance/" target="_blank"
-                               style="color:#2563eb;">Edit Distance</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">LCS</td>
-                    </tr>
-                    <tr>
-                        <td>81</td>
-                        <td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/"
-                               target="_blank" style="color:#2563eb;">Stock with Cooldown</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">State Machine</td>
-                    </tr>
-                    <tr>
-                        <td>82</td>
-                        <td><a href="https://leetcode.com/problems/unique-paths/" target="_blank"
-                               style="color:#2563eb;">Unique Paths</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Grid DP</td>
-                    </tr>
-                    <tr>
-                        <td>83</td>
-                        <td><a href="https://leetcode.com/problems/minimum-path-sum/" target="_blank"
-                               style="color:#2563eb;">Minimum Path Sum</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Grid DP</td>
-                    </tr>
-                    <tr>
-                        <td>84</td>
-                        <td><a href="https://leetcode.com/problems/word-break/" target="_blank" style="color:#2563eb;">Word
-                            Break</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">1D DP</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 10: DYNAMIC PROGRAMMING (12) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 10. Dynamic Programming (12 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>73</td>
+                                <td><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank"
+                                       style="color:#2563eb;">Climbing Stairs</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">1D DP</td>
+                            </tr>
+                            <tr>
+                                <td>74</td>
+                                <td><a href="https://leetcode.com/problems/house-robber/" target="_blank"
+                                       style="color:#2563eb;">House Robber</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">1D DP</td>
+                            </tr>
+                            <tr>
+                                <td>75</td>
+                                <td><a href="https://leetcode.com/problems/coin-change/" target="_blank"
+                                       style="color:#2563eb;">Coin
+                                    Change</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Unbounded Knapsack</td>
+                            </tr>
+                            <tr>
+                                <td>76</td>
+                                <td><a href="https://leetcode.com/problems/longest-increasing-subsequence/"
+                                       target="_blank"
+                                       style="color:#2563eb;">LIS</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">LIS</td>
+                            </tr>
+                            <tr>
+                                <td>77</td>
+                                <td><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank"
+                                       style="color:#2563eb;">Partition Equal Subset Sum</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">0/1 Knapsack</td>
+                            </tr>
+                            <tr>
+                                <td>78</td>
+                                <td><a href="https://leetcode.com/problems/target-sum/" target="_blank"
+                                       style="color:#2563eb;">Target
+                                    Sum</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">0/1 Knapsack</td>
+                            </tr>
+                            <tr>
+                                <td>79</td>
+                                <td><a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank"
+                                       style="color:#2563eb;">LCS</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">LCS</td>
+                            </tr>
+                            <tr>
+                                <td>80</td>
+                                <td><a href="https://leetcode.com/problems/edit-distance/" target="_blank"
+                                       style="color:#2563eb;">Edit Distance</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">LCS</td>
+                            </tr>
+                            <tr>
+                                <td>81</td>
+                                <td>
+                                    <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/"
+                                       target="_blank" style="color:#2563eb;">Stock with Cooldown</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">State Machine</td>
+                            </tr>
+                            <tr>
+                                <td>82</td>
+                                <td><a href="https://leetcode.com/problems/unique-paths/" target="_blank"
+                                       style="color:#2563eb;">Unique Paths</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Grid DP</td>
+                            </tr>
+                            <tr>
+                                <td>83</td>
+                                <td><a href="https://leetcode.com/problems/minimum-path-sum/" target="_blank"
+                                       style="color:#2563eb;">Minimum Path Sum</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Grid DP</td>
+                            </tr>
+                            <tr>
+                                <td>84</td>
+                                <td><a href="https://leetcode.com/problems/word-break/" target="_blank"
+                                       style="color:#2563eb;">Word
+                                    Break</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">1D DP</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 11: BINARY SEARCH (5) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 11. Binary Search (5 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>85</td>
-                        <td><a href="https://leetcode.com/problems/binary-search/" target="_blank"
-                               style="color:#2563eb;">Binary Search</a></td>
-                        <td style="text-align:center;">Easy</td>
-                        <td style="text-align:center;">Classic</td>
-                    </tr>
-                    <tr>
-                        <td>86</td>
-                        <td><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank"
-                               style="color:#2563eb;">Search in Rotated Sorted Array</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Rotated</td>
-                    </tr>
-                    <tr>
-                        <td>87</td>
-                        <td><a href="https://leetcode.com/problems/find-peak-element/" target="_blank"
-                               style="color:#2563eb;">Find Peak Element</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Peak</td>
-                    </tr>
-                    <tr>
-                        <td>88</td>
-                        <td><a href="https://leetcode.com/problems/search-a-2d-matrix/" target="_blank"
-                               style="color:#2563eb;">Search a 2D Matrix</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Binary Search</td>
-                    </tr>
-                    <tr>
-                        <td>89</td>
-                        <td><a href="https://leetcode.com/problems/koko-eating-bananas/" target="_blank"
-                               style="color:#2563eb;">Koko Eating Bananas</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Binary Search on Answer</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 11: BINARY SEARCH (5) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 11. Binary Search (5 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>85</td>
+                                <td><a href="https://leetcode.com/problems/binary-search/" target="_blank"
+                                       style="color:#2563eb;">Binary Search</a></td>
+                                <td style="text-align:center;">Easy</td>
+                                <td style="text-align:center;">Classic</td>
+                            </tr>
+                            <tr>
+                                <td>86</td>
+                                <td><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Search in Rotated Sorted Array</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Rotated</td>
+                            </tr>
+                            <tr>
+                                <td>87</td>
+                                <td><a href="https://leetcode.com/problems/find-peak-element/" target="_blank"
+                                       style="color:#2563eb;">Find Peak Element</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Peak</td>
+                            </tr>
+                            <tr>
+                                <td>88</td>
+                                <td><a href="https://leetcode.com/problems/search-a-2d-matrix/" target="_blank"
+                                       style="color:#2563eb;">Search a 2D Matrix</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Binary Search</td>
+                            </tr>
+                            <tr>
+                                <td>89</td>
+                                <td><a href="https://leetcode.com/problems/koko-eating-bananas/" target="_blank"
+                                       style="color:#2563eb;">Koko Eating Bananas</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Binary Search on Answer</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== CATEGORY 12: DESIGN & MISC (5) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 12. Design &amp; Misc (5 problems)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>90</td>
-                        <td><a href="https://leetcode.com/problems/implement-trie/" target="_blank"
-                               style="color:#2563eb;">Implement Trie</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Trie</td>
-                    </tr>
-                    <tr>
-                        <td>91</td>
-                        <td><a href="https://leetcode.com/problems/add-and-search-word/" target="_blank"
-                               style="color:#2563eb;">Add &amp; Search Word</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Trie + DFS</td>
-                    </tr>
-                    <tr>
-                        <td>92</td>
-                        <td><a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/"
-                               target="_blank" style="color:#2563eb;">Design Add &amp; Search</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">Trie</td>
-                    </tr>
-                    <tr>
-                        <td>93</td>
-                        <td><a href="https://leetcode.com/problems/randomized-set/" target="_blank"
-                               style="color:#2563eb;">Randomized Set</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">HashMap + List</td>
-                    </tr>
-                    <tr>
-                        <td>94</td>
-                        <td><a href="https://leetcode.com/problems/insert-delete-getrandom-o1/" target="_blank"
-                               style="color:#2563eb;">Insert Delete GetRandom</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">HashMap + List</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== CATEGORY 12: DESIGN & MISC (5) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 12. Design &amp; Misc (5 problems)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>90</td>
+                                <td><a href="https://leetcode.com/problems/implement-trie/" target="_blank"
+                                       style="color:#2563eb;">Implement Trie</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Trie</td>
+                            </tr>
+                            <tr>
+                                <td>91</td>
+                                <td><a href="https://leetcode.com/problems/add-and-search-word/" target="_blank"
+                                       style="color:#2563eb;">Add &amp; Search Word</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Trie + DFS</td>
+                            </tr>
+                            <tr>
+                                <td>92</td>
+                                <td><a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/"
+                                       target="_blank" style="color:#2563eb;">Design Add &amp; Search</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">Trie</td>
+                            </tr>
+                            <tr>
+                                <td>93</td>
+                                <td><a href="https://leetcode.com/problems/randomized-set/" target="_blank"
+                                       style="color:#2563eb;">Randomized Set</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">HashMap + List</td>
+                            </tr>
+                            <tr>
+                                <td>94</td>
+                                <td><a href="https://leetcode.com/problems/insert-delete-getrandom-o1/" target="_blank"
+                                       style="color:#2563eb;">Insert Delete GetRandom</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">HashMap + List</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- ===== BONUS: NEXT LEVEL (6) ===== -->
-            <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 13. Next Level (6 problems – revisit after you finish
-                the above)</h4>
-            <div style="overflow-x:auto; margin-bottom:0.5rem;">
-                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
-                    <thead>
-                    <tr style="background:#1e293b; color:white;">
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty</th>
-                        <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>95</td>
-                        <td><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank"
-                               style="color:#2563eb;">Longest Palindromic Substring</a></td>
-                        <td style="text-align:center;">Medium</td>
-                        <td style="text-align:center;">DP / Expand Center</td>
-                    </tr>
-                    <tr>
-                        <td>96</td>
-                        <td><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank"
-                               style="color:#2563eb;">Median of Two Sorted Arrays</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Binary Search</td>
-                    </tr>
-                    <tr>
-                        <td>97</td>
-                        <td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank"
-                               style="color:#2563eb;">Merge K Sorted Lists</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Heap / Divide &amp; Conquer</td>
-                    </tr>
-                    <tr>
-                        <td>98</td>
-                        <td><a href="https://leetcode.com/problems/word-search-ii/" target="_blank"
-                               style="color:#2563eb;">Word Search II</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Trie + DFS</td>
-                    </tr>
-                    <tr>
-                        <td>99</td>
-                        <td><a href="https://leetcode.com/problems/sudoku-solver/" target="_blank"
-                               style="color:#2563eb;">Sudoku Solver</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">Backtracking</td>
-                    </tr>
-                    <tr>
-                        <td>100</td>
-                        <td><a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
-                               target="_blank" style="color:#2563eb;">Serialize/Deserialize BT</a></td>
-                        <td style="text-align:center;">Hard</td>
-                        <td style="text-align:center;">DFS / BFS</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- ===== BONUS: NEXT LEVEL (6) ===== -->
+                    <h4 style="color:#2563eb; margin:1.5rem 0 0.5rem;">🔹 13. Next Level (6 problems – revisit after you
+                        finish
+                        the above)</h4>
+                    <div style="overflow-x:auto; margin-bottom:0.5rem;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                            <tr style="background:#1e293b; color:white;">
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">#</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:left;">Problem</th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Difficulty
+                                </th>
+                                <th style="padding:6px 10px; border:1px solid #334155; text-align:center;">Pattern</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>95</td>
+                                <td><a href="https://leetcode.com/problems/longest-palindromic-substring/"
+                                       target="_blank"
+                                       style="color:#2563eb;">Longest Palindromic Substring</a></td>
+                                <td style="text-align:center;">Medium</td>
+                                <td style="text-align:center;">DP / Expand Center</td>
+                            </tr>
+                            <tr>
+                                <td>96</td>
+                                <td><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank"
+                                       style="color:#2563eb;">Median of Two Sorted Arrays</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Binary Search</td>
+                            </tr>
+                            <tr>
+                                <td>97</td>
+                                <td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank"
+                                       style="color:#2563eb;">Merge K Sorted Lists</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Heap / Divide &amp; Conquer</td>
+                            </tr>
+                            <tr>
+                                <td>98</td>
+                                <td><a href="https://leetcode.com/problems/word-search-ii/" target="_blank"
+                                       style="color:#2563eb;">Word Search II</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Trie + DFS</td>
+                            </tr>
+                            <tr>
+                                <td>99</td>
+                                <td><a href="https://leetcode.com/problems/sudoku-solver/" target="_blank"
+                                       style="color:#2563eb;">Sudoku Solver</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">Backtracking</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td><a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+                                       target="_blank" style="color:#2563eb;">Serialize/Deserialize BT</a></td>
+                                <td style="text-align:center;">Hard</td>
+                                <td style="text-align:center;">DFS / BFS</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <div style="background:#1e293b; color:#e5e7eb; padding:1rem; border-radius:8px; margin:0.5rem 0;">
-                <p style="margin:0; color:#60a5fa; font-weight:bold;">🚀 Final Advice</p>
-                <p style="margin:0.3rem 0 0; color:#94a3b8;">
-                    “Consistency beats intensity. Solve <strong>1–2 problems daily</strong> rather than 10 problems once
-                    a week.
-                    Track your progress, revisit weak areas, and <strong>always</strong> analyse the time and space
-                    complexity of your solutions.”
-                </p>
+                    <div style="background:#1e293b; color:#e5e7eb; padding:1rem; border-radius:8px; margin:0.5rem 0;">
+                        <p style="margin:0; color:#60a5fa; font-weight:bold;">🚀 Final Advice</p>
+                        <p style="margin:0.3rem 0 0; color:#94a3b8;">
+                            “Consistency beats intensity. Solve <strong>1–2 problems daily</strong> rather than 10
+                            problems once
+                            a week.
+                            Track your progress, revisit weak areas, and <strong>always</strong> analyse the time and
+                            space
+                            complexity of your solutions.”
+                        </p>
+                    </div>
+                </details>
+                <details
+                        style="background:#f8fafc; border-radius:8px; padding:0.5rem 1.5rem 1.5rem 1.5rem; border:1px solid #e2e8f0; margin-top:2rem;">
+                    <summary
+                            style="font-weight:bold; font-size:1.1rem; cursor:pointer; padding:0.5rem 0; user-select:none;">
+                        📚 DSA – Essential Tools &amp; Ecosystem
+                    </summary>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>LeetCode</strong><br>
+                            <span style="font-size:0.9rem;">The gold standard for DSA practice. <strong>Use:</strong> Daily challenges and curated problem lists. <strong>Why:</strong> Real interview questions and large community.</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>HackerRank / Codeforces</strong><br>
+                            <span style="font-size:0.9rem;">Competitive programming platforms. <strong>Use:</strong> Improve speed and accuracy. <strong>Why:</strong> Great for timed practice and contests.</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>Visualgo.net</strong><br>
+                            <span style="font-size:0.9rem;">Visualize algorithms in real‑time. <strong>Use:</strong> Understand how sorting, trees, and graphs work. <strong>Why:</strong> Seeing the algorithm helps with intuition.</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>Pramp / Interviewing.io</strong><br>
+                            <span style="font-size:0.9rem;">Mock interview platforms. <strong>Use:</strong> Practice with peers or engineers. <strong>Why:</strong> Simulates real interview pressure.</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>Debuggers (VS Code / PyCharm)</strong><br>
+                            <span style="font-size:0.9rem;">Step‑through debugging. <strong>Use:</strong> Trace recursive calls and variable changes. <strong>Why:</strong> Faster bug fixing and deeper understanding.</span>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>GitHub</strong><br>
+                            <span style="font-size:0.9rem;">Version control. <strong>Use:</strong> Track your progress and showcase solutions. <strong>Why:</strong> Build a portfolio of 100+ solved problems.</span>
+                        </div>
+                    </div>
+                </details>
             </div>
-        </details>
-        <details
-                style="background:#f8fafc; border-radius:8px; padding:0.5rem 1.5rem 1.5rem 1.5rem; border:1px solid #e2e8f0; margin-top:2rem;">
-            <summary style="font-weight:bold; font-size:1.1rem; cursor:pointer; padding:0.5rem 0; user-select:none;">
-                📚 DSA – Essential Tools &amp; Ecosystem
-            </summary>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>LeetCode</strong><br>
-                    <span style="font-size:0.9rem;">The gold standard for DSA practice. <strong>Use:</strong> Daily challenges and curated problem lists. <strong>Why:</strong> Real interview questions and large community.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>HackerRank / Codeforces</strong><br>
-                    <span style="font-size:0.9rem;">Competitive programming platforms. <strong>Use:</strong> Improve speed and accuracy. <strong>Why:</strong> Great for timed practice and contests.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Visualgo.net</strong><br>
-                    <span style="font-size:0.9rem;">Visualize algorithms in real‑time. <strong>Use:</strong> Understand how sorting, trees, and graphs work. <strong>Why:</strong> Seeing the algorithm helps with intuition.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Pramp / Interviewing.io</strong><br>
-                    <span style="font-size:0.9rem;">Mock interview platforms. <strong>Use:</strong> Practice with peers or engineers. <strong>Why:</strong> Simulates real interview pressure.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>Debuggers (VS Code / PyCharm)</strong><br>
-                    <span style="font-size:0.9rem;">Step‑through debugging. <strong>Use:</strong> Trace recursive calls and variable changes. <strong>Why:</strong> Faster bug fixing and deeper understanding.</span>
-                </div>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                    <strong>GitHub</strong><br>
-                    <span style="font-size:0.9rem;">Version control. <strong>Use:</strong> Track your progress and showcase solutions. <strong>Why:</strong> Build a portfolio of 100+ solved problems.</span>
-                </div>
-            </div>
-        </details>
+        </div>
     </div>
 </div>
 <!-- ========== FOOTER ========== -->
@@ -8073,8 +8156,8 @@ for r in range(n):
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 <!-- Shared JS + roadmap-specific JS -->
-<script src="assets/js/script.js"></script>
-<script src="assets/js/roadmap-script.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/roadmap-script.js"></script>
 
 </body>
 </html>
