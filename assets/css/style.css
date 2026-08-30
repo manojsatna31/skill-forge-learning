@@ -27,7 +27,7 @@ body {
 header {
     background: #1e293b;
     color: #fff;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -38,6 +38,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .nav .logo {
@@ -50,22 +52,33 @@ header {
     color: #60a5fa;
 }
 
-.nav a {
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
     color: #e5e7eb;
     text-decoration: none;
-    margin-left: 1.5rem;
+    margin-left: 0.8rem;
     font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.2s ease;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
 }
 
-.nav a:hover,
-.nav a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
 }
 
-.nav a.active {
+.nav-links a.active {
     border-bottom: 2px solid #60a5fa;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.2rem;
 }
 
 /* --- Hero section --- */
@@ -102,17 +115,26 @@ header {
     margin-top: -0.5rem;
 }
 
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
 .hero .btn {
     display: inline-block;
     background: #60a5fa;
     color: #0f172a;
-    padding: 0.75rem 2.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 40px;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+    min-width: 140px;
 }
 
 .hero .btn:hover {
@@ -204,6 +226,7 @@ h2 {
     border: 1px solid #e5e7eb;
     text-align: center;
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .track-item:hover {
@@ -258,21 +281,151 @@ footer a {
     text-decoration: none;
 }
 
-/* --- Responsive layout --- */
-@media (max-width: 768px) {
+/* --- Responsive layout (Mobile + Tablet) --- */
+
+/* Small tablets and large phones */
+@media (max-width: 850px) {
     .grid-2 {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
     }
 
     .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 700px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Header - wrap navigation */
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
     }
 
     .nav .logo {
-        font-size: 1.2rem;
+        text-align: center;
+        font-size: 1.4rem;
     }
 
-    .nav a {
-        margin-left: 1rem;
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.2rem;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: -0.5px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin: 0.8rem auto 1.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .hero .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+        min-width: 120px;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    /* Section heading */
+    h2 {
+        font-size: 1.6rem;
+        padding-left: 0.8rem;
+    }
+
+    /* Grids */
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Tracks */
+    .track-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .track-item {
+        padding: 1rem;
+    }
+
+    .track-item .icon {
+        font-size: 2rem;
+    }
+
+    /* Code structure */
+    .code-structure {
+        font-size: 0.8rem;
+        padding: 1rem;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 0;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .track-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+        max-width: 220px;
     }
 }

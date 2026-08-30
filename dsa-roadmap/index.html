@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>60-Day Sql Roadmap · SkillForge</title>
-    <!--    <base href="/" />-->
-    <!--    <base href="../" />-->
-
-    <!-- Prism Core CSS -->
     <link
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
             rel="stylesheet"
@@ -17,25 +13,23 @@
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="../assets/css/style.css"/>
-    <link rel="stylesheet" href="../assets/css/roadmap-style.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/roadmap-style.css"/>
 
 </head>
 <body>
 <!-- ─── Header ─── -->
 <header>
-    <div class="container nav">
-        <!--        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>-->
-        <a href="../">
+    <div class="container nav nav-links">
+        <a href="/">
             <div class="logo">Skill<span>Forge</span></div>
         </a>
         <div>
-            <!--            <a href="/">Home</a>-->
-            <a href="../">Home</a>
-            <a href="../python-roadmap/">🐍 Python</a>
-            <a href="../java-roadmap/">☕ Java</a>
-            <a href="../sql-roadmap/">🗄️SQL</a>
-            <a href="../dsa-roadmap/" class="active">DSA</a>
+            <a href="/">Home</a>
+            <a href="/python-roadmap/">🐍 Python</a>
+            <a href="/java-roadmap/">☕ Java</a>
+            <a href="/sql-roadmap/">🛢️ SQL</a>
+            <a href="/dsa-roadmap/" class="active">📊 DSA</a>
         </div>
     </div>
 </header>
@@ -89,22 +83,22 @@
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
                         <div style="background:#ecfdf5; padding:0.8rem; border-radius:6px; border:1px solid #86efac;">
                             <strong>🐍 Python – Recommended for beginners</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                                <li>✅ Concise syntax – write less code.</li>
-                                <li>✅ Built‑in data structures (lists, dicts, sets).</li>
-                                <li>✅ Rich standard library (heapq, collections, itertools).</li>
-                                <li>✅ Most popular for DSA in interviews.</li>
-                                <li>⚠️ Slower execution (rarely an issue in coding interviews).</li>
-                            </ul>
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Concise syntax – write less code.</span><br/>
+                                <span>✅ Built‑in data structures (lists, dicts, sets).</span><br/>
+                                <span>✅ Rich standard library (heapq, collections, itertools).</span><br/>
+                                <span>✅ Most popular for DSA in interviews.</span><br/>
+                                <span>⚠️ Slower execution (rarely an issue in coding interviews).</span>
+                            </div>
                         </div>
                         <div style="background:#eff6ff; padding:0.8rem; border-radius:6px; border:1px solid #93c5fd;">
                             <strong>☕ Java – Standard in big‑tech</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                                <li>✅ Verbose but explicit – better for learning OOP.</li>
-                                <li>✅ Strongly typed – catches errors early.</li>
-                                <li>✅ Rich standard library (Collections, PriorityQueue).</li>
-                                <li>✅ Preferred in many large companies (Google, Amazon).</li>
-                                <li>⚠️ More boilerplate – requires more typing.</li>
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Verbose but explicit – better for learning OOP.</span><br/>
+                                <span>✅ Strongly typed – catches errors early.</span><br/>
+                                <span>✅ Rich standard library (Collections, PriorityQueue).</span><br/>
+                                <span>✅ Preferred in many large companies (Google, Amazon).</span><br/>
+                                <span>⚠️ More boilerplate – requires more typing.</span>
                             </ul>
                         </div>
                     </div>
@@ -121,48 +115,56 @@
                     <h3 style="margin:0; color:#2563eb;">2. Local Setup – Install &amp; Configure</h3>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step A: Install Python</h4>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
-                        <li><strong>Windows:</strong> Download from <a href="https://python.org"
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span><strong>Windows:</strong> Download from <a href="https://python.org"
                                                                        target="_blank">python.org</a>. <strong>Check
                             "Add
                             Python to PATH"</strong> during installation.
-                        </li>
-                        <li><strong>macOS:</strong> <code>brew install python</code> or download from python.org.</li>
-                        <li><strong>Linux:</strong> <code>sudo apt install python3 python3-pip</code>.</li>
-                        <li>Verify: <code>python --version</code> (Windows) or <code>python3 --version</code>
+                        </span>
+                        </br>
+                        <span><strong>macOS:</strong> <code>brew install python</code> or download from python.org.</span>
+                        </br>
+                        <span><strong>Linux:</strong> <code>sudo apt install python3 python3-pip</code>.</span>
+                        </br>
+                        <span>Verify: <code>python --version</code> (Windows) or <code>python3 --version</code>
                             (macOS/Linux).
-                        </li>
-                    </ul>
+                        </span>
+                    </div>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step B: Install Java (JDK 17+)</h4>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
-                        <li><strong>Windows/macOS:</strong> Download from <a href="https://adoptium.net/"
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span><strong>Windows/macOS:</strong> Download from <a href="https://adoptium.net/"
                                                                              target="_blank">Adoptium</a>.
-                        </li>
-                        <li><strong>Linux:</strong> <code>sudo apt install openjdk-17-jdk</code>.</li>
-                        <li>Verify: <code>java -version</code> and <code>javac -version</code>.</li>
-                    </ul>
+                        </span>
+                        </br>
+                        <span><strong>Linux:</strong> <code>sudo apt install openjdk-17-jdk</code>.</span>
+                        </br>
+                        <span>Verify: <code>java -version</code> and <code>javac -version</code>.</span>
+                    </div>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step C: Install VS Code (or IntelliJ/IDEA)</h4>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
-                        <li>Download from <a href="https://code.visualstudio.com/"
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span>Download from <a href="https://code.visualstudio.com/"
                                              target="_blank">code.visualstudio.com</a>.
-                        </li>
-                        <li><strong>Essential Extensions:</strong>
-                            <ul>
-                                <li><strong>For Python:</strong> <code>Python</code> (by Microsoft),
+                        </span>
+                        </br>
+                        <span><strong>Essential Extensions:</strong>
+                            <div>
+                                <span><strong>For Python:</strong> <code>Python</code> (by Microsoft),
                                     <code>Pylance</code>.
-                                </li>
-                                <li><strong>For Java:</strong> <code>Extension Pack for Java</code> (includes Language
+                                </span>
+                                </br>
+                                <span><strong>For Java:</strong> <code>Extension Pack for Java</code> (includes Language
                                     Support, Debugger, and Maven).
-                                </li>
-                                <li><strong>Common:</strong> <code>LeetCode</code> (practice directly in VS Code),
+                                </span>
+                                </br>
+                                <span><strong>Common:</strong> <code>LeetCode</code> (practice directly in VS Code),
                                     <code>Prettier</code>
                                     (formatting).
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                                </span>
+                            </div>
+                        </span>
+                    </div>
                     <div class="code-container" style="margin-top:0.5rem;">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                         <pre class="line-numbers"><code class="language-bash"># Quick VS Code command to install Python extension (Ctrl+P)
@@ -174,20 +176,22 @@ ext install ms-vscode.vscode-java-pack</code></pre>
                 <!-- ===== SECTION 3: ONLINE PLATFORMS ===== -->
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
                     <h3 style="margin:0; color:#2563eb;">3. Set Up Online Platforms</h3>
-                    <ul style="margin:0.3rem 0 0 1.2rem;">
-                        <li><strong>LeetCode:</strong> Create a free account at <a href="https://leetcode.com"
+                    <div style="margin:0.3rem 0 0 1.2rem;">
+                        <span><strong>LeetCode:</strong> Create a free account at <a href="https://leetcode.com"
                                                                                    target="_blank">leetcode.com</a>.
                             Explore
                             the "Problems" section and the "Playground".
-                        </li>
-                        <li><strong>HackerRank:</strong> Create an account at <a href="https://hackerrank.com"
+                        </span>
+                        </br>
+                        <span><strong>HackerRank:</strong> Create an account at <a href="https://hackerrank.com"
                                                                                  target="_blank">hackerrank.com</a>.
                             Practice in the "Interview Preparation Kit".
-                        </li>
-                        <li><strong>Why both?</strong> LeetCode has the best interview questions; HackerRank has great
+                        </span>
+                        </br>
+                        <span><strong>Why both?</strong> LeetCode has the best interview questions; HackerRank has great
                             input/output tutorials for beginners.
-                        </li>
-                    </ul>
+                        </span>
+                    </div>
                     <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
                         <strong>💡 Tip:</strong> Use LeetCode's "Playground" to test code quickly without leaving the
                         browser.
@@ -287,13 +291,15 @@ public class Main {
                         </div>
                     </div>
 
-                    <ul style="margin:0.5rem 0 0 1.2rem;">
-                        <li><strong>Run in VS Code:</strong> Press <kbd>Ctrl+F5</kbd> (or <kbd>Cmd+F5</kbd> on Mac) to
+                    <div style="margin:0.5rem 0 0 1.2rem;">
+                        <span><strong>Run in VS Code:</strong> Press <kbd>Ctrl+F5</kbd> (or <kbd>Cmd+F5</kbd> on Mac) to
                             execute.
-                        </li>
-                        <li><strong>Run in LeetCode Playground:</strong> Paste the code and click "Run".</li>
-                        <li><strong>Run in HackerRank:</strong> Use the "Run Code" button.</li>
-                    </ul>
+                        </span>
+                        </br>
+                        <span><strong>Run in LeetCode Playground:</strong> Paste the code and click "Run".</span>
+                        </br>
+                        <span><strong>Run in HackerRank:</strong> Use the "Run Code" button.</span>
+                    </div>
                 </div>
 
                 <!-- ===== SECTION 6: TROUBLESHOOTING ===== -->
@@ -342,17 +348,18 @@ public class Main {
                 </div>
 
                 <!-- ===== FINAL CHECKLIST ===== -->
-                <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#15803d;">✅ Final Checklist – Before You Start</h3>
+<!--                <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">-->
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">7. Final Checklist – Before You Start</h3>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;">
-                        <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ Python/Java installed and verified</span>
-                        <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ VS Code with required extensions</span>
-                        <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ LeetCode &amp; HackerRank accounts created</span>
-                        <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ I/O template ready for your chosen language</span>
-                        <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ "Hello, DSA World!" runs successfully</span>
-                        <span style="background:#d1fae5; padding:0.3rem 0.6rem; border-radius:4px;">☑ Familiar with LeetCode interface (playground, problems)</span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ Python/Java installed and verified</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ VS Code with required extensions</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ LeetCode &amp; HackerRank accounts created</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ I/O template ready for your chosen language</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ "Hello, DSA World!" runs successfully</strong></span>
+                        <span style="padding:0.3rem 0.6rem; border-radius:4px;"><strong>✅ Familiar with LeetCode interface (playground, problems)</strong></span>
                     </div>
-                    <p style="margin:0.5rem 0 0; color:#065f46; font-style:italic;">"You're now ready to start Day 1 –
+                    <p style="margin:0.5rem 0 0;font-style:italic;">"You're now ready to start Day 1 –
                         Big‑O
                         Notation."</p>
                 </div>
@@ -7089,7 +7096,8 @@ for r in range(n):
     <div id="phase9" class="phase-section no-sidebar">
         <div class="content-area">
             <div class="main-content">
-                <h2 style="color:#1e293b; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Essential LeetCode List and Platform to know</h2>
+                <h2 style="color:#1e293b; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">Essential LeetCode
+                    List and Platform to know</h2>
                 <details
                         style="background:#f8fafc; border-radius:8px; padding:0.5rem 1.5rem 1.5rem 1.5rem; border:1px solid #e2e8f0; margin-top:2rem;">
                     <summary
@@ -8148,8 +8156,8 @@ for r in range(n):
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 <!-- Shared JS + roadmap-specific JS -->
-<script src="../assets/js/script.js"></script>
-<script src="../assets/js/roadmap-script.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/roadmap-script.js"></script>
 
 </body>
 </html>

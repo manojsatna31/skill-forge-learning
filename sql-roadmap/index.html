@@ -4,9 +4,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>60-Day Sql Roadmap · SkillForge</title>
-    <!--    <base href="/" />-->
-    <!--    <base href="../" />-->
-
     <!-- Prism Core CSS -->
     <link
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
@@ -17,30 +14,28 @@
             href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="../assets/css/style.css"/>
-    <link rel="stylesheet" href="../assets/css/roadmap-style.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/roadmap-style.css"/>
 
 </head>
 <body>
 <!-- ─── Header ─── -->
 <header>
-    <div class="container nav">
-        <!--        <a href="/"><div class="logo">Skill<span>Forge</span></div></a>-->
-        <a href="../">
+    <div class="container nav nav-links">
+        <a href="/">
             <div class="logo">Skill<span>Forge</span></div>
         </a>
         <div>
-            <!--            <a href="/">Home</a>-->
-            <a href="../">Home</a>
-            <a href="../python-roadmap/">🐍 Python</a>
-            <a href="../java-roadmap/">☕ Java</a>
-            <a href="../sql-roadmap/" class="active">🗄️SQL</a>
-            <a href="../dsa-roadmap/">📊 DSA</a>
+            <a href="/">Home</a>
+            <a href="/python-roadmap/">🐍 Python</a>
+            <a href="/java-roadmap/">☕ Java</a>
+            <a href="/sql-roadmap/" class="active">🛢️ SQL</a>
+            <a href="/dsa-roadmap/">📊 DSA</a>
         </div>
     </div>
 </header>
 <div class="page-title">
-    <h1>🐍 60‑Day SQL Mastery</h1>
+    <h1>🛢️ 45 ‑Day SQL Mastery</h1>
     <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
         Setting Up Your Environment
     </p>
@@ -94,27 +89,27 @@
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
                         <div style="background:#ecfdf5; padding:1rem; border-radius:6px; border:1px solid #86efac;">
                             <strong>🐘 PostgreSQL (Recommended)</strong>
-                            <ul style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
-                                <li>✅ Advanced feature set (JSON, full-text search).</li>
-                                <li>✅ ACID compliant, highly extensible.</li>
-                                <li>✅ Great for production and learning.</li>
-                            </ul>
+                            <div style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Advanced feature set (JSON, full-text search).</span><br/>
+                                <span>✅ ACID compliant, highly extensible.</span><br/>
+                                <span>✅ Great for production and learning.</span>
+                            </div>
                         </div>
                         <div style="background:#eff6ff; padding:1rem; border-radius:6px; border:1px solid #93c5fd;">
                             <strong>🐬 MySQL</strong>
-                            <ul style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
-                                <li>✅ Widely used in web applications.</li>
-                                <li>✅ Simple setup, large community.</li>
-                                <li>✅ Great for learning standard SQL.</li>
-                            </ul>
+                            <div style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ Widely used in web applications.</span><br/>
+                                <span>✅ Simple setup, large community.</span><br/>
+                                <span>✅ Great for learning standard SQL.</span>
+                            </div>
                         </div>
                         <div style="background:#fef3c7; padding:1rem; border-radius:6px; border:1px solid #f59e0b;">
                             <strong>🗄️ SQLite</strong>
-                            <ul style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
-                                <li>✅ File‑based, zero configuration.</li>
-                                <li>✅ Perfect for local practice.</li>
-                                <li>✅ Comes built‑in with Python.</li>
-                            </ul>
+                            <div style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span>✅ File‑based, zero configuration.</span><br/>
+                                <span>✅ Perfect for local practice.</span><br/>
+                                <span>✅ Comes built‑in with Python.</span>
+                            </div>
                         </div>
                     </div>
                     <div style="background:#f8fafc; border-left:4px solid #2563eb; padding:0.5rem 1rem; border-radius:4px; margin-top:0.5rem;">
@@ -132,26 +127,26 @@
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-bottom:0.5rem;">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🖥️ Windows</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
                                 <li>Download installer from <a href="https://www.postgresql.org/download/windows/"
                                                                target="_blank">postgresql.org</a>.
                                 </li>
                                 <li>Run installer, set password, and keep default port (5432).</li>
-                            </ul>
+                            </ol>
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🍎 macOS</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
                                 <li><code>brew install postgresql</code></li>
                                 <li><code>brew services start postgresql</code></li>
-                            </ul>
+                            </ol>
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🐧 Linux</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
                                 <li><code>sudo apt install postgresql postgresql-contrib</code></li>
                                 <li><code>sudo systemctl start postgresql</code></li>
-                            </ul>
+                            </ol>
                         </div>
                     </div>
 
@@ -159,28 +154,28 @@
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🖥️ Windows</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
                                 <li>Download MySQL Installer from <a href="https://dev.mysql.com/downloads/installer/"
                                                                      target="_blank">mysql.com</a>.
                                 </li>
                                 <li>Choose Developer Default, set root password.</li>
-                            </ul>
+                            </ol>
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🍎 macOS</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
                                 <li><code>brew install mysql</code></li>
                                 <li><code>brew services start mysql</code></li>
                                 <li><code>mysql_secure_installation</code></li>
-                            </ul>
+                            </ol>
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🐧 Linux</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
                                 <li><code>sudo apt install mysql-server</code></li>
                                 <li><code>sudo systemctl start mysql</code></li>
                                 <li><code>sudo mysql_secure_installation</code></li>
-                            </ul>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -197,18 +192,20 @@
                     </p>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step A: Install Docker</h4>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
-                        <li><strong>Windows/macOS:</strong> Download <a
+                    <div style="margin:0.2rem 0 0 1.2rem;">
+                        <span><strong>Windows/macOS:</strong> Download <a
                                 href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker
                             Desktop</a>
                             and install.
-                        </li>
-                        <li><strong>Linux:</strong> <code>sudo apt install docker.io</code> (Ubuntu) or follow your
+                        </span>
+                        </br>
+                        <span><strong>Linux:</strong> <code>sudo apt install docker.io</code> (Ubuntu) or follow your
                             distro's
                             guide.
-                        </li>
-                        <li>Verify: <code>docker --version</code></li>
-                    </ul>
+                        </span>
+                        </br>
+                        <span>Verify: <code>docker --version</code></span>
+                    </div>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🔹 Step B: Run PostgreSQL with Persistent
                         Storage</h4>
@@ -343,10 +340,12 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                         tables
                         and inserts sample data for the <strong>Library Management System</strong>.
                         <strong>Run this script after you have verified your database is running.</strong>
+
                     </p>
+                    <a href="/assets/scripts/library_setup.sql" download class="btn" style="background:#2563eb; color:#fff; padding:0.5rem 1.5rem; border-radius:6px; text-decoration:none;">📥 Download library_setup.sql</a>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">📄 What the Script Does</h4>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
+                    <ol style="padding-left:1.2rem; margin:0.2rem 0 0 1.2rem;">
                         <li><strong>Drops existing tables</strong> (if any) for a clean start.</li>
                         <li><strong>Creates 7 tables</strong>: <code>publishers</code>, <code>authors</code>,
                             <code>books</code>, <code>book_author</code> (junction), <code>members</code>,
@@ -358,43 +357,47 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                         <li><strong>Includes validation queries</strong> at the end to confirm the data loaded
                             correctly.
                         </li>
-                    </ul>
+                    </ol>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🚀 When to Run It</h4>
-                    <ul style="margin:0.2rem 0 0 1.2rem;">
+                    <ol style="padding-left:1.2rem; margin:0.2rem 0 0 1.2rem;">
                         <li><strong>After</strong> you have installed and verified your database (PostgreSQL/MySQL).
                         </li>
                         <li><strong>Before</strong> you start Day 1 of the SQL roadmap – the data is used for all
                             exercises.
                         </li>
                         <li>If you are using Docker, make sure your container is running and you can connect to it.</li>
-                    </ul>
+                    </ol>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">💻 How to Run It</h4>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🐘 PostgreSQL</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                                <li><strong>Using psql:</strong> <code>psql -U admin -d library -f
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span><strong>Using psql:</strong> <code>psql -U admin -d library -f
                                     library_setup.sql</code>
-                                </li>
-                                <li><strong>In pgAdmin:</strong> Open the Query Tool, load the file, and execute.</li>
-                                <li><strong>Docker:</strong> <code>docker exec -i postgres-dev psql -U admin -d library
+                                </span>
+                                </br>
+                                <span><strong>In pgAdmin:</strong> Open the Query Tool, load the file, and execute.</span>
+                                </br>
+                                <span><strong>Docker:</strong> <code>docker exec -i postgres-dev psql -U admin -d library
                                     &lt;
-                                    library_setup.sql</code></li>
-                            </ul>
+                                    library_setup.sql</code></span>
+                            </div>
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🐬 MySQL</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
-                                <li><strong>Using command line:</strong> <code>mysql -u root -p library &lt;
-                                    library_setup.sql</code></li>
-                                <li><strong>In Workbench:</strong> Open the file, click the lightning bolt to execute.
-                                </li>
-                                <li><strong>Docker:</strong> <code>docker exec -i mysql-dev mysql -u root -p library
+                            <div style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                                <span><strong>Using command line:</strong> <code>mysql -u root -p library &lt;
+                                    library_setup.sql</code></span>
+                                </br>
+                                <span><strong>In Workbench:</strong> Open the file, click the lightning bolt to execute.
+                                </span>
+                                </br>
+                                <span><strong>Docker:</strong> <code>docker exec -i mysql-dev mysql -u root -p library
                                     &lt;
                                     library_setup.sql</code></li>
-                            </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -408,8 +411,10 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                 </div>
 
                 <!-- ===== SECTION 7: FINAL CHECKLIST ===== -->
-                <div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#15803d;">✅ Final Checklist</h3>
+                <!--<div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#15803d;">✅ Final Checklist</h3>-->
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                        <h3 style="margin:0; color:#2563eb;">7. Final Checklist</h3>
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
                         <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
                             <div style="font-size:2rem;">🐘</div>
@@ -433,7 +438,7 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                                 verified</p>
                         </div>
                     </div>
-                    <p style="margin:0.5rem 0 0; color:#065f46; font-style:italic;">"Your SQL environment is ready.
+                    <p style="margin:0.5rem 0 0; font-style:italic;">"Your SQL environment is ready.
                         Let's
                         start Day 1!"</p>
                 </div>
@@ -441,28 +446,33 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                 <!-- ===== SECTION 8: TROUBLESHOOTING ===== -->
                 <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
                     <h3 style="margin:0; color:#b91c1c;">⚠️ Troubleshooting – Common Issues</h3>
-                    <ul style="margin:0.3rem 0 0 1.2rem;">
-                        <li><strong>Port conflict (5432/3306 already in use):</strong> Stop the conflicting service, or
+                    <div style="padding-left:0.5rem; margin:0.3rem 0 0 1.2rem;">
+                        <span><strong>Port conflict (5432/3306 already in use):</strong> Stop the conflicting service, or
                             change the host port: <code>-p 5433:5432</code> (Docker).
-                        </li>
-                        <li><strong>“psql: could not connect to server”:</strong> Check if PostgreSQL is running: <code>brew
+                        </span>
+                        </br>
+                        <span><strong>“psql: could not connect to server”:</strong> Check if PostgreSQL is running: <code>brew
                             services list</code> or <code>docker ps</code>.
-                        </li>
-                        <li><strong>“Access denied” for MySQL:</strong> Reset root password: <code>sudo mysql -u
+                        </span>
+                        </br>
+                        <span><strong>“Access denied” for MySQL:</strong> Reset root password: <code>sudo mysql -u
                             root</code>
                             (Linux) or follow Docker logs.
-                        </li>
-                        <li><strong>Docker permission denied (Linux):</strong> Add your user to the docker group: <code>sudo
+                        </span>
+                        </br>
+                        <span></span><strong>Docker permission denied (Linux):</strong> Add your user to the docker group: <code>sudo
                             usermod -aG docker $USER</code> and restart.
-                        </li>
-                        <li><strong>Volume mount not persisting:</strong> Ensure the host directory exists before
+                        </span>
+                        </br>
+                        <span><strong>Volume mount not persisting:</strong> Ensure the host directory exists before
                             running
                             the container (<code>mkdir -p ~/postgres_data</code>).
-                        </li>
-                        <li><strong>Script execution errors:</strong> Check if you are connected to the correct database
+                        </span>
+                        </br>
+                        <span><strong>Script execution errors:</strong> Check if you are connected to the correct database
                             (<code>library</code>) and have the necessary permissions.
-                        </li>
-                    </ul>
+                        </span>
+                    </div>
 
                     <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:0.8rem 1rem; margin-top:0.8rem; border-radius:4px;">
                         <strong>🎉 You're all set!</strong> Your database environment is now ready. Open your terminal,
@@ -5080,33 +5090,33 @@ BEGIN; -- SQL operations COMMIT; -- or ROLLBACK;</code></pre>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- ============================================================= -->
-    <!-- Prism JS                                                      -->
-    <!-- ============================================================= -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js">
-    </script>
+<!-- ============================================================= -->
+<!-- Prism JS                                                      -->
+<!-- ============================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js">
+</script>
 
-    <!-- Shared JS + roadmap-specific JS -->
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/roadmap-script.js"></script>
-
+<!-- Shared JS + roadmap-specific JS -->
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/roadmap-script.js"></script>
 </body>
 </html>

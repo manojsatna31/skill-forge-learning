@@ -110,9 +110,11 @@ SkillForge/
    git clone https://github.com/manojsatna31/skill-forge-learning.git
    cd skill-forge-learning
    ```
-2. **Open `index.html` in your browser** (or use a local server for better experience).
-3. **Navigate through the roadmaps** and start your learning journey!
-4. **Optional:** Use VS Code Live Server extension for a smoother experience.
+2. **Start a local server**
+   ```bash
+   python -m http.server 8080
+   ```
+3. Then open `http://localhost:8000/`
 
 ## 🤝 Contributing
 #### We welcome contributions! Whether it's:
