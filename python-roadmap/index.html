@@ -62,169 +62,168 @@
     <div id="phase1" class="phase-section active no-sidebar">
         <div class="content-area">
             <div class="main-content">
-                <h2>1️⃣ Install Python (3.10 or later)</h2>
-                <p>Python is the core of this training. We recommend the latest stable version (3.11 or 3.12).</p>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Windows</strong>
-                        <ol style="margin:0.5rem 0 0 1.2rem;">
-                            <li>Download the installer from <a href="https://python.org" target="_blank">python.org</a>.
-                            </li>
-                            <li><strong>Check</strong> “Add Python to PATH” during installation.</li>
-                            <li>Select “Install Now” (or customise installation).</li>
-                            <li>Verify installation:</li>
-                        </ol>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash">python --version
+                <h2>🛠️ Prerequisite – Setting Up Your Python Environment </h2>
+                <p style="font-size:1.1rem; color:#4a5568;">
+                    solid development environment is the first step toward Python mastery. This guide walks you through
+                    installing Python, choosing a code editor, verifying your setup, and writing your very first script.
+                    Follow these steps <strong>before</strong> you start Day 1.
+                </p>
+                <!-- ===== SECTION 1: Python Setup ===== -->
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">1️⃣ Install Python (3.10 or later)</h3>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Windows</strong>
+                            <ol style="margin:0.5rem 0 0 1.2rem;">
+                                <li>Download the installer from <a href="https://python.org"
+                                                                   target="_blank">python.org</a>.
+                                </li>
+                                <li><strong>Check</strong> “Add Python to PATH” during installation.</li>
+                                <li>Select “Install Now” (or customise installation).</li>
+                                <li>Verify installation:</li>
+                            </ol>
+                            <div class="code-container" style="margin-top:0.5rem;">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-bash">python --version
 pip --version</code></pre>
+                            </div>
+                            <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and <code>pip
+                                24.x</code></p>
                         </div>
-                        <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and <code>pip
-                            24.x</code></p>
-                    </div>
-
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>🍎 macOS</strong>
-                        <ol style="margin:0.5rem 0 0 1.2rem;">
-                            <li>Download from <a href="https://python.org" target="_blank">python.org</a> (recommended).
-                            </li>
-                            <li>Alternatively, use <code>brew install python</code>.</li>
-                            <li>Verify:</li>
-                        </ol>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash">python3 --version
+                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🍎 macOS</strong>
+                            <ol style="margin:0.5rem 0 0 1.2rem;">
+                                <li>Download from <a href="https://python.org" target="_blank">python.org</a>
+                                    (recommended).
+                                </li>
+                                <li>Alternatively, use <code>brew install python</code>.</li>
+                                <li>Verify:</li>
+                            </ol>
+                            <div class="code-container" style="margin-top:0.5rem;">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-bash">python3 --version
 pip3 --version</code></pre>
+                            </div>
+                            <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
+                                <code>pip3</code> by default.</p>
                         </div>
-                        <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
-                            <code>pip3</code> by default.</p>
-                    </div>
-
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; grid-column:span 2;">
-                        <strong>🐧 Linux (Ubuntu/Debian)</strong>
-                        <ol style="margin:0.5rem 0 0 1.2rem;">
-                            <li>Update and install:</li>
-                        </ol>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash">sudo apt update
-sudo apt install python3 python3-pip python3-venv -y
-python3 --version
-pip3 --version</code></pre>
-                        </div>
-                        <p style="font-size:0.9rem; color:#64748b;">Most distributions include Python 3.10+ by
-                            default.</p>
                     </div>
                 </div>
-
                 <!-- ===== SECTION 2: VS CODE ===== -->
-                <h2 style="margin-top:2rem;">2️⃣ Install VS Code (or your preferred editor)</h2>
-                <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">2️⃣ Install VS Code (or your preferred editor)</h3>
+                    <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
 
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>📥 Download &amp; Install</strong>
-                        <ol style="margin:0.5rem 0 0 1.2rem;">
-                            <li>Go to <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a>.
-                            </li>
-                            <li>Download the installer for your OS.</li>
-                            <li>Run the installer (keep default settings).</li>
-                            <li>Launch VS Code.</li>
-                        </ol>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>🧩 Recommended Extensions</strong>
-                        <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
-                        <ul style="margin:0.2rem 0 0 1.2rem;">
-                            <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
-                            <li><strong>Pylance</strong> – fast language server.</li>
-                            <li><strong>Python Debugger</strong> – debug scripts.</li>
-                            <li><strong>Jupyter</strong> – optional for notebooks.</li>
-                            <li><strong>Prettier</strong> – optional formatter.</li>
-                            <li><strong>GitLens</strong> – optional Git integration.</li>
-                        </ul>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>📥 Download &amp; Install</strong>
+                            <ol style="margin:0.5rem 0 0 1.2rem;">
+                                <li>Go to <a href="https://code.visualstudio.com"
+                                             target="_blank">code.visualstudio.com</a>.
+                                </li>
+                                <li>Download the installer for your OS.</li>
+                                <li>Run the installer (keep default settings).</li>
+                                <li>Launch VS Code.</li>
+                            </ol>
+                        </div>
+                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                            <strong>🧩 Recommended Extensions</strong>
+                            <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
+                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                                <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
+                                <li><strong>Pylance</strong> – fast language server.</li>
+                                <li><strong>Python Debugger</strong> – debug scripts.</li>
+                                <li><strong>Jupyter</strong> – optional for notebooks.</li>
+                                <li><strong>Prettier</strong> – optional formatter.</li>
+                                <li><strong>GitLens</strong> – optional Git integration.</li>
+                            </ul>
+                            <div class="code-container" style="margin-top:0.5rem;">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
 ext install ms-python.python
 ext install ms-python.vscode-pylance</code></pre>
+                            </div>
                         </div>
                     </div>
+                    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
+                        <strong>💡 Pro Tip:</strong> After installing the Python extension, press <kbd>Ctrl+Shift+P</kbd>,
+                        type
+                        “Python: Select Interpreter” and choose your installed Python version.
+                    </div>
                 </div>
-                <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
-                    <strong>💡 Pro Tip:</strong> After installing the Python extension, press <kbd>Ctrl+Shift+P</kbd>,
-                    type
-                    “Python: Select Interpreter” and choose your installed Python version.
-                </div>
-
                 <!-- ===== SECTION 3: SQLITE3 ===== -->
-                <h2 style="margin-top:2rem;">3️⃣ SQLite3 (Built‑in, but verify)</h2>
-                <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
-
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>🐍 Verify Python's SQLite</strong>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">3️⃣ SQLite3 (Built‑in, but verify)</h3>
+                    <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>🐍 Verify Python's SQLite</strong>
+                            <div class="code-container" style="margin-top:0.5rem;">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
+                            </div>
+                            <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
                         </div>
-                        <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>🖥️ Standalone CLI (Optional)</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem;">
-                            <li><strong>Windows:</strong> Download from <a href="https://sqlite.org/download.html"
-                                                                           target="_blank">sqlite.org</a> and add to
-                                PATH.
-                            </li>
-                            <li><strong>macOS/Linux:</strong> <code>brew install sqlite3</code> or <code>sudo apt
-                                install
-                                sqlite3</code>.
-                            </li>
-                        </ul>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>🖥️ Standalone CLI (Optional)</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                                <li><strong>Windows:</strong> Download from <a href="https://sqlite.org/download.html"
+                                                                               target="_blank">sqlite.org</a> and add to
+                                    PATH.
+                                </li>
+                                <li><strong>macOS/Linux:</strong> <code>brew install sqlite3</code> or <code>sudo apt
+                                    install
+                                    sqlite3</code>.
+                                </li>
+                            </ul>
+                            <div class="code-container" style="margin-top:0.5rem;">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ===== SECTION 4: GIT ===== -->
-                <h2 style="margin-top:2rem;">4️⃣ Git – Version Control</h2>
-                <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">4️⃣ Git – Version Control</h3>
+                    <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
 
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>📥 Installation</strong>
-                        <ul style="margin:0.2rem 0 0 1.2rem;">
-                            <li><strong>Windows:</strong> <a href="https://git-scm.com" target="_blank">git-scm.com</a>
-                            </li>
-                            <li><strong>macOS:</strong> <code>brew install git</code></li>
-                            <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
-                        </ul>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>📥 Installation</strong>
+                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                                <li><strong>Windows:</strong> <a href="https://git-scm.com"
+                                                                 target="_blank">git-scm.com</a>
+                                </li>
+                                <li><strong>macOS:</strong> <code>brew install git</code></li>
+                                <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
+                            </ul>
+                            <div class="code-container" style="margin-top:0.5rem;">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
+                            </div>
                         </div>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
-                        <strong>⚙️ Initial Configuration</strong>
-                        <div class="code-container" style="margin-top:0.5rem;">
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                            <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <strong>⚙️ Initial Configuration</strong>
+                            <div class="code-container" style="margin-top:0.5rem;">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</code></pre>
+                            </div>
+                            <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
                         </div>
-                        <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
                     </div>
                 </div>
 
                 <!-- ===== SECTION 5: UV ===== -->
-                <h2 style="margin-top:2rem;">5️⃣ uv – Fast Package Manager (Optional)</h2>
-                <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
-                <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
-                    <div class="code-container">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">5️⃣ uv – Fast Package Manager (Optional)</h3>
+                    <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
+                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre class="line-numbers"><code class="language-bash"># Install uv (macOS/Linux)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or via pip (slower but works everywhere)
@@ -232,71 +231,81 @@ pip install uv
 
 # Verify
 uv --version</code></pre>
+                        </div>
+                        <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> + <code>venv</code>,
+                            that’s
+                            perfectly fine – <code>uv</code> is optional.</p>
                     </div>
-                    <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> + <code>venv</code>,
-                        that’s
-                        perfectly fine – <code>uv</code> is optional.</p>
                 </div>
 
                 <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
-                <h2 style="margin-top:2rem;">✅ Final Checklist</h2>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">🐍</div>
-                        <strong>Python</strong>
-                        <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python --version</code></p>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">📝</div>
-                        <strong>VS Code</strong>
-                        <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
-                            --version</code></p>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">🗄️</div>
-                        <strong>SQLite3</strong>
-                        <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import sqlite3</code>
-                        </p>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">🔧</div>
-                        <strong>Git</strong>
-                        <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git
-                            --version</code>
-                        </p>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">📦</div>
-                        <strong>uv / pip</strong>
-                        <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip
-                            --version</code>
-                        </p>
-                    </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                        <div style="font-size:2rem;">🌐</div>
-                        <strong>Browser</strong>
-                        <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">✅ Final Checklist</h3>
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">🐍</div>
+                            <strong>Python</strong>
+                            <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python --version</code>
+                            </p>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">📝</div>
+                            <strong>VS Code</strong>
+                            <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
+                                --version</code></p>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">🗄️</div>
+                            <strong>SQLite3</strong>
+                            <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import
+                                sqlite3</code>
+                            </p>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">🔧</div>
+                            <strong>Git</strong>
+                            <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git
+                                --version</code>
+                            </p>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">📦</div>
+                            <strong>uv / pip</strong>
+                            <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip
+                                --version</code>
+                            </p>
+                        </div>
+                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
+                            <div style="font-size:2rem;">🌐</div>
+                            <strong>Browser</strong>
+                            <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
-                <h2 style="margin-top:2rem;">⚠️ Troubleshooting – Common Issues</h2>
-                <ul style="margin:1rem 0 0 1.2rem;">
-                    <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”. Re‑run
-                        the
-                        installer and select that option.
-                    </li>
-                    <li><strong>“pip is not installed”:</strong> Run <code>python -m ensurepip</code>.</li>
-                    <li><strong>“command not found: code” (macOS/Linux):</strong> Open VS Code, press
-                        <kbd>Cmd+Shift+P</kbd>
-                        (macOS) / <kbd>Ctrl+Shift+P</kbd> (Linux), type “Shell Command: Install 'code' command in PATH”.
-                    </li>
-                    <li><strong>“sqlite3” module not found:</strong> Extremely rare – reinstall Python.</li>
-                    <li><strong>Permission errors:</strong> Use <code>python -m pip install --user package_name</code>
-                        or
-                        use a virtual environment.
-                    </li>
-                </ul>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">⚠️ Troubleshooting – Common Issues</h3>
+                    <ul style="padding-left:1.5rem; margin:1rem 0 0 1.2rem;">
+                        <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”.
+                            Re‑run
+                            the
+                            installer and select that option.
+                        </li>
+                        <li><strong>“pip is not installed”:</strong> Run <code>python -m ensurepip</code>.</li>
+                        <li><strong>“command not found: code” (macOS/Linux):</strong> Open VS Code, press
+                            <kbd>Cmd+Shift+P</kbd>
+                            (macOS) / <kbd>Ctrl+Shift+P</kbd> (Linux), type “Shell Command: Install 'code' command
+                            in PATH”.
+                        </li>
+                        <li><strong>“sqlite3” module not found:</strong> Extremely rare – reinstall Python.</li>
+                        <li><strong>Permission errors:</strong> Use <code>python -m pip install --user
+                            package_name</code>
+                            or
+                            use a virtual environment.
+                        </li>
+                    </ul>
+                </div>
 
                 <div style="background:#eff6ff; border-left:4px solid #2563eb; padding:1rem 1.5rem; margin:1.5rem 0; border-radius:6px;">
                     <strong>🎉 You're all set!</strong> Once these tools are installed, you have everything you need to
@@ -357,7 +366,8 @@ uv --version</code></pre>
                     <p><strong>Goal:</strong> Install Python, set up your environment, and write your first program.
                     </p>
                     <ul>
-                        <li>Download &amp; install Python 3.10+ from <a href="https://python.org" target="_blank">python.org</a>
+                        <li>Download &amp; install Python 3.10+ from <a href="https://python.org"
+                                                                        target="_blank">python.org</a>
                         </li>
                         <li>Install VS Code or PyCharm (or any text editor)</li>
                         <li>Run your first script</li>
@@ -1076,7 +1086,8 @@ def sqrt_positive(x):
                             multiply,
                             divide. Include error handling for division by zero and invalid inputs.
                         </li>
-                        <li><strong>String Reverser:</strong> Write a function that reverses a string. Use <code>try/except</code>
+                        <li><strong>String Reverser:</strong> Write a function that reverses a string. Use
+                            <code>try/except</code>
                             to handle non‑string inputs.
                         </li>
                         <li><strong>List Stats:</strong> Write a function that takes a list and returns its length,
@@ -1598,7 +1609,8 @@ if __name__ == "__main__":
                                 <li><strong>Data Types</strong> – <code>int</code>, <code>float</code>,
                                     <code>str</code>,
                                     <code>bool</code>, <code>None</code></li>
-                                <li><strong>Type Casting</strong> – <code>int()</code>, <code>float()</code>, <code>str()</code>,
+                                <li><strong>Type Casting</strong> – <code>int()</code>, <code>float()</code>,
+                                    <code>str()</code>,
                                     <code>bool()</code></li>
                                 <li><strong>Strings</strong> – concatenation, slicing, methods
                                     (<code>.upper()</code>,
@@ -2141,7 +2153,8 @@ print(my_dog.bark())      # Rex says woof!
 print(my_dog.species)     # Canis familiaris
                         </code></pre>
                     </div>
-                    <p><span class="task-badge">✅ Task</span> Define a class <code>Car</code> with attributes <code>brand</code>,
+                    <p><span class="task-badge">✅ Task</span> Define a class <code>Car</code> with attributes
+                        <code>brand</code>,
                         <code>model</code>, and a method <code>info()</code> that prints them.</p>
                 </div>
 
@@ -2374,7 +2387,8 @@ class Human:
 make_sound(Human())  # Hello
                         </code></pre>
                     </div>
-                    <p><span class="task-badge">✅ Task</span> Write a function that accepts any object with a <code>area()</code>
+                    <p><span class="task-badge">✅ Task</span> Write a function that accepts any object with a
+                        <code>area()</code>
                         method and prints the area.</p>
                 </div>
 
@@ -2671,7 +2685,8 @@ from my_package import utils
                         iterators for common looping patterns.</p>
 
                     <ul>
-                        <li><strong>Infinite iterators:</strong> <code>count()</code>, <code>cycle()</code>, <code>repeat()</code>
+                        <li><strong>Infinite iterators:</strong> <code>count()</code>, <code>cycle()</code>,
+                            <code>repeat()</code>
                         </li>
                         <li><strong>Combining iterators:</strong> <code>chain()</code>, <code>zip_longest()</code>
                         </li>
@@ -3244,7 +3259,8 @@ with closing(urlopen('https://python.org')) as page:
                         <code>send()</code>,
                         and can be terminated with <code>close()</code>.</p>
                     <ul>
-                        <li><code>yield</code> can return a value and also receive a value via <code>generator.send(value)</code>.
+                        <li><code>yield</code> can return a value and also receive a value via
+                            <code>generator.send(value)</code>.
                         </li>
                         <li><code>throw()</code> raises an exception inside the generator.</li>
                     </ul>
@@ -3545,8 +3561,7 @@ print(found)  # ['banana']
 
 # flags
 text = "Hello World"
-print(re.search(r'world', text, re.IGNORECASE))  # finds match
-                        </code></pre>
+print(re.search(r'world', text, re.IGNORECASE))  # finds match</code></pre>
                     </div>
                     <p><span class="task-badge">✅ Task</span> Write a regex that matches words that start with a
                         capital
@@ -5802,7 +5817,8 @@ $ cat output/weather_report.json | python -m json.tool
                     <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:1rem 0;">
                         <strong style="color:#2563eb;">📦 Packaging &amp; Distribution</strong>
                         <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
-                            <li><strong>setuptools &amp; pip</strong> – creating <code>setup.py</code>, <code>pyproject.toml</code>,
+                            <li><strong>setuptools &amp; pip</strong> – creating <code>setup.py</code>,
+                                <code>pyproject.toml</code>,
                                 building wheels
                             </li>
                             <li><strong>Virtual environments</strong> – <code>venv</code>, dependency isolation,
@@ -5894,7 +5910,8 @@ $ cat output/weather_report.json | python -m json.tool
                     <ul>
                         <li><strong>Python Documentation</strong> – <a href="https://docs.python.org/3/"
                                                                        target="_blank">docs.python.org</a></li>
-                        <li><strong>Real Python</strong> – <a href="https://realpython.com/" target="_blank">realpython.com</a>
+                        <li><strong>Real Python</strong> – <a href="https://realpython.com/"
+                                                              target="_blank">realpython.com</a>
                         </li>
                         <li><strong>Python Module of the Week</strong> – <a href="https://pymotw.com/"
                                                                             target="_blank">pymotw.com</a>
@@ -6101,7 +6118,8 @@ class Sorter:
 sorter = Sorter(BubbleSort())
 print(sorter.sort([3,1,4,1,5]))  # [1,1,3,4,5]</code></pre>
                     </div>
-                    <p><span class="task-badge">✅ Task</span> Build a payment system using Strategy: <code>CreditCardPayment</code>,
+                    <p><span class="task-badge">✅ Task</span> Build a payment system using Strategy:
+                        <code>CreditCardPayment</code>,
                         <code>PayPalPayment</code>, <code>BitcoinPayment</code>.</p>
                 </div>
 
@@ -6217,14 +6235,16 @@ class ValidateMeta(type):
 class Valid(metaclass=ValidateMeta):
     name = "ValidClass"</code></pre>
                     </div>
-                    <p><span class="task-badge">✅ Task</span> Create a metaclass that automatically adds a <code>created_at</code>
+                    <p><span class="task-badge">✅ Task</span> Create a metaclass that automatically adds a
+                        <code>created_at</code>
                         timestamp to every class instance.</p>
                 </div>
 
                 <!-- ===== DAY 80 ===== -->
                 <div id="day80" class="day-content">
                     <h2>Day 80: Descriptors</h2>
-                    <p><strong>Concept:</strong> Descriptors let you define reusable attribute behavior via <code>__get__</code>,
+                    <p><strong>Concept:</strong> Descriptors let you define reusable attribute behavior via
+                        <code>__get__</code>,
                         <code>__set__</code>, and <code>__delete__</code>.</p>
                     <ul>
                         <li><strong>Data descriptor</strong> – implements <code>__set__</code> or
@@ -9171,7 +9191,8 @@ $ python test_speed.py            # measure the speedups</code></pre>
                             <li><strong>B</strong> – <code>_var</code> is a valid variable name; others start with
                                 digits or contain invalid characters.
                             </li>
-                            <li><strong>B</strong> – An empty list is falsy, so <code>bool([])</code> returns <code>False</code>.
+                            <li><strong>B</strong> – An empty list is falsy, so <code>bool([])</code> returns
+                                <code>False</code>.
                             </li>
                             <li><strong>B</strong> – <code>for</code> loops are used to iterate over sequences.</li>
                             <li><strong>A</strong> – <code>if x == 5:</code> is the correct syntax (colon required).
@@ -9210,7 +9231,8 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <code>False</code>, so <code>True and False = False</code>.
                             </li>
                             <li><strong>B</strong> – <code>import</code> is a Python keyword.</li>
-                            <li><strong>A</strong> – The union of two sets combines all unique elements: <code>{1,2,3,4,5}</code>.
+                            <li><strong>A</strong> – The union of two sets combines all unique elements:
+                                <code>{1,2,3,4,5}</code>.
                             </li>
                             <li><strong>C</strong> – <code>len()</code> returns the length of a string.</li>
                             <li><strong>B</strong> – <code>10.5</code> is a <code>float</code>, so
@@ -10899,7 +10921,8 @@ $ python test_speed.py            # measure the speedups</code></pre>
                         <li><strong>GroupBy & Aggregations:</strong> <code>groupby()</code>, <code>agg()</code>,
                             <code>transform()</code>
                         </li>
-                        <li><strong>Merging & Joining:</strong> <code>merge()</code>, <code>concat()</code>, <code>join()</code>
+                        <li><strong>Merging & Joining:</strong> <code>merge()</code>, <code>concat()</code>,
+                            <code>join()</code>
                         </li>
                         <li><strong>Pivot Tables:</strong> <code>pivot_table()</code> for quick summaries</li>
                         <li><strong>Apply & Vectorisation:</strong> <code>apply()</code>, <code>map()</code>, and
@@ -12440,7 +12463,8 @@ with Pool(processes=4) as pool:
                         <li><strong>Late binding closures:</strong> lambdas in loops capture the loop variable by
                             reference.
                         </li>
-                        <li><strong><code>==</code> vs <code>is</code>:</strong> <code>==</code> compares values; <code>is</code>
+                        <li><strong><code>==</code> vs <code>is</code>:</strong> <code>==</code> compares values;
+                            <code>is</code>
                             compares object identity.
                         </li>
                         <li><strong>Floating-point precision:</strong> <code>0.1 + 0.2 != 0.3</code> – use <code>decimal.Decimal</code>
@@ -12456,7 +12480,8 @@ with Pool(processes=4) as pool:
                         <li><strong>Using <code>list</code>, <code>dict</code> as variable names:</strong> Shadows
                             built-in types.
                         </li>
-                        <li><strong>Global vs local variable confusion:</strong> Use <code>global</code> or <code>nonlocal</code>
+                        <li><strong>Global vs local variable confusion:</strong> Use <code>global</code> or
+                            <code>nonlocal</code>
                             explicitly.
                         </li>
                     </ul>
@@ -12591,7 +12616,8 @@ for i in range(3):
                         </tr>
                         <tr>
                             <td>ML / AI</td>
-                            <td><code>scikit-learn</code>, <code>pytorch</code>, <code>tensorflow</code>, <code>transformers</code>
+                            <td><code>scikit-learn</code>, <code>pytorch</code>, <code>tensorflow</code>,
+                                <code>transformers</code>
                             </td>
                         </tr>
                         <tr>
@@ -12970,6 +12996,22 @@ for i in range(3):
         </div>
     </div>
 </div>
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="container">
+        <p style="
+            font-size:1.1rem;
+            font-weight:300;
+            color:#e5e7eb;
+        ">SkillForge – Forge Your Skills, Shape Your Future.</p>
+        <p style="margin-top:0.5rem;">&copy; 2026 SkillForge &bull; Built with ❤️ for learners everywhere.</p>
+        <p style="margin-top:0.5rem;">
+            <a href="https://github.com/manojsatna31/skill-forge-learning" target="_blank" rel="noopener noreferrer">
+                GitHub Repository
+            </a>
+        </p>
+    </div>
+</footer>
 <!-- ============================================================= -->
 <!-- Prism JS                                                      -->
 <!-- ============================================================= -->

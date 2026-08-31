@@ -166,6 +166,137 @@ h2 {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.highlight-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+    overflow: hidden;
+}
+
+.highlight-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #60a5fa;
+}
+
+.highlight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.10);
+    border-color: #bfdbfe;
+}
+
+.highlight-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.highlight-card h3 {
+    font-size: 1.35rem;
+    color: #0f172a;
+    margin-bottom: 0.6rem;
+}
+
+.highlight-card > p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: #2563eb;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.highlight-link:hover {
+    color: #1d4ed8;
+}
+/* Repository tree inside highlight card */
+.mini-structure {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.9rem;
+    margin-top: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #475569;
+    overflow-x: auto;
+}
+
+/* Roadmap status items */
+.roadmap-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.roadmap-pill {
+    background: #f1f5f9;
+    color: #334155;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.roadmap-pill.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.roadmap-pill.future {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Open source information */
+.opensource-box {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.opensource-box strong {
+    color: #0f172a;
+}
+
+.opensource-box p {
+    color: #475569;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.grid-4 .card {
+    min-width: 0;
+}
 
 .card {
     background: #fff;

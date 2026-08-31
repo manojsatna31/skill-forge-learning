@@ -342,7 +342,9 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                         <strong>Run this script after you have verified your database is running.</strong>
 
                     </p>
-                    <a href="/assets/scripts/library_setup.sql" download class="btn" style="background:#2563eb; color:#fff; padding:0.5rem 1.5rem; border-radius:6px; text-decoration:none;">📥 Download library_setup.sql</a>
+                    <a href="/assets/scripts/library_setup.sql" download class="btn"
+                       style="background:#2563eb; color:#fff; padding:0.5rem 1.5rem; border-radius:6px; text-decoration:none;">📥
+                        Download library_setup.sql</a>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">📄 What the Script Does</h4>
                     <ol style="padding-left:1.2rem; margin:0.2rem 0 0 1.2rem;">
@@ -411,10 +413,8 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                 </div>
 
                 <!-- ===== SECTION 7: FINAL CHECKLIST ===== -->
-                <!--<div style="background:#ecfdf5; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#15803d;">✅ Final Checklist</h3>-->
-                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                        <h3 style="margin:0; color:#2563eb;">7. Final Checklist</h3>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
+                    <h3 style="margin:0; color:#2563eb;">✅ Final Checklist</h3>
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
                         <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
                             <div style="font-size:2rem;">🐘</div>
@@ -445,7 +445,7 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
 
                 <!-- ===== SECTION 8: TROUBLESHOOTING ===== -->
                 <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#b91c1c;">⚠️ Troubleshooting – Common Issues</h3>
+                    <h3 style="margin:0; color:#2563eb;">⚠️ Troubleshooting – Common Issues</h3>
                     <div style="padding-left:0.5rem; margin:0.3rem 0 0 1.2rem;">
                         <span><strong>Port conflict (5432/3306 already in use):</strong> Stop the conflicting service, or
                             change the host port: <code>-p 5433:5432</code> (Docker).
@@ -460,8 +460,9 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                             (Linux) or follow Docker logs.
                         </span>
                         </br>
-                        <span></span><strong>Docker permission denied (Linux):</strong> Add your user to the docker group: <code>sudo
-                            usermod -aG docker $USER</code> and restart.
+                        <span></span><strong>Docker permission denied (Linux):</strong> Add your user to the docker
+                        group: <code>sudo
+                        usermod -aG docker $USER</code> and restart.
                         </span>
                         </br>
                         <span><strong>Volume mount not persisting:</strong> Ensure the host directory exists before
@@ -5091,7 +5092,22 @@ BEGIN; -- SQL operations COMMIT; -- or ROLLBACK;</code></pre>
         </div>
     </div>
 </div>
-
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="container">
+        <p style="
+            font-size:1.1rem;
+            font-weight:300;
+            color:#e5e7eb;
+        ">SkillForge – Forge Your Skills, Shape Your Future.</p>
+        <p style="margin-top:0.5rem;">&copy; 2026 SkillForge &bull; Built with ❤️ for learners everywhere.</p>
+        <p style="margin-top:0.5rem;">
+            <a href="https://github.com/manojsatna31/skill-forge-learning" target="_blank" rel="noopener noreferrer">
+                GitHub Repository
+            </a>
+        </p>
+    </div>
+</footer>
 
 <!-- ============================================================= -->
 <!-- Prism JS                                                      -->
