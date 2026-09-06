@@ -3,6 +3,153 @@
   Used by: python-roadmap/index.html, java-roadmap/index.html, sql-roadmap/index.html, dsa-roadmap/index.html
 */
 
+/* --- Inline style equivalents --- */
+
+.card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.card h3 {
+    margin: 0;
+    color: #2563eb;
+}
+
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.grid-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.grid-four {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.grid-item {
+    background: #f8fafc;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.text-sm {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.text-md {
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+.text-muted {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.badge {
+    background: #15803d;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.badge-secondary {
+    background: #2563eb;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.icon-large {
+    font-size: 2rem;
+}
+
+.index-old-text {
+    margin-top: 1.5rem;
+    color: #64748b;
+}
+
+.index-old-copyright {
+    margin-top: 0.5rem;
+}
+
+.list-indent {
+    margin: 0.5rem 0 0 1.2rem;
+}
+
+.text-callout {
+    margin: 0.3rem 0;
+}
+
+.grid-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.grid-four {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.card-green {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+}
+
+.badge {
+    background: #15803d;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.badge-secondary {
+    background: #2563eb;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.phase-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+.code-container {
+    margin-top: 0.5rem;
+}
+
 /* --- Reset and shared base styles --- */
 * {
     box-sizing: border-box;

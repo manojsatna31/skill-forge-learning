@@ -36,7 +36,7 @@
 </header>
 <div class="page-title">
     <h1>🐍 100‑Day Python Mastery</h1>
-    <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
+    <p id="phase-subtitle" class="phase-subtitle">
         Setting Up Your Environment
     </p>
 </div>
@@ -63,18 +63,18 @@
         <div class="content-area">
             <div class="main-content">
                 <h2>🛠️ Prerequisite – Setting Up Your Python Environment </h2>
-                <p style="font-size:1.1rem; color:#4a5568;">
+                <p class="text-md">
                     solid development environment is the first step toward Python mastery. This guide walks you through
                     installing Python, choosing a code editor, verifying your setup, and writing your very first script.
                     Follow these steps <strong>before</strong> you start Day 1.
                 </p>
                 <!-- ===== SECTION 1: Python Setup ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">1️⃣ Install Python (3.10 or later)</h3>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                <div class="card">
+                    <h3>1️⃣ Install Python (3.10 or later)</h3>
+                    <div class="grid-two">
+                        <div class="grid-item">
                             <strong>🖥️ Windows</strong>
-                            <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <ol class="list-indent">
                                 <li>Download the installer from <a href="https://python.org"
                                                                    target="_blank">python.org</a>.
                                 </li>
@@ -82,42 +82,42 @@
                                 <li>Select “Install Now” (or customise installation).</li>
                                 <li>Verify installation:</li>
                             </ol>
-                            <div class="code-container" style="margin-top:0.5rem;">
+                            <div class="code-container" class="code-container">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                                 <pre class="line-numbers"><code class="language-bash">python --version
 pip --version</code></pre>
                             </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Expected: <code>Python 3.12.x</code> and <code>pip
+                            <p class="text-sm">Expected: <code>Python 3.12.x</code> and <code>pip
                                 24.x</code></p>
                         </div>
-                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong>🍎 macOS</strong>
-                            <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <ol class="list-indent">
                                 <li>Download from <a href="https://python.org" target="_blank">python.org</a>
                                     (recommended).
                                 </li>
                                 <li>Alternatively, use <code>brew install python</code>.</li>
                                 <li>Verify:</li>
                             </ol>
-                            <div class="code-container" style="margin-top:0.5rem;">
+                            <div class="code-container" class="code-container">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                                 <pre class="line-numbers"><code class="language-bash">python3 --version
 pip3 --version</code></pre>
                             </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Note: macOS uses <code>python3</code> and
+                            <p class="text-sm">Note: macOS uses <code>python3</code> and
                                 <code>pip3</code> by default.</p>
                         </div>
                     </div>
                 </div>
                 <!-- ===== SECTION 2: VS CODE ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">2️⃣ Install VS Code (or your preferred editor)</h3>
+                <div class="card">
+                    <h3>2️⃣ Install VS Code (or your preferred editor)</h3>
                     <p>Visual Studio Code is lightweight, free, and has excellent Python support.</p>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                    <div class="grid-two">
+                        <div class="grid-item">
                             <strong>📥 Download &amp; Install</strong>
-                            <ol style="margin:0.5rem 0 0 1.2rem;">
+                            <ol class="list-indent">
                                 <li>Go to <a href="https://code.visualstudio.com"
                                              target="_blank">code.visualstudio.com</a>.
                                 </li>
@@ -126,10 +126,10 @@ pip3 --version</code></pre>
                                 <li>Launch VS Code.</li>
                             </ol>
                         </div>
-                        <div style="background:#f8fafc; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong>🧩 Recommended Extensions</strong>
-                            <p style="margin:0.3rem 0;">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <p class="text-callout">Install from Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</p>
+                            <ul class="list-indent">
                                 <li><strong>Python</strong> (Microsoft) – linting, debugging, IntelliSense.</li>
                                 <li><strong>Pylance</strong> – fast language server.</li>
                                 <li><strong>Python Debugger</strong> – debug scripts.</li>
@@ -137,36 +137,36 @@ pip3 --version</code></pre>
                                 <li><strong>Prettier</strong> – optional formatter.</li>
                                 <li><strong>GitLens</strong> – optional Git integration.</li>
                             </ul>
-                            <div class="code-container" style="margin-top:0.5rem;">
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
-ext install ms-python.python
-ext install ms-python.vscode-pylance</code></pre>
-                            </div>
                         </div>
                     </div>
-                    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:0.5rem 0;">
+                    <div class="code-container" class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre class="line-numbers"><code class="language-bash"># Quick Open (Ctrl+P) and paste:
+ext install ms-python.python
+ext install ms-python.vscode-pylance</code></pre>
+                    </div>
+                    <div class="card-green">
                         <strong>💡 Pro Tip:</strong> After installing the Python extension, press <kbd>Ctrl+Shift+P</kbd>,
                         type
                         “Python: Select Interpreter” and choose your installed Python version.
                     </div>
                 </div>
                 <!-- ===== SECTION 3: SQLITE3 ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">3️⃣ SQLite3 (Built‑in, but verify)</h3>
+                <div class="card">
+                    <h3>3️⃣ SQLite3 (Built‑in, but verify)</h3>
                     <p>SQLite comes with Python, but it’s useful to have the standalone CLI.</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-two">
+                        <div class="grid-item">
                             <strong>🐍 Verify Python's SQLite</strong>
-                            <div class="code-container" style="margin-top:0.5rem;">
+                            <div class="code-container" class="code-container">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                                 <pre class="line-numbers"><code class="language-bash">python -c "import sqlite3; print(sqlite3.sqlite_version)"</code></pre>
                             </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Expected: <code>3.40.1</code> or higher.</p>
+                            <p class="text-sm">Expected: <code>3.40.1</code> or higher.</p>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong>🖥️ Standalone CLI (Optional)</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <ul class="list-indent">
                                 <li><strong>Windows:</strong> Download from <a href="https://sqlite.org/download.html"
                                                                                target="_blank">sqlite.org</a> and add to
                                     PATH.
@@ -176,7 +176,7 @@ ext install ms-python.vscode-pylance</code></pre>
                                     sqlite3</code>.
                                 </li>
                             </ul>
-                            <div class="code-container" style="margin-top:0.5rem;">
+                            <div class="code-container" class="code-container">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                                 <pre class="line-numbers"><code class="language-bash">sqlite3 --version</code></pre>
                             </div>
@@ -185,40 +185,40 @@ ext install ms-python.vscode-pylance</code></pre>
                 </div>
 
                 <!-- ===== SECTION 4: GIT ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">4️⃣ Git – Version Control</h3>
+                <div class="card">
+                    <h3>4️⃣ Git – Version Control</h3>
                     <p>Git tracks changes and is essential for collaboration and open‑source work.</p>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-two">
+                        <div class="grid-item">
                             <strong>📥 Installation</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <ul class="list-indent">
                                 <li><strong>Windows:</strong> <a href="https://git-scm.com"
                                                                  target="_blank">git-scm.com</a>
                                 </li>
                                 <li><strong>macOS:</strong> <code>brew install git</code></li>
                                 <li><strong>Linux:</strong> <code>sudo apt install git</code></li>
                             </ul>
-                            <div class="code-container" style="margin-top:0.5rem;">
+                            <div class="code-container" class="code-container">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                                 <pre class="line-numbers"><code class="language-bash">git --version</code></pre>
                             </div>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong>⚙️ Initial Configuration</strong>
-                            <div class="code-container" style="margin-top:0.5rem;">
+                            <div class="code-container" class="code-container">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                                 <pre class="line-numbers"><code class="language-bash">git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</code></pre>
                             </div>
-                            <p style="font-size:0.9rem; color:#64748b;">Required before your first commit.</p>
+                            <p class="text-sm">Required before your first commit.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- ===== SECTION 5: UV ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">5️⃣ uv – Fast Package Manager (Optional)</h3>
+                <div class="card">
+                    <h3>5️⃣ uv – Fast Package Manager (Optional)</h3>
                     <p><code>uv</code> is the fastest Python package manager – works alongside <code>pip</code>.</p>
                     <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; margin:0.5rem 0;">
                         <div class="code-container">
@@ -232,60 +232,60 @@ pip install uv
 # Verify
 uv --version</code></pre>
                         </div>
-                        <p style="font-size:0.9rem; color:#64748b;">If you prefer <code>pip</code> + <code>venv</code>,
+                        <p class="text-sm">If you prefer <code>pip</code> + <code>venv</code>,
                             that’s
                             perfectly fine – <code>uv</code> is optional.</p>
                     </div>
                 </div>
 
                 <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">✅ Final Checklist</h3>
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🐍</div>
+                <div class="card">
+                    <h3>✅ Final Checklist</h3>
+                    <div class="grid-three">
+                        <div class="grid-item text-center" style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0">
+                            <div class="icon-large">🐍</div>
                             <strong>Python</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Version 3.10+<br><code>python --version</code>
+                            <p class="text-sm">Version 3.10+<br><code>python --version</code>
                             </p>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">📝</div>
+                        <div class="grid-item text-center" style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <div class="icon-large">📝</div>
                             <strong>VS Code</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + Python extension<br><code>code
+                            <p class="text-sm">Installed + Python extension<br><code>code
                                 --version</code></p>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🗄️</div>
+                        <div class="grid-item text-center" style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <div class="icon-large">🗄️</div>
                             <strong>SQLite3</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Working in Python<br><code>import
+                            <p class="text-sm">Working in Python<br><code>import
                                 sqlite3</code>
                             </p>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🔧</div>
+                        <div class="grid-item text-center" style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <div class="icon-large">🔧</div>
                             <strong>Git</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Installed + configured<br><code>git
+                            <p class="text-sm">Installed + configured<br><code>git
                                 --version</code>
                             </p>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">📦</div>
+                        <div class="grid-item text-center" style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <div class="icon-large">📦</div>
                             <strong>uv / pip</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Package manager ready<br><code>pip
+                            <p class="text-sm">Package manager ready<br><code>pip
                                 --version</code>
                             </p>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center;">
-                            <div style="font-size:2rem;">🌐</div>
+                        <div class="grid-item text-center" style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                            <div class="icon-large">🌐</div>
                             <strong>Browser</strong>
-                            <p style="font-size:0.9rem; margin:0.2rem 0;">Chrome / Firefox / Edge</p>
+                            <p class="text-sm">Chrome / Firefox / Edge</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">⚠️ Troubleshooting – Common Issues</h3>
+                <div class="card">
+                    <h3>⚠️ Troubleshooting – Common Issues</h3>
                     <ul style="padding-left:1.5rem; margin:1rem 0 0 1.2rem;">
                         <li><strong>“python is not recognized” (Windows):</strong> You missed “Add Python to PATH”.
                             Re‑run
@@ -1599,8 +1599,8 @@ if __name__ == "__main__":
 
                     <h3>🧠 What You Learned</h3>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-three">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">📦 Core Concepts</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Variables</strong> – storing data, dynamic typing, naming conventions
@@ -1618,7 +1618,7 @@ if __name__ == "__main__":
                                 </li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🔄 Control Flow</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Conditionals</strong> – <code>if</code>, <code>elif</code>,
@@ -1635,7 +1635,7 @@ if __name__ == "__main__":
                                 </li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🧩 Functions &amp; Scope</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Function Definition</strong> – <code>def</code>, parameters, arguments
@@ -1652,7 +1652,7 @@ if __name__ == "__main__":
                                     <code>map()</code>, <code>filter()</code>, <code>sorted()</code></li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">⚠️ Error Handling &amp; File I/O</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Exceptions</strong> – <code>try</code>/<code>except</code>, specific
@@ -1712,23 +1712,23 @@ if __name__ == "__main__":
                     <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1rem 0;">
                         <h4 style="margin:0 0 0.5rem 0; color:#15803d;">📋 To‑Do List CLI</h4>
                         <p>You built a command‑line task manager that:</p>
-                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                        <ul class="list-indent">
                             <li>Adds, views, deletes, and marks tasks as done.</li>
                             <li>Persists data using JSON.</li>
                             <li>Uses functions for modularity and error handling for robustness.</li>
                         </ul>
-                        <p style="margin-top:0.5rem;"><em>This project taught you modular design, file I/O, and user
+                        <p class="code-container"><em>This project taught you modular design, file I/O, and user
                             interaction.</em></p>
                     </div>
                     <div style="background:#eef2ff; border:1px solid #818cf8; border-radius:8px; padding:1rem; margin:1rem 0;">
                         <h4 style="margin:0 0 0.5rem 0; color:#4338ca;">🧠 Quiz Game</h4>
                         <p>You built an interactive quiz that:</p>
-                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                        <ul class="list-indent">
                             <li>Loads questions from a JSON file.</li>
                             <li>Validates user input and tracks scores.</li>
                             <li>Saves score history to a file.</li>
                         </ul>
-                        <p style="margin-top:0.5rem;"><em>This project combined everything: file I/O, data
+                        <p class="code-container"><em>This project combined everything: file I/O, data
                             structures,
                             functions, and error handling.</em></p>
                     </div>
@@ -2861,8 +2861,8 @@ def save_data(self, filename="library.json"):
 
                     <h3>🧠 What You Learned</h3>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-three">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">📦 Core Data Structures</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Lists</strong> – ordered, mutable, indexing/slicing, methods
@@ -2880,7 +2880,7 @@ def save_data(self, filename="library.json"):
                                 </li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🔧 Advanced Data Tools</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>collections</strong> – <code>defaultdict</code>, <code>Counter</code>,
@@ -2895,7 +2895,7 @@ def save_data(self, filename="library.json"):
                                     <code>zip()</code>, <code>enumerate()</code></li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🧬 Object‑Oriented Programming</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Classes &amp; Objects</strong> – <code>class</code>,
@@ -2926,7 +2926,7 @@ def save_data(self, filename="library.json"):
                                 </li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">📦 Modules &amp; Packages</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Modules</strong> – importing, <code>from ... import</code>, <code>if
@@ -2979,7 +2979,7 @@ def save_data(self, filename="library.json"):
                     <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem; margin:1rem 0;">
                         <h4 style="margin:0 0 0.5rem 0; color:#15803d;">📚 Library Management System</h4>
                         <p>You built a complete CLI system that:</p>
-                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                        <ul class="list-indent">
                             <li>Manages books and members using classes (<code>Book</code>, <code>Member</code>,
                                 <code>Library</code>).
                             </li>
@@ -2987,7 +2987,7 @@ def save_data(self, filename="library.json"):
                             <li>Persists data to JSON and SQLite (if extended).</li>
                             <li>Uses composition (Library contains books/members) and error handling.</li>
                         </ul>
-                        <p style="margin-top:0.5rem;"><em>This project solidified your OOP skills and taught you to
+                        <p class="code-container"><em>This project solidified your OOP skills and taught you to
                             design real‑world systems.</em></p>
                     </div>
 
@@ -5751,8 +5751,8 @@ $ cat output/weather_report.json | python -m json.tool
 
                     <h3>🧠 What You Learned</h3>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-three">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">📦 Core Libraries &amp; Tools</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>Decorators</strong> – <code>@timer</code>, <code>@retry</code>, <code>functools.wraps</code>,
@@ -5768,7 +5768,7 @@ $ cat output/weather_report.json | python -m json.tool
                                     <code>Counter</code>, <code>defaultdict</code></li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🗄️ Data &amp; File Handling</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>OS &amp; shutil</strong> – filesystem operations, copying, moving,
@@ -5784,7 +5784,7 @@ $ cat output/weather_report.json | python -m json.tool
                                 <li><strong>sqlite3</strong> – database creation, CRUD, transactions</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🧪 Testing &amp; Debugging</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>unittest</strong> – test cases, assertions, setup/teardown</li>
@@ -5799,7 +5799,7 @@ $ cat output/weather_report.json | python -m json.tool
                                 </li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">⚡ Concurrency &amp; Networking</strong>
                             <ul style="margin:0.5rem 0 0 1.2rem; padding:0;">
                                 <li><strong>threading</strong> – I/O‑bound concurrency, locks, thread safety</li>
@@ -5874,32 +5874,32 @@ $ cat output/weather_report.json | python -m json.tool
 
                     <h3>🚀 Final Projects – Putting It All Together</h3>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div class="grid-three">
                         <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem;">
                             <h4 style="margin:0 0 0.5rem 0; color:#15803d;">📊 ETL Data Pipeline</h4>
                             <p><strong>Concepts used:</strong></p>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <ul class="list-indent">
                                 <li>Extract: CSV/JSON, regex validation</li>
                                 <li>Transform: OOP, comprehensions, aggregations</li>
                                 <li>Load: sqlite3, context managers</li>
                                 <li>Orchestration: decorators, logging, retries</li>
                                 <li>Testing: unittest, mocking</li>
                             </ul>
-                            <p style="margin-top:0.5rem;"><em>This project taught you how to build a
+                            <p class="code-container"><em>This project taught you how to build a
                                 production‑ready
                                 data pipeline with error handling, logging, and persistence.</em></p>
                         </div>
                         <div style="background:#eef2ff; border:1px solid #818cf8; border-radius:8px; padding:1rem;">
                             <h4 style="margin:0 0 0.5rem 0; color:#4338ca;">🌤️ Weather Aggregator</h4>
                             <p><strong>Concepts used:</strong></p>
-                            <ul style="margin:0.2rem 0 0 1.2rem;">
+                            <ul class="list-indent">
                                 <li>API requests with <code>requests</code> + retries</li>
                                 <li>Concurrent fetching with <code>ThreadPoolExecutor</code></li>
                                 <li>Storage: sqlite3, daily summaries</li>
                                 <li>Reporting: text and JSON exports</li>
                                 <li>Testing: mocks for external API</li>
                             </ul>
-                            <p style="margin-top:0.5rem;"><em>This project gave you hands‑on experience with
+                            <p class="code-container"><em>This project gave you hands‑on experience with
                                 concurrency, API integration, and database reporting.</em></p>
                         </div>
                     </div>
@@ -8392,8 +8392,8 @@ $ python test_speed.py            # measure the speedups</code></pre>
 
                     <h3>🧠 What You Learned</h3>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-three">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🏗️ Design Patterns</strong>
                             <ul>
                                 <li>Singleton, Factory, Observer, Strategy</li>
@@ -8401,7 +8401,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <li>Applied to real‑world problems</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🛠️ Metaclasses &amp; Descriptors</strong>
                             <ul>
                                 <li>Class creation and customisation</li>
@@ -8409,7 +8409,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <li>Advanced property patterns</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">📊 Performance Profiling</strong>
                             <ul>
                                 <li>cProfile, line_profiler, memory_profiler</li>
@@ -8417,7 +8417,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <li>Identifying and fixing bottlenecks</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">⚡ Optimisation Techniques</strong>
                             <ul>
                                 <li>Algorithmic improvements (O(n²) → O(n))</li>
@@ -8426,7 +8426,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <li>Local variable binding, comprehension speed</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🔗 C Extensions</strong>
                             <ul>
                                 <li><code>ctypes</code> – call C libraries</li>
@@ -8434,7 +8434,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <li>CPython API – embedding Python in C</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🌐 Parallelism &amp; Distributed</strong>
                             <ul>
                                 <li><code>ProcessPoolExecutor</code></li>
@@ -8442,7 +8442,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <li>Ray &amp; Dask for clusters</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🌀 Advanced asyncio</strong>
                             <ul>
                                 <li>Event loop internals</li>
@@ -8450,7 +8450,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                                 <li>Semaphore for rate limiting</li>
                             </ul>
                         </div>
-                        <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                        <div class="grid-item">
                             <strong style="color:#2563eb;">🧪 Professional Tooling</strong>
                             <ul>
                                 <li>Type checking: <code>mypy</code></li>
@@ -8479,7 +8479,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                     <hr>
 
                     <h3>🚀 Final Projects Recap</h3>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;">
+                    <div class="grid-three">
                         <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1rem;">
                             <h4 style="margin:0 0 0.5rem 0; color:#15803d;">🕸️ High‑Performance Web Crawler</h4>
                             <ul>
@@ -8521,7 +8521,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
 
                     <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:1.5rem; margin:1.5rem 0;">
                         <h3 style="margin:0 0 0.5rem 0; color:#15803d;">🧠 What You've Achieved</h3>
-                        <ul style="margin:0.2rem 0 0 1.2rem;">
+                        <ul class="list-indent">
                             <li><strong>Design Patterns</strong> – Singleton, Factory, Observer, Strategy,
                                 Decorator,
                                 Adapter
@@ -8542,25 +8542,25 @@ $ python test_speed.py            # measure the speedups</code></pre>
                         </ul>
                     </div>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:1rem 0;">
+                    <div class="grid-three">
                         <div style="background:#f8fafc; padding:1rem; border-radius:8px; text-align:center; border:1px solid #e2e8f0;">
-                            <div style="font-size:2rem;">📊</div>
+                            <div class="icon-large">📊</div>
                             <strong>Phase 1</strong>
                             <p style="margin:0; font-size:0.85rem; color:#64748b;">Foundations &amp; Core Syntax</p>
                         </div>
                         <div style="background:#f8fafc; padding:1rem; border-radius:8px; text-align:center; border:1px solid #e2e8f0;">
-                            <div style="font-size:2rem;">🧬</div>
+                            <div class="icon-large">🧬</div>
                             <strong>Phase 2</strong>
                             <p style="margin:0; font-size:0.85rem; color:#64748b;">Data Structures &amp; OOP</p>
                         </div>
                         <div style="background:#f8fafc; padding:1rem; border-radius:8px; text-align:center; border:1px solid #e2e8f0;">
-                            <div style="font-size:2rem;">⚡</div>
+                            <div class="icon-large">⚡</div>
                             <strong>Phase 3</strong>
                             <p style="margin:0; font-size:0.85rem; color:#64748b;">Advanced Concepts &amp;
                                 Libraries</p>
                         </div>
                         <div style="background:#fef3c7; padding:1rem; border-radius:8px; text-align:center; border:1px solid #f59e0b; grid-column:1/4;">
-                            <div style="font-size:2rem;">🚀</div>
+                            <div class="icon-large">🚀</div>
                             <strong style="color:#92400e;">Phase 4 – You Are Here!</strong>
                             <p style="margin:0; font-size:0.85rem; color:#78350f;">Expert Patterns &amp;
                                 Performance</p>
@@ -8611,7 +8611,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
                 <div id="phase6DefaultActiveSideBar" class="day-content active">
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ –
                         Intermediate Level</h2>
-                    <p style="font-size:1.1rem; color:#4a5568;">60 questions covering Python syntax, data
+                    <p class="text-md">60 questions covering Python syntax, data
                         structures,
                         OOP, error handling, and more. Click the toggle below to reveal answers and
                         explanations.</p>
@@ -9310,7 +9310,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
 
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ – Expert
                         Level</h2>
-                    <p style="font-size:1.1rem; color:#4a5568;">60 questions on decorators, context managers,
+                    <p class="text-md">60 questions on decorators, context managers,
                         generators, concurrency, asyncio, metaclasses, descriptors, design patterns, and more. Click
                         the
                         toggle below to reveal answers and explanations.</p>
@@ -10098,7 +10098,7 @@ $ python test_speed.py            # measure the speedups</code></pre>
 
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ –
                         Professional Level (10+ years)</h2>
-                    <p style="font-size:1.1rem; color:#4a5568;">60 questions on C extensions, performance
+                    <p class="text-md">60 questions on C extensions, performance
                         optimisation,
                         distributed systems, advanced design patterns, and professional tooling. Click the toggle
                         below
@@ -12686,7 +12686,7 @@ for i in range(3):
                     Every
                     Engineer Should Know</h2>
 
-                <p style="font-size:1.1rem; color:#4a5568;">
+                <p class="text-md">
                     A curated list of 60+ essential Python libraries across 7 key domains. Each entry includes a brief
                     description,
                     <strong>when to use</strong>, and <strong>why it matters</strong>. Master these to become a
@@ -12699,43 +12699,43 @@ for i in range(3):
                     Core
                     Development &amp; APIs</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>requests</strong><br>
                         <span style="font-size:0.9rem;">HTTP client for humans. <strong>Use:</strong> Making API calls, scraping, webhooks. <strong>Why:</strong> Simplicity and widespread adoption.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>httpx</strong><br>
                         <span style="font-size:0.9rem;">Async HTTP client. <strong>Use:</strong> When you need async/await for high‑concurrency networking. <strong>Why:</strong> Modern, supports HTTP/2.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>fastapi</strong><br>
                         <span style="font-size:0.9rem;">Modern web framework (async). <strong>Use:</strong> Building APIs with auto‑generated OpenAPI docs. <strong>Why:</strong> Speed, async support, and built‑in validation.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>flask</strong><br>
                         <span style="font-size:0.9rem;">Micro‑framework for web apps. <strong>Use:</strong> Simple web applications, prototypes, small APIs. <strong>Why:</strong> Lightweight, flexible, huge ecosystem.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>django</strong><br>
                         <span style="font-size:0.9rem;">Full‑stack web framework. <strong>Use:</strong> Large, data‑driven web applications with admin panels. <strong>Why:</strong> Batteries‑included, security, ORM.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>click / typer</strong><br>
                         <span style="font-size:0.9rem;">CLI building tools. <strong>Use:</strong> Creating command‑line interfaces. <strong>Why:</strong> Typer is based on type hints; Click is mature and flexible.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>pydantic</strong><br>
                         <span style="font-size:0.9rem;">Data validation with type hints. <strong>Use:</strong> Parsing and validating configs, request bodies, responses. <strong>Why:</strong> Fast, integrates with FastAPI, great error messages.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>python-dotenv</strong><br>
                         <span style="font-size:0.9rem;">Load environment variables from <code>.env</code>. <strong>Use:</strong> Managing config in development and production. <strong>Why:</strong> Keeps secrets out of code.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>loguru</strong><br>
                         <span style="font-size:0.9rem;">Modern logging. <strong>Use:</strong> When you need easy, colorful, structured logging. <strong>Why:</strong> Simpler than <code>logging</code>, great defaults.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>structlog</strong><br>
                         <span style="font-size:0.9rem;">Structured logging. <strong>Use:</strong> For machine‑readable logs (JSON). <strong>Why:</strong> Better for observability and log aggregation.</span>
                     </div>
@@ -12746,35 +12746,35 @@ for i in range(3):
                     Data
                     Analysis &amp; Wrangling</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>pandas</strong><br>
                         <span style="font-size:0.9rem;">Data manipulation and analysis. <strong>Use:</strong> Any tabular data work. <strong>Why:</strong> The gold standard; powerful, flexible, and huge ecosystem.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>polars</strong><br>
                         <span style="font-size:0.9rem;">Fast DataFrame library (Rust). <strong>Use:</strong> When performance matters (large datasets). <strong>Why:</strong> Faster than pandas, parallel, memory‑efficient.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>numpy</strong><br>
                         <span style="font-size:0.9rem;">Numerical computing. <strong>Use:</strong> Core library for arrays and math. <strong>Why:</strong> Foundation of the data science ecosystem, fast C operations.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>scipy</strong><br>
                         <span style="font-size:0.9rem;">Scientific computing. <strong>Use:</strong> Advanced math, statistics, optimisation. <strong>Why:</strong> Builds on NumPy, adds many scientific algorithms.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>openpyxl / xlsxwriter</strong><br>
                         <span style="font-size:0.9rem;">Read/write Excel files. <strong>Use:</strong> When you need to interact with Excel. <strong>Why:</strong> openpyxl supports reading/writing, xlsxwriter for writing only.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>dask</strong><br>
                         <span style="font-size:0.9rem;">Parallel computing (out‑of‑core). <strong>Use:</strong> When datasets don't fit in memory. <strong>Why:</strong> Scales pandas and NumPy to clusters or large single machines.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>pyarrow</strong><br>
                         <span style="font-size:0.9rem;">Columnar data format. <strong>Use:</strong> For efficient data interchange (with Spark, Dask, etc.). <strong>Why:</strong> Fast, zero‑copy, memory‑efficient.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>modin</strong><br>
                         <span style="font-size:0.9rem;">Pandas drop‑in replacement. <strong>Use:</strong> To accelerate pandas workflows. <strong>Why:</strong> Uses Dask or Ray under the hood for parallel execution.</span>
                     </div>
@@ -12784,35 +12784,35 @@ for i in range(3):
                 <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🤖
                     Machine Learning &amp; AI Engineering</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>scikit‑learn</strong><br>
                         <span style="font-size:0.9rem;">Classical ML algorithms. <strong>Use:</strong> Regression, classification, clustering, preprocessing. <strong>Why:</strong> Simple, consistent API, and battle‑tested.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>xgboost / lightgbm / catboost</strong><br>
                         <span style="font-size:0.9rem;">Gradient boosting frameworks. <strong>Use:</strong> For structured/tabular data, competitions. <strong>Why:</strong> State‑of‑the‑art performance, handles missing values.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>pytorch</strong><br>
                         <span style="font-size:0.9rem;">Deep learning framework. <strong>Use:</strong> Research and production deep learning. <strong>Why:</strong> Dynamic computation graphs, pythonic, huge community.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>tensorflow / keras</strong><br>
                         <span style="font-size:0.9rem;">Deep learning framework. <strong>Use:</strong> Production‑focused, mobile/edge deployment. <strong>Why:</strong> Mature ecosystem, TensorFlow Serving, TFLite.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>jax</strong><br>
                         <span style="font-size:0.9rem;">Accelerated computing with autograd. <strong>Use:</strong> For high‑performance research, differentiable programming. <strong>Why:</strong> Fast, GPU/TPU support, functional.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>transformers</strong><br>
                         <span style="font-size:0.9rem;">Hugging Face library for NLP. <strong>Use:</strong> Working with pretrained language models (BERT, GPT, etc.). <strong>Why:</strong> Access to thousands of models, easy fine‑tuning.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>datasets</strong><br>
                         <span style="font-size:0.9rem;">Hugging Face datasets. <strong>Use:</strong> Loading and processing ML datasets. <strong>Why:</strong> Huge catalogue, streaming, memory‑efficient.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>evaluate</strong><br>
                         <span style="font-size:0.9rem;">Evaluation metrics. <strong>Use:</strong> For benchmarking models. <strong>Why:</strong> Standardised metrics, works with datasets and transformers.</span>
                     </div>
@@ -12823,27 +12823,27 @@ for i in range(3):
                     Core
                     Foundations &amp; Data Prep</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>sqlalchemy</strong><br>
                         <span style="font-size:0.9rem;">SQL ORM and toolkit. <strong>Use:</strong> Interacting with relational databases. <strong>Why:</strong> Pythonic, supports multiple DBs, async support.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>psycopg2</strong><br>
                         <span style="font-size:0.9rem;">PostgreSQL adapter. <strong>Use:</strong> Connecting to PostgreSQL. <strong>Why:</strong> Fast, reliable, supports async.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>duckdb</strong><br>
                         <span style="font-size:0.9rem;">Embedded analytics database. <strong>Use:</strong> In‑process analytical queries. <strong>Why:</strong> Fast, supports SQL, integrates with pandas/polars.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>great_expectations</strong><br>
                         <span style="font-size:0.9rem;">Data quality testing. <strong>Use:</strong> Validating data pipelines. <strong>Why:</strong> Ensures data meets expectations, catches issues early.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>ydata‑profiling (formerly pandas‑profiling)</strong><br>
                         <span style="font-size:0.9rem;">Automated data profiling. <strong>Use:</strong> Exploratory Data Analysis (EDA). <strong>Why:</strong> Generates comprehensive reports in one line.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>redis‑py</strong><br>
                         <span style="font-size:0.9rem;">Redis client. <strong>Use:</strong> Caching, message queues, real‑time data. <strong>Why:</strong> Fast, widely used, supports pub/sub.</span>
                     </div>
@@ -12854,23 +12854,23 @@ for i in range(3):
                     Model
                     Training &amp; Inference</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>mlflow</strong><br>
                         <span style="font-size:0.9rem;">ML lifecycle management. <strong>Use:</strong> Tracking experiments, packaging models. <strong>Why:</strong> End‑to‑end, supports multiple ML frameworks.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>wandb</strong><br>
                         <span style="font-size:0.9rem;">Weights &amp; Biases – experiment tracking. <strong>Use:</strong> Visualising experiments, hyperparameter sweeps. <strong>Why:</strong> Excellent UI, collaboration, cloud‑based.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>optuna / hyperopt</strong><br>
                         <span style="font-size:0.9rem;">Hyperparameter optimisation. <strong>Use:</strong> Tuning model hyperparameters. <strong>Why:</strong> Efficient search algorithms (TPE, Bayes, etc.).</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>onnx / onnxruntime</strong><br>
                         <span style="font-size:0.9rem;">Open Neural Network Exchange. <strong>Use:</strong> Interoperability and inference speed. <strong>Why:</strong> Deploy models across frameworks, hardware acceleration.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>tensorrt / openvino</strong><br>
                         <span style="font-size:0.9rem;">Hardware‑specific inference engines. <strong>Use:</strong> Optimising inference on NVIDIA (TensorRT) or Intel (OpenVINO). <strong>Why:</strong> Significant speedups on specific hardware.</span>
                     </div>
@@ -12881,35 +12881,35 @@ for i in range(3):
                     LLM
                     Orchestration &amp; Structured Output</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>langchain</strong><br>
                         <span style="font-size:0.9rem;">LLM application framework. <strong>Use:</strong> Building RAG, agents, and chains. <strong>Why:</strong> Comprehensive, integrates with many tools.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>llama‑index</strong><br>
                         <span style="font-size:0.9rem;">RAG framework. <strong>Use:</strong> Indexing and retrieving data for LLMs. <strong>Why:</strong> Focused on data ingestion and retrieval.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>instructor</strong><br>
                         <span style="font-size:0.9rem;">Structured LLM outputs. <strong>Use:</strong> When you need typed, validated outputs from LLMs. <strong>Why:</strong> Uses Pydantic, easy to integrate.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>guidance / outline</strong><br>
                         <span style="font-size:0.9rem;">Structured generation. <strong>Use:</strong> Constraining LLM output to a grammar. <strong>Why:</strong> Guarantees valid JSON, regex, or custom formats.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>litellm</strong><br>
                         <span style="font-size:0.9rem;">Unified LLM interface. <strong>Use:</strong> Call 100+ LLMs with the same API. <strong>Why:</strong> Simplifies switching between providers (OpenAI, Anthropic, Cohere, etc.).</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>vllm</strong><br>
                         <span style="font-size:0.9rem;">Fast LLM inference. <strong>Use:</strong> High‑throughput serving. <strong>Why:</strong> PagedAttention, continuous batching, state‑of‑the‑art performance.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>tiktoken</strong><br>
                         <span style="font-size:0.9rem;">Tokenisation for OpenAI models. <strong>Use:</strong> Counting tokens for pricing and context limits. <strong>Why:</strong> Fast, accurate, official.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>huggingface_hub</strong><br>
                         <span style="font-size:0.9rem;">Hugging Face Hub client. <strong>Use:</strong> Downloading and uploading models, datasets. <strong>Why:</strong> Essential for using the Hugging Face ecosystem.</span>
                     </div>
@@ -12919,27 +12919,27 @@ for i in range(3):
                 <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🔍
                     Search, Retrieval &amp; Databases</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>elasticsearch / opensearch‑py</strong><br>
                         <span style="font-size:0.9rem;">Clients for Elasticsearch / OpenSearch. <strong>Use:</strong> Text search, analytics, logging. <strong>Why:</strong> Powerful full‑text search, distributed.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>pinecone‑client / weaviate‑client / qdrant‑client</strong><br>
                         <span style="font-size:0.9rem;">Vector databases. <strong>Use:</strong> Similarity search for embeddings. <strong>Why:</strong> Essential for RAG, recommendation, semantic search.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>chromadb</strong><br>
                         <span style="font-size:0.9rem;">Embedded vector database. <strong>Use:</strong> Local vector storage for prototyping. <strong>Why:</strong> Lightweight, easy to set up, no external service.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>faiss</strong><br>
                         <span style="font-size:0.9rem;">Facebook AI Similarity Search. <strong>Use:</strong> Efficient similarity search on dense vectors. <strong>Why:</strong> CPU/GPU accelerated, state‑of‑the‑art.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>annoy</strong><br>
                         <span style="font-size:0.9rem;">Approximate Nearest Neighbours (Spotify). <strong>Use:</strong> Similarity search with static indexes. <strong>Why:</strong> Memory‑efficient, fast.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>sentence‑transformers</strong><br>
                         <span style="font-size:0.9rem;">Sentence embeddings. <strong>Use:</strong> Generating embeddings for text. <strong>Why:</strong> Easy to use, state‑of‑the‑art, integrates with Hugging Face.</span>
                     </div>
@@ -12949,31 +12949,31 @@ for i in range(3):
                 <h3 style="color:#2563eb; margin-top:2rem; border-bottom:2px solid #e2e8f0; padding-bottom:0.3rem;">🚀
                     Production Deployment &amp; Observability</h3>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;">
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>prometheus_client</strong><br>
                         <span style="font-size:0.9rem;">Metrics for Prometheus. <strong>Use:</strong> Exposing application metrics. <strong>Why:</strong> Standard for cloud‑native monitoring.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>opentelemetry</strong><br>
                         <span style="font-size:0.9rem;">Observability framework. <strong>Use:</strong> Distributed tracing, metrics, logging. <strong>Why:</strong> Vendor‑neutral, standardised.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>sentry‑sdk</strong><br>
                         <span style="font-size:0.9rem;">Error monitoring. <strong>Use:</strong> Tracking exceptions in production. <strong>Why:</strong> Easy setup, captures context, alerts.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>gunicorn / uvicorn</strong><br>
                         <span style="font-size:0.9rem;">WSGI/ASGI servers. <strong>Use:</strong> Serving web applications in production. <strong>Why:</strong> Gunicorn for WSGI (Flask, Django), Uvicorn for ASGI (FastAPI).</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>celery / rq</strong><br>
                         <span style="font-size:0.9rem;">Task queues. <strong>Use:</strong> Background job processing. <strong>Why:</strong> Celery for complex workflows, RQ for simplicity.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>docker‑py / kubernetes</strong><br>
                         <span style="font-size:0.9rem;">Container and K8s API clients. <strong>Use:</strong> Automating container operations. <strong>Why:</strong> Essential for cloud‑native deployment.</span>
                     </div>
-                    <div style="background:#f8fafc; padding:1rem; border-radius:8px; border:1px solid #e2e8f0;">
+                    <div class="grid-item">
                         <strong>newrelic / datadog</strong><br>
                         <span style="font-size:0.9rem;">Application performance monitoring. <strong>Use:</strong> Full‑stack performance insights. <strong>Why:</strong> Enterprise‑grade, dashboards, alerts.</span>
                     </div>
@@ -13004,8 +13004,8 @@ for i in range(3):
             font-weight:300;
             color:#e5e7eb;
         ">SkillForge – Forge Your Skills, Shape Your Future.</p>
-        <p style="margin-top:0.5rem;">&copy; 2026 SkillForge &bull; Built with ❤️ for learners everywhere.</p>
-        <p style="margin-top:0.5rem;">
+        <p class="code-container">&copy; 2026 SkillForge &bull; Built with ❤️ for learners everywhere.</p>
+        <p class="code-container">
             <a href="https://github.com/manojsatna31/skill-forge-learning" target="_blank" rel="noopener noreferrer">
                 GitHub Repository
             </a>

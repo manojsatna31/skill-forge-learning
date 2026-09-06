@@ -36,7 +36,7 @@
 </header>
 <div class="page-title">
     <h1>🛢️ 45 ‑Day SQL Mastery</h1>
-    <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
+    <p id="phase-subtitle" class="phase-subtitle">
         Setting Up Your Environment
     </p>
 </div>
@@ -65,7 +65,7 @@
             <div class="main-content">
                 <h2>🛠️ Prerequisite – Setting Up Your SQL Environment</h2>
 
-                <p style="font-size:1.1rem; color:#4a5568; margin-bottom:1rem;">
+                <p class="text-md">
                     A solid database setup is essential for your SQL journey. This guide walks you through installing
                     PostgreSQL or MySQL (locally or via Docker), configuring GUI clients, and verifying your
                     environment.
@@ -83,11 +83,11 @@
                 </div>
 
                 <!-- ===== SECTION 1: CHOOSE YOUR DATABASE ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">1️⃣ Choose Your Database</h3>
+                <div class="card">
+                    <h3>1️⃣ Choose Your Database</h3>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
-                        <div style="background:#ecfdf5; padding:1rem; border-radius:6px; border:1px solid #86efac;">
+                    <div class="grid-three">
+                        <div class="grid-item">
                             <strong>🐘 PostgreSQL (Recommended)</strong>
                             <div style="margin:0.5rem 0 0 1.2rem; font-size:0.9rem;">
                                 <span>✅ Advanced feature set (JSON, full-text search).</span><br/>
@@ -120,8 +120,8 @@
                 </div>
 
                 <!-- ===== SECTION 2: LOCAL INSTALLATION ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">2️⃣ Local Installation (Traditional)</h3>
+                <div class="card">
+                    <h3>2️⃣ Local Installation (Traditional)</h3>
 
                     <h4 style="margin:0.8rem 0 0.2rem; color:#1e293b;">🐘 PostgreSQL</h4>
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-bottom:0.5rem;">
@@ -181,8 +181,8 @@
                 </div>
 
                 <!-- ===== SECTION 3: DOCKER INSTALLATION ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">3️⃣ Docker Installation (Recommended – Best for Isolation &amp;
+                <div class="card">
+                    <h3>3️⃣ Docker Installation (Recommended – Best for Isolation &amp;
                         Portability)</h3>
                     <p style="margin:0.3rem 0;">
                         Docker is the cleanest way to run databases. It isolates your database from your OS, makes
@@ -269,12 +269,12 @@ docker start postgres-dev</code></pre>
                 </div>
 
                 <!-- ===== SECTION 4: GUI CLIENTS ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">4️⃣ Install a GUI Client (Optional but Highly Recommended)</h3>
+                <div class="card">
+                    <h3>4️⃣ Install a GUI Client (Optional but Highly Recommended)</h3>
                     <p style="margin:0.3rem 0;">A GUI client makes it easier to browse schemas, run queries, and
                         visualise
                         data.</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                    <div class="grid-three">
                         <div style="background:#fff; padding:1rem; border-radius:6px; border:1px solid #e2e8f0; text-align:center;">
                             <div style="font-size:2rem;">🐘</div>
                             <strong>pgAdmin</strong>
@@ -297,8 +297,8 @@ docker start postgres-dev</code></pre>
                 </div>
 
                 <!-- ===== SECTION 5: VERIFY YOUR SETUP ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">5️⃣ Verify Your Setup</h3>
+                <div class="card">
+                    <h3>5️⃣ Verify Your Setup</h3>
                     <p>Run these tests to confirm everything is working.</p>
 
 
@@ -333,8 +333,8 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                 </div>
 
                 <!-- ===== SECTION 6: DATABASE SETUP SCRIPT ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">6️⃣ Database Setup Script – How to Use It</h3>
+                <div class="card">
+                    <h3>6️⃣ Database Setup Script – How to Use It</h3>
                     <p style="margin:0.3rem 0;">
                         This roadmap provides a complete SQL script (<code>library_setup.sql</code>) that creates all
                         tables
@@ -413,9 +413,9 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
                 </div>
 
                 <!-- ===== SECTION 7: FINAL CHECKLIST ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">✅ Final Checklist</h3>
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                <div class="card">
+                    <h3>✅ Final Checklist</h3>
+                    <div class="grid-three">
                         <div style="background:#fff; padding:1rem; text-align:center; border-radius:6px; border:1px solid #e2e8f0;">
                             <div style="font-size:2rem;">🐘</div>
                             <strong>PostgreSQL / MySQL</strong>
@@ -445,7 +445,7 @@ docker exec -it mysql-dev mysql -u root -p library -e "SELECT VERSION();"</code>
 
                 <!-- ===== SECTION 8: TROUBLESHOOTING ===== -->
                 <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">⚠️ Troubleshooting – Common Issues</h3>
+                    <h3>⚠️ Troubleshooting – Common Issues</h3>
                     <div style="padding-left:0.5rem; margin:0.3rem 0 0 1.2rem;">
                         <span><strong>Port conflict (5432/3306 already in use):</strong> Stop the conflicting service, or
                             change the host port: <code>-p 5433:5432</code> (Docker).

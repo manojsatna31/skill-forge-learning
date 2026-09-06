@@ -32,7 +32,7 @@
 </header>
 <div class="page-title">
     <h1>☕ 100‑Day Java Mastery</h1>
-    <p id="phase-subtitle" style="font-size:1.25rem; opacity:0.9; margin-top:0.5rem;">
+    <p id="phase-subtitle" class="phase-subtitle">
         Setting Up Your Environment
     </p>
 </div>
@@ -61,20 +61,20 @@
             <div class="main-content">
                 <h2>🛠️ Prerequisite – Setting Up Your Java Environment</h2>
 
-                <p style="font-size:1.1rem; color:#4a5568;">
+                <p class="text-md">
                     A solid setup is the foundation of your Java journey. This guide walks you through installing Java,
                     IntelliJ IDEA, MySQL, Maven, and Git. Follow these steps <strong>before</strong> you start Day 1.
                 </p>
 
                 <!-- ===== SECTION 1: JAVA ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">1️⃣ Install Java (JDK 17 or later)</h3>
-                    <p style="margin:0.3rem 0;">Java is the foundation. We use the latest LTS version (JDK 17 or
+                <div class="card">
+                    <h3>1️⃣ Install Java (JDK 17 or later)</h3>
+                    <p class="text-callout">Java is the foundation. We use the latest LTS version (JDK 17 or
                         21).</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                    <div class="grid-two">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🖥️ Windows</strong>
-                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol class="list-indent">
                                 <li>Download the latest <a
                                         href="https://www.oracle.com/java/technologies/javase-downloads.html"
                                         target="_blank">Java JDK</a>.
@@ -87,7 +87,7 @@
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🍎 macOS / 🐧 Linux</strong>
-                            <ol style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ol class="list-indent">
                                 <li>Install via Homebrew: <code>brew install openjdk@17</code> (macOS) or <code>sudo apt
                                     install openjdk-17-jdk</code> (Ubuntu).
                                 </li>
@@ -109,14 +109,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.11+9-LTS-211, mixed mode, sharing)
                 </div>
 
                 <!-- ===== SECTION 2: INTELLIJ ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">2️⃣ Install IntelliJ IDEA (Community Edition)</h3>
-                    <p style="margin:0.3rem 0;">IntelliJ is the most popular Java IDE, with excellent refactoring and
+                <div class="card">
+                    <h3>2️⃣ Install IntelliJ IDEA (Community Edition)</h3>
+                    <p class="text-callout">IntelliJ is the most popular Java IDE, with excellent refactoring and
                         debugging tools.</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                    <div class="grid-two">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🖥️ Windows</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Download from <a href="https://www.jetbrains.com/idea/download/" target="_blank">jetbrains.com</a>.
                                 </li>
                                 <li>Install and launch.</li>
@@ -127,7 +127,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.11+9-LTS-211, mixed mode, sharing)
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🍎 macOS / 🐧 Linux</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Download DMG from JetBrains site.</li>
                                 <li>Drag IntelliJ IDEA to Applications folder.</li>
                                 <li>Launch and complete the setup wizard.</li>
@@ -137,13 +137,13 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.11+9-LTS-211, mixed mode, sharing)
                 </div>
 
                 <!-- ===== SECTION 3: MYSQL ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">3️⃣ Install MySQL (or use Docker)</h3>
-                    <p style="margin:0.3rem 0;">MySQL is used for database projects.</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                <div class="card">
+                    <h3>3️⃣ Install MySQL (or use Docker)</h3>
+                    <p class="text-callout">MySQL is used for database projects.</p>
+                    <div class="grid-two">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🖥️ Windows</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Download MySQL Installer from <a href="https://dev.mysql.com/downloads/installer/"
                                                                      target="_blank">MySQL</a>.
                                 </li>
@@ -153,7 +153,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.11+9-LTS-211, mixed mode, sharing)
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🍎 macOS / 🐧 Linux</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Install via Homebrew: <code>brew install mysql</code>.</li>
                                 <li>Start service: <code>brew services start mysql</code>.</li>
                                 <li>Secure installation: <code>mysql_secure_installation</code>.</li>
@@ -163,13 +163,13 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.11+9-LTS-211, mixed mode, sharing)
                 </div>
 
                 <!-- ===== SECTION 4: MAVEN ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">4️⃣ Install Maven (Build Tool)</h3>
-                    <p style="margin:0.3rem 0;">Maven manages dependencies and builds your projects.</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                <div class="card">
+                    <h3>4️⃣ Install Maven (Build Tool)</h3>
+                    <p class="text-callout">Maven manages dependencies and builds your projects.</p>
+                    <div class="grid-two">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🖥️ Windows</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Get the binary zip from <a href="https://maven.apache.org/download.cgi"
                                                                target="_blank">Apache
                                     Maven Downloads</a>.
@@ -183,7 +183,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.11+9-LTS-211, mixed mode, sharing)
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🍎 macOS / 🐧 Linux</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Option 1: Download binary zip from <a href="https://maven.apache.org/download.cgi"
                                                                           target="_blank">Apache Maven</a> and extract
                                     to
@@ -210,13 +210,13 @@ Default locale: en_IN, platform encoding: UTF-8</code></pre>
                 </div>
 
                 <!-- ===== SECTION 5: GIT ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">5️⃣ Install Git (Version Control)</h3>
-                    <p style="margin:0.3rem 0;">Git helps you track changes and collaborate.</p>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.5rem;">
+                <div class="card">
+                    <h3>5️⃣ Install Git (Version Control)</h3>
+                    <p class="text-callout">Git helps you track changes and collaborate.</p>
+                    <div class="grid-two">
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🖥️ Windows</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Download from <a href="https://git-scm.com/download/win" target="_blank">Git SCM</a>.
                                 </li>
                                 <li>Run installer and configure Git Bash.</li>
@@ -224,7 +224,7 @@ Default locale: en_IN, platform encoding: UTF-8</code></pre>
                         </div>
                         <div style="background:#fff; padding:0.8rem; border-radius:6px; border:1px solid #e2e8f0;">
                             <strong>🍎 macOS / 🐧 Linux</strong>
-                            <ul style="margin:0.2rem 0 0 1.2rem; font-size:0.9rem;">
+                            <ul class="list-indent">
                                 <li>Install via Homebrew: <code>brew install git</code>.</li>
                                 <li>Verify with <code>git --version</code>.</li>
                             </ul>
@@ -239,8 +239,8 @@ git config --global user.email "you@example.com"</code></pre>
                 </div>
 
                 <!-- ===== SECTION 6: FINAL CHECKLIST ===== -->
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">✅ Final Checklist</h3>
+                <div class="card">
+                    <h3>✅ Final Checklist</h3>
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; margin-top:0.5rem;">
                         <div style="background:#fff; padding:0.8rem; text-align:center; border-radius:6px;">
                             <div style="font-size:2rem;">☕</div>
@@ -277,7 +277,7 @@ git config --global user.email "you@example.com"</code></pre>
                 </div>
                 <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
                 <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1rem; margin:1.5rem 0;">
-                    <h3 style="margin:0; color:#2563eb;">⚠️ Troubleshooting – Common Issues</h3>
+                    <h3>⚠️ Troubleshooting – Common Issues</h3>
                     <ul style="padding-left:1.5rem; margin:0.3rem 0 0 1.2rem;">
                         <li><strong>"java" not recognized:</strong> Set <code>JAVA_HOME</code> and add
                             <code>%JAVA_HOME%\bin</code> to PATH (Windows).
@@ -5765,7 +5765,7 @@ services:
                 <div id="phase6DefaultActiveSideBar" class="day-content active">
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ –
                         Intermediate Level</h2>
-                    <p style="font-size:1.1rem; color:#4a5568;">60 questions covering Java syntax, OOP, arrays,
+                    <p class="text-md">60 questions covering Java syntax, OOP, arrays,
                         strings, collections, exceptions, and more. Click the toggle below to reveal answers and
                         explanations.</p>
 
@@ -6447,7 +6447,7 @@ services:
                 <div id="mcq-expert" class="day-content">
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ – Expert
                         Level</h2>
-                    <p style="font-size:1.1rem; color:#4a5568;">60 questions on generics, streams, lambdas,
+                    <p class="text-md">60 questions on generics, streams, lambdas,
                         concurrency, JDBC, JPA, Spring, design patterns, annotations, reflection, and more. Click
                         the toggle below to reveal answers and explanations.</p>
 
@@ -7159,7 +7159,7 @@ services:
                 <div id="mcq-professional" class="day-content">
                     <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">MCQ –
                         Professional Level (10+ years)</h2>
-                    <p style="font-size:1.1rem; color:#4a5568;">60 questions on JVM internals, garbage collection,
+                    <p class="text-md">60 questions on JVM internals, garbage collection,
                         profiling, design patterns, microservices, cloud-native, security, performance tuning, and
                         modern Java features. Click the toggle below to reveal answers and explanations.</p>
 
@@ -9861,7 +9861,7 @@ void testGetUser() {
                 <h2 style="color:#2c3e50; border-bottom:3px solid #2c3e50; padding-bottom:0.5rem;">Java Libraries Every
                     Engineer Should Know</h2>
 
-                <p style="font-size:1.1rem; color:#4a5568;">
+                <p class="text-md">
                     A curated list of 60+ essential Java libraries across 10 key domains. Each entry includes a brief
                     description,
                     <strong>when to use</strong>, and <strong>why it matters</strong>. Master these to become a
